@@ -8,14 +8,44 @@
  */
 
 (() => {
+  var __create = Object.create;
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
   var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getProtoOf = Object.getPrototypeOf;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __esm = (fn, res) => function __init() {
+    return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+  };
   var __commonJS = (cb, mod) => function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+    // If the importer is in node compatibility mode or this is not an ESM
+    // file that has been converted to a CommonJS file using a Babel-
+    // compatible transform (i.e. "__esModule" has not been set), then set
+    // "default" to the CommonJS "module.exports" for node compatibility.
+    isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+    mod
+  ));
+  var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
   // packages/shared/render/plugins/BaseSiteModules/tram-min.js
   var require_tram_min = __commonJS({
     "packages/shared/render/plugins/BaseSiteModules/tram-min.js"() {
+      "use strict";
       window.tram = function(a) {
         function b(a2, b2) {
           var c2 = new M.Bare();
@@ -732,6 +762,7 @@
   // packages/shared/render/plugins/BaseSiteModules/underscore-custom.js
   var require_underscore_custom = __commonJS({
     "packages/shared/render/plugins/BaseSiteModules/underscore-custom.js"(exports, module) {
+      "use strict";
       var $ = window.$;
       var tram = require_tram_min() && $.tram;
       module.exports = function() {
@@ -739,7 +770,7 @@
         _.VERSION = "1.6.0-Webflow";
         var breaker = {};
         var ArrayProto = Array.prototype, ObjProto = Object.prototype, FuncProto = Function.prototype;
-        var push = ArrayProto.push, slice = ArrayProto.slice, concat = ArrayProto.concat, toString = ObjProto.toString, hasOwnProperty = ObjProto.hasOwnProperty;
+        var push = ArrayProto.push, slice = ArrayProto.slice, concat = ArrayProto.concat, toString = ObjProto.toString, hasOwnProperty2 = ObjProto.hasOwnProperty;
         var nativeForEach = ArrayProto.forEach, nativeMap = ArrayProto.map, nativeReduce = ArrayProto.reduce, nativeReduceRight = ArrayProto.reduceRight, nativeFilter = ArrayProto.filter, nativeEvery = ArrayProto.every, nativeSome = ArrayProto.some, nativeIndexOf = ArrayProto.indexOf, nativeLastIndexOf = ArrayProto.lastIndexOf, nativeIsArray = Array.isArray, nativeKeys = Object.keys, nativeBind = FuncProto.bind;
         var each = _.each = _.forEach = function(obj, iterator, context) {
           if (obj == null)
@@ -891,7 +922,7 @@
           return keys;
         };
         _.has = function(obj, key) {
-          return hasOwnProperty.call(obj, key);
+          return hasOwnProperty2.call(obj, key);
         };
         _.isObject = function(obj) {
           return obj === Object(obj);
@@ -968,6 +999,7 @@
   // packages/shared/render/plugins/BaseSiteModules/webflow-lib.js
   var require_webflow_lib = __commonJS({
     "packages/shared/render/plugins/BaseSiteModules/webflow-lib.js"(exports, module) {
+      "use strict";
       var Webflow = {};
       var modules = {};
       var primary = [];
@@ -1170,6 +1202,7 @@
   // packages/shared/render/plugins/BaseSiteModules/webflow-brand.js
   var require_webflow_brand = __commonJS({
     "packages/shared/render/plugins/BaseSiteModules/webflow-brand.js"(exports, module) {
+      "use strict";
       var Webflow = require_webflow_lib();
       Webflow.define("brand", module.exports = function($) {
         var api = {};
@@ -1200,11 +1233,11 @@
         }
         function createBadge() {
           var $brand = $('<a class="w-webflow-badge"></a>').attr("href", "https://webflow.com?utm_campaign=brandjs");
-          var $logoArt = $("<img>").attr("src", "https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-icon.f67cd735e3.svg").attr("alt", "").css({
-            marginRight: "8px",
-            width: "16px"
+          var $logoArt = $("<img>").attr("src", "https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-icon-d2.89e12c322e.svg").attr("alt", "").css({
+            marginRight: "4px",
+            width: "26px"
           });
-          var $logoText = $("<img>").attr("src", "https://d1otoma47x30pg.cloudfront.net/img/webflow-badge-text.6faa6a38cd.svg").attr("alt", "Made in Webflow");
+          var $logoText = $("<img>").attr("src", "https://d3e54v103j8qbb.cloudfront.net/img/webflow-badge-text-d2.c82cec3b78.svg").attr("alt", "Made in Webflow");
           $brand.append($logoArt, $logoText);
           return $brand[0];
         }
@@ -1233,6 +1266,7 @@
   // packages/shared/render/plugins/BaseSiteModules/webflow-focus-visible.js
   var require_webflow_focus_visible = __commonJS({
     "packages/shared/render/plugins/BaseSiteModules/webflow-focus-visible.js"(exports, module) {
+      "use strict";
       var Webflow = require_webflow_lib();
       Webflow.define("focus-visible", module.exports = function() {
         function applyFocusVisiblePolyfill(scope) {
@@ -1384,6 +1418,7 @@
   // packages/shared/render/plugins/BaseSiteModules/webflow-focus.js
   var require_webflow_focus = __commonJS({
     "packages/shared/render/plugins/BaseSiteModules/webflow-focus.js"(exports, module) {
+      "use strict";
       var Webflow = require_webflow_lib();
       Webflow.define("focus", module.exports = function() {
         var capturedEvents = [];
@@ -1495,7 +1530,7 @@
     "packages/shared/render/plugins/BaseSiteModules/webflow-ix2-events.js"(exports, module) {
       "use strict";
       var IXEvents = require_webflow_ix_events();
-      function dispatchCustomEvent(element, eventName) {
+      function dispatchCustomEvent2(element, eventName) {
         var event = document.createEvent("CustomEvent");
         event.initCustomEvent(eventName, true, true, null);
         element.dispatchEvent(event);
@@ -1509,11 +1544,11 @@
         },
         intro: function(i, el) {
           IXEvents.triggers.intro(i, el);
-          dispatchCustomEvent(el, "COMPONENT_ACTIVE");
+          dispatchCustomEvent2(el, "COMPONENT_ACTIVE");
         },
         outro: function(i, el) {
           IXEvents.triggers.outro(i, el);
-          dispatchCustomEvent(el, "COMPONENT_INACTIVE");
+          dispatchCustomEvent2(el, "COMPONENT_INACTIVE");
         }
       };
       api.triggers = {};
@@ -1992,9 +2027,9 @@
     "node_modules/core-js/internals/has-own-property.js"(exports, module) {
       var uncurryThis = require_function_uncurry_this();
       var toObject = require_to_object();
-      var hasOwnProperty = uncurryThis({}.hasOwnProperty);
+      var hasOwnProperty2 = uncurryThis({}.hasOwnProperty);
       module.exports = Object.hasOwn || function hasOwn(it, key) {
-        return hasOwnProperty(toObject(it), key);
+        return hasOwnProperty2(toObject(it), key);
       };
     }
   });
@@ -2259,16 +2294,16 @@
       var OBJECT_ALREADY_INITIALIZED = "Object already initialized";
       var TypeError2 = global2.TypeError;
       var WeakMap2 = global2.WeakMap;
-      var set;
-      var get;
+      var set3;
+      var get3;
       var has;
       var enforce = function(it) {
-        return has(it) ? get(it) : set(it, {});
+        return has(it) ? get3(it) : set3(it, {});
       };
       var getterFor = function(TYPE) {
         return function(it) {
           var state;
-          if (!isObject(it) || (state = get(it)).type !== TYPE) {
+          if (!isObject(it) || (state = get3(it)).type !== TYPE) {
             throw TypeError2("Incompatible receiver, " + TYPE + " required");
           }
           return state;
@@ -2279,14 +2314,14 @@
         wmget = uncurryThis(store.get);
         wmhas = uncurryThis(store.has);
         wmset = uncurryThis(store.set);
-        set = function(it, metadata) {
+        set3 = function(it, metadata) {
           if (wmhas(store, it))
             throw new TypeError2(OBJECT_ALREADY_INITIALIZED);
           metadata.facade = it;
           wmset(store, it, metadata);
           return metadata;
         };
-        get = function(it) {
+        get3 = function(it) {
           return wmget(store, it) || {};
         };
         has = function(it) {
@@ -2295,14 +2330,14 @@
       } else {
         STATE = sharedKey("state");
         hiddenKeys[STATE] = true;
-        set = function(it, metadata) {
+        set3 = function(it, metadata) {
           if (hasOwn(it, STATE))
             throw new TypeError2(OBJECT_ALREADY_INITIALIZED);
           metadata.facade = it;
           createNonEnumerableProperty(it, STATE, metadata);
           return metadata;
         };
-        get = function(it) {
+        get3 = function(it) {
           return hasOwn(it, STATE) ? it[STATE] : {};
         };
         has = function(it) {
@@ -2315,8 +2350,8 @@
       var wmset;
       var STATE;
       module.exports = {
-        set,
-        get,
+        set: set3,
+        get: get3,
         has,
         enforce,
         getterFor
@@ -2852,11 +2887,11 @@
     "node_modules/lodash/_getRawTag.js"(exports, module) {
       var Symbol2 = require_Symbol();
       var objectProto = Object.prototype;
-      var hasOwnProperty = objectProto.hasOwnProperty;
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
       var nativeObjectToString = objectProto.toString;
       var symToStringTag = Symbol2 ? Symbol2.toStringTag : void 0;
       function getRawTag(value) {
-        var isOwn = hasOwnProperty.call(value, symToStringTag), tag = value[symToStringTag];
+        var isOwn = hasOwnProperty2.call(value, symToStringTag), tag = value[symToStringTag];
         try {
           value[symToStringTag] = void 0;
           var unmasked = true;
@@ -2948,7 +2983,7 @@
       var funcProto = Function.prototype;
       var objectProto = Object.prototype;
       var funcToString = funcProto.toString;
-      var hasOwnProperty = objectProto.hasOwnProperty;
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
       var objectCtorString = funcToString.call(Object);
       function isPlainObject(value) {
         if (!isObjectLike(value) || baseGetTag(value) != objectTag) {
@@ -2958,7 +2993,7 @@
         if (proto === null) {
           return true;
         }
-        var Ctor = hasOwnProperty.call(proto, "constructor") && proto.constructor;
+        var Ctor = hasOwnProperty2.call(proto, "constructor") && proto.constructor;
         return typeof Ctor == "function" && Ctor instanceof Ctor && funcToString.call(Ctor) == objectCtorString;
       }
       module.exports = isPlainObject;
@@ -3174,7 +3209,7 @@
     "node_modules/redux/lib/combineReducers.js"(exports) {
       "use strict";
       exports.__esModule = true;
-      exports["default"] = combineReducers;
+      exports["default"] = combineReducers2;
       var _createStore = require_createStore();
       var _isPlainObject = require_isPlainObject();
       var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
@@ -3191,8 +3226,8 @@
       function assertReducerSanity(reducers) {
         Object.keys(reducers).forEach(function(key) {
           var reducer = reducers[key];
-          var initialState = reducer(void 0, { type: _createStore.ActionTypes.INIT });
-          if (typeof initialState === "undefined") {
+          var initialState4 = reducer(void 0, { type: _createStore.ActionTypes.INIT });
+          if (typeof initialState4 === "undefined") {
             throw new Error('Reducer "' + key + '" returned undefined during initialization. If the state passed to the reducer is undefined, you must explicitly return the initial state. The initial state may not be undefined.');
           }
           var type = "@@redux/PROBE_UNKNOWN_ACTION_" + Math.random().toString(36).substring(7).split("").join(".");
@@ -3201,7 +3236,7 @@
           }
         });
       }
-      function combineReducers(reducers) {
+      function combineReducers2(reducers) {
         var reducerKeys = Object.keys(reducers);
         var finalReducers = {};
         for (var i = 0; i < reducerKeys.length; i++) {
@@ -3400,15 +3435,12 @@
     }
   });
 
-  // packages/systems/ix2/shared/constants/trigger-events.js
-  var require_trigger_events = __commonJS({
-    "packages/systems/ix2/shared/constants/trigger-events.js"(exports) {
+  // packages/systems/ix2/shared-constants/trigger-events.ts
+  var EventTypeConsts, EventAppliesTo, EventBasedOn, EventContinuousMouseAxes, EventLimitAffectedElements, QuickEffectIds, QuickEffectDirectionConsts;
+  var init_trigger_events = __esm({
+    "packages/systems/ix2/shared-constants/trigger-events.ts"() {
       "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.QuickEffectIds = exports.QuickEffectDirectionConsts = exports.EventTypeConsts = exports.EventLimitAffectedElements = exports.EventContinuousMouseAxes = exports.EventBasedOn = exports.EventAppliesTo = void 0;
-      var EventTypeConsts = {
+      EventTypeConsts = {
         NAVBAR_OPEN: "NAVBAR_OPEN",
         NAVBAR_CLOSE: "NAVBAR_CLOSE",
         TAB_ACTIVE: "TAB_ACTIVE",
@@ -3436,30 +3468,25 @@
         PAGE_SCROLL_DOWN: "PAGE_SCROLL_DOWN",
         PAGE_SCROLL: "PAGE_SCROLL"
       };
-      exports.EventTypeConsts = EventTypeConsts;
-      var EventAppliesTo = {
+      EventAppliesTo = {
         ELEMENT: "ELEMENT",
         CLASS: "CLASS",
         PAGE: "PAGE"
       };
-      exports.EventAppliesTo = EventAppliesTo;
-      var EventBasedOn = {
+      EventBasedOn = {
         ELEMENT: "ELEMENT",
         VIEWPORT: "VIEWPORT"
       };
-      exports.EventBasedOn = EventBasedOn;
-      var EventContinuousMouseAxes = {
+      EventContinuousMouseAxes = {
         X_AXIS: "X_AXIS",
         Y_AXIS: "Y_AXIS"
       };
-      exports.EventContinuousMouseAxes = EventContinuousMouseAxes;
-      var EventLimitAffectedElements = {
+      EventLimitAffectedElements = {
         CHILDREN: "CHILDREN",
         SIBLINGS: "SIBLINGS",
         IMMEDIATE_CHILDREN: "IMMEDIATE_CHILDREN"
       };
-      exports.EventLimitAffectedElements = EventLimitAffectedElements;
-      var QuickEffectIds = {
+      QuickEffectIds = {
         FADE_EFFECT: "FADE_EFFECT",
         SLIDE_EFFECT: "SLIDE_EFFECT",
         GROW_EFFECT: "GROW_EFFECT",
@@ -3481,8 +3508,7 @@
         SHRINK_BIG_EFFECT: "SHRINK_BIG_EFFECT",
         PLUGIN_LOTTIE_EFFECT: "PLUGIN_LOTTIE_EFFECT"
       };
-      exports.QuickEffectIds = QuickEffectIds;
-      var QuickEffectDirectionConsts = {
+      QuickEffectDirectionConsts = {
         LEFT: "LEFT",
         RIGHT: "RIGHT",
         BOTTOM: "BOTTOM",
@@ -3494,19 +3520,15 @@
         CLOCKWISE: "CLOCKWISE",
         COUNTER_CLOCKWISE: "COUNTER_CLOCKWISE"
       };
-      exports.QuickEffectDirectionConsts = QuickEffectDirectionConsts;
     }
   });
 
-  // packages/systems/ix2/shared/constants/animation-actions.js
-  var require_animation_actions = __commonJS({
-    "packages/systems/ix2/shared/constants/animation-actions.js"(exports) {
+  // packages/systems/ix2/shared-constants/animation-actions.ts
+  var ActionTypeConsts, ActionAppliesTo;
+  var init_animation_actions = __esm({
+    "packages/systems/ix2/shared-constants/animation-actions.ts"() {
       "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.ActionTypeConsts = exports.ActionAppliesTo = void 0;
-      var ActionTypeConsts = {
+      ActionTypeConsts = {
         TRANSFORM_MOVE: "TRANSFORM_MOVE",
         TRANSFORM_SCALE: "TRANSFORM_SCALE",
         TRANSFORM_ROTATE: "TRANSFORM_ROTATE",
@@ -3521,6 +3543,7 @@
         OBJECT_VALUE: "OBJECT_VALUE",
         PLUGIN_LOTTIE: "PLUGIN_LOTTIE",
         PLUGIN_SPLINE: "PLUGIN_SPLINE",
+        PLUGIN_VARIABLE: "PLUGIN_VARIABLE",
         GENERAL_DISPLAY: "GENERAL_DISPLAY",
         GENERAL_START_ACTION: "GENERAL_START_ACTION",
         GENERAL_CONTINUOUS_ACTION: "GENERAL_CONTINUOUS_ACTION",
@@ -3530,25 +3553,20 @@
         GENERAL_LOOP: "GENERAL_LOOP",
         STYLE_BOX_SHADOW: "STYLE_BOX_SHADOW"
       };
-      exports.ActionTypeConsts = ActionTypeConsts;
-      var ActionAppliesTo = {
+      ActionAppliesTo = {
         ELEMENT: "ELEMENT",
         ELEMENT_CLASS: "ELEMENT_CLASS",
         TRIGGER_ELEMENT: "TRIGGER_ELEMENT"
       };
-      exports.ActionAppliesTo = ActionAppliesTo;
     }
   });
 
-  // packages/systems/ix2/shared/constants/trigger-interactions.js
-  var require_trigger_interactions = __commonJS({
-    "packages/systems/ix2/shared/constants/trigger-interactions.js"(exports) {
+  // packages/systems/ix2/shared-constants/trigger-interactions.ts
+  var InteractionTypeConsts;
+  var init_trigger_interactions = __esm({
+    "packages/systems/ix2/shared-constants/trigger-interactions.ts"() {
       "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.InteractionTypeConsts = void 0;
-      var InteractionTypeConsts = {
+      InteractionTypeConsts = {
         MOUSE_CLICK_INTERACTION: "MOUSE_CLICK_INTERACTION",
         MOUSE_HOVER_INTERACTION: "MOUSE_HOVER_INTERACTION",
         MOUSE_MOVE_INTERACTION: "MOUSE_MOVE_INTERACTION",
@@ -3564,20 +3582,16 @@
         TAB_INTERACTION: "TAB_INTERACTION",
         SLIDER_INTERACTION: "SLIDER_INTERACTION"
       };
-      exports.InteractionTypeConsts = InteractionTypeConsts;
     }
   });
 
-  // packages/systems/ix2/shared/constants/reduced-motion.js
-  var require_reduced_motion = __commonJS({
-    "packages/systems/ix2/shared/constants/reduced-motion.js"(exports) {
+  // packages/systems/ix2/shared-constants/reduced-motion.ts
+  var TRANSFORM_MOVE, TRANSFORM_SCALE, TRANSFORM_ROTATE, TRANSFORM_SKEW, STYLE_SIZE, STYLE_FILTER, STYLE_FONT_VARIATION, ReducedMotionTypes;
+  var init_reduced_motion = __esm({
+    "packages/systems/ix2/shared-constants/reduced-motion.ts"() {
       "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.ReducedMotionTypes = void 0;
-      var _animationActions = require_animation_actions();
-      var {
+      init_animation_actions();
+      ({
         TRANSFORM_MOVE,
         TRANSFORM_SCALE,
         TRANSFORM_ROTATE,
@@ -3585,8 +3599,8 @@
         STYLE_SIZE,
         STYLE_FILTER,
         STYLE_FONT_VARIATION
-      } = _animationActions.ActionTypeConsts;
-      var ReducedMotionTypes = {
+      } = ActionTypeConsts);
+      ReducedMotionTypes = {
         [TRANSFORM_MOVE]: true,
         [TRANSFORM_SCALE]: true,
         [TRANSFORM_ROTATE]: true,
@@ -3595,279 +3609,224 @@
         [STYLE_FILTER]: true,
         [STYLE_FONT_VARIATION]: true
       };
-      exports.ReducedMotionTypes = ReducedMotionTypes;
     }
   });
 
-  // packages/systems/ix2/shared/constants/IX2EngineActionTypes.js
-  var require_IX2EngineActionTypes = __commonJS({
-    "packages/systems/ix2/shared/constants/IX2EngineActionTypes.js"(exports) {
+  // packages/systems/ix2/shared-constants/IX2EngineActionTypes.ts
+  var IX2EngineActionTypes_exports = {};
+  __export(IX2EngineActionTypes_exports, {
+    IX2_ACTION_LIST_PLAYBACK_CHANGED: () => IX2_ACTION_LIST_PLAYBACK_CHANGED,
+    IX2_ANIMATION_FRAME_CHANGED: () => IX2_ANIMATION_FRAME_CHANGED,
+    IX2_CLEAR_REQUESTED: () => IX2_CLEAR_REQUESTED,
+    IX2_ELEMENT_STATE_CHANGED: () => IX2_ELEMENT_STATE_CHANGED,
+    IX2_EVENT_LISTENER_ADDED: () => IX2_EVENT_LISTENER_ADDED,
+    IX2_EVENT_STATE_CHANGED: () => IX2_EVENT_STATE_CHANGED,
+    IX2_INSTANCE_ADDED: () => IX2_INSTANCE_ADDED,
+    IX2_INSTANCE_REMOVED: () => IX2_INSTANCE_REMOVED,
+    IX2_INSTANCE_STARTED: () => IX2_INSTANCE_STARTED,
+    IX2_MEDIA_QUERIES_DEFINED: () => IX2_MEDIA_QUERIES_DEFINED,
+    IX2_PARAMETER_CHANGED: () => IX2_PARAMETER_CHANGED,
+    IX2_PLAYBACK_REQUESTED: () => IX2_PLAYBACK_REQUESTED,
+    IX2_PREVIEW_REQUESTED: () => IX2_PREVIEW_REQUESTED,
+    IX2_RAW_DATA_IMPORTED: () => IX2_RAW_DATA_IMPORTED,
+    IX2_SESSION_INITIALIZED: () => IX2_SESSION_INITIALIZED,
+    IX2_SESSION_STARTED: () => IX2_SESSION_STARTED,
+    IX2_SESSION_STOPPED: () => IX2_SESSION_STOPPED,
+    IX2_STOP_REQUESTED: () => IX2_STOP_REQUESTED,
+    IX2_TEST_FRAME_RENDERED: () => IX2_TEST_FRAME_RENDERED,
+    IX2_VIEWPORT_WIDTH_CHANGED: () => IX2_VIEWPORT_WIDTH_CHANGED
+  });
+  var IX2_RAW_DATA_IMPORTED, IX2_SESSION_INITIALIZED, IX2_SESSION_STARTED, IX2_SESSION_STOPPED, IX2_PREVIEW_REQUESTED, IX2_PLAYBACK_REQUESTED, IX2_STOP_REQUESTED, IX2_CLEAR_REQUESTED, IX2_EVENT_LISTENER_ADDED, IX2_EVENT_STATE_CHANGED, IX2_ANIMATION_FRAME_CHANGED, IX2_PARAMETER_CHANGED, IX2_INSTANCE_ADDED, IX2_INSTANCE_STARTED, IX2_INSTANCE_REMOVED, IX2_ELEMENT_STATE_CHANGED, IX2_ACTION_LIST_PLAYBACK_CHANGED, IX2_VIEWPORT_WIDTH_CHANGED, IX2_MEDIA_QUERIES_DEFINED, IX2_TEST_FRAME_RENDERED;
+  var init_IX2EngineActionTypes = __esm({
+    "packages/systems/ix2/shared-constants/IX2EngineActionTypes.ts"() {
       "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.IX2_VIEWPORT_WIDTH_CHANGED = exports.IX2_TEST_FRAME_RENDERED = exports.IX2_STOP_REQUESTED = exports.IX2_SESSION_STOPPED = exports.IX2_SESSION_STARTED = exports.IX2_SESSION_INITIALIZED = exports.IX2_RAW_DATA_IMPORTED = exports.IX2_PREVIEW_REQUESTED = exports.IX2_PLAYBACK_REQUESTED = exports.IX2_PARAMETER_CHANGED = exports.IX2_MEDIA_QUERIES_DEFINED = exports.IX2_INSTANCE_STARTED = exports.IX2_INSTANCE_REMOVED = exports.IX2_INSTANCE_ADDED = exports.IX2_EVENT_STATE_CHANGED = exports.IX2_EVENT_LISTENER_ADDED = exports.IX2_ELEMENT_STATE_CHANGED = exports.IX2_CLEAR_REQUESTED = exports.IX2_ANIMATION_FRAME_CHANGED = exports.IX2_ACTION_LIST_PLAYBACK_CHANGED = void 0;
-      var IX2_RAW_DATA_IMPORTED = "IX2_RAW_DATA_IMPORTED";
-      exports.IX2_RAW_DATA_IMPORTED = IX2_RAW_DATA_IMPORTED;
-      var IX2_SESSION_INITIALIZED = "IX2_SESSION_INITIALIZED";
-      exports.IX2_SESSION_INITIALIZED = IX2_SESSION_INITIALIZED;
-      var IX2_SESSION_STARTED = "IX2_SESSION_STARTED";
-      exports.IX2_SESSION_STARTED = IX2_SESSION_STARTED;
-      var IX2_SESSION_STOPPED = "IX2_SESSION_STOPPED";
-      exports.IX2_SESSION_STOPPED = IX2_SESSION_STOPPED;
-      var IX2_PREVIEW_REQUESTED = "IX2_PREVIEW_REQUESTED";
-      exports.IX2_PREVIEW_REQUESTED = IX2_PREVIEW_REQUESTED;
-      var IX2_PLAYBACK_REQUESTED = "IX2_PLAYBACK_REQUESTED";
-      exports.IX2_PLAYBACK_REQUESTED = IX2_PLAYBACK_REQUESTED;
-      var IX2_STOP_REQUESTED = "IX2_STOP_REQUESTED";
-      exports.IX2_STOP_REQUESTED = IX2_STOP_REQUESTED;
-      var IX2_CLEAR_REQUESTED = "IX2_CLEAR_REQUESTED";
-      exports.IX2_CLEAR_REQUESTED = IX2_CLEAR_REQUESTED;
-      var IX2_EVENT_LISTENER_ADDED = "IX2_EVENT_LISTENER_ADDED";
-      exports.IX2_EVENT_LISTENER_ADDED = IX2_EVENT_LISTENER_ADDED;
-      var IX2_EVENT_STATE_CHANGED = "IX2_EVENT_STATE_CHANGED";
-      exports.IX2_EVENT_STATE_CHANGED = IX2_EVENT_STATE_CHANGED;
-      var IX2_ANIMATION_FRAME_CHANGED = "IX2_ANIMATION_FRAME_CHANGED";
-      exports.IX2_ANIMATION_FRAME_CHANGED = IX2_ANIMATION_FRAME_CHANGED;
-      var IX2_PARAMETER_CHANGED = "IX2_PARAMETER_CHANGED";
-      exports.IX2_PARAMETER_CHANGED = IX2_PARAMETER_CHANGED;
-      var IX2_INSTANCE_ADDED = "IX2_INSTANCE_ADDED";
-      exports.IX2_INSTANCE_ADDED = IX2_INSTANCE_ADDED;
-      var IX2_INSTANCE_STARTED = "IX2_INSTANCE_STARTED";
-      exports.IX2_INSTANCE_STARTED = IX2_INSTANCE_STARTED;
-      var IX2_INSTANCE_REMOVED = "IX2_INSTANCE_REMOVED";
-      exports.IX2_INSTANCE_REMOVED = IX2_INSTANCE_REMOVED;
-      var IX2_ELEMENT_STATE_CHANGED = "IX2_ELEMENT_STATE_CHANGED";
-      exports.IX2_ELEMENT_STATE_CHANGED = IX2_ELEMENT_STATE_CHANGED;
-      var IX2_ACTION_LIST_PLAYBACK_CHANGED = "IX2_ACTION_LIST_PLAYBACK_CHANGED";
-      exports.IX2_ACTION_LIST_PLAYBACK_CHANGED = IX2_ACTION_LIST_PLAYBACK_CHANGED;
-      var IX2_VIEWPORT_WIDTH_CHANGED = "IX2_VIEWPORT_WIDTH_CHANGED";
-      exports.IX2_VIEWPORT_WIDTH_CHANGED = IX2_VIEWPORT_WIDTH_CHANGED;
-      var IX2_MEDIA_QUERIES_DEFINED = "IX2_MEDIA_QUERIES_DEFINED";
-      exports.IX2_MEDIA_QUERIES_DEFINED = IX2_MEDIA_QUERIES_DEFINED;
-      var IX2_TEST_FRAME_RENDERED = "IX2_TEST_FRAME_RENDERED";
-      exports.IX2_TEST_FRAME_RENDERED = IX2_TEST_FRAME_RENDERED;
+      IX2_RAW_DATA_IMPORTED = "IX2_RAW_DATA_IMPORTED";
+      IX2_SESSION_INITIALIZED = "IX2_SESSION_INITIALIZED";
+      IX2_SESSION_STARTED = "IX2_SESSION_STARTED";
+      IX2_SESSION_STOPPED = "IX2_SESSION_STOPPED";
+      IX2_PREVIEW_REQUESTED = "IX2_PREVIEW_REQUESTED";
+      IX2_PLAYBACK_REQUESTED = "IX2_PLAYBACK_REQUESTED";
+      IX2_STOP_REQUESTED = "IX2_STOP_REQUESTED";
+      IX2_CLEAR_REQUESTED = "IX2_CLEAR_REQUESTED";
+      IX2_EVENT_LISTENER_ADDED = "IX2_EVENT_LISTENER_ADDED";
+      IX2_EVENT_STATE_CHANGED = "IX2_EVENT_STATE_CHANGED";
+      IX2_ANIMATION_FRAME_CHANGED = "IX2_ANIMATION_FRAME_CHANGED";
+      IX2_PARAMETER_CHANGED = "IX2_PARAMETER_CHANGED";
+      IX2_INSTANCE_ADDED = "IX2_INSTANCE_ADDED";
+      IX2_INSTANCE_STARTED = "IX2_INSTANCE_STARTED";
+      IX2_INSTANCE_REMOVED = "IX2_INSTANCE_REMOVED";
+      IX2_ELEMENT_STATE_CHANGED = "IX2_ELEMENT_STATE_CHANGED";
+      IX2_ACTION_LIST_PLAYBACK_CHANGED = "IX2_ACTION_LIST_PLAYBACK_CHANGED";
+      IX2_VIEWPORT_WIDTH_CHANGED = "IX2_VIEWPORT_WIDTH_CHANGED";
+      IX2_MEDIA_QUERIES_DEFINED = "IX2_MEDIA_QUERIES_DEFINED";
+      IX2_TEST_FRAME_RENDERED = "IX2_TEST_FRAME_RENDERED";
     }
   });
 
-  // packages/systems/ix2/shared/constants/IX2EngineConstants.js
-  var require_IX2EngineConstants = __commonJS({
-    "packages/systems/ix2/shared/constants/IX2EngineConstants.js"(exports) {
+  // packages/systems/ix2/shared-constants/IX2EngineConstants.ts
+  var IX2EngineConstants_exports = {};
+  __export(IX2EngineConstants_exports, {
+    ABSTRACT_NODE: () => ABSTRACT_NODE,
+    AUTO: () => AUTO,
+    BACKGROUND: () => BACKGROUND,
+    BACKGROUND_COLOR: () => BACKGROUND_COLOR,
+    BAR_DELIMITER: () => BAR_DELIMITER,
+    BORDER_COLOR: () => BORDER_COLOR,
+    BOUNDARY_SELECTOR: () => BOUNDARY_SELECTOR,
+    CHILDREN: () => CHILDREN,
+    COLON_DELIMITER: () => COLON_DELIMITER,
+    COLOR: () => COLOR,
+    COMMA_DELIMITER: () => COMMA_DELIMITER,
+    CONFIG_UNIT: () => CONFIG_UNIT,
+    CONFIG_VALUE: () => CONFIG_VALUE,
+    CONFIG_X_UNIT: () => CONFIG_X_UNIT,
+    CONFIG_X_VALUE: () => CONFIG_X_VALUE,
+    CONFIG_Y_UNIT: () => CONFIG_Y_UNIT,
+    CONFIG_Y_VALUE: () => CONFIG_Y_VALUE,
+    CONFIG_Z_UNIT: () => CONFIG_Z_UNIT,
+    CONFIG_Z_VALUE: () => CONFIG_Z_VALUE,
+    DISPLAY: () => DISPLAY,
+    FILTER: () => FILTER,
+    FLEX: () => FLEX,
+    FONT_VARIATION_SETTINGS: () => FONT_VARIATION_SETTINGS,
+    HEIGHT: () => HEIGHT,
+    HTML_ELEMENT: () => HTML_ELEMENT,
+    IMMEDIATE_CHILDREN: () => IMMEDIATE_CHILDREN,
+    IX2_ID_DELIMITER: () => IX2_ID_DELIMITER,
+    OPACITY: () => OPACITY,
+    PARENT: () => PARENT,
+    PLAIN_OBJECT: () => PLAIN_OBJECT,
+    PRESERVE_3D: () => PRESERVE_3D,
+    RENDER_GENERAL: () => RENDER_GENERAL,
+    RENDER_PLUGIN: () => RENDER_PLUGIN,
+    RENDER_STYLE: () => RENDER_STYLE,
+    RENDER_TRANSFORM: () => RENDER_TRANSFORM,
+    ROTATE_X: () => ROTATE_X,
+    ROTATE_Y: () => ROTATE_Y,
+    ROTATE_Z: () => ROTATE_Z,
+    SCALE_3D: () => SCALE_3D,
+    SCALE_X: () => SCALE_X,
+    SCALE_Y: () => SCALE_Y,
+    SCALE_Z: () => SCALE_Z,
+    SIBLINGS: () => SIBLINGS,
+    SKEW: () => SKEW,
+    SKEW_X: () => SKEW_X,
+    SKEW_Y: () => SKEW_Y,
+    TRANSFORM: () => TRANSFORM,
+    TRANSLATE_3D: () => TRANSLATE_3D,
+    TRANSLATE_X: () => TRANSLATE_X,
+    TRANSLATE_Y: () => TRANSLATE_Y,
+    TRANSLATE_Z: () => TRANSLATE_Z,
+    WF_PAGE: () => WF_PAGE,
+    WIDTH: () => WIDTH,
+    WILL_CHANGE: () => WILL_CHANGE,
+    W_MOD_IX: () => W_MOD_IX,
+    W_MOD_JS: () => W_MOD_JS
+  });
+  var IX2_ID_DELIMITER, WF_PAGE, W_MOD_JS, W_MOD_IX, BOUNDARY_SELECTOR, CONFIG_X_VALUE, CONFIG_Y_VALUE, CONFIG_Z_VALUE, CONFIG_VALUE, CONFIG_X_UNIT, CONFIG_Y_UNIT, CONFIG_Z_UNIT, CONFIG_UNIT, TRANSFORM, TRANSLATE_X, TRANSLATE_Y, TRANSLATE_Z, TRANSLATE_3D, SCALE_X, SCALE_Y, SCALE_Z, SCALE_3D, ROTATE_X, ROTATE_Y, ROTATE_Z, SKEW, SKEW_X, SKEW_Y, OPACITY, FILTER, FONT_VARIATION_SETTINGS, WIDTH, HEIGHT, BACKGROUND_COLOR, BACKGROUND, BORDER_COLOR, COLOR, DISPLAY, FLEX, WILL_CHANGE, AUTO, COMMA_DELIMITER, COLON_DELIMITER, BAR_DELIMITER, CHILDREN, IMMEDIATE_CHILDREN, SIBLINGS, PARENT, PRESERVE_3D, HTML_ELEMENT, PLAIN_OBJECT, ABSTRACT_NODE, RENDER_TRANSFORM, RENDER_GENERAL, RENDER_STYLE, RENDER_PLUGIN;
+  var init_IX2EngineConstants = __esm({
+    "packages/systems/ix2/shared-constants/IX2EngineConstants.ts"() {
       "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.W_MOD_JS = exports.W_MOD_IX = exports.WILL_CHANGE = exports.WIDTH = exports.WF_PAGE = exports.TRANSLATE_Z = exports.TRANSLATE_Y = exports.TRANSLATE_X = exports.TRANSLATE_3D = exports.TRANSFORM = exports.SKEW_Y = exports.SKEW_X = exports.SKEW = exports.SIBLINGS = exports.SCALE_Z = exports.SCALE_Y = exports.SCALE_X = exports.SCALE_3D = exports.ROTATE_Z = exports.ROTATE_Y = exports.ROTATE_X = exports.RENDER_TRANSFORM = exports.RENDER_STYLE = exports.RENDER_PLUGIN = exports.RENDER_GENERAL = exports.PRESERVE_3D = exports.PLAIN_OBJECT = exports.PARENT = exports.OPACITY = exports.IX2_ID_DELIMITER = exports.IMMEDIATE_CHILDREN = exports.HTML_ELEMENT = exports.HEIGHT = exports.FONT_VARIATION_SETTINGS = exports.FLEX = exports.FILTER = exports.DISPLAY = exports.CONFIG_Z_VALUE = exports.CONFIG_Z_UNIT = exports.CONFIG_Y_VALUE = exports.CONFIG_Y_UNIT = exports.CONFIG_X_VALUE = exports.CONFIG_X_UNIT = exports.CONFIG_VALUE = exports.CONFIG_UNIT = exports.COMMA_DELIMITER = exports.COLOR = exports.COLON_DELIMITER = exports.CHILDREN = exports.BOUNDARY_SELECTOR = exports.BORDER_COLOR = exports.BAR_DELIMITER = exports.BACKGROUND_COLOR = exports.BACKGROUND = exports.AUTO = exports.ABSTRACT_NODE = void 0;
-      var IX2_ID_DELIMITER = "|";
-      exports.IX2_ID_DELIMITER = IX2_ID_DELIMITER;
-      var WF_PAGE = "data-wf-page";
-      exports.WF_PAGE = WF_PAGE;
-      var W_MOD_JS = "w-mod-js";
-      exports.W_MOD_JS = W_MOD_JS;
-      var W_MOD_IX = "w-mod-ix";
-      exports.W_MOD_IX = W_MOD_IX;
-      var BOUNDARY_SELECTOR = ".w-dyn-item";
-      exports.BOUNDARY_SELECTOR = BOUNDARY_SELECTOR;
-      var CONFIG_X_VALUE = "xValue";
-      exports.CONFIG_X_VALUE = CONFIG_X_VALUE;
-      var CONFIG_Y_VALUE = "yValue";
-      exports.CONFIG_Y_VALUE = CONFIG_Y_VALUE;
-      var CONFIG_Z_VALUE = "zValue";
-      exports.CONFIG_Z_VALUE = CONFIG_Z_VALUE;
-      var CONFIG_VALUE = "value";
-      exports.CONFIG_VALUE = CONFIG_VALUE;
-      var CONFIG_X_UNIT = "xUnit";
-      exports.CONFIG_X_UNIT = CONFIG_X_UNIT;
-      var CONFIG_Y_UNIT = "yUnit";
-      exports.CONFIG_Y_UNIT = CONFIG_Y_UNIT;
-      var CONFIG_Z_UNIT = "zUnit";
-      exports.CONFIG_Z_UNIT = CONFIG_Z_UNIT;
-      var CONFIG_UNIT = "unit";
-      exports.CONFIG_UNIT = CONFIG_UNIT;
-      var TRANSFORM = "transform";
-      exports.TRANSFORM = TRANSFORM;
-      var TRANSLATE_X = "translateX";
-      exports.TRANSLATE_X = TRANSLATE_X;
-      var TRANSLATE_Y = "translateY";
-      exports.TRANSLATE_Y = TRANSLATE_Y;
-      var TRANSLATE_Z = "translateZ";
-      exports.TRANSLATE_Z = TRANSLATE_Z;
-      var TRANSLATE_3D = "translate3d";
-      exports.TRANSLATE_3D = TRANSLATE_3D;
-      var SCALE_X = "scaleX";
-      exports.SCALE_X = SCALE_X;
-      var SCALE_Y = "scaleY";
-      exports.SCALE_Y = SCALE_Y;
-      var SCALE_Z = "scaleZ";
-      exports.SCALE_Z = SCALE_Z;
-      var SCALE_3D = "scale3d";
-      exports.SCALE_3D = SCALE_3D;
-      var ROTATE_X = "rotateX";
-      exports.ROTATE_X = ROTATE_X;
-      var ROTATE_Y = "rotateY";
-      exports.ROTATE_Y = ROTATE_Y;
-      var ROTATE_Z = "rotateZ";
-      exports.ROTATE_Z = ROTATE_Z;
-      var SKEW = "skew";
-      exports.SKEW = SKEW;
-      var SKEW_X = "skewX";
-      exports.SKEW_X = SKEW_X;
-      var SKEW_Y = "skewY";
-      exports.SKEW_Y = SKEW_Y;
-      var OPACITY = "opacity";
-      exports.OPACITY = OPACITY;
-      var FILTER = "filter";
-      exports.FILTER = FILTER;
-      var FONT_VARIATION_SETTINGS = "font-variation-settings";
-      exports.FONT_VARIATION_SETTINGS = FONT_VARIATION_SETTINGS;
-      var WIDTH = "width";
-      exports.WIDTH = WIDTH;
-      var HEIGHT = "height";
-      exports.HEIGHT = HEIGHT;
-      var BACKGROUND_COLOR = "backgroundColor";
-      exports.BACKGROUND_COLOR = BACKGROUND_COLOR;
-      var BACKGROUND = "background";
-      exports.BACKGROUND = BACKGROUND;
-      var BORDER_COLOR = "borderColor";
-      exports.BORDER_COLOR = BORDER_COLOR;
-      var COLOR = "color";
-      exports.COLOR = COLOR;
-      var DISPLAY = "display";
-      exports.DISPLAY = DISPLAY;
-      var FLEX = "flex";
-      exports.FLEX = FLEX;
-      var WILL_CHANGE = "willChange";
-      exports.WILL_CHANGE = WILL_CHANGE;
-      var AUTO = "AUTO";
-      exports.AUTO = AUTO;
-      var COMMA_DELIMITER = ",";
-      exports.COMMA_DELIMITER = COMMA_DELIMITER;
-      var COLON_DELIMITER = ":";
-      exports.COLON_DELIMITER = COLON_DELIMITER;
-      var BAR_DELIMITER = "|";
-      exports.BAR_DELIMITER = BAR_DELIMITER;
-      var CHILDREN = "CHILDREN";
-      exports.CHILDREN = CHILDREN;
-      var IMMEDIATE_CHILDREN = "IMMEDIATE_CHILDREN";
-      exports.IMMEDIATE_CHILDREN = IMMEDIATE_CHILDREN;
-      var SIBLINGS = "SIBLINGS";
-      exports.SIBLINGS = SIBLINGS;
-      var PARENT = "PARENT";
-      exports.PARENT = PARENT;
-      var PRESERVE_3D = "preserve-3d";
-      exports.PRESERVE_3D = PRESERVE_3D;
-      var HTML_ELEMENT = "HTML_ELEMENT";
-      exports.HTML_ELEMENT = HTML_ELEMENT;
-      var PLAIN_OBJECT = "PLAIN_OBJECT";
-      exports.PLAIN_OBJECT = PLAIN_OBJECT;
-      var ABSTRACT_NODE = "ABSTRACT_NODE";
-      exports.ABSTRACT_NODE = ABSTRACT_NODE;
-      var RENDER_TRANSFORM = "RENDER_TRANSFORM";
-      exports.RENDER_TRANSFORM = RENDER_TRANSFORM;
-      var RENDER_GENERAL = "RENDER_GENERAL";
-      exports.RENDER_GENERAL = RENDER_GENERAL;
-      var RENDER_STYLE = "RENDER_STYLE";
-      exports.RENDER_STYLE = RENDER_STYLE;
-      var RENDER_PLUGIN = "RENDER_PLUGIN";
-      exports.RENDER_PLUGIN = RENDER_PLUGIN;
+      IX2_ID_DELIMITER = "|";
+      WF_PAGE = "data-wf-page";
+      W_MOD_JS = "w-mod-js";
+      W_MOD_IX = "w-mod-ix";
+      BOUNDARY_SELECTOR = ".w-dyn-item";
+      CONFIG_X_VALUE = "xValue";
+      CONFIG_Y_VALUE = "yValue";
+      CONFIG_Z_VALUE = "zValue";
+      CONFIG_VALUE = "value";
+      CONFIG_X_UNIT = "xUnit";
+      CONFIG_Y_UNIT = "yUnit";
+      CONFIG_Z_UNIT = "zUnit";
+      CONFIG_UNIT = "unit";
+      TRANSFORM = "transform";
+      TRANSLATE_X = "translateX";
+      TRANSLATE_Y = "translateY";
+      TRANSLATE_Z = "translateZ";
+      TRANSLATE_3D = "translate3d";
+      SCALE_X = "scaleX";
+      SCALE_Y = "scaleY";
+      SCALE_Z = "scaleZ";
+      SCALE_3D = "scale3d";
+      ROTATE_X = "rotateX";
+      ROTATE_Y = "rotateY";
+      ROTATE_Z = "rotateZ";
+      SKEW = "skew";
+      SKEW_X = "skewX";
+      SKEW_Y = "skewY";
+      OPACITY = "opacity";
+      FILTER = "filter";
+      FONT_VARIATION_SETTINGS = "font-variation-settings";
+      WIDTH = "width";
+      HEIGHT = "height";
+      BACKGROUND_COLOR = "backgroundColor";
+      BACKGROUND = "background";
+      BORDER_COLOR = "borderColor";
+      COLOR = "color";
+      DISPLAY = "display";
+      FLEX = "flex";
+      WILL_CHANGE = "willChange";
+      AUTO = "AUTO";
+      COMMA_DELIMITER = ",";
+      COLON_DELIMITER = ":";
+      BAR_DELIMITER = "|";
+      CHILDREN = "CHILDREN";
+      IMMEDIATE_CHILDREN = "IMMEDIATE_CHILDREN";
+      SIBLINGS = "SIBLINGS";
+      PARENT = "PARENT";
+      PRESERVE_3D = "preserve-3d";
+      HTML_ELEMENT = "HTML_ELEMENT";
+      PLAIN_OBJECT = "PLAIN_OBJECT";
+      ABSTRACT_NODE = "ABSTRACT_NODE";
+      RENDER_TRANSFORM = "RENDER_TRANSFORM";
+      RENDER_GENERAL = "RENDER_GENERAL";
+      RENDER_STYLE = "RENDER_STYLE";
+      RENDER_PLUGIN = "RENDER_PLUGIN";
     }
   });
 
-  // packages/systems/ix2/shared/constants/index.js
-  var require_constants = __commonJS({
-    "packages/systems/ix2/shared/constants/index.js"(exports) {
+  // packages/systems/ix2/shared-constants/index.ts
+  var shared_constants_exports = {};
+  __export(shared_constants_exports, {
+    ActionAppliesTo: () => ActionAppliesTo,
+    ActionTypeConsts: () => ActionTypeConsts,
+    EventAppliesTo: () => EventAppliesTo,
+    EventBasedOn: () => EventBasedOn,
+    EventContinuousMouseAxes: () => EventContinuousMouseAxes,
+    EventLimitAffectedElements: () => EventLimitAffectedElements,
+    EventTypeConsts: () => EventTypeConsts,
+    IX2EngineActionTypes: () => IX2EngineActionTypes_exports,
+    IX2EngineConstants: () => IX2EngineConstants_exports,
+    InteractionTypeConsts: () => InteractionTypeConsts,
+    QuickEffectDirectionConsts: () => QuickEffectDirectionConsts,
+    QuickEffectIds: () => QuickEffectIds,
+    ReducedMotionTypes: () => ReducedMotionTypes
+  });
+  var init_shared_constants = __esm({
+    "packages/systems/ix2/shared-constants/index.ts"() {
       "use strict";
-      var _interopRequireWildcard = require_interopRequireWildcard().default;
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      var _exportNames = {
-        IX2EngineActionTypes: true,
-        IX2EngineConstants: true
-      };
-      exports.IX2EngineConstants = exports.IX2EngineActionTypes = void 0;
-      var _triggerEvents = require_trigger_events();
-      Object.keys(_triggerEvents).forEach(function(key) {
-        if (key === "default" || key === "__esModule")
-          return;
-        if (Object.prototype.hasOwnProperty.call(_exportNames, key))
-          return;
-        if (key in exports && exports[key] === _triggerEvents[key])
-          return;
-        Object.defineProperty(exports, key, {
-          enumerable: true,
-          get: function() {
-            return _triggerEvents[key];
-          }
-        });
-      });
-      var _animationActions = require_animation_actions();
-      Object.keys(_animationActions).forEach(function(key) {
-        if (key === "default" || key === "__esModule")
-          return;
-        if (Object.prototype.hasOwnProperty.call(_exportNames, key))
-          return;
-        if (key in exports && exports[key] === _animationActions[key])
-          return;
-        Object.defineProperty(exports, key, {
-          enumerable: true,
-          get: function() {
-            return _animationActions[key];
-          }
-        });
-      });
-      var _triggerInteractions = require_trigger_interactions();
-      Object.keys(_triggerInteractions).forEach(function(key) {
-        if (key === "default" || key === "__esModule")
-          return;
-        if (Object.prototype.hasOwnProperty.call(_exportNames, key))
-          return;
-        if (key in exports && exports[key] === _triggerInteractions[key])
-          return;
-        Object.defineProperty(exports, key, {
-          enumerable: true,
-          get: function() {
-            return _triggerInteractions[key];
-          }
-        });
-      });
-      var _reducedMotion = require_reduced_motion();
-      Object.keys(_reducedMotion).forEach(function(key) {
-        if (key === "default" || key === "__esModule")
-          return;
-        if (Object.prototype.hasOwnProperty.call(_exportNames, key))
-          return;
-        if (key in exports && exports[key] === _reducedMotion[key])
-          return;
-        Object.defineProperty(exports, key, {
-          enumerable: true,
-          get: function() {
-            return _reducedMotion[key];
-          }
-        });
-      });
-      var IX2EngineActionTypes = _interopRequireWildcard(require_IX2EngineActionTypes());
-      exports.IX2EngineActionTypes = IX2EngineActionTypes;
-      var IX2EngineConstants = _interopRequireWildcard(require_IX2EngineConstants());
-      exports.IX2EngineConstants = IX2EngineConstants;
+      init_trigger_events();
+      init_animation_actions();
+      init_trigger_interactions();
+      init_reduced_motion();
+      init_IX2EngineActionTypes();
+      init_IX2EngineConstants();
+      init_animation_actions();
+      init_trigger_events();
     }
   });
 
-  // packages/systems/ix2/engine/reducers/IX2DataReducer.js
-  var require_IX2DataReducer = __commonJS({
-    "packages/systems/ix2/engine/reducers/IX2DataReducer.js"(exports) {
+  // packages/systems/ix2/engine/reducers/IX2DataReducer.ts
+  var IX2_RAW_DATA_IMPORTED2, ixData;
+  var init_IX2DataReducer = __esm({
+    "packages/systems/ix2/engine/reducers/IX2DataReducer.ts"() {
       "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.ixData = void 0;
-      var _constants = require_constants();
-      var {
-        IX2_RAW_DATA_IMPORTED
-      } = _constants.IX2EngineActionTypes;
-      var ixData = (state = Object.freeze({}), action) => {
+      init_shared_constants();
+      ({ IX2_RAW_DATA_IMPORTED: IX2_RAW_DATA_IMPORTED2 } = IX2EngineActionTypes_exports);
+      ixData = (state = Object.freeze({}), action) => {
         switch (action.type) {
-          case IX2_RAW_DATA_IMPORTED: {
+          case IX2_RAW_DATA_IMPORTED2: {
             return action.payload.ixData || Object.freeze({});
           }
           default: {
@@ -3875,28 +3834,6 @@
           }
         }
       };
-      exports.ixData = ixData;
-    }
-  });
-
-  // node_modules/@babel/runtime/helpers/extends.js
-  var require_extends = __commonJS({
-    "node_modules/@babel/runtime/helpers/extends.js"(exports, module) {
-      function _extends() {
-        module.exports = _extends = Object.assign ? Object.assign.bind() : function(target) {
-          for (var i = 1; i < arguments.length; i++) {
-            var source = arguments[i];
-            for (var key in source) {
-              if (Object.prototype.hasOwnProperty.call(source, key)) {
-                target[key] = source[key];
-              }
-            }
-          }
-          return target;
-        }, module.exports.__esModule = true, module.exports["default"] = module.exports;
-        return _extends.apply(this, arguments);
-      }
-      module.exports = _extends, module.exports.__esModule = true, module.exports["default"] = module.exports;
     }
   });
 
@@ -3913,21 +3850,21 @@
         return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
       };
       exports.clone = clone;
-      exports.addLast = addLast;
+      exports.addLast = addLast2;
       exports.addFirst = addFirst;
       exports.removeLast = removeLast;
       exports.removeFirst = removeFirst;
       exports.insert = insert;
       exports.removeAt = removeAt;
       exports.replaceAt = replaceAt;
-      exports.getIn = getIn;
-      exports.set = set;
-      exports.setIn = setIn;
+      exports.getIn = getIn2;
+      exports.set = set3;
+      exports.setIn = setIn4;
       exports.update = update;
       exports.updateIn = updateIn;
-      exports.merge = merge;
+      exports.merge = merge3;
       exports.mergeDeep = mergeDeep;
-      exports.mergeIn = mergeIn;
+      exports.mergeIn = mergeIn4;
       exports.omit = omit;
       exports.addDefaults = addDefaults;
       var INVALID_ARGS = "INVALID_ARGS";
@@ -3941,7 +3878,7 @@
         }
         return keys;
       }
-      var hasOwnProperty = {}.hasOwnProperty;
+      var hasOwnProperty2 = {}.hasOwnProperty;
       function clone(obj) {
         if (Array.isArray(obj))
           return obj.slice();
@@ -3990,7 +3927,7 @@
         var type = typeof o === "undefined" ? "undefined" : _typeof(o);
         return o != null && (type === "object" || type === "function");
       }
-      function addLast(array, val) {
+      function addLast2(array, val) {
         if (Array.isArray(val))
           return array.concat(val);
         return array.concat([val]);
@@ -4029,7 +3966,7 @@
         result[idx] = newItem;
         return result;
       }
-      function getIn(obj, path) {
+      function getIn2(obj, path) {
         !Array.isArray(path) && throwStr(false ? "A path array should be provided when calling getIn()" : INVALID_ARGS);
         if (obj == null)
           return void 0;
@@ -4042,7 +3979,7 @@
         }
         return ptr;
       }
-      function set(obj, key, val) {
+      function set3(obj, key, val) {
         var fallback = typeof key === "number" ? [] : {};
         var finalObj = obj == null ? fallback : obj;
         if (finalObj[key] === val)
@@ -4060,9 +3997,9 @@
           var nestedObj = isObject(obj) && isObject(obj[key]) ? obj[key] : typeof path[idx + 1] === "number" ? [] : {};
           newValue = doSetIn(nestedObj, path, val, idx + 1);
         }
-        return set(obj, key, newValue);
+        return set3(obj, key, newValue);
       }
-      function setIn(obj, path, val) {
+      function setIn4(obj, path, val) {
         if (!path.length)
           return val;
         return doSetIn(obj, path, val, 0);
@@ -4070,14 +4007,14 @@
       function update(obj, key, fnUpdate) {
         var prevVal = obj == null ? void 0 : obj[key];
         var nextVal = fnUpdate(prevVal);
-        return set(obj, key, nextVal);
+        return set3(obj, key, nextVal);
       }
       function updateIn(obj, path, fnUpdate) {
-        var prevVal = getIn(obj, path);
+        var prevVal = getIn2(obj, path);
         var nextVal = fnUpdate(prevVal);
-        return setIn(obj, path, nextVal);
+        return setIn4(obj, path, nextVal);
       }
-      function merge(a, b, c, d, e, f) {
+      function merge3(a, b, c, d, e, f) {
         for (var _len2 = arguments.length, rest = Array(_len2 > 6 ? _len2 - 6 : 0), _key2 = 6; _key2 < _len2; _key2++) {
           rest[_key2 - 6] = arguments[_key2];
         }
@@ -4089,8 +4026,8 @@
         }
         return rest.length ? doMerge.call.apply(doMerge, [null, false, true, a, b, c, d, e, f].concat(rest)) : doMerge(false, true, a, b, c, d, e, f);
       }
-      function mergeIn(a, path, b, c, d, e, f) {
-        var prevVal = getIn(a, path);
+      function mergeIn4(a, path, b, c, d, e, f) {
+        var prevVal = getIn2(a, path);
         if (prevVal == null)
           prevVal = {};
         var nextVal = void 0;
@@ -4102,13 +4039,13 @@
         } else {
           nextVal = doMerge(false, false, prevVal, b, c, d, e, f);
         }
-        return setIn(a, path, nextVal);
+        return setIn4(a, path, nextVal);
       }
       function omit(obj, attrs) {
         var omitList = Array.isArray(attrs) ? attrs : [attrs];
         var fDoSomething = false;
         for (var i = 0; i < omitList.length; i++) {
-          if (hasOwnProperty.call(obj, omitList[i])) {
+          if (hasOwnProperty2.call(obj, omitList[i])) {
             fDoSomething = true;
             break;
           }
@@ -4133,23 +4070,23 @@
       }
       var timm = {
         clone,
-        addLast,
+        addLast: addLast2,
         addFirst,
         removeLast,
         removeFirst,
         insert,
         removeAt,
         replaceAt,
-        getIn,
+        getIn: getIn2,
         // eslint-disable-next-line object-shorthand
-        set,
+        set: set3,
         // so that flow doesn't complain
-        setIn,
+        setIn: setIn4,
         update,
         updateIn,
-        merge,
+        merge: merge3,
         mergeDeep,
-        mergeIn,
+        mergeIn: mergeIn4,
         omit,
         addDefaults
       };
@@ -4157,78 +4094,61 @@
     }
   });
 
-  // packages/systems/ix2/engine/reducers/IX2RequestReducer.js
-  var require_IX2RequestReducer = __commonJS({
-    "packages/systems/ix2/engine/reducers/IX2RequestReducer.js"(exports) {
+  // packages/systems/ix2/engine/reducers/IX2RequestReducer.ts
+  var import_timm, IX2_PREVIEW_REQUESTED2, IX2_PLAYBACK_REQUESTED2, IX2_STOP_REQUESTED2, IX2_CLEAR_REQUESTED2, initialState, stateKeys, ixRequest;
+  var init_IX2RequestReducer = __esm({
+    "packages/systems/ix2/engine/reducers/IX2RequestReducer.ts"() {
       "use strict";
-      var _interopRequireDefault = require_interopRequireDefault().default;
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.ixRequest = void 0;
-      var _extends2 = _interopRequireDefault(require_extends());
-      var _constants = require_constants();
-      var _timm = require_timm();
-      var {
-        IX2_PREVIEW_REQUESTED,
-        IX2_PLAYBACK_REQUESTED,
-        IX2_STOP_REQUESTED,
-        IX2_CLEAR_REQUESTED
-      } = _constants.IX2EngineActionTypes;
-      var initialState = {
+      init_shared_constants();
+      import_timm = __toESM(require_timm());
+      ({
+        IX2_PREVIEW_REQUESTED: IX2_PREVIEW_REQUESTED2,
+        IX2_PLAYBACK_REQUESTED: IX2_PLAYBACK_REQUESTED2,
+        IX2_STOP_REQUESTED: IX2_STOP_REQUESTED2,
+        IX2_CLEAR_REQUESTED: IX2_CLEAR_REQUESTED2
+      } = IX2EngineActionTypes_exports);
+      initialState = {
         preview: {},
         playback: {},
         stop: {},
         clear: {}
       };
-      var stateKeys = Object.create(null, {
-        [IX2_PREVIEW_REQUESTED]: {
-          value: "preview"
-        },
-        [IX2_PLAYBACK_REQUESTED]: {
-          value: "playback"
-        },
-        [IX2_STOP_REQUESTED]: {
-          value: "stop"
-        },
-        [IX2_CLEAR_REQUESTED]: {
-          value: "clear"
-        }
+      stateKeys = Object.create(null, {
+        [IX2_PREVIEW_REQUESTED2]: { value: "preview" },
+        [IX2_PLAYBACK_REQUESTED2]: { value: "playback" },
+        [IX2_STOP_REQUESTED2]: { value: "stop" },
+        [IX2_CLEAR_REQUESTED2]: { value: "clear" }
       });
-      var ixRequest = (state = initialState, action) => {
+      ixRequest = (state = initialState, action) => {
         if (action.type in stateKeys) {
           const key = [stateKeys[action.type]];
-          return (0, _timm.setIn)(state, [key], (0, _extends2.default)({}, action.payload));
+          return (0, import_timm.setIn)(state, [key], { ...action.payload });
         }
         return state;
       };
-      exports.ixRequest = ixRequest;
     }
   });
 
-  // packages/systems/ix2/engine/reducers/IX2SessionReducer.js
-  var require_IX2SessionReducer = __commonJS({
-    "packages/systems/ix2/engine/reducers/IX2SessionReducer.js"(exports) {
+  // packages/systems/ix2/engine/reducers/IX2SessionReducer.ts
+  var import_timm2, IX2_SESSION_INITIALIZED2, IX2_SESSION_STARTED2, IX2_TEST_FRAME_RENDERED2, IX2_SESSION_STOPPED2, IX2_EVENT_LISTENER_ADDED2, IX2_EVENT_STATE_CHANGED2, IX2_ANIMATION_FRAME_CHANGED2, IX2_ACTION_LIST_PLAYBACK_CHANGED2, IX2_VIEWPORT_WIDTH_CHANGED2, IX2_MEDIA_QUERIES_DEFINED2, initialState2, TEST_FRAME_STEPS_SIZE, ixSession;
+  var init_IX2SessionReducer = __esm({
+    "packages/systems/ix2/engine/reducers/IX2SessionReducer.ts"() {
       "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.ixSession = void 0;
-      var _constants = require_constants();
-      var _timm = require_timm();
-      var {
-        IX2_SESSION_INITIALIZED,
-        IX2_SESSION_STARTED,
-        IX2_TEST_FRAME_RENDERED,
-        IX2_SESSION_STOPPED,
-        IX2_EVENT_LISTENER_ADDED,
-        IX2_EVENT_STATE_CHANGED,
-        IX2_ANIMATION_FRAME_CHANGED,
-        IX2_ACTION_LIST_PLAYBACK_CHANGED,
-        IX2_VIEWPORT_WIDTH_CHANGED,
-        IX2_MEDIA_QUERIES_DEFINED
-      } = _constants.IX2EngineActionTypes;
-      var initialState = {
+      init_shared_constants();
+      import_timm2 = __toESM(require_timm());
+      ({
+        IX2_SESSION_INITIALIZED: IX2_SESSION_INITIALIZED2,
+        IX2_SESSION_STARTED: IX2_SESSION_STARTED2,
+        IX2_TEST_FRAME_RENDERED: IX2_TEST_FRAME_RENDERED2,
+        IX2_SESSION_STOPPED: IX2_SESSION_STOPPED2,
+        IX2_EVENT_LISTENER_ADDED: IX2_EVENT_LISTENER_ADDED2,
+        IX2_EVENT_STATE_CHANGED: IX2_EVENT_STATE_CHANGED2,
+        IX2_ANIMATION_FRAME_CHANGED: IX2_ANIMATION_FRAME_CHANGED2,
+        IX2_ACTION_LIST_PLAYBACK_CHANGED: IX2_ACTION_LIST_PLAYBACK_CHANGED2,
+        IX2_VIEWPORT_WIDTH_CHANGED: IX2_VIEWPORT_WIDTH_CHANGED2,
+        IX2_MEDIA_QUERIES_DEFINED: IX2_MEDIA_QUERIES_DEFINED2
+      } = IX2EngineActionTypes_exports);
+      initialState2 = {
         active: false,
         tick: 0,
         eventListeners: [],
@@ -4240,91 +4160,70 @@
         hasDefinedMediaQueries: false,
         reducedMotion: false
       };
-      var TEST_FRAME_STEPS_SIZE = 20;
-      var ixSession = (state = initialState, action) => {
+      TEST_FRAME_STEPS_SIZE = 20;
+      ixSession = (state = initialState2, action) => {
         switch (action.type) {
-          case IX2_SESSION_INITIALIZED: {
-            const {
-              hasBoundaryNodes,
-              reducedMotion
-            } = action.payload;
-            return (0, _timm.merge)(state, {
+          case IX2_SESSION_INITIALIZED2: {
+            const { hasBoundaryNodes, reducedMotion } = action.payload;
+            return (0, import_timm2.merge)(state, {
               hasBoundaryNodes,
               reducedMotion
             });
           }
-          case IX2_SESSION_STARTED: {
-            return (0, _timm.set)(state, "active", true);
+          case IX2_SESSION_STARTED2: {
+            return (0, import_timm2.set)(state, "active", true);
           }
-          case IX2_TEST_FRAME_RENDERED: {
+          case IX2_TEST_FRAME_RENDERED2: {
             const {
-              payload: {
-                step = TEST_FRAME_STEPS_SIZE
-              }
+              payload: { step = TEST_FRAME_STEPS_SIZE }
             } = action;
-            return (0, _timm.set)(state, "tick", state.tick + step);
+            return (0, import_timm2.set)(state, "tick", state.tick + step);
           }
-          case IX2_SESSION_STOPPED: {
-            return initialState;
+          case IX2_SESSION_STOPPED2: {
+            return initialState2;
           }
-          case IX2_ANIMATION_FRAME_CHANGED: {
+          case IX2_ANIMATION_FRAME_CHANGED2: {
             const {
-              payload: {
-                now
-              }
+              payload: { now }
             } = action;
-            return (0, _timm.set)(state, "tick", now);
+            return (0, import_timm2.set)(state, "tick", now);
           }
-          case IX2_EVENT_LISTENER_ADDED: {
-            const eventListeners = (0, _timm.addLast)(state.eventListeners, action.payload);
-            return (0, _timm.set)(state, "eventListeners", eventListeners);
+          case IX2_EVENT_LISTENER_ADDED2: {
+            const eventListeners = (0, import_timm2.addLast)(state.eventListeners, action.payload);
+            return (0, import_timm2.set)(state, "eventListeners", eventListeners);
           }
-          case IX2_EVENT_STATE_CHANGED: {
-            const {
-              stateKey,
-              newState
-            } = action.payload;
-            return (0, _timm.setIn)(state, ["eventState", stateKey], newState);
+          case IX2_EVENT_STATE_CHANGED2: {
+            const { stateKey, newState } = action.payload;
+            return (0, import_timm2.setIn)(state, ["eventState", stateKey], newState);
           }
-          case IX2_ACTION_LIST_PLAYBACK_CHANGED: {
-            const {
-              actionListId,
-              isPlaying
-            } = action.payload;
-            return (0, _timm.setIn)(state, ["playbackState", actionListId], isPlaying);
+          case IX2_ACTION_LIST_PLAYBACK_CHANGED2: {
+            const { actionListId, isPlaying } = action.payload;
+            return (0, import_timm2.setIn)(state, ["playbackState", actionListId], isPlaying);
           }
-          case IX2_VIEWPORT_WIDTH_CHANGED: {
-            const {
-              width,
-              mediaQueries
-            } = action.payload;
+          case IX2_VIEWPORT_WIDTH_CHANGED2: {
+            const { width, mediaQueries } = action.payload;
             const mediaQueryCount = mediaQueries.length;
             let mediaQueryKey = null;
             for (let i = 0; i < mediaQueryCount; i++) {
-              const {
-                key,
-                min,
-                max
-              } = mediaQueries[i];
+              const { key, min, max } = mediaQueries[i];
               if (width >= min && width <= max) {
                 mediaQueryKey = key;
                 break;
               }
             }
-            return (0, _timm.merge)(state, {
+            return (0, import_timm2.merge)(state, {
               viewportWidth: width,
               mediaQueryKey
             });
           }
-          case IX2_MEDIA_QUERIES_DEFINED: {
-            return (0, _timm.set)(state, "hasDefinedMediaQueries", true);
+          case IX2_MEDIA_QUERIES_DEFINED2: {
+            return (0, import_timm2.set)(state, "hasDefinedMediaQueries", true);
           }
           default: {
             return state;
           }
         }
       };
-      exports.ixSession = ixSession;
     }
   });
 
@@ -4589,9 +4488,9 @@
       var funcProto = Function.prototype;
       var objectProto = Object.prototype;
       var funcToString = funcProto.toString;
-      var hasOwnProperty = objectProto.hasOwnProperty;
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
       var reIsNative = RegExp(
-        "^" + funcToString.call(hasOwnProperty).replace(reRegExpChar, "\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, "$1.*?") + "$"
+        "^" + funcToString.call(hasOwnProperty2).replace(reRegExpChar, "\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, "$1.*?") + "$"
       );
       function baseIsNative(value) {
         if (!isObject(value) || isMasked(value)) {
@@ -4676,14 +4575,14 @@
       var nativeCreate = require_nativeCreate();
       var HASH_UNDEFINED = "__lodash_hash_undefined__";
       var objectProto = Object.prototype;
-      var hasOwnProperty = objectProto.hasOwnProperty;
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
       function hashGet(key) {
         var data = this.__data__;
         if (nativeCreate) {
           var result = data[key];
           return result === HASH_UNDEFINED ? void 0 : result;
         }
-        return hasOwnProperty.call(data, key) ? data[key] : void 0;
+        return hasOwnProperty2.call(data, key) ? data[key] : void 0;
       }
       module.exports = hashGet;
     }
@@ -4694,10 +4593,10 @@
     "node_modules/lodash/_hashHas.js"(exports, module) {
       var nativeCreate = require_nativeCreate();
       var objectProto = Object.prototype;
-      var hasOwnProperty = objectProto.hasOwnProperty;
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
       function hashHas(key) {
         var data = this.__data__;
-        return nativeCreate ? data[key] !== void 0 : hasOwnProperty.call(data, key);
+        return nativeCreate ? data[key] !== void 0 : hasOwnProperty2.call(data, key);
       }
       module.exports = hashHas;
     }
@@ -4824,9 +4723,9 @@
     "node_modules/lodash/_mapCacheSet.js"(exports, module) {
       var getMapData = require_getMapData();
       function mapCacheSet(key, value) {
-        var data = getMapData(this, key), size = data.size;
+        var data = getMapData(this, key), size2 = data.size;
         data.set(key, value);
-        this.size += data.size == size ? 0 : 1;
+        this.size += data.size == size2 ? 0 : 1;
         return this;
       }
       module.exports = mapCacheSet;
@@ -5054,9 +4953,9 @@
   // node_modules/lodash/_setToArray.js
   var require_setToArray = __commonJS({
     "node_modules/lodash/_setToArray.js"(exports, module) {
-      function setToArray(set) {
-        var index = -1, result = Array(set.size);
-        set.forEach(function(value) {
+      function setToArray(set3) {
+        var index = -1, result = Array(set3.size);
+        set3.forEach(function(value) {
           result[++index] = value;
         });
         return result;
@@ -5255,12 +5154,12 @@
       var baseIsArguments = require_baseIsArguments();
       var isObjectLike = require_isObjectLike();
       var objectProto = Object.prototype;
-      var hasOwnProperty = objectProto.hasOwnProperty;
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
       var propertyIsEnumerable = objectProto.propertyIsEnumerable;
       var isArguments = baseIsArguments(function() {
         return arguments;
       }()) ? baseIsArguments : function(value) {
-        return isObjectLike(value) && hasOwnProperty.call(value, "callee") && !propertyIsEnumerable.call(value, "callee");
+        return isObjectLike(value) && hasOwnProperty2.call(value, "callee") && !propertyIsEnumerable.call(value, "callee");
       };
       module.exports = isArguments;
     }
@@ -5412,11 +5311,11 @@
       var isIndex = require_isIndex();
       var isTypedArray = require_isTypedArray();
       var objectProto = Object.prototype;
-      var hasOwnProperty = objectProto.hasOwnProperty;
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
       function arrayLikeKeys(value, inherited) {
         var isArr = isArray(value), isArg = !isArr && isArguments(value), isBuff = !isArr && !isArg && isBuffer(value), isType = !isArr && !isArg && !isBuff && isTypedArray(value), skipIndexes = isArr || isArg || isBuff || isType, result = skipIndexes ? baseTimes(value.length, String) : [], length = result.length;
         for (var key in value) {
-          if ((inherited || hasOwnProperty.call(value, key)) && !(skipIndexes && // Safari 9 has enumerable `arguments.length` in strict mode.
+          if ((inherited || hasOwnProperty2.call(value, key)) && !(skipIndexes && // Safari 9 has enumerable `arguments.length` in strict mode.
           (key == "length" || // Node.js 0.10 has enumerable non-index properties on buffers.
           isBuff && (key == "offset" || key == "parent") || // PhantomJS 2 has enumerable non-index properties on typed arrays.
           isType && (key == "buffer" || key == "byteLength" || key == "byteOffset") || // Skip index properties.
@@ -5457,14 +5356,14 @@
       var isPrototype = require_isPrototype();
       var nativeKeys = require_nativeKeys();
       var objectProto = Object.prototype;
-      var hasOwnProperty = objectProto.hasOwnProperty;
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
       function baseKeys(object) {
         if (!isPrototype(object)) {
           return nativeKeys(object);
         }
         var result = [];
         for (var key in Object(object)) {
-          if (hasOwnProperty.call(object, key) && key != "constructor") {
+          if (hasOwnProperty2.call(object, key) && key != "constructor") {
             result.push(key);
           }
         }
@@ -5518,7 +5417,7 @@
       var getAllKeys = require_getAllKeys();
       var COMPARE_PARTIAL_FLAG = 1;
       var objectProto = Object.prototype;
-      var hasOwnProperty = objectProto.hasOwnProperty;
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
       function equalObjects(object, other, bitmask, customizer, equalFunc, stack) {
         var isPartial = bitmask & COMPARE_PARTIAL_FLAG, objProps = getAllKeys(object), objLength = objProps.length, othProps = getAllKeys(other), othLength = othProps.length;
         if (objLength != othLength && !isPartial) {
@@ -5527,7 +5426,7 @@
         var index = objLength;
         while (index--) {
           var key = objProps[index];
-          if (!(isPartial ? key in other : hasOwnProperty.call(other, key))) {
+          if (!(isPartial ? key in other : hasOwnProperty2.call(other, key))) {
             return false;
           }
         }
@@ -5668,7 +5567,7 @@
       var arrayTag = "[object Array]";
       var objectTag = "[object Object]";
       var objectProto = Object.prototype;
-      var hasOwnProperty = objectProto.hasOwnProperty;
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
       function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
         var objIsArr = isArray(object), othIsArr = isArray(other), objTag = objIsArr ? arrayTag : getTag(object), othTag = othIsArr ? arrayTag : getTag(other);
         objTag = objTag == argsTag ? objectTag : objTag;
@@ -5686,7 +5585,7 @@
           return objIsArr || isTypedArray(object) ? equalArrays(object, other, bitmask, customizer, equalFunc, stack) : equalByTag(object, other, objTag, bitmask, customizer, equalFunc, stack);
         }
         if (!(bitmask & COMPARE_PARTIAL_FLAG)) {
-          var objIsWrapped = objIsObj && hasOwnProperty.call(object, "__wrapped__"), othIsWrapped = othIsObj && hasOwnProperty.call(other, "__wrapped__");
+          var objIsWrapped = objIsObj && hasOwnProperty2.call(object, "__wrapped__"), othIsWrapped = othIsObj && hasOwnProperty2.call(other, "__wrapped__");
           if (objIsWrapped || othIsWrapped) {
             var objUnwrapped = objIsWrapped ? object.value() : object, othUnwrapped = othIsWrapped ? other.value() : other;
             stack || (stack = new Stack());
@@ -6030,11 +5929,11 @@
   var require_get = __commonJS({
     "node_modules/lodash/get.js"(exports, module) {
       var baseGet = require_baseGet();
-      function get(object, path, defaultValue) {
+      function get3(object, path, defaultValue) {
         var result = object == null ? void 0 : baseGet(object, path);
         return result === void 0 ? defaultValue : result;
       }
-      module.exports = get;
+      module.exports = get3;
     }
   });
 
@@ -6093,7 +5992,7 @@
   var require_baseMatchesProperty = __commonJS({
     "node_modules/lodash/_baseMatchesProperty.js"(exports, module) {
       var baseIsEqual = require_baseIsEqual();
-      var get = require_get();
+      var get3 = require_get();
       var hasIn = require_hasIn();
       var isKey = require_isKey();
       var isStrictComparable = require_isStrictComparable();
@@ -6106,7 +6005,7 @@
           return matchesStrictComparable(toKey(path), srcValue);
         }
         return function(object) {
-          var objValue = get(object, path);
+          var objValue = get3(object, path);
           return objValue === void 0 && objValue === srcValue ? hasIn(object, path) : baseIsEqual(srcValue, objValue, COMPARE_PARTIAL_FLAG | COMPARE_UNORDERED_FLAG);
         };
       }
@@ -6346,42 +6245,58 @@
     "node_modules/lodash/find.js"(exports, module) {
       var createFind = require_createFind();
       var findIndex = require_findIndex();
-      var find = createFind(findIndex);
-      module.exports = find;
+      var find3 = createFind(findIndex);
+      module.exports = find3;
     }
   });
 
-  // packages/systems/ix2/shared/logic/IX2BrowserSupport.js
-  var require_IX2BrowserSupport = __commonJS({
-    "packages/systems/ix2/shared/logic/IX2BrowserSupport.js"(exports) {
+  // packages/systems/ix2/shared/logic/IX2BrowserSupport.ts
+  var IX2BrowserSupport_exports = {};
+  __export(IX2BrowserSupport_exports, {
+    ELEMENT_MATCHES: () => ELEMENT_MATCHES,
+    FLEX_PREFIXED: () => FLEX_PREFIXED,
+    IS_BROWSER_ENV: () => IS_BROWSER_ENV,
+    TRANSFORM_PREFIXED: () => TRANSFORM_PREFIXED,
+    TRANSFORM_STYLE_PREFIXED: () => TRANSFORM_STYLE_PREFIXED,
+    withBrowser: () => withBrowser
+  });
+  var import_find, IS_BROWSER_ENV, withBrowser, ELEMENT_MATCHES, FLEX_PREFIXED, TRANSFORM_PREFIXED, TRANSFORM_PREFIX, TRANSFORM_STYLE_PREFIXED;
+  var init_IX2BrowserSupport = __esm({
+    "packages/systems/ix2/shared/logic/IX2BrowserSupport.ts"() {
       "use strict";
-      var _interopRequireDefault = require_interopRequireDefault().default;
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.withBrowser = exports.TRANSFORM_STYLE_PREFIXED = exports.TRANSFORM_PREFIXED = exports.IS_BROWSER_ENV = exports.FLEX_PREFIXED = exports.ELEMENT_MATCHES = void 0;
-      var _find = _interopRequireDefault(require_find());
-      var IS_BROWSER_ENV = typeof window !== "undefined";
-      exports.IS_BROWSER_ENV = IS_BROWSER_ENV;
-      var withBrowser = (fn, fallback) => {
+      import_find = __toESM(require_find());
+      IS_BROWSER_ENV = typeof window !== "undefined";
+      withBrowser = (fn, fallback) => {
         if (IS_BROWSER_ENV) {
           return fn();
         }
         return fallback;
       };
-      exports.withBrowser = withBrowser;
-      var ELEMENT_MATCHES = withBrowser(() => {
-        return (0, _find.default)(["matches", "matchesSelector", "mozMatchesSelector", "msMatchesSelector", "oMatchesSelector", "webkitMatchesSelector"], (key) => key in Element.prototype);
+      ELEMENT_MATCHES = withBrowser(() => {
+        return (0, import_find.default)(
+          [
+            "matches",
+            "matchesSelector",
+            "mozMatchesSelector",
+            "msMatchesSelector",
+            "oMatchesSelector",
+            "webkitMatchesSelector"
+          ],
+          (key) => key in Element.prototype
+        );
       });
-      exports.ELEMENT_MATCHES = ELEMENT_MATCHES;
-      var FLEX_PREFIXED = withBrowser(() => {
+      FLEX_PREFIXED = withBrowser(() => {
         const el = document.createElement("i");
-        const values = ["flex", "-webkit-flex", "-ms-flexbox", "-moz-box", "-webkit-box"];
+        const values = [
+          "flex",
+          "-webkit-flex",
+          "-ms-flexbox",
+          "-moz-box",
+          "-webkit-box"
+        ];
         const none = "";
         try {
-          const {
-            length
-          } = values;
+          const { length } = values;
           for (let i = 0; i < length; i++) {
             const value = values[i];
             el.style.display = value;
@@ -6394,15 +6309,12 @@
           return none;
         }
       }, "flex");
-      exports.FLEX_PREFIXED = FLEX_PREFIXED;
-      var TRANSFORM_PREFIXED = withBrowser(() => {
+      TRANSFORM_PREFIXED = withBrowser(() => {
         const el = document.createElement("i");
         if (el.style.transform == null) {
           const prefixes = ["Webkit", "Moz", "ms"];
           const suffix = "Transform";
-          const {
-            length
-          } = prefixes;
+          const { length } = prefixes;
           for (let i = 0; i < length; i++) {
             const prop = prefixes[i] + suffix;
             if (el.style[prop] !== void 0) {
@@ -6412,10 +6324,8 @@
         }
         return "transform";
       }, "transform");
-      exports.TRANSFORM_PREFIXED = TRANSFORM_PREFIXED;
-      var TRANSFORM_PREFIX = TRANSFORM_PREFIXED.split("transform")[0];
-      var TRANSFORM_STYLE_PREFIXED = TRANSFORM_PREFIX ? TRANSFORM_PREFIX + "TransformStyle" : "transformStyle";
-      exports.TRANSFORM_STYLE_PREFIXED = TRANSFORM_STYLE_PREFIXED;
+      TRANSFORM_PREFIX = TRANSFORM_PREFIXED.split("transform")[0];
+      TRANSFORM_STYLE_PREFIXED = TRANSFORM_PREFIX ? TRANSFORM_PREFIX + "TransformStyle" : "transformStyle";
     }
   });
 
@@ -6497,7 +6407,7 @@
             return binarySubdivide(aX, intervalStart, intervalStart + kSampleStepSize, mX1, mX2);
           }
         }
-        return function BezierEasing(x) {
+        return function BezierEasing3(x) {
           if (mX1 === mY1 && mX2 === mY2) {
             return x;
           }
@@ -6513,349 +6423,373 @@
     }
   });
 
-  // packages/systems/ix2/shared/logic/IX2Easings.js
-  var require_IX2Easings = __commonJS({
-    "packages/systems/ix2/shared/logic/IX2Easings.js"(exports) {
+  // packages/systems/ix2/shared/logic/IX2Easings.ts
+  var IX2Easings_exports = {};
+  __export(IX2Easings_exports, {
+    bounce: () => bounce,
+    bouncePast: () => bouncePast,
+    ease: () => ease,
+    easeIn: () => easeIn,
+    easeInOut: () => easeInOut,
+    easeOut: () => easeOut,
+    inBack: () => inBack,
+    inCirc: () => inCirc,
+    inCubic: () => inCubic,
+    inElastic: () => inElastic,
+    inExpo: () => inExpo,
+    inOutBack: () => inOutBack,
+    inOutCirc: () => inOutCirc,
+    inOutCubic: () => inOutCubic,
+    inOutElastic: () => inOutElastic,
+    inOutExpo: () => inOutExpo,
+    inOutQuad: () => inOutQuad,
+    inOutQuart: () => inOutQuart,
+    inOutQuint: () => inOutQuint,
+    inOutSine: () => inOutSine,
+    inQuad: () => inQuad,
+    inQuart: () => inQuart,
+    inQuint: () => inQuint,
+    inSine: () => inSine,
+    outBack: () => outBack,
+    outBounce: () => outBounce,
+    outCirc: () => outCirc,
+    outCubic: () => outCubic,
+    outElastic: () => outElastic,
+    outExpo: () => outExpo,
+    outQuad: () => outQuad,
+    outQuart: () => outQuart,
+    outQuint: () => outQuint,
+    outSine: () => outSine,
+    swingFrom: () => swingFrom,
+    swingFromTo: () => swingFromTo,
+    swingTo: () => swingTo
+  });
+  function inQuad(pos) {
+    return Math.pow(pos, 2);
+  }
+  function outQuad(pos) {
+    return -(Math.pow(pos - 1, 2) - 1);
+  }
+  function inOutQuad(pos) {
+    if ((pos /= 0.5) < 1) {
+      return 0.5 * Math.pow(pos, 2);
+    }
+    return -0.5 * ((pos -= 2) * pos - 2);
+  }
+  function inCubic(pos) {
+    return Math.pow(pos, 3);
+  }
+  function outCubic(pos) {
+    return Math.pow(pos - 1, 3) + 1;
+  }
+  function inOutCubic(pos) {
+    if ((pos /= 0.5) < 1) {
+      return 0.5 * Math.pow(pos, 3);
+    }
+    return 0.5 * (Math.pow(pos - 2, 3) + 2);
+  }
+  function inQuart(pos) {
+    return Math.pow(pos, 4);
+  }
+  function outQuart(pos) {
+    return -(Math.pow(pos - 1, 4) - 1);
+  }
+  function inOutQuart(pos) {
+    if ((pos /= 0.5) < 1) {
+      return 0.5 * Math.pow(pos, 4);
+    }
+    return -0.5 * ((pos -= 2) * Math.pow(pos, 3) - 2);
+  }
+  function inQuint(pos) {
+    return Math.pow(pos, 5);
+  }
+  function outQuint(pos) {
+    return Math.pow(pos - 1, 5) + 1;
+  }
+  function inOutQuint(pos) {
+    if ((pos /= 0.5) < 1) {
+      return 0.5 * Math.pow(pos, 5);
+    }
+    return 0.5 * (Math.pow(pos - 2, 5) + 2);
+  }
+  function inSine(pos) {
+    return -Math.cos(pos * (Math.PI / 2)) + 1;
+  }
+  function outSine(pos) {
+    return Math.sin(pos * (Math.PI / 2));
+  }
+  function inOutSine(pos) {
+    return -0.5 * (Math.cos(Math.PI * pos) - 1);
+  }
+  function inExpo(pos) {
+    return pos === 0 ? 0 : Math.pow(2, 10 * (pos - 1));
+  }
+  function outExpo(pos) {
+    return pos === 1 ? 1 : -Math.pow(2, -10 * pos) + 1;
+  }
+  function inOutExpo(pos) {
+    if (pos === 0) {
+      return 0;
+    }
+    if (pos === 1) {
+      return 1;
+    }
+    if ((pos /= 0.5) < 1) {
+      return 0.5 * Math.pow(2, 10 * (pos - 1));
+    }
+    return 0.5 * (-Math.pow(2, -10 * --pos) + 2);
+  }
+  function inCirc(pos) {
+    return -(Math.sqrt(1 - pos * pos) - 1);
+  }
+  function outCirc(pos) {
+    return Math.sqrt(1 - Math.pow(pos - 1, 2));
+  }
+  function inOutCirc(pos) {
+    if ((pos /= 0.5) < 1) {
+      return -0.5 * (Math.sqrt(1 - pos * pos) - 1);
+    }
+    return 0.5 * (Math.sqrt(1 - (pos -= 2) * pos) + 1);
+  }
+  function outBounce(pos) {
+    if (pos < 1 / 2.75) {
+      return 7.5625 * pos * pos;
+    } else if (pos < 2 / 2.75) {
+      return 7.5625 * (pos -= 1.5 / 2.75) * pos + 0.75;
+    } else if (pos < 2.5 / 2.75) {
+      return 7.5625 * (pos -= 2.25 / 2.75) * pos + 0.9375;
+    } else {
+      return 7.5625 * (pos -= 2.625 / 2.75) * pos + 0.984375;
+    }
+  }
+  function inBack(pos) {
+    const s = magicSwing;
+    return pos * pos * ((s + 1) * pos - s);
+  }
+  function outBack(pos) {
+    const s = magicSwing;
+    return (pos -= 1) * pos * ((s + 1) * pos + s) + 1;
+  }
+  function inOutBack(pos) {
+    let s = magicSwing;
+    if ((pos /= 0.5) < 1) {
+      return 0.5 * (pos * pos * (((s *= 1.525) + 1) * pos - s));
+    }
+    return 0.5 * ((pos -= 2) * pos * (((s *= 1.525) + 1) * pos + s) + 2);
+  }
+  function inElastic(pos) {
+    let s = magicSwing;
+    let p = 0;
+    let a = 1;
+    if (pos === 0) {
+      return 0;
+    }
+    if (pos === 1) {
+      return 1;
+    }
+    if (!p) {
+      p = 0.3;
+    }
+    if (a < 1) {
+      a = 1;
+      s = p / 4;
+    } else {
+      s = p / (2 * Math.PI) * Math.asin(1 / a);
+    }
+    return -(a * Math.pow(2, 10 * (pos -= 1)) * Math.sin((pos - s) * (2 * Math.PI) / p));
+  }
+  function outElastic(pos) {
+    let s = magicSwing;
+    let p = 0;
+    let a = 1;
+    if (pos === 0) {
+      return 0;
+    }
+    if (pos === 1) {
+      return 1;
+    }
+    if (!p) {
+      p = 0.3;
+    }
+    if (a < 1) {
+      a = 1;
+      s = p / 4;
+    } else {
+      s = p / (2 * Math.PI) * Math.asin(1 / a);
+    }
+    return a * Math.pow(2, -10 * pos) * Math.sin((pos - s) * (2 * Math.PI) / p) + 1;
+  }
+  function inOutElastic(pos) {
+    let s = magicSwing;
+    let p = 0;
+    let a = 1;
+    if (pos === 0) {
+      return 0;
+    }
+    if ((pos /= 1 / 2) === 2) {
+      return 1;
+    }
+    if (!p) {
+      p = 0.3 * 1.5;
+    }
+    if (a < 1) {
+      a = 1;
+      s = p / 4;
+    } else {
+      s = p / (2 * Math.PI) * Math.asin(1 / a);
+    }
+    if (pos < 1) {
+      return -0.5 * (a * Math.pow(2, 10 * (pos -= 1)) * Math.sin((pos - s) * (2 * Math.PI) / p));
+    }
+    return a * Math.pow(2, -10 * (pos -= 1)) * Math.sin((pos - s) * (2 * Math.PI) / p) * 0.5 + 1;
+  }
+  function swingFromTo(pos) {
+    let s = magicSwing;
+    return (pos /= 0.5) < 1 ? 0.5 * (pos * pos * (((s *= 1.525) + 1) * pos - s)) : 0.5 * ((pos -= 2) * pos * (((s *= 1.525) + 1) * pos + s) + 2);
+  }
+  function swingFrom(pos) {
+    const s = magicSwing;
+    return pos * pos * ((s + 1) * pos - s);
+  }
+  function swingTo(pos) {
+    const s = magicSwing;
+    return (pos -= 1) * pos * ((s + 1) * pos + s) + 1;
+  }
+  function bounce(pos) {
+    if (pos < 1 / 2.75) {
+      return 7.5625 * pos * pos;
+    } else if (pos < 2 / 2.75) {
+      return 7.5625 * (pos -= 1.5 / 2.75) * pos + 0.75;
+    } else if (pos < 2.5 / 2.75) {
+      return 7.5625 * (pos -= 2.25 / 2.75) * pos + 0.9375;
+    } else {
+      return 7.5625 * (pos -= 2.625 / 2.75) * pos + 0.984375;
+    }
+  }
+  function bouncePast(pos) {
+    if (pos < 1 / 2.75) {
+      return 7.5625 * pos * pos;
+    } else if (pos < 2 / 2.75) {
+      return 2 - (7.5625 * (pos -= 1.5 / 2.75) * pos + 0.75);
+    } else if (pos < 2.5 / 2.75) {
+      return 2 - (7.5625 * (pos -= 2.25 / 2.75) * pos + 0.9375);
+    } else {
+      return 2 - (7.5625 * (pos -= 2.625 / 2.75) * pos + 0.984375);
+    }
+  }
+  var import_bezier_easing, magicSwing, ease, easeIn, easeOut, easeInOut;
+  var init_IX2Easings = __esm({
+    "packages/systems/ix2/shared/logic/IX2Easings.ts"() {
       "use strict";
-      var _interopRequireDefault = require_interopRequireDefault().default;
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.bounce = bounce;
-      exports.bouncePast = bouncePast;
-      exports.easeOut = exports.easeInOut = exports.easeIn = exports.ease = void 0;
-      exports.inBack = inBack;
-      exports.inCirc = inCirc;
-      exports.inCubic = inCubic;
-      exports.inElastic = inElastic;
-      exports.inExpo = inExpo;
-      exports.inOutBack = inOutBack;
-      exports.inOutCirc = inOutCirc;
-      exports.inOutCubic = inOutCubic;
-      exports.inOutElastic = inOutElastic;
-      exports.inOutExpo = inOutExpo;
-      exports.inOutQuad = inOutQuad;
-      exports.inOutQuart = inOutQuart;
-      exports.inOutQuint = inOutQuint;
-      exports.inOutSine = inOutSine;
-      exports.inQuad = inQuad;
-      exports.inQuart = inQuart;
-      exports.inQuint = inQuint;
-      exports.inSine = inSine;
-      exports.outBack = outBack;
-      exports.outBounce = outBounce;
-      exports.outCirc = outCirc;
-      exports.outCubic = outCubic;
-      exports.outElastic = outElastic;
-      exports.outExpo = outExpo;
-      exports.outQuad = outQuad;
-      exports.outQuart = outQuart;
-      exports.outQuint = outQuint;
-      exports.outSine = outSine;
-      exports.swingFrom = swingFrom;
-      exports.swingFromTo = swingFromTo;
-      exports.swingTo = swingTo;
-      var _bezierEasing = _interopRequireDefault(require_src());
-      var magicSwing = 1.70158;
-      var ease = (0, _bezierEasing.default)(0.25, 0.1, 0.25, 1);
-      exports.ease = ease;
-      var easeIn = (0, _bezierEasing.default)(0.42, 0, 1, 1);
-      exports.easeIn = easeIn;
-      var easeOut = (0, _bezierEasing.default)(0, 0, 0.58, 1);
-      exports.easeOut = easeOut;
-      var easeInOut = (0, _bezierEasing.default)(0.42, 0, 0.58, 1);
-      exports.easeInOut = easeInOut;
-      function inQuad(pos) {
-        return Math.pow(pos, 2);
-      }
-      function outQuad(pos) {
-        return -(Math.pow(pos - 1, 2) - 1);
-      }
-      function inOutQuad(pos) {
-        if ((pos /= 0.5) < 1) {
-          return 0.5 * Math.pow(pos, 2);
-        }
-        return -0.5 * ((pos -= 2) * pos - 2);
-      }
-      function inCubic(pos) {
-        return Math.pow(pos, 3);
-      }
-      function outCubic(pos) {
-        return Math.pow(pos - 1, 3) + 1;
-      }
-      function inOutCubic(pos) {
-        if ((pos /= 0.5) < 1) {
-          return 0.5 * Math.pow(pos, 3);
-        }
-        return 0.5 * (Math.pow(pos - 2, 3) + 2);
-      }
-      function inQuart(pos) {
-        return Math.pow(pos, 4);
-      }
-      function outQuart(pos) {
-        return -(Math.pow(pos - 1, 4) - 1);
-      }
-      function inOutQuart(pos) {
-        if ((pos /= 0.5) < 1) {
-          return 0.5 * Math.pow(pos, 4);
-        }
-        return -0.5 * ((pos -= 2) * Math.pow(pos, 3) - 2);
-      }
-      function inQuint(pos) {
-        return Math.pow(pos, 5);
-      }
-      function outQuint(pos) {
-        return Math.pow(pos - 1, 5) + 1;
-      }
-      function inOutQuint(pos) {
-        if ((pos /= 0.5) < 1) {
-          return 0.5 * Math.pow(pos, 5);
-        }
-        return 0.5 * (Math.pow(pos - 2, 5) + 2);
-      }
-      function inSine(pos) {
-        return -Math.cos(pos * (Math.PI / 2)) + 1;
-      }
-      function outSine(pos) {
-        return Math.sin(pos * (Math.PI / 2));
-      }
-      function inOutSine(pos) {
-        return -0.5 * (Math.cos(Math.PI * pos) - 1);
-      }
-      function inExpo(pos) {
-        return pos === 0 ? 0 : Math.pow(2, 10 * (pos - 1));
-      }
-      function outExpo(pos) {
-        return pos === 1 ? 1 : -Math.pow(2, -10 * pos) + 1;
-      }
-      function inOutExpo(pos) {
-        if (pos === 0) {
-          return 0;
-        }
-        if (pos === 1) {
-          return 1;
-        }
-        if ((pos /= 0.5) < 1) {
-          return 0.5 * Math.pow(2, 10 * (pos - 1));
-        }
-        return 0.5 * (-Math.pow(2, -10 * --pos) + 2);
-      }
-      function inCirc(pos) {
-        return -(Math.sqrt(1 - pos * pos) - 1);
-      }
-      function outCirc(pos) {
-        return Math.sqrt(1 - Math.pow(pos - 1, 2));
-      }
-      function inOutCirc(pos) {
-        if ((pos /= 0.5) < 1) {
-          return -0.5 * (Math.sqrt(1 - pos * pos) - 1);
-        }
-        return 0.5 * (Math.sqrt(1 - (pos -= 2) * pos) + 1);
-      }
-      function outBounce(pos) {
-        if (pos < 1 / 2.75) {
-          return 7.5625 * pos * pos;
-        } else if (pos < 2 / 2.75) {
-          return 7.5625 * (pos -= 1.5 / 2.75) * pos + 0.75;
-        } else if (pos < 2.5 / 2.75) {
-          return 7.5625 * (pos -= 2.25 / 2.75) * pos + 0.9375;
-        } else {
-          return 7.5625 * (pos -= 2.625 / 2.75) * pos + 0.984375;
-        }
-      }
-      function inBack(pos) {
-        const s = magicSwing;
-        return pos * pos * ((s + 1) * pos - s);
-      }
-      function outBack(pos) {
-        const s = magicSwing;
-        return (pos -= 1) * pos * ((s + 1) * pos + s) + 1;
-      }
-      function inOutBack(pos) {
-        let s = magicSwing;
-        if ((pos /= 0.5) < 1) {
-          return 0.5 * (pos * pos * (((s *= 1.525) + 1) * pos - s));
-        }
-        return 0.5 * ((pos -= 2) * pos * (((s *= 1.525) + 1) * pos + s) + 2);
-      }
-      function inElastic(pos) {
-        let s = magicSwing;
-        let p = 0;
-        let a = 1;
-        if (pos === 0) {
-          return 0;
-        }
-        if (pos === 1) {
-          return 1;
-        }
-        if (!p) {
-          p = 0.3;
-        }
-        if (a < 1) {
-          a = 1;
-          s = p / 4;
-        } else {
-          s = p / (2 * Math.PI) * Math.asin(1 / a);
-        }
-        return -(a * Math.pow(2, 10 * (pos -= 1)) * Math.sin((pos - s) * (2 * Math.PI) / p));
-      }
-      function outElastic(pos) {
-        let s = magicSwing;
-        let p = 0;
-        let a = 1;
-        if (pos === 0) {
-          return 0;
-        }
-        if (pos === 1) {
-          return 1;
-        }
-        if (!p) {
-          p = 0.3;
-        }
-        if (a < 1) {
-          a = 1;
-          s = p / 4;
-        } else {
-          s = p / (2 * Math.PI) * Math.asin(1 / a);
-        }
-        return a * Math.pow(2, -10 * pos) * Math.sin((pos - s) * (2 * Math.PI) / p) + 1;
-      }
-      function inOutElastic(pos) {
-        let s = magicSwing;
-        let p = 0;
-        let a = 1;
-        if (pos === 0) {
-          return 0;
-        }
-        if ((pos /= 1 / 2) === 2) {
-          return 1;
-        }
-        if (!p) {
-          p = 0.3 * 1.5;
-        }
-        if (a < 1) {
-          a = 1;
-          s = p / 4;
-        } else {
-          s = p / (2 * Math.PI) * Math.asin(1 / a);
-        }
-        if (pos < 1) {
-          return -0.5 * (a * Math.pow(2, 10 * (pos -= 1)) * Math.sin((pos - s) * (2 * Math.PI) / p));
-        }
-        return a * Math.pow(2, -10 * (pos -= 1)) * Math.sin((pos - s) * (2 * Math.PI) / p) * 0.5 + 1;
-      }
-      function swingFromTo(pos) {
-        let s = magicSwing;
-        return (pos /= 0.5) < 1 ? 0.5 * (pos * pos * (((s *= 1.525) + 1) * pos - s)) : 0.5 * ((pos -= 2) * pos * (((s *= 1.525) + 1) * pos + s) + 2);
-      }
-      function swingFrom(pos) {
-        const s = magicSwing;
-        return pos * pos * ((s + 1) * pos - s);
-      }
-      function swingTo(pos) {
-        const s = magicSwing;
-        return (pos -= 1) * pos * ((s + 1) * pos + s) + 1;
-      }
-      function bounce(pos) {
-        if (pos < 1 / 2.75) {
-          return 7.5625 * pos * pos;
-        } else if (pos < 2 / 2.75) {
-          return 7.5625 * (pos -= 1.5 / 2.75) * pos + 0.75;
-        } else if (pos < 2.5 / 2.75) {
-          return 7.5625 * (pos -= 2.25 / 2.75) * pos + 0.9375;
-        } else {
-          return 7.5625 * (pos -= 2.625 / 2.75) * pos + 0.984375;
-        }
-      }
-      function bouncePast(pos) {
-        if (pos < 1 / 2.75) {
-          return 7.5625 * pos * pos;
-        } else if (pos < 2 / 2.75) {
-          return 2 - (7.5625 * (pos -= 1.5 / 2.75) * pos + 0.75);
-        } else if (pos < 2.5 / 2.75) {
-          return 2 - (7.5625 * (pos -= 2.25 / 2.75) * pos + 0.9375);
-        } else {
-          return 2 - (7.5625 * (pos -= 2.625 / 2.75) * pos + 0.984375);
-        }
-      }
+      import_bezier_easing = __toESM(require_src());
+      magicSwing = 1.70158;
+      ease = (0, import_bezier_easing.default)(0.25, 0.1, 0.25, 1);
+      easeIn = (0, import_bezier_easing.default)(0.42, 0, 1, 1);
+      easeOut = (0, import_bezier_easing.default)(0, 0, 0.58, 1);
+      easeInOut = (0, import_bezier_easing.default)(0.42, 0, 0.58, 1);
     }
   });
 
-  // packages/systems/ix2/shared/logic/IX2EasingUtils.js
-  var require_IX2EasingUtils = __commonJS({
-    "packages/systems/ix2/shared/logic/IX2EasingUtils.js"(exports) {
+  // packages/systems/ix2/shared/logic/IX2EasingUtils.ts
+  var IX2EasingUtils_exports = {};
+  __export(IX2EasingUtils_exports, {
+    applyEasing: () => applyEasing,
+    createBezierEasing: () => createBezierEasing,
+    optimizeFloat: () => optimizeFloat
+  });
+  function optimizeFloat(value, digits = 5, base = 10) {
+    const pow = Math.pow(base, digits);
+    const float = Number(Math.round(value * pow) / pow);
+    return Math.abs(float) > 1e-4 ? float : 0;
+  }
+  function createBezierEasing(easing) {
+    return (0, import_bezier_easing2.default)(...easing);
+  }
+  function applyEasing(easing, position, customEasingFn) {
+    if (position === 0) {
+      return 0;
+    }
+    if (position === 1) {
+      return 1;
+    }
+    if (customEasingFn) {
+      return optimizeFloat(position > 0 ? customEasingFn(position) : position);
+    }
+    return optimizeFloat(
+      position > 0 && easing && IX2Easings_exports[easing] ? IX2Easings_exports[easing](position) : position
+    );
+  }
+  var import_bezier_easing2;
+  var init_IX2EasingUtils = __esm({
+    "packages/systems/ix2/shared/logic/IX2EasingUtils.ts"() {
       "use strict";
-      var _interopRequireDefault = require_interopRequireDefault().default;
-      var _interopRequireWildcard = require_interopRequireWildcard().default;
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.applyEasing = applyEasing;
-      exports.createBezierEasing = createBezierEasing;
-      exports.optimizeFloat = optimizeFloat;
-      var easings = _interopRequireWildcard(require_IX2Easings());
-      var _bezierEasing = _interopRequireDefault(require_src());
-      function optimizeFloat(value, digits = 5, base = 10) {
-        const pow = Math.pow(base, digits);
-        const float = Number(Math.round(value * pow) / pow);
-        return Math.abs(float) > 1e-4 ? float : 0;
-      }
-      function createBezierEasing(easing) {
-        return (0, _bezierEasing.default)(...easing);
-      }
-      function applyEasing(easing, position, customEasingFn) {
-        if (position === 0) {
-          return 0;
-        }
-        if (position === 1) {
-          return 1;
-        }
-        if (customEasingFn) {
-          return optimizeFloat(position > 0 ? customEasingFn(position) : position);
-        }
-        return optimizeFloat(position > 0 && easing && easings[easing] ? easings[easing](position) : position);
-      }
+      init_IX2Easings();
+      import_bezier_easing2 = __toESM(require_src());
     }
   });
 
-  // packages/systems/ix2/shared/reducers/IX2ElementsReducer.js
-  var require_IX2ElementsReducer = __commonJS({
-    "packages/systems/ix2/shared/reducers/IX2ElementsReducer.js"(exports) {
+  // packages/systems/ix2/shared/reducers/IX2ElementsReducer.ts
+  var IX2ElementsReducer_exports = {};
+  __export(IX2ElementsReducer_exports, {
+    createElementState: () => createElementState,
+    ixElements: () => ixElements,
+    mergeActionState: () => mergeActionState
+  });
+  function createElementState(state, ref, refType, elementId, actionItem) {
+    const refId = refType === PLAIN_OBJECT2 ? (0, import_timm3.getIn)(actionItem, ["config", "target", "objectId"]) : null;
+    return (0, import_timm3.mergeIn)(state, [elementId], {
+      id: elementId,
+      ref,
+      refId,
+      refType
+    });
+  }
+  function mergeActionState(state, elementId, actionTypeId, actionState, actionItem) {
+    const units = pickUnits(actionItem);
+    const mergePath = [elementId, refState, actionTypeId];
+    return (0, import_timm3.mergeIn)(state, mergePath, actionState, units);
+  }
+  function pickUnits(actionItem) {
+    const { config } = actionItem;
+    return valueUnitPairs.reduce((result, pair) => {
+      const valueKey = pair[0];
+      const unitKey = pair[1];
+      const configValue = config[valueKey];
+      const configUnit = config[unitKey];
+      if (configValue != null && configUnit != null) {
+        result[unitKey] = configUnit;
+      }
+      return result;
+    }, {});
+  }
+  var import_timm3, HTML_ELEMENT2, PLAIN_OBJECT2, ABSTRACT_NODE2, CONFIG_X_VALUE2, CONFIG_Y_VALUE2, CONFIG_Z_VALUE2, CONFIG_VALUE2, CONFIG_X_UNIT2, CONFIG_Y_UNIT2, CONFIG_Z_UNIT2, CONFIG_UNIT2, IX2_SESSION_STOPPED3, IX2_INSTANCE_ADDED2, IX2_ELEMENT_STATE_CHANGED2, initialState3, refState, ixElements, valueUnitPairs;
+  var init_IX2ElementsReducer = __esm({
+    "packages/systems/ix2/shared/reducers/IX2ElementsReducer.ts"() {
       "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.createElementState = createElementState;
-      exports.ixElements = void 0;
-      exports.mergeActionState = mergeActionState;
-      var _timm = require_timm();
-      var _constants = require_constants();
-      var {
-        HTML_ELEMENT,
-        PLAIN_OBJECT,
-        ABSTRACT_NODE,
-        CONFIG_X_VALUE,
-        CONFIG_Y_VALUE,
-        CONFIG_Z_VALUE,
-        CONFIG_VALUE,
-        CONFIG_X_UNIT,
-        CONFIG_Y_UNIT,
-        CONFIG_Z_UNIT,
-        CONFIG_UNIT
-      } = _constants.IX2EngineConstants;
-      var {
-        IX2_SESSION_STOPPED,
-        IX2_INSTANCE_ADDED,
-        IX2_ELEMENT_STATE_CHANGED
-      } = _constants.IX2EngineActionTypes;
-      var initialState = {};
-      var refState = "refState";
-      var ixElements = (state = initialState, action = {}) => {
+      import_timm3 = __toESM(require_timm());
+      init_shared_constants();
+      ({
+        HTML_ELEMENT: HTML_ELEMENT2,
+        PLAIN_OBJECT: PLAIN_OBJECT2,
+        ABSTRACT_NODE: ABSTRACT_NODE2,
+        CONFIG_X_VALUE: CONFIG_X_VALUE2,
+        CONFIG_Y_VALUE: CONFIG_Y_VALUE2,
+        CONFIG_Z_VALUE: CONFIG_Z_VALUE2,
+        CONFIG_VALUE: CONFIG_VALUE2,
+        CONFIG_X_UNIT: CONFIG_X_UNIT2,
+        CONFIG_Y_UNIT: CONFIG_Y_UNIT2,
+        CONFIG_Z_UNIT: CONFIG_Z_UNIT2,
+        CONFIG_UNIT: CONFIG_UNIT2
+      } = IX2EngineConstants_exports);
+      ({ IX2_SESSION_STOPPED: IX2_SESSION_STOPPED3, IX2_INSTANCE_ADDED: IX2_INSTANCE_ADDED2, IX2_ELEMENT_STATE_CHANGED: IX2_ELEMENT_STATE_CHANGED2 } = IX2EngineActionTypes_exports);
+      initialState3 = {};
+      refState = "refState";
+      ixElements = (state = initialState3, action = {}) => {
         switch (action.type) {
-          case IX2_SESSION_STOPPED: {
-            return initialState;
+          case IX2_SESSION_STOPPED3: {
+            return initialState3;
           }
-          case IX2_INSTANCE_ADDED: {
+          case IX2_INSTANCE_ADDED2: {
             const {
               elementId,
               element: ref,
@@ -6863,60 +6797,46 @@
               actionItem,
               refType
             } = action.payload;
-            const {
-              actionTypeId
-            } = actionItem;
+            const { actionTypeId } = actionItem;
             let newState = state;
-            if ((0, _timm.getIn)(newState, [elementId, ref]) !== ref) {
-              newState = createElementState(newState, ref, refType, elementId, actionItem);
+            if ((0, import_timm3.getIn)(newState, [elementId, ref]) !== ref) {
+              newState = createElementState(
+                newState,
+                ref,
+                refType,
+                elementId,
+                actionItem
+              );
             }
-            return mergeActionState(newState, elementId, actionTypeId, origin, actionItem);
+            return mergeActionState(
+              newState,
+              elementId,
+              actionTypeId,
+              origin,
+              actionItem
+            );
           }
-          case IX2_ELEMENT_STATE_CHANGED: {
-            const {
+          case IX2_ELEMENT_STATE_CHANGED2: {
+            const { elementId, actionTypeId, current, actionItem } = action.payload;
+            return mergeActionState(
+              state,
               elementId,
               actionTypeId,
               current,
               actionItem
-            } = action.payload;
-            return mergeActionState(state, elementId, actionTypeId, current, actionItem);
+            );
           }
           default: {
             return state;
           }
         }
       };
-      exports.ixElements = ixElements;
-      function createElementState(state, ref, refType, elementId, actionItem) {
-        const refId = refType === PLAIN_OBJECT ? (0, _timm.getIn)(actionItem, ["config", "target", "objectId"]) : null;
-        return (0, _timm.mergeIn)(state, [elementId], {
-          id: elementId,
-          ref,
-          refId,
-          refType
-        });
-      }
-      function mergeActionState(state, elementId, actionTypeId, actionState, actionItem) {
-        const units = pickUnits(actionItem);
-        const mergePath = [elementId, refState, actionTypeId];
-        return (0, _timm.mergeIn)(state, mergePath, actionState, units);
-      }
-      var valueUnitPairs = [[CONFIG_X_VALUE, CONFIG_X_UNIT], [CONFIG_Y_VALUE, CONFIG_Y_UNIT], [CONFIG_Z_VALUE, CONFIG_Z_UNIT], [CONFIG_VALUE, CONFIG_UNIT]];
-      function pickUnits(actionItem) {
-        const {
-          config
-        } = actionItem;
-        return valueUnitPairs.reduce((result, pair) => {
-          const valueKey = pair[0];
-          const unitKey = pair[1];
-          const configValue = config[valueKey];
-          const configUnit = config[unitKey];
-          if (configValue != null && configUnit != null) {
-            result[unitKey] = configUnit;
-          }
-          return result;
-        }, {});
-      }
+      valueUnitPairs = [
+        [CONFIG_X_VALUE2, CONFIG_X_UNIT2],
+        [CONFIG_Y_VALUE2, CONFIG_Y_UNIT2],
+        [CONFIG_Z_VALUE2, CONFIG_Z_UNIT2],
+        [CONFIG_VALUE2, CONFIG_UNIT2]
+      ];
     }
   });
 
@@ -6928,11 +6848,11 @@
         value: true
       });
       exports.renderPlugin = exports.getPluginOrigin = exports.getPluginDuration = exports.getPluginDestination = exports.getPluginConfig = exports.createPluginInstance = exports.clearPlugin = void 0;
-      var getPluginConfig = (actionItemConfig) => {
+      var getPluginConfig2 = (actionItemConfig) => {
         return actionItemConfig.value;
       };
-      exports.getPluginConfig = getPluginConfig;
-      var getPluginDuration = (element, actionItem) => {
+      exports.getPluginConfig = getPluginConfig2;
+      var getPluginDuration3 = (element, actionItem) => {
         if (actionItem.config.duration !== "auto") {
           return null;
         }
@@ -6942,39 +6862,39 @@
         }
         return parseFloat(element.getAttribute("data-default-duration")) * 1e3;
       };
-      exports.getPluginDuration = getPluginDuration;
-      var getPluginOrigin = (refState) => {
-        return refState || {
+      exports.getPluginDuration = getPluginDuration3;
+      var getPluginOrigin2 = (refState2) => {
+        return refState2 || {
           value: 0
         };
       };
-      exports.getPluginOrigin = getPluginOrigin;
-      var getPluginDestination = (actionItemConfig) => {
+      exports.getPluginOrigin = getPluginOrigin2;
+      var getPluginDestination2 = (actionItemConfig) => {
         return {
           value: actionItemConfig.value
         };
       };
-      exports.getPluginDestination = getPluginDestination;
-      var createPluginInstance = (element) => {
+      exports.getPluginDestination = getPluginDestination2;
+      var createPluginInstance3 = (element) => {
         const instance = window.Webflow.require("lottie").createInstance(element);
         instance.stop();
         instance.setSubframe(true);
         return instance;
       };
-      exports.createPluginInstance = createPluginInstance;
-      var renderPlugin = (pluginInstance, refState, actionItem) => {
+      exports.createPluginInstance = createPluginInstance3;
+      var renderPlugin2 = (pluginInstance, refState2, actionItem) => {
         if (!pluginInstance) {
           return;
         }
-        const percent = refState[actionItem.actionTypeId].value / 100;
+        const percent = refState2[actionItem.actionTypeId].value / 100;
         pluginInstance.goToFrame(pluginInstance.frames * percent);
       };
-      exports.renderPlugin = renderPlugin;
-      var clearPlugin = (element) => {
+      exports.renderPlugin = renderPlugin2;
+      var clearPlugin2 = (element) => {
         const instance = window.Webflow.require("lottie").createInstance(element);
         instance.stop();
       };
-      exports.clearPlugin = clearPlugin;
+      exports.clearPlugin = clearPlugin2;
     }
   });
 
@@ -6989,14 +6909,14 @@
       var queryContainerElement = (elementId) => document.querySelector(`[data-w-id="${elementId}"]`);
       var getFrontendModule = () => window.Webflow.require("spline");
       var difference = (arr1, arr2) => arr1.filter((x) => !arr2.includes(x));
-      var getPluginConfig = (actionItemConfig, key) => {
+      var getPluginConfig2 = (actionItemConfig, key) => {
         return actionItemConfig.value[key];
       };
-      exports.getPluginConfig = getPluginConfig;
-      var getPluginDuration = () => {
+      exports.getPluginConfig = getPluginConfig2;
+      var getPluginDuration3 = () => {
         return null;
       };
-      exports.getPluginDuration = getPluginDuration;
+      exports.getPluginDuration = getPluginDuration3;
       var DEFAULT_VALUES = Object.freeze({
         positionX: 0,
         positionY: 0,
@@ -7008,20 +6928,20 @@
         scaleY: 1,
         scaleZ: 1
       });
-      var getPluginOrigin = (refState, actionItem) => {
+      var getPluginOrigin2 = (refState2, actionItem) => {
         const destination = actionItem.config.value;
         const destinationKeys = Object.keys(destination);
-        if (refState) {
-          const stateKeys = Object.keys(refState);
-          const diffKeys = difference(destinationKeys, stateKeys);
+        if (refState2) {
+          const stateKeys2 = Object.keys(refState2);
+          const diffKeys = difference(destinationKeys, stateKeys2);
           if (diffKeys.length) {
             const origin2 = diffKeys.reduce((result, key) => {
               result[key] = DEFAULT_VALUES[key];
               return result;
-            }, refState);
+            }, refState2);
             return origin2;
           }
-          return refState;
+          return refState2;
         }
         const origin = destinationKeys.reduce((result, key) => {
           result[key] = DEFAULT_VALUES[key];
@@ -7029,63 +6949,265 @@
         }, {});
         return origin;
       };
-      exports.getPluginOrigin = getPluginOrigin;
-      var getPluginDestination = (actionItemConfig) => {
+      exports.getPluginOrigin = getPluginOrigin2;
+      var getPluginDestination2 = (actionItemConfig) => {
         return actionItemConfig.value;
       };
-      exports.getPluginDestination = getPluginDestination;
-      var createPluginInstance = (element, actionItem) => {
+      exports.getPluginDestination = getPluginDestination2;
+      var createPluginInstance3 = (element, actionItem) => {
         var _actionItem$config, _actionItem$config$ta;
         const pluginElementId = actionItem === null || actionItem === void 0 ? void 0 : (_actionItem$config = actionItem.config) === null || _actionItem$config === void 0 ? void 0 : (_actionItem$config$ta = _actionItem$config.target) === null || _actionItem$config$ta === void 0 ? void 0 : _actionItem$config$ta.pluginElement;
         return pluginElementId ? queryContainerElement(pluginElementId) : null;
       };
-      exports.createPluginInstance = createPluginInstance;
-      var renderPlugin = (containerElement, refState, actionItem) => {
-        const instance = getFrontendModule().getInstance(containerElement);
+      exports.createPluginInstance = createPluginInstance3;
+      var renderPlugin2 = (containerElement, refState2, actionItem) => {
+        const frontendModule = getFrontendModule();
+        const instance = frontendModule.getInstance(containerElement);
         const objectId = actionItem.config.target.objectId;
-        if (!instance || !objectId) {
-          return;
-        }
-        const obj = instance.spline.findObjectById(objectId);
-        if (!obj) {
-          return;
-        }
-        const {
-          PLUGIN_SPLINE: props
-        } = refState;
-        if (props.positionX != null) {
-          obj.position.x = props.positionX;
-        }
-        if (props.positionY != null) {
-          obj.position.y = props.positionY;
-        }
-        if (props.positionZ != null) {
-          obj.position.z = props.positionZ;
-        }
-        if (props.rotationX != null) {
-          obj.rotation.x = props.rotationX;
-        }
-        if (props.rotationY != null) {
-          obj.rotation.y = props.rotationY;
-        }
-        if (props.rotationZ != null) {
-          obj.rotation.z = props.rotationZ;
-        }
-        if (props.scaleX != null) {
-          obj.scale.x = props.scaleX;
-        }
-        if (props.scaleY != null) {
-          obj.scale.y = props.scaleY;
-        }
-        if (props.scaleZ != null) {
-          obj.scale.z = props.scaleZ;
+        const renderSpline = (spline) => {
+          if (!spline) {
+            throw new Error("Invalid spline app passed to renderSpline");
+          }
+          const obj = objectId && spline.findObjectById(objectId);
+          if (!obj) {
+            return;
+          }
+          const {
+            PLUGIN_SPLINE: props
+          } = refState2;
+          if (props.positionX != null) {
+            obj.position.x = props.positionX;
+          }
+          if (props.positionY != null) {
+            obj.position.y = props.positionY;
+          }
+          if (props.positionZ != null) {
+            obj.position.z = props.positionZ;
+          }
+          if (props.rotationX != null) {
+            obj.rotation.x = props.rotationX;
+          }
+          if (props.rotationY != null) {
+            obj.rotation.y = props.rotationY;
+          }
+          if (props.rotationZ != null) {
+            obj.rotation.z = props.rotationZ;
+          }
+          if (props.scaleX != null) {
+            obj.scale.x = props.scaleX;
+          }
+          if (props.scaleY != null) {
+            obj.scale.y = props.scaleY;
+          }
+          if (props.scaleZ != null) {
+            obj.scale.z = props.scaleZ;
+          }
+        };
+        if (instance) {
+          renderSpline(instance.spline);
+        } else {
+          frontendModule.setLoadHandler(containerElement, renderSpline);
         }
       };
-      exports.renderPlugin = renderPlugin;
-      var clearPlugin = () => {
+      exports.renderPlugin = renderPlugin2;
+      var clearPlugin2 = () => {
         return null;
       };
-      exports.clearPlugin = clearPlugin;
+      exports.clearPlugin = clearPlugin2;
+    }
+  });
+
+  // packages/systems/ix2/plugins/IX2Variable.js
+  var require_IX2Variable = __commonJS({
+    "packages/systems/ix2/plugins/IX2Variable.js"(exports) {
+      "use strict";
+      Object.defineProperty(exports, "__esModule", {
+        value: true
+      });
+      exports.getPluginOrigin = exports.getPluginDuration = exports.getPluginDestination = exports.getPluginConfig = exports.createPluginInstance = exports.clearPlugin = void 0;
+      exports.normalizeColor = normalizeColor;
+      exports.renderPlugin = void 0;
+      function normalizeColor(inputColor) {
+        let red;
+        let green;
+        let blue;
+        let alpha = 1;
+        const cleanColor = inputColor.replace(/\s/g, "").toLowerCase();
+        if (cleanColor.startsWith("#")) {
+          const hex = cleanColor.substring(1);
+          if (hex.length === 3) {
+            red = parseInt(hex[0] + hex[0], 16);
+            green = parseInt(hex[1] + hex[1], 16);
+            blue = parseInt(hex[2] + hex[2], 16);
+          } else if (hex.length === 6) {
+            red = parseInt(hex.substring(0, 2), 16);
+            green = parseInt(hex.substring(2, 4), 16);
+            blue = parseInt(hex.substring(4, 6), 16);
+          }
+        } else if (cleanColor.startsWith("rgba")) {
+          const rgbaValues = cleanColor.match(/rgba\(([^)]+)\)/)[1].split(",");
+          red = parseInt(rgbaValues[0], 10);
+          green = parseInt(rgbaValues[1], 10);
+          blue = parseInt(rgbaValues[2], 10);
+          alpha = parseFloat(rgbaValues[3]);
+        } else if (cleanColor.startsWith("rgb")) {
+          const rgbValues = cleanColor.match(/rgb\(([^)]+)\)/)[1].split(",");
+          red = parseInt(rgbValues[0], 10);
+          green = parseInt(rgbValues[1], 10);
+          blue = parseInt(rgbValues[2], 10);
+        } else if (cleanColor.startsWith("hsla")) {
+          const hslaValues = cleanColor.match(/hsla\(([^)]+)\)/)[1].split(",");
+          const h = parseFloat(hslaValues[0]);
+          const s = parseFloat(hslaValues[1].replace("%", "")) / 100;
+          const l = parseFloat(hslaValues[2].replace("%", "")) / 100;
+          alpha = parseFloat(hslaValues[3]);
+          const C = (1 - Math.abs(2 * l - 1)) * s;
+          const X = C * (1 - Math.abs(h / 60 % 2 - 1));
+          const m = l - C / 2;
+          let R;
+          let G;
+          let B;
+          if (h >= 0 && h < 60) {
+            R = C;
+            G = X;
+            B = 0;
+          } else if (h >= 60 && h < 120) {
+            R = X;
+            G = C;
+            B = 0;
+          } else if (h >= 120 && h < 180) {
+            R = 0;
+            G = C;
+            B = X;
+          } else if (h >= 180 && h < 240) {
+            R = 0;
+            G = X;
+            B = C;
+          } else if (h >= 240 && h < 300) {
+            R = X;
+            G = 0;
+            B = C;
+          } else {
+            R = C;
+            G = 0;
+            B = X;
+          }
+          red = Math.round((R + m) * 255);
+          green = Math.round((G + m) * 255);
+          blue = Math.round((B + m) * 255);
+        } else if (cleanColor.startsWith("hsl")) {
+          const hslValues = cleanColor.match(/hsl\(([^)]+)\)/)[1].split(",");
+          const h = parseFloat(hslValues[0]);
+          const s = parseFloat(hslValues[1].replace("%", "")) / 100;
+          const l = parseFloat(hslValues[2].replace("%", "")) / 100;
+          const C = (1 - Math.abs(2 * l - 1)) * s;
+          const X = C * (1 - Math.abs(h / 60 % 2 - 1));
+          const m = l - C / 2;
+          let R;
+          let G;
+          let B;
+          if (h >= 0 && h < 60) {
+            R = C;
+            G = X;
+            B = 0;
+          } else if (h >= 60 && h < 120) {
+            R = X;
+            G = C;
+            B = 0;
+          } else if (h >= 120 && h < 180) {
+            R = 0;
+            G = C;
+            B = X;
+          } else if (h >= 180 && h < 240) {
+            R = 0;
+            G = X;
+            B = C;
+          } else if (h >= 240 && h < 300) {
+            R = X;
+            G = 0;
+            B = C;
+          } else {
+            R = C;
+            G = 0;
+            B = X;
+          }
+          red = Math.round((R + m) * 255);
+          green = Math.round((G + m) * 255);
+          blue = Math.round((B + m) * 255);
+        }
+        if (Number.isNaN(red) || Number.isNaN(green) || Number.isNaN(blue)) {
+          `Invalid color in [ix2/lugins/IX2Variable.js] '${inputColor}'`;
+        }
+        return {
+          red,
+          green,
+          blue,
+          alpha
+        };
+      }
+      var getPluginConfig2 = (actionItemConfig, key) => {
+        return actionItemConfig.value[key];
+      };
+      exports.getPluginConfig = getPluginConfig2;
+      var getPluginDuration3 = () => {
+        return null;
+      };
+      exports.getPluginDuration = getPluginDuration3;
+      var getPluginOrigin2 = (refState2, actionItem) => {
+        if (refState2) {
+          return refState2;
+        }
+        const destination = actionItem.config.value;
+        const objectId = actionItem.config.target.objectId;
+        const computedValue = getComputedStyle(document.documentElement).getPropertyValue(objectId);
+        if (destination.size != null) {
+          return {
+            size: parseInt(computedValue, 10)
+          };
+        }
+        if (destination.red != null && destination.green != null && destination.blue != null) {
+          return normalizeColor(computedValue);
+        }
+      };
+      exports.getPluginOrigin = getPluginOrigin2;
+      var getPluginDestination2 = (actionItemConfig) => {
+        return actionItemConfig.value;
+      };
+      exports.getPluginDestination = getPluginDestination2;
+      var createPluginInstance3 = () => {
+        return null;
+      };
+      exports.createPluginInstance = createPluginInstance3;
+      var renderPlugin2 = (_, refState2, actionItem) => {
+        const objectId = actionItem.config.target.objectId;
+        const unit = actionItem.config.value.unit;
+        const {
+          PLUGIN_VARIABLE: props
+        } = refState2;
+        const {
+          size: size2,
+          red,
+          green,
+          blue,
+          alpha
+        } = props;
+        let value;
+        if (size2 != null) {
+          value = size2 + unit;
+        }
+        if (red != null && blue != null && green != null && alpha != null) {
+          value = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+        }
+        if (value != null) {
+          document.documentElement.style.setProperty(objectId, value);
+        }
+      };
+      exports.renderPlugin = renderPlugin2;
+      var clearPlugin2 = (ref, actionItem) => {
+        const objectId = actionItem.config.target.objectId;
+        document.documentElement.style.removeProperty(objectId);
+      };
+      exports.clearPlugin = clearPlugin2;
     }
   });
 
@@ -7094,40 +7216,50 @@
     "packages/systems/ix2/plugins/index.js"(exports) {
       "use strict";
       var _interopRequireWildcard = require_interopRequireWildcard().default;
-      var _interopRequireDefault = require_interopRequireDefault().default;
       Object.defineProperty(exports, "__esModule", {
         value: true
       });
       exports.pluginMethodMap = void 0;
-      var _extends2 = _interopRequireDefault(require_extends());
-      var _constants = require_constants();
+      var _sharedConstants = (init_shared_constants(), __toCommonJS(shared_constants_exports));
       var lottie = _interopRequireWildcard(require_IX2Lottie());
       var spline = _interopRequireWildcard(require_IX2Spline());
-      var pluginMethodMap = /* @__PURE__ */ new Map([[_constants.ActionTypeConsts.PLUGIN_LOTTIE, (0, _extends2.default)({}, lottie)], [_constants.ActionTypeConsts.PLUGIN_SPLINE, (0, _extends2.default)({}, spline)]]);
-      exports.pluginMethodMap = pluginMethodMap;
+      var variable = _interopRequireWildcard(require_IX2Variable());
+      var pluginMethodMap2 = exports.pluginMethodMap = /* @__PURE__ */ new Map([[_sharedConstants.ActionTypeConsts.PLUGIN_LOTTIE, {
+        ...lottie
+      }], [_sharedConstants.ActionTypeConsts.PLUGIN_SPLINE, {
+        ...spline
+      }], [_sharedConstants.ActionTypeConsts.PLUGIN_VARIABLE, {
+        ...variable
+      }]]);
     }
   });
 
-  // packages/systems/ix2/shared/logic/IX2VanillaPlugins.js
-  var require_IX2VanillaPlugins = __commonJS({
-    "packages/systems/ix2/shared/logic/IX2VanillaPlugins.js"(exports) {
+  // packages/systems/ix2/shared/logic/IX2VanillaPlugins.ts
+  var IX2VanillaPlugins_exports = {};
+  __export(IX2VanillaPlugins_exports, {
+    clearPlugin: () => clearPlugin,
+    createPluginInstance: () => createPluginInstance,
+    getPluginConfig: () => getPluginConfig,
+    getPluginDestination: () => getPluginDestination,
+    getPluginDuration: () => getPluginDuration,
+    getPluginOrigin: () => getPluginOrigin,
+    isPluginType: () => isPluginType,
+    renderPlugin: () => renderPlugin
+  });
+  function isPluginType(actionTypeId) {
+    return import_plugins.pluginMethodMap.has(actionTypeId);
+  }
+  var import_plugins, pluginMethod, getPluginConfig, getPluginOrigin, getPluginDuration, getPluginDestination, createPluginInstance, renderPlugin, clearPlugin;
+  var init_IX2VanillaPlugins = __esm({
+    "packages/systems/ix2/shared/logic/IX2VanillaPlugins.ts"() {
       "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.getPluginOrigin = exports.getPluginDuration = exports.getPluginDestination = exports.getPluginConfig = exports.createPluginInstance = exports.clearPlugin = void 0;
-      exports.isPluginType = isPluginType;
-      exports.renderPlugin = void 0;
-      var _IX2BrowserSupport = require_IX2BrowserSupport();
-      var _plugins = require_plugins();
-      function isPluginType(actionTypeId) {
-        return _plugins.pluginMethodMap.has(actionTypeId);
-      }
-      var pluginMethod = (methodName) => (actionTypeId) => {
-        if (!_IX2BrowserSupport.IS_BROWSER_ENV) {
+      init_IX2BrowserSupport();
+      import_plugins = __toESM(require_plugins());
+      pluginMethod = (methodName) => (actionTypeId) => {
+        if (!IS_BROWSER_ENV) {
           return () => null;
         }
-        const plugin = _plugins.pluginMethodMap.get(actionTypeId);
+        const plugin = import_plugins.pluginMethodMap.get(actionTypeId);
         if (!plugin) {
           throw new Error(`IX2 no plugin configured for: ${actionTypeId}`);
         }
@@ -7137,30 +7269,23 @@
         }
         return method;
       };
-      var getPluginConfig = pluginMethod("getPluginConfig");
-      exports.getPluginConfig = getPluginConfig;
-      var getPluginOrigin = pluginMethod("getPluginOrigin");
-      exports.getPluginOrigin = getPluginOrigin;
-      var getPluginDuration = pluginMethod("getPluginDuration");
-      exports.getPluginDuration = getPluginDuration;
-      var getPluginDestination = pluginMethod("getPluginDestination");
-      exports.getPluginDestination = getPluginDestination;
-      var createPluginInstance = pluginMethod("createPluginInstance");
-      exports.createPluginInstance = createPluginInstance;
-      var renderPlugin = pluginMethod("renderPlugin");
-      exports.renderPlugin = renderPlugin;
-      var clearPlugin = pluginMethod("clearPlugin");
-      exports.clearPlugin = clearPlugin;
+      getPluginConfig = pluginMethod("getPluginConfig");
+      getPluginOrigin = pluginMethod("getPluginOrigin");
+      getPluginDuration = pluginMethod("getPluginDuration");
+      getPluginDestination = pluginMethod("getPluginDestination");
+      createPluginInstance = pluginMethod("createPluginInstance");
+      renderPlugin = pluginMethod("renderPlugin");
+      clearPlugin = pluginMethod("clearPlugin");
     }
   });
 
   // node_modules/lodash/defaultTo.js
   var require_defaultTo = __commonJS({
     "node_modules/lodash/defaultTo.js"(exports, module) {
-      function defaultTo(value, defaultValue) {
+      function defaultTo2(value, defaultValue) {
         return value == null || value !== value ? defaultValue : value;
       }
-      module.exports = defaultTo;
+      module.exports = defaultTo2;
     }
   });
 
@@ -7277,11 +7402,11 @@
       var baseIteratee = require_baseIteratee();
       var baseReduce = require_baseReduce();
       var isArray = require_isArray();
-      function reduce(collection, iteratee, accumulator) {
+      function reduce2(collection, iteratee, accumulator) {
         var func = isArray(collection) ? arrayReduce : baseReduce, initAccum = arguments.length < 3;
         return func(collection, baseIteratee(iteratee, 4), accumulator, initAccum, baseEach);
       }
-      module.exports = reduce;
+      module.exports = reduce2;
     }
   });
 
@@ -7314,666 +7439,1004 @@
     "node_modules/lodash/findLast.js"(exports, module) {
       var createFind = require_createFind();
       var findLastIndex = require_findLastIndex();
-      var findLast = createFind(findLastIndex);
-      module.exports = findLast;
+      var findLast2 = createFind(findLastIndex);
+      module.exports = findLast2;
     }
   });
 
-  // packages/systems/ix2/shared/logic/shallowEqual.js
-  var require_shallowEqual = __commonJS({
-    "packages/systems/ix2/shared/logic/shallowEqual.js"(exports) {
-      "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.default = void 0;
-      var hasOwnProperty = Object.prototype.hasOwnProperty;
-      function is(x, y) {
-        if (x === y) {
-          return x !== 0 || y !== 0 || 1 / x === 1 / y;
-        }
-        return x !== x && y !== y;
+  // packages/systems/ix2/shared/logic/shallowEqual.ts
+  function is(x, y) {
+    if (x === y) {
+      return x !== 0 || y !== 0 || 1 / x === 1 / y;
+    }
+    return x !== x && y !== y;
+  }
+  function shallowEqual(objA, objB) {
+    if (is(objA, objB)) {
+      return true;
+    }
+    if (typeof objA !== "object" || objA === null || typeof objB !== "object" || objB === null) {
+      return false;
+    }
+    const keysA = Object.keys(objA);
+    const keysB = Object.keys(objB);
+    if (keysA.length !== keysB.length) {
+      return false;
+    }
+    for (let i = 0; i < keysA.length; i++) {
+      if (
+        // @ts-expect-error - TS2345 - Argument of type 'string | undefined' is not assignable to parameter of type 'PropertyKey'.
+        !hasOwnProperty.call(objB, keysA[i]) || // @ts-expect-error - TS2538 - Type 'undefined' cannot be used as an index type. | TS2538 - Type 'undefined' cannot be used as an index type.
+        !is(objA[keysA[i]], objB[keysA[i]])
+      ) {
+        return false;
       }
-      function shallowEqual(objA, objB) {
-        if (is(objA, objB)) {
-          return true;
+    }
+    return true;
+  }
+  var hasOwnProperty, shallowEqual_default;
+  var init_shallowEqual = __esm({
+    "packages/systems/ix2/shared/logic/shallowEqual.ts"() {
+      "use strict";
+      hasOwnProperty = Object.prototype.hasOwnProperty;
+      shallowEqual_default = shallowEqual;
+    }
+  });
+
+  // packages/systems/ix2/shared/logic/IX2VanillaUtils.ts
+  var IX2VanillaUtils_exports = {};
+  __export(IX2VanillaUtils_exports, {
+    cleanupHTMLElement: () => cleanupHTMLElement,
+    clearAllStyles: () => clearAllStyles,
+    clearObjectCache: () => clearObjectCache,
+    getActionListProgress: () => getActionListProgress,
+    getAffectedElements: () => getAffectedElements,
+    getComputedStyle: () => getComputedStyle2,
+    getDestinationValues: () => getDestinationValues,
+    getElementId: () => getElementId,
+    getInstanceId: () => getInstanceId,
+    getInstanceOrigin: () => getInstanceOrigin,
+    getItemConfigByKey: () => getItemConfigByKey,
+    getMaxDurationItemIndex: () => getMaxDurationItemIndex,
+    getNamespacedParameterId: () => getNamespacedParameterId,
+    getRenderType: () => getRenderType,
+    getStyleProp: () => getStyleProp,
+    mediaQueriesEqual: () => mediaQueriesEqual,
+    observeStore: () => observeStore,
+    reduceListToGroup: () => reduceListToGroup,
+    reifyState: () => reifyState,
+    renderHTMLElement: () => renderHTMLElement,
+    shallowEqual: () => shallowEqual_default,
+    shouldAllowMediaQuery: () => shouldAllowMediaQuery,
+    shouldNamespaceEventParameter: () => shouldNamespaceEventParameter,
+    stringifyTarget: () => stringifyTarget
+  });
+  function clearObjectCache() {
+    objectCache.clear();
+  }
+  function getInstanceId() {
+    return "i" + instanceCount++;
+  }
+  function getElementId(ixElements3, ref) {
+    for (const key in ixElements3) {
+      const ixEl = ixElements3[key];
+      if (ixEl && ixEl.ref === ref) {
+        return ixEl.id;
+      }
+    }
+    return "e" + elementCount++;
+  }
+  function reifyState({ events, actionLists, site } = {}) {
+    const eventTypeMap = (0, import_reduce.default)(
+      events,
+      (result, event) => {
+        const { eventTypeId } = event;
+        if (!result[eventTypeId]) {
+          result[eventTypeId] = {};
         }
-        if (typeof objA !== "object" || objA === null || typeof objB !== "object" || objB === null) {
-          return false;
+        result[eventTypeId][event.id] = event;
+        return result;
+      },
+      {}
+    );
+    let mediaQueries = site && site.mediaQueries;
+    let mediaQueryKeys = [];
+    if (mediaQueries) {
+      mediaQueryKeys = mediaQueries.map((mq) => mq.key);
+    } else {
+      mediaQueries = [];
+      console.warn(`IX2 missing mediaQueries in site data`);
+    }
+    return {
+      ixData: {
+        events,
+        actionLists,
+        eventTypeMap,
+        mediaQueries,
+        mediaQueryKeys
+      }
+    };
+  }
+  function observeStore({
+    // @ts-expect-error - TS7031 - Binding element 'store' implicitly has an 'any' type.
+    store,
+    // @ts-expect-error - TS7031 - Binding element 'select' implicitly has an 'any' type.
+    select,
+    // @ts-expect-error - TS7031 - Binding element 'onChange' implicitly has an 'any' type.
+    onChange,
+    comparator = strictEqual
+  }) {
+    const { getState, subscribe } = store;
+    const unsubscribe = subscribe(handleChange);
+    let currentState = select(getState());
+    function handleChange() {
+      const nextState = select(getState());
+      if (nextState == null) {
+        unsubscribe();
+        return;
+      }
+      if (!comparator(nextState, currentState)) {
+        currentState = nextState;
+        onChange(currentState, store);
+      }
+    }
+    return unsubscribe;
+  }
+  function normalizeTarget(target) {
+    const type = typeof target;
+    if (type === "string") {
+      return { id: target };
+    } else if (target != null && type === "object") {
+      const { id, objectId, selector, selectorGuids, appliesTo, useEventTarget } = target;
+      return { id, objectId, selector, selectorGuids, appliesTo, useEventTarget };
+    }
+    return {};
+  }
+  function getAffectedElements({
+    config,
+    event,
+    eventTarget,
+    elementRoot,
+    elementApi
+  }) {
+    if (!elementApi) {
+      throw new Error("IX2 missing elementApi");
+    }
+    const { targets } = config;
+    if (Array.isArray(targets) && targets.length > 0) {
+      return targets.reduce(
+        (accumulator, target2) => accumulator.concat(
+          getAffectedElements({
+            config: { target: target2 },
+            event,
+            eventTarget,
+            elementRoot,
+            elementApi
+          })
+        ),
+        []
+      );
+    }
+    const {
+      getValidDocument: getValidDocument2,
+      getQuerySelector: getQuerySelector2,
+      queryDocument: queryDocument2,
+      getChildElements: getChildElements2,
+      getSiblingElements: getSiblingElements2,
+      matchSelector: matchSelector2,
+      elementContains: elementContains2,
+      isSiblingNode: isSiblingNode2
+    } = elementApi;
+    const { target } = config;
+    if (!target) {
+      return [];
+    }
+    const {
+      id,
+      objectId,
+      selector,
+      selectorGuids,
+      appliesTo,
+      useEventTarget
+    } = normalizeTarget(target);
+    if (objectId) {
+      const ref = objectCache.has(objectId) ? objectCache.get(objectId) : objectCache.set(objectId, {}).get(objectId);
+      return [ref];
+    }
+    if (appliesTo === EventAppliesTo.PAGE) {
+      const doc = getValidDocument2(id);
+      return doc ? [doc] : [];
+    }
+    const overrides = event?.action?.config?.affectedElements ?? {};
+    const override = overrides[id || selector] || {};
+    const validOverride = Boolean(override.id || override.selector);
+    let limitAffectedElements;
+    let baseSelector;
+    let finalSelector;
+    const eventTargetSelector = event && getQuerySelector2(normalizeTarget(event.target));
+    if (validOverride) {
+      limitAffectedElements = override.limitAffectedElements;
+      baseSelector = eventTargetSelector;
+      finalSelector = getQuerySelector2(override);
+    } else {
+      baseSelector = finalSelector = getQuerySelector2({
+        id,
+        selector,
+        selectorGuids
+      });
+    }
+    if (event && useEventTarget) {
+      const eventTargets = eventTarget && (finalSelector || useEventTarget === true) ? [eventTarget] : queryDocument2(eventTargetSelector);
+      if (finalSelector) {
+        if (useEventTarget === PARENT2) {
+          return queryDocument2(finalSelector).filter(
+            (parentElement) => eventTargets.some(
+              (targetElement) => elementContains2(parentElement, targetElement)
+            )
+          );
         }
-        const keysA = Object.keys(objA);
-        const keysB = Object.keys(objB);
-        if (keysA.length !== keysB.length) {
-          return false;
+        if (useEventTarget === CHILDREN2) {
+          return queryDocument2(finalSelector).filter(
+            (childElement) => eventTargets.some(
+              (targetElement) => elementContains2(targetElement, childElement)
+            )
+          );
         }
-        for (let i = 0; i < keysA.length; i++) {
-          if (!hasOwnProperty.call(objB, keysA[i]) || !is(objA[keysA[i]], objB[keysA[i]])) {
-            return false;
+        if (useEventTarget === SIBLINGS2) {
+          return queryDocument2(finalSelector).filter(
+            (siblingElement) => eventTargets.some(
+              (targetElement) => isSiblingNode2(targetElement, siblingElement)
+            )
+          );
+        }
+      }
+      return eventTargets;
+    }
+    if (baseSelector == null || finalSelector == null) {
+      return [];
+    }
+    if (IS_BROWSER_ENV && elementRoot) {
+      return queryDocument2(finalSelector).filter(
+        (element) => elementRoot.contains(element)
+      );
+    }
+    if (limitAffectedElements === CHILDREN2) {
+      return queryDocument2(baseSelector, finalSelector);
+    } else if (limitAffectedElements === IMMEDIATE_CHILDREN2) {
+      return getChildElements2(queryDocument2(baseSelector)).filter(
+        matchSelector2(finalSelector)
+      );
+    } else if (limitAffectedElements === SIBLINGS2) {
+      return getSiblingElements2(queryDocument2(baseSelector)).filter(
+        matchSelector2(finalSelector)
+      );
+    } else {
+      return queryDocument2(finalSelector);
+    }
+  }
+  function getComputedStyle2({ element, actionItem }) {
+    if (!IS_BROWSER_ENV) {
+      return {};
+    }
+    const { actionTypeId } = actionItem;
+    switch (actionTypeId) {
+      case STYLE_SIZE2:
+      case STYLE_BACKGROUND_COLOR:
+      case STYLE_BORDER:
+      case STYLE_TEXT_COLOR:
+      case GENERAL_DISPLAY:
+        return window.getComputedStyle(element);
+      default:
+        return {};
+    }
+  }
+  function getInstanceOrigin(element, refState2 = {}, computedStyle = {}, actionItem, elementApi) {
+    const { getStyle: getStyle2 } = elementApi;
+    const { actionTypeId } = actionItem;
+    if (isPluginType(actionTypeId)) {
+      return getPluginOrigin(actionTypeId)(refState2[actionTypeId], actionItem);
+    }
+    switch (actionItem.actionTypeId) {
+      case TRANSFORM_MOVE2:
+      case TRANSFORM_SCALE2:
+      case TRANSFORM_ROTATE2:
+      case TRANSFORM_SKEW2: {
+        return (
+          // @ts-expect-error - TS7053 - Element implicitly has an 'any' type because expression of type '"TRANSFORM_MOVE" | "TRANSFORM_SCALE" | "TRANSFORM_ROTATE" | "TRANSFORM_SKEW"' can't be used to index type '{}'.
+          refState2[actionItem.actionTypeId] || transformDefaults[actionItem.actionTypeId]
+        );
+      }
+      case STYLE_FILTER2:
+        return getFilterDefaults(
+          // @ts-expect-error - TS7053 - Element implicitly has an 'any' type because expression of type '"STYLE_FILTER"' can't be used to index type '{}'.
+          refState2[actionItem.actionTypeId],
+          actionItem.config.filters
+        );
+      case STYLE_FONT_VARIATION2:
+        return getFontVariationDefaults(
+          // @ts-expect-error - TS7053 - Element implicitly has an 'any' type because expression of type '"STYLE_FONT_VARIATION"' can't be used to index type '{}'.
+          refState2[actionItem.actionTypeId],
+          actionItem.config.fontVariations
+        );
+      case STYLE_OPACITY:
+        return { value: (0, import_defaultTo.default)(parseFloat(getStyle2(element, OPACITY2)), 1) };
+      case STYLE_SIZE2: {
+        const inlineWidth = getStyle2(element, WIDTH2);
+        const inlineHeight = getStyle2(element, HEIGHT2);
+        let widthValue;
+        let heightValue;
+        if (actionItem.config.widthUnit === AUTO2) {
+          widthValue = pxValueRegex.test(inlineWidth) ? parseFloat(inlineWidth) : (
+            // @ts-expect-error - TS18047 - 'computedStyle' is possibly 'null'.
+            parseFloat(computedStyle.width)
+          );
+        } else {
+          widthValue = (0, import_defaultTo.default)(
+            parseFloat(inlineWidth),
+            // @ts-expect-error - TS18047 - 'computedStyle' is possibly 'null'.
+            parseFloat(computedStyle.width)
+          );
+        }
+        if (actionItem.config.heightUnit === AUTO2) {
+          heightValue = pxValueRegex.test(inlineHeight) ? parseFloat(inlineHeight) : (
+            // @ts-expect-error - TS18047 - 'computedStyle' is possibly 'null'.
+            parseFloat(computedStyle.height)
+          );
+        } else {
+          heightValue = (0, import_defaultTo.default)(
+            parseFloat(inlineHeight),
+            // @ts-expect-error - TS18047 - 'computedStyle' is possibly 'null'.
+            parseFloat(computedStyle.height)
+          );
+        }
+        return {
+          widthValue,
+          heightValue
+        };
+      }
+      case STYLE_BACKGROUND_COLOR:
+      case STYLE_BORDER:
+      case STYLE_TEXT_COLOR:
+        return parseColor({
+          element,
+          actionTypeId: actionItem.actionTypeId,
+          computedStyle,
+          getStyle: getStyle2
+        });
+      case GENERAL_DISPLAY:
+        return {
+          // @ts-expect-error - TS18047 - 'computedStyle' is possibly 'null'.
+          value: (0, import_defaultTo.default)(getStyle2(element, DISPLAY2), computedStyle.display)
+        };
+      case OBJECT_VALUE:
+        return refState2[actionItem.actionTypeId] || { value: 0 };
+      default: {
+        return;
+      }
+    }
+  }
+  function getDestinationValues({
+    element,
+    actionItem,
+    elementApi
+  }) {
+    if (isPluginType(actionItem.actionTypeId)) {
+      return getPluginDestination(actionItem.actionTypeId)(actionItem.config);
+    }
+    switch (actionItem.actionTypeId) {
+      case TRANSFORM_MOVE2:
+      case TRANSFORM_SCALE2:
+      case TRANSFORM_ROTATE2:
+      case TRANSFORM_SKEW2: {
+        const { xValue, yValue, zValue } = actionItem.config;
+        return { xValue, yValue, zValue };
+      }
+      case STYLE_SIZE2: {
+        const { getStyle: getStyle2, setStyle: setStyle2, getProperty: getProperty2 } = elementApi;
+        const { widthUnit, heightUnit } = actionItem.config;
+        let { widthValue, heightValue } = actionItem.config;
+        if (!IS_BROWSER_ENV) {
+          return { widthValue, heightValue };
+        }
+        if (widthUnit === AUTO2) {
+          const temp = getStyle2(element, WIDTH2);
+          setStyle2(element, WIDTH2, "");
+          widthValue = getProperty2(element, "offsetWidth");
+          setStyle2(element, WIDTH2, temp);
+        }
+        if (heightUnit === AUTO2) {
+          const temp = getStyle2(element, HEIGHT2);
+          setStyle2(element, HEIGHT2, "");
+          heightValue = getProperty2(element, "offsetHeight");
+          setStyle2(element, HEIGHT2, temp);
+        }
+        return { widthValue, heightValue };
+      }
+      case STYLE_BACKGROUND_COLOR:
+      case STYLE_BORDER:
+      case STYLE_TEXT_COLOR: {
+        const { rValue, gValue, bValue, aValue } = actionItem.config;
+        return { rValue, gValue, bValue, aValue };
+      }
+      case STYLE_FILTER2: {
+        return actionItem.config.filters.reduce(
+          reduceFilters,
+          {}
+        );
+      }
+      case STYLE_FONT_VARIATION2: {
+        return actionItem.config.fontVariations.reduce(
+          reduceFontVariations,
+          {}
+        );
+      }
+      default: {
+        const { value } = actionItem.config;
+        return { value };
+      }
+    }
+  }
+  function getRenderType(actionTypeId) {
+    if (/^TRANSFORM_/.test(actionTypeId)) {
+      return RENDER_TRANSFORM2;
+    }
+    if (/^STYLE_/.test(actionTypeId)) {
+      return RENDER_STYLE2;
+    }
+    if (/^GENERAL_/.test(actionTypeId)) {
+      return RENDER_GENERAL2;
+    }
+    if (/^PLUGIN_/.test(actionTypeId)) {
+      return RENDER_PLUGIN2;
+    }
+  }
+  function getStyleProp(renderType, actionTypeId) {
+    return renderType === RENDER_STYLE2 ? actionTypeId.replace("STYLE_", "").toLowerCase() : null;
+  }
+  function renderHTMLElement(element, refState2, actionState, eventId, actionItem, styleProp, elementApi, renderType, pluginInstance) {
+    switch (renderType) {
+      case RENDER_TRANSFORM2: {
+        return renderTransform(
+          element,
+          refState2,
+          actionState,
+          actionItem,
+          elementApi
+        );
+      }
+      case RENDER_STYLE2: {
+        return renderStyle(
+          element,
+          refState2,
+          actionState,
+          actionItem,
+          styleProp,
+          elementApi
+        );
+      }
+      case RENDER_GENERAL2: {
+        return renderGeneral(element, actionItem, elementApi);
+      }
+      case RENDER_PLUGIN2: {
+        const { actionTypeId } = actionItem;
+        if (isPluginType(actionTypeId)) {
+          return renderPlugin(actionTypeId)(pluginInstance, refState2, actionItem);
+        }
+      }
+    }
+  }
+  function renderTransform(element, refState2, actionState, actionItem, elementApi) {
+    const newTransform = transformKeys.map((actionTypeId) => {
+      const defaults = transformDefaults[actionTypeId];
+      const {
+        xValue = defaults.xValue,
+        yValue = defaults.yValue,
+        zValue = defaults.zValue,
+        xUnit = "",
+        yUnit = "",
+        zUnit = ""
+      } = refState2[actionTypeId] || {};
+      switch (actionTypeId) {
+        case TRANSFORM_MOVE2:
+          return `${TRANSLATE_3D2}(${xValue}${xUnit}, ${yValue}${yUnit}, ${zValue}${zUnit})`;
+        case TRANSFORM_SCALE2:
+          return `${SCALE_3D2}(${xValue}${xUnit}, ${yValue}${yUnit}, ${zValue}${zUnit})`;
+        case TRANSFORM_ROTATE2:
+          return `${ROTATE_X2}(${xValue}${xUnit}) ${ROTATE_Y2}(${yValue}${yUnit}) ${ROTATE_Z2}(${zValue}${zUnit})`;
+        case TRANSFORM_SKEW2:
+          return `${SKEW2}(${xValue}${xUnit}, ${yValue}${yUnit})`;
+        default:
+          return "";
+      }
+    }).join(" ");
+    const { setStyle: setStyle2 } = elementApi;
+    addWillChange(element, TRANSFORM_PREFIXED, elementApi);
+    setStyle2(element, TRANSFORM_PREFIXED, newTransform);
+    if (hasDefined3dTransform(actionItem, actionState)) {
+      setStyle2(element, TRANSFORM_STYLE_PREFIXED, PRESERVE_3D2);
+    }
+  }
+  function renderFilter(element, actionState, actionItemConfig, elementApi) {
+    const filterValue = (0, import_reduce.default)(
+      actionState,
+      (result, value, type) => `${result} ${type}(${value}${getFilterUnit(type, actionItemConfig)})`,
+      ""
+    );
+    const { setStyle: setStyle2 } = elementApi;
+    addWillChange(element, FILTER2, elementApi);
+    setStyle2(element, FILTER2, filterValue);
+  }
+  function renderFontVariation(element, actionState, actionItemConfig, elementApi) {
+    const fontVariationValue = (0, import_reduce.default)(
+      actionState,
+      (result, value, type) => {
+        result.push(`"${type}" ${value}`);
+        return result;
+      },
+      []
+    ).join(", ");
+    const { setStyle: setStyle2 } = elementApi;
+    addWillChange(element, FONT_VARIATION_SETTINGS2, elementApi);
+    setStyle2(element, FONT_VARIATION_SETTINGS2, fontVariationValue);
+  }
+  function hasDefined3dTransform({ actionTypeId }, { xValue, yValue, zValue }) {
+    return actionTypeId === TRANSFORM_MOVE2 && zValue !== void 0 || // SCALE_Z
+    actionTypeId === TRANSFORM_SCALE2 && zValue !== void 0 || // ROTATE_X or ROTATE_Y
+    actionTypeId === TRANSFORM_ROTATE2 && (xValue !== void 0 || yValue !== void 0);
+  }
+  function getFirstMatch(regex, value) {
+    const match = regex.exec(value);
+    return match ? match[1] : "";
+  }
+  function parseColor({ element, actionTypeId, computedStyle, getStyle: getStyle2 }) {
+    const prop = colorStyleProps[actionTypeId];
+    const inlineValue = getStyle2(element, prop);
+    const value = rgbValidRegex.test(inlineValue) ? inlineValue : computedStyle[prop];
+    const matches = getFirstMatch(rgbMatchRegex, value).split(COMMA_DELIMITER2);
+    return {
+      // @ts-expect-error - TS2345 - Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+      rValue: (0, import_defaultTo.default)(parseInt(matches[0], 10), 255),
+      // @ts-expect-error - TS2345 - Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+      gValue: (0, import_defaultTo.default)(parseInt(matches[1], 10), 255),
+      // @ts-expect-error - TS2345 - Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+      bValue: (0, import_defaultTo.default)(parseInt(matches[2], 10), 255),
+      // @ts-expect-error - TS2345 - Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+      aValue: (0, import_defaultTo.default)(parseFloat(matches[3]), 1)
+    };
+  }
+  function renderStyle(element, refState2, actionState, actionItem, styleProp, elementApi) {
+    const { setStyle: setStyle2 } = elementApi;
+    switch (actionItem.actionTypeId) {
+      case STYLE_SIZE2: {
+        let { widthUnit = "", heightUnit = "" } = actionItem.config;
+        const { widthValue, heightValue } = actionState;
+        if (widthValue !== void 0) {
+          if (widthUnit === AUTO2) {
+            widthUnit = "px";
           }
+          addWillChange(element, WIDTH2, elementApi);
+          setStyle2(element, WIDTH2, widthValue + widthUnit);
         }
-        return true;
+        if (heightValue !== void 0) {
+          if (heightUnit === AUTO2) {
+            heightUnit = "px";
+          }
+          addWillChange(element, HEIGHT2, elementApi);
+          setStyle2(element, HEIGHT2, heightValue + heightUnit);
+        }
+        break;
       }
-      var _default = shallowEqual;
-      exports.default = _default;
+      case STYLE_FILTER2: {
+        renderFilter(element, actionState, actionItem.config, elementApi);
+        break;
+      }
+      case STYLE_FONT_VARIATION2: {
+        renderFontVariation(element, actionState, actionItem.config, elementApi);
+        break;
+      }
+      case STYLE_BACKGROUND_COLOR:
+      case STYLE_BORDER:
+      case STYLE_TEXT_COLOR: {
+        const prop = colorStyleProps[actionItem.actionTypeId];
+        const rValue = Math.round(actionState.rValue);
+        const gValue = Math.round(actionState.gValue);
+        const bValue = Math.round(actionState.bValue);
+        const aValue = actionState.aValue;
+        addWillChange(element, prop, elementApi);
+        setStyle2(
+          element,
+          prop,
+          aValue >= 1 ? `rgb(${rValue},${gValue},${bValue})` : `rgba(${rValue},${gValue},${bValue},${aValue})`
+        );
+        break;
+      }
+      default: {
+        const { unit = "" } = actionItem.config;
+        addWillChange(element, styleProp, elementApi);
+        setStyle2(element, styleProp, actionState.value + unit);
+        break;
+      }
     }
-  });
-
-  // packages/systems/ix2/shared/logic/IX2VanillaUtils.js
-  var require_IX2VanillaUtils = __commonJS({
-    "packages/systems/ix2/shared/logic/IX2VanillaUtils.js"(exports) {
-      "use strict";
-      var _interopRequireDefault = require_interopRequireDefault().default;
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.cleanupHTMLElement = cleanupHTMLElement;
-      exports.clearAllStyles = clearAllStyles;
-      exports.clearObjectCache = clearObjectCache;
-      exports.getActionListProgress = getActionListProgress;
-      exports.getAffectedElements = getAffectedElements;
-      exports.getComputedStyle = getComputedStyle;
-      exports.getDestinationValues = getDestinationValues;
-      exports.getElementId = getElementId;
-      exports.getInstanceId = getInstanceId;
-      exports.getInstanceOrigin = getInstanceOrigin;
-      exports.getItemConfigByKey = void 0;
-      exports.getMaxDurationItemIndex = getMaxDurationItemIndex;
-      exports.getNamespacedParameterId = getNamespacedParameterId;
-      exports.getRenderType = getRenderType;
-      exports.getStyleProp = getStyleProp;
-      exports.mediaQueriesEqual = mediaQueriesEqual;
-      exports.observeStore = observeStore;
-      exports.reduceListToGroup = reduceListToGroup;
-      exports.reifyState = reifyState;
-      exports.renderHTMLElement = renderHTMLElement;
-      Object.defineProperty(exports, "shallowEqual", {
-        enumerable: true,
-        get: function() {
-          return _shallowEqual.default;
+  }
+  function renderGeneral(element, actionItem, elementApi) {
+    const { setStyle: setStyle2 } = elementApi;
+    switch (actionItem.actionTypeId) {
+      case GENERAL_DISPLAY: {
+        const { value } = actionItem.config;
+        if (value === FLEX2 && IS_BROWSER_ENV) {
+          setStyle2(element, DISPLAY2, FLEX_PREFIXED);
+        } else {
+          setStyle2(element, DISPLAY2, value);
         }
+        return;
+      }
+    }
+  }
+  function addWillChange(element, prop, elementApi) {
+    if (!IS_BROWSER_ENV) {
+      return;
+    }
+    const validProp = willChangeProps[prop];
+    if (!validProp) {
+      return;
+    }
+    const { getStyle: getStyle2, setStyle: setStyle2 } = elementApi;
+    const value = getStyle2(element, WILL_CHANGE2);
+    if (!value) {
+      setStyle2(element, WILL_CHANGE2, validProp);
+      return;
+    }
+    const values = value.split(COMMA_DELIMITER2).map(trim);
+    if (values.indexOf(validProp) === -1) {
+      setStyle2(
+        element,
+        WILL_CHANGE2,
+        values.concat(validProp).join(COMMA_DELIMITER2)
+      );
+    }
+  }
+  function removeWillChange(element, prop, elementApi) {
+    if (!IS_BROWSER_ENV) {
+      return;
+    }
+    const validProp = willChangeProps[prop];
+    if (!validProp) {
+      return;
+    }
+    const { getStyle: getStyle2, setStyle: setStyle2 } = elementApi;
+    const value = getStyle2(element, WILL_CHANGE2);
+    if (!value || value.indexOf(validProp) === -1) {
+      return;
+    }
+    setStyle2(
+      element,
+      WILL_CHANGE2,
+      value.split(COMMA_DELIMITER2).map(trim).filter((v) => v !== validProp).join(COMMA_DELIMITER2)
+    );
+  }
+  function clearAllStyles({ store, elementApi }) {
+    const { ixData: ixData2 } = store.getState();
+    const { events = {}, actionLists = {} } = ixData2;
+    Object.keys(events).forEach((eventId) => {
+      const event = events[eventId];
+      const { config } = event.action;
+      const { actionListId } = config;
+      const actionList = actionLists[actionListId];
+      if (actionList) {
+        clearActionListStyles({ actionList, event, elementApi });
+      }
+    });
+    Object.keys(actionLists).forEach((actionListId) => {
+      clearActionListStyles({ actionList: actionLists[actionListId], elementApi });
+    });
+  }
+  function clearActionListStyles({ actionList = {}, event, elementApi }) {
+    const { actionItemGroups, continuousParameterGroups } = actionList;
+    actionItemGroups && // @ts-expect-error - TS7006 - Parameter 'actionGroup' implicitly has an 'any' type.
+    actionItemGroups.forEach((actionGroup) => {
+      clearActionGroupStyles({ actionGroup, event, elementApi });
+    });
+    continuousParameterGroups && // @ts-expect-error - TS7006 - Parameter 'paramGroup' implicitly has an 'any' type.
+    continuousParameterGroups.forEach((paramGroup) => {
+      const { continuousActionGroups } = paramGroup;
+      continuousActionGroups.forEach((actionGroup) => {
+        clearActionGroupStyles({ actionGroup, event, elementApi });
       });
-      exports.shouldAllowMediaQuery = shouldAllowMediaQuery;
-      exports.shouldNamespaceEventParameter = shouldNamespaceEventParameter;
-      exports.stringifyTarget = stringifyTarget;
-      var _defaultTo = _interopRequireDefault(require_defaultTo());
-      var _reduce = _interopRequireDefault(require_reduce());
-      var _findLast = _interopRequireDefault(require_findLast());
-      var _timm = require_timm();
-      var _constants = require_constants();
-      var _shallowEqual = _interopRequireDefault(require_shallowEqual());
-      var _IX2EasingUtils = require_IX2EasingUtils();
-      var _IX2VanillaPlugins = require_IX2VanillaPlugins();
-      var _IX2BrowserSupport = require_IX2BrowserSupport();
-      var {
-        BACKGROUND,
-        TRANSFORM,
-        TRANSLATE_3D,
-        SCALE_3D,
-        ROTATE_X,
-        ROTATE_Y,
-        ROTATE_Z,
-        SKEW,
-        PRESERVE_3D,
-        FLEX,
-        OPACITY,
-        FILTER,
-        FONT_VARIATION_SETTINGS,
-        WIDTH,
-        HEIGHT,
-        BACKGROUND_COLOR,
-        BORDER_COLOR,
-        COLOR,
-        CHILDREN,
-        IMMEDIATE_CHILDREN,
-        SIBLINGS,
-        PARENT,
-        DISPLAY,
-        WILL_CHANGE,
-        AUTO,
-        COMMA_DELIMITER,
-        COLON_DELIMITER,
-        BAR_DELIMITER,
-        RENDER_TRANSFORM,
-        RENDER_GENERAL,
-        RENDER_STYLE,
-        RENDER_PLUGIN
-      } = _constants.IX2EngineConstants;
-      var {
-        TRANSFORM_MOVE,
-        TRANSFORM_SCALE,
-        TRANSFORM_ROTATE,
-        TRANSFORM_SKEW,
+    });
+  }
+  function clearActionGroupStyles({ actionGroup, event, elementApi }) {
+    const { actionItems } = actionGroup;
+    actionItems.forEach((actionItem) => {
+      const { actionTypeId, config } = actionItem;
+      let clearElement;
+      if (isPluginType(actionTypeId)) {
+        clearElement = (ref) => clearPlugin(actionTypeId)(ref, actionItem);
+      } else {
+        clearElement = processElementByType({
+          effect: clearStyleProp,
+          actionTypeId,
+          elementApi
+        });
+      }
+      getAffectedElements({ config, event, elementApi }).forEach(clearElement);
+    });
+  }
+  function cleanupHTMLElement(element, actionItem, elementApi) {
+    const { setStyle: setStyle2, getStyle: getStyle2 } = elementApi;
+    const { actionTypeId } = actionItem;
+    if (actionTypeId === STYLE_SIZE2) {
+      const { config } = actionItem;
+      if (config.widthUnit === AUTO2) {
+        setStyle2(element, WIDTH2, "");
+      }
+      if (config.heightUnit === AUTO2) {
+        setStyle2(element, HEIGHT2, "");
+      }
+    }
+    if (getStyle2(element, WILL_CHANGE2)) {
+      processElementByType({ effect: removeWillChange, actionTypeId, elementApi })(
+        element
+      );
+    }
+  }
+  function clearStyleProp(element, prop, elementApi) {
+    const { setStyle: setStyle2 } = elementApi;
+    removeWillChange(element, prop, elementApi);
+    setStyle2(element, prop, "");
+    if (prop === TRANSFORM_PREFIXED) {
+      setStyle2(element, TRANSFORM_STYLE_PREFIXED, "");
+    }
+  }
+  function getMaxDurationItemIndex(actionItems) {
+    let maxDuration = 0;
+    let resultIndex = 0;
+    actionItems.forEach((actionItem, index) => {
+      const { config } = actionItem;
+      const total = config.delay + config.duration;
+      if (total >= maxDuration) {
+        maxDuration = total;
+        resultIndex = index;
+      }
+    });
+    return resultIndex;
+  }
+  function getActionListProgress(actionList, instance) {
+    const { actionItemGroups, useFirstGroupAsInitialState } = actionList;
+    const { actionItem: instanceItem, verboseTimeElapsed = 0 } = instance;
+    let totalDuration = 0;
+    let elapsedDuration = 0;
+    actionItemGroups.forEach((group, index) => {
+      if (useFirstGroupAsInitialState && index === 0) {
+        return;
+      }
+      const { actionItems } = group;
+      const carrierItem = actionItems[getMaxDurationItemIndex(actionItems)];
+      const { config, actionTypeId } = carrierItem;
+      if (instanceItem.id === carrierItem.id) {
+        elapsedDuration = totalDuration + verboseTimeElapsed;
+      }
+      const duration = getRenderType(actionTypeId) === RENDER_GENERAL2 ? 0 : config.duration;
+      totalDuration += config.delay + duration;
+    });
+    return totalDuration > 0 ? optimizeFloat(elapsedDuration / totalDuration) : 0;
+  }
+  function reduceListToGroup({ actionList, actionItemId, rawData }) {
+    const { actionItemGroups, continuousParameterGroups } = actionList;
+    const newActionItems = [];
+    const takeItemUntilMatch = (actionItem) => {
+      newActionItems.push(
+        (0, import_timm4.mergeIn)(actionItem, ["config"], {
+          delay: 0,
+          duration: 0
+        })
+      );
+      return actionItem.id === actionItemId;
+    };
+    actionItemGroups && // @ts-expect-error - TS7031 - Binding element 'actionItems' implicitly has an 'any' type.
+    actionItemGroups.some(({ actionItems }) => {
+      return actionItems.some(takeItemUntilMatch);
+    });
+    continuousParameterGroups && // @ts-expect-error - TS7006 - Parameter 'paramGroup' implicitly has an 'any' type.
+    continuousParameterGroups.some((paramGroup) => {
+      const { continuousActionGroups } = paramGroup;
+      return continuousActionGroups.some(({ actionItems }) => {
+        return actionItems.some(takeItemUntilMatch);
+      });
+    });
+    return (0, import_timm4.setIn)(rawData, ["actionLists"], {
+      [actionList.id]: {
+        id: actionList.id,
+        actionItemGroups: [
+          {
+            actionItems: newActionItems
+          }
+        ]
+      }
+    });
+  }
+  function shouldNamespaceEventParameter(eventTypeId, { basedOn }) {
+    return eventTypeId === EventTypeConsts.SCROLLING_IN_VIEW && (basedOn === EventBasedOn.ELEMENT || basedOn == null) || eventTypeId === EventTypeConsts.MOUSE_MOVE && basedOn === EventBasedOn.ELEMENT;
+  }
+  function getNamespacedParameterId(eventStateKey, continuousParameterGroupId) {
+    const namespacedParameterId = eventStateKey + COLON_DELIMITER2 + continuousParameterGroupId;
+    return namespacedParameterId;
+  }
+  function shouldAllowMediaQuery(mediaQueries, mediaQueryKey) {
+    if (mediaQueryKey == null) {
+      return true;
+    }
+    return mediaQueries.indexOf(mediaQueryKey) !== -1;
+  }
+  function mediaQueriesEqual(listA, listB) {
+    return shallowEqual_default(listA && listA.sort(), listB && listB.sort());
+  }
+  function stringifyTarget(target) {
+    if (typeof target === "string") {
+      return target;
+    }
+    if (target.pluginElement && target.objectId) {
+      return target.pluginElement + BAR_DELIMITER2 + target.objectId;
+    }
+    if (target.objectId) {
+      return target.objectId;
+    }
+    const { id = "", selector = "", useEventTarget = "" } = target;
+    return id + BAR_DELIMITER2 + selector + BAR_DELIMITER2 + useEventTarget;
+  }
+  var import_defaultTo, import_reduce, import_findLast, import_timm4, BACKGROUND2, TRANSFORM2, TRANSLATE_3D2, SCALE_3D2, ROTATE_X2, ROTATE_Y2, ROTATE_Z2, SKEW2, PRESERVE_3D2, FLEX2, OPACITY2, FILTER2, FONT_VARIATION_SETTINGS2, WIDTH2, HEIGHT2, BACKGROUND_COLOR2, BORDER_COLOR2, COLOR2, CHILDREN2, IMMEDIATE_CHILDREN2, SIBLINGS2, PARENT2, DISPLAY2, WILL_CHANGE2, AUTO2, COMMA_DELIMITER2, COLON_DELIMITER2, BAR_DELIMITER2, RENDER_TRANSFORM2, RENDER_GENERAL2, RENDER_STYLE2, RENDER_PLUGIN2, TRANSFORM_MOVE2, TRANSFORM_SCALE2, TRANSFORM_ROTATE2, TRANSFORM_SKEW2, STYLE_OPACITY, STYLE_FILTER2, STYLE_FONT_VARIATION2, STYLE_SIZE2, STYLE_BACKGROUND_COLOR, STYLE_BORDER, STYLE_TEXT_COLOR, GENERAL_DISPLAY, OBJECT_VALUE, trim, colorStyleProps, willChangeProps, objectCache, instanceCount, elementCount, strictEqual, pxValueRegex, getFilterDefaults, getFontVariationDefaults, reduceFilters, reduceFontVariations, getItemConfigByKey, transformDefaults, filterDefaults, fontVariationDefaults, getFilterUnit, transformKeys, paramCapture, rgbValidRegex, rgbMatchRegex, processElementByType;
+  var init_IX2VanillaUtils = __esm({
+    "packages/systems/ix2/shared/logic/IX2VanillaUtils.ts"() {
+      "use strict";
+      import_defaultTo = __toESM(require_defaultTo());
+      import_reduce = __toESM(require_reduce());
+      import_findLast = __toESM(require_findLast());
+      import_timm4 = __toESM(require_timm());
+      init_shared_constants();
+      init_shallowEqual();
+      init_IX2EasingUtils();
+      init_IX2VanillaPlugins();
+      init_IX2BrowserSupport();
+      ({
+        BACKGROUND: BACKGROUND2,
+        TRANSFORM: TRANSFORM2,
+        TRANSLATE_3D: TRANSLATE_3D2,
+        SCALE_3D: SCALE_3D2,
+        ROTATE_X: ROTATE_X2,
+        ROTATE_Y: ROTATE_Y2,
+        ROTATE_Z: ROTATE_Z2,
+        SKEW: SKEW2,
+        PRESERVE_3D: PRESERVE_3D2,
+        FLEX: FLEX2,
+        OPACITY: OPACITY2,
+        FILTER: FILTER2,
+        FONT_VARIATION_SETTINGS: FONT_VARIATION_SETTINGS2,
+        WIDTH: WIDTH2,
+        HEIGHT: HEIGHT2,
+        BACKGROUND_COLOR: BACKGROUND_COLOR2,
+        BORDER_COLOR: BORDER_COLOR2,
+        COLOR: COLOR2,
+        CHILDREN: CHILDREN2,
+        IMMEDIATE_CHILDREN: IMMEDIATE_CHILDREN2,
+        SIBLINGS: SIBLINGS2,
+        PARENT: PARENT2,
+        DISPLAY: DISPLAY2,
+        WILL_CHANGE: WILL_CHANGE2,
+        AUTO: AUTO2,
+        COMMA_DELIMITER: COMMA_DELIMITER2,
+        COLON_DELIMITER: COLON_DELIMITER2,
+        BAR_DELIMITER: BAR_DELIMITER2,
+        RENDER_TRANSFORM: RENDER_TRANSFORM2,
+        RENDER_GENERAL: RENDER_GENERAL2,
+        RENDER_STYLE: RENDER_STYLE2,
+        RENDER_PLUGIN: RENDER_PLUGIN2
+      } = IX2EngineConstants_exports);
+      ({
+        TRANSFORM_MOVE: TRANSFORM_MOVE2,
+        TRANSFORM_SCALE: TRANSFORM_SCALE2,
+        TRANSFORM_ROTATE: TRANSFORM_ROTATE2,
+        TRANSFORM_SKEW: TRANSFORM_SKEW2,
         STYLE_OPACITY,
-        STYLE_FILTER,
-        STYLE_FONT_VARIATION,
-        STYLE_SIZE,
+        STYLE_FILTER: STYLE_FILTER2,
+        STYLE_FONT_VARIATION: STYLE_FONT_VARIATION2,
+        STYLE_SIZE: STYLE_SIZE2,
         STYLE_BACKGROUND_COLOR,
         STYLE_BORDER,
         STYLE_TEXT_COLOR,
         GENERAL_DISPLAY,
         OBJECT_VALUE
-      } = _constants.ActionTypeConsts;
-      var trim = (v) => v.trim();
-      var colorStyleProps = Object.freeze({
-        [STYLE_BACKGROUND_COLOR]: BACKGROUND_COLOR,
-        [STYLE_BORDER]: BORDER_COLOR,
-        [STYLE_TEXT_COLOR]: COLOR
+      } = ActionTypeConsts);
+      trim = (v) => v.trim();
+      colorStyleProps = Object.freeze({
+        [STYLE_BACKGROUND_COLOR]: BACKGROUND_COLOR2,
+        [STYLE_BORDER]: BORDER_COLOR2,
+        [STYLE_TEXT_COLOR]: COLOR2
       });
-      var willChangeProps = Object.freeze({
-        // $FlowFixMe
-        [_IX2BrowserSupport.TRANSFORM_PREFIXED]: TRANSFORM,
-        [BACKGROUND_COLOR]: BACKGROUND,
-        [OPACITY]: OPACITY,
-        [FILTER]: FILTER,
-        [WIDTH]: WIDTH,
-        [HEIGHT]: HEIGHT,
-        [FONT_VARIATION_SETTINGS]: FONT_VARIATION_SETTINGS
+      willChangeProps = Object.freeze({
+        [TRANSFORM_PREFIXED]: TRANSFORM2,
+        [BACKGROUND_COLOR2]: BACKGROUND2,
+        [OPACITY2]: OPACITY2,
+        [FILTER2]: FILTER2,
+        [WIDTH2]: WIDTH2,
+        [HEIGHT2]: HEIGHT2,
+        [FONT_VARIATION_SETTINGS2]: FONT_VARIATION_SETTINGS2
       });
-      var objectCache = /* @__PURE__ */ new Map();
-      function clearObjectCache() {
-        objectCache.clear();
-      }
-      var instanceCount = 1;
-      function getInstanceId() {
-        return "i" + instanceCount++;
-      }
-      var elementCount = 1;
-      function getElementId(ixElements, ref) {
-        for (const key in ixElements) {
-          const ixEl = ixElements[key];
-          if (ixEl && ixEl.ref === ref) {
-            return ixEl.id;
+      objectCache = /* @__PURE__ */ new Map();
+      instanceCount = 1;
+      elementCount = 1;
+      strictEqual = (a, b) => a === b;
+      pxValueRegex = /px/;
+      getFilterDefaults = (actionState, filters) => (
+        // @ts-expect-error - TS7006 - Parameter 'result' implicitly has an 'any' type. | TS7006 - Parameter 'filter' implicitly has an 'any' type.
+        filters.reduce((result, filter) => {
+          if (result[filter.type] == null) {
+            result[filter.type] = // @ts-expect-error - TS7053 - Element implicitly has an 'any' type because expression of type 'any' can't be used to index type 'Readonly<{ blur: 0; 'hue-rotate': 0; invert: 0; grayscale: 0; saturate: 100; sepia: 0; contrast: 100; brightness: 100; }>'.
+            filterDefaults[filter.type];
           }
-        }
-        return "e" + elementCount++;
-      }
-      function reifyState({
-        events,
-        actionLists,
-        site
-      } = {}) {
-        const eventTypeMap = (0, _reduce.default)(events, (result, event) => {
-          const {
-            eventTypeId
-          } = event;
-          if (!result[eventTypeId]) {
-            result[eventTypeId] = {};
-          }
-          result[eventTypeId][event.id] = event;
           return result;
-        }, {});
-        let mediaQueries = site && site.mediaQueries;
-        let mediaQueryKeys = [];
-        if (mediaQueries) {
-          mediaQueryKeys = mediaQueries.map((mq) => mq.key);
-        } else {
-          mediaQueries = [];
-          console.warn(`IX2 missing mediaQueries in site data`);
-        }
-        return {
-          ixData: {
-            events,
-            actionLists,
-            eventTypeMap,
-            mediaQueries,
-            mediaQueryKeys
-          }
-        };
-      }
-      var strictEqual = (a, b) => a === b;
-      function observeStore({
-        store,
-        select,
-        onChange,
-        comparator = strictEqual
-      }) {
-        const {
-          getState,
-          subscribe
-        } = store;
-        const unsubscribe = subscribe(handleChange);
-        let currentState = select(getState());
-        function handleChange() {
-          const nextState = select(getState());
-          if (nextState == null) {
-            unsubscribe();
-            return;
-          }
-          if (!comparator(nextState, currentState)) {
-            currentState = nextState;
-            onChange(currentState, store);
-          }
-        }
-        return unsubscribe;
-      }
-      function normalizeTarget(target) {
-        const type = typeof target;
-        if (type === "string") {
-          return {
-            id: target
-          };
-        } else if (target != null && type === "object") {
-          const {
-            id,
-            objectId,
-            selector,
-            selectorGuids,
-            appliesTo,
-            useEventTarget
-          } = target;
-          return {
-            id,
-            objectId,
-            selector,
-            selectorGuids,
-            appliesTo,
-            useEventTarget
-          };
-        }
-        return {};
-      }
-      function getAffectedElements({
-        config,
-        event,
-        eventTarget,
-        elementRoot,
-        elementApi
-      }) {
-        var _event$action$config$, _event$action, _event$action$config;
-        if (!elementApi) {
-          throw new Error("IX2 missing elementApi");
-        }
-        const {
-          targets
-        } = config;
-        if (Array.isArray(targets) && targets.length > 0) {
-          return targets.reduce((accumulator, target2) => accumulator.concat(getAffectedElements({
-            config: {
-              target: target2
-            },
-            event,
-            eventTarget,
-            elementRoot,
-            elementApi
-          })), []);
-        }
-        const {
-          getValidDocument,
-          getQuerySelector,
-          queryDocument,
-          getChildElements,
-          getSiblingElements,
-          matchSelector,
-          elementContains,
-          isSiblingNode
-        } = elementApi;
-        const {
-          target
-        } = config;
-        if (!target) {
-          return [];
-        }
-        const {
-          id,
-          // $FlowFixMe
-          objectId,
-          // $FlowFixMe
-          selector,
-          // $FlowFixMe
-          selectorGuids,
-          // $FlowFixMe
-          appliesTo,
-          // $FlowFixMe
-          useEventTarget
-        } = normalizeTarget(target);
-        if (objectId) {
-          const ref = objectCache.has(objectId) ? objectCache.get(objectId) : objectCache.set(objectId, {}).get(objectId);
-          return [ref];
-        }
-        if (appliesTo === _constants.EventAppliesTo.PAGE) {
-          const doc = getValidDocument(id);
-          return doc ? [doc] : [];
-        }
-        const overrides = (_event$action$config$ = event === null || event === void 0 ? void 0 : (_event$action = event.action) === null || _event$action === void 0 ? void 0 : (_event$action$config = _event$action.config) === null || _event$action$config === void 0 ? void 0 : _event$action$config.affectedElements) !== null && _event$action$config$ !== void 0 ? _event$action$config$ : {};
-        const override = overrides[id || selector] || {};
-        const validOverride = Boolean(override.id || override.selector);
-        let limitAffectedElements;
-        let baseSelector;
-        let finalSelector;
-        const eventTargetSelector = event && getQuerySelector(normalizeTarget(event.target));
-        if (validOverride) {
-          limitAffectedElements = override.limitAffectedElements;
-          baseSelector = eventTargetSelector;
-          finalSelector = getQuerySelector(override);
-        } else {
-          baseSelector = finalSelector = getQuerySelector({
-            id,
-            selector,
-            selectorGuids
-          });
-        }
-        if (event && useEventTarget) {
-          const eventTargets = eventTarget && (finalSelector || useEventTarget === true) ? [eventTarget] : queryDocument(eventTargetSelector);
-          if (finalSelector) {
-            if (useEventTarget === PARENT) {
-              return queryDocument(finalSelector).filter((parentElement) => eventTargets.some((targetElement) => elementContains(parentElement, targetElement)));
-            }
-            if (useEventTarget === CHILDREN) {
-              return queryDocument(finalSelector).filter((childElement) => eventTargets.some((targetElement) => elementContains(targetElement, childElement)));
-            }
-            if (useEventTarget === SIBLINGS) {
-              return queryDocument(finalSelector).filter((siblingElement) => eventTargets.some((targetElement) => isSiblingNode(targetElement, siblingElement)));
-            }
-          }
-          return eventTargets;
-        }
-        if (baseSelector == null || finalSelector == null) {
-          return [];
-        }
-        if (_IX2BrowserSupport.IS_BROWSER_ENV && elementRoot) {
-          return queryDocument(finalSelector).filter((element) => elementRoot.contains(element));
-        }
-        if (limitAffectedElements === CHILDREN) {
-          return queryDocument(baseSelector, finalSelector);
-        } else if (limitAffectedElements === IMMEDIATE_CHILDREN) {
-          return getChildElements(queryDocument(baseSelector)).filter(matchSelector(finalSelector));
-        } else if (limitAffectedElements === SIBLINGS) {
-          return getSiblingElements(queryDocument(baseSelector)).filter(matchSelector(finalSelector));
-        } else {
-          return queryDocument(finalSelector);
-        }
-      }
-      function getComputedStyle({
-        element,
-        actionItem
-      }) {
-        if (!_IX2BrowserSupport.IS_BROWSER_ENV) {
-          return {};
-        }
-        const {
-          actionTypeId
-        } = actionItem;
-        switch (actionTypeId) {
-          case STYLE_SIZE:
-          case STYLE_BACKGROUND_COLOR:
-          case STYLE_BORDER:
-          case STYLE_TEXT_COLOR:
-          case GENERAL_DISPLAY:
-            return window.getComputedStyle(element);
-          default:
-            return {};
-        }
-      }
-      var pxValueRegex = /px/;
-      var getFilterDefaults = (actionState, filters) => filters.reduce((result, filter) => {
-        if (result[filter.type] == null) {
-          result[filter.type] = filterDefaults[
-            // $FlowFixMe - property `saturation` (did you mean `saturate`?) is missing in `filterDefaults`
-            filter.type
-          ];
-        }
-        return result;
-      }, actionState || {});
-      var getFontVariationDefaults = (actionState, fontVariations) => fontVariations.reduce((result, fontVariation) => {
+        }, actionState || {})
+      );
+      getFontVariationDefaults = (actionState, fontVariations) => fontVariations.reduce((result, fontVariation) => {
         if (result[fontVariation.type] == null) {
-          result[fontVariation.type] = fontVariationDefaults[fontVariation.type] || fontVariation.defaultValue || 0;
+          result[fontVariation.type] = // @ts-expect-error - TS7053 - Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'Readonly<{ wght: 0; opsz: 0; wdth: 0; slnt: 0; }>'.
+          fontVariationDefaults[fontVariation.type] || // @ts-expect-error - TS2339 - Property 'defaultValue' does not exist on type 'FontVariationItemConfigType'.
+          fontVariation.defaultValue || 0;
         }
         return result;
       }, actionState || {});
-      function getInstanceOrigin(element, refState = {}, computedStyle = {}, actionItem, elementApi) {
-        const {
-          getStyle
-        } = elementApi;
-        const {
-          actionTypeId
-        } = actionItem;
-        if ((0, _IX2VanillaPlugins.isPluginType)(actionTypeId)) {
-          return (0, _IX2VanillaPlugins.getPluginOrigin)(actionTypeId)(refState[actionTypeId], actionItem);
-        }
-        switch (actionItem.actionTypeId) {
-          case TRANSFORM_MOVE:
-          case TRANSFORM_SCALE:
-          case TRANSFORM_ROTATE:
-          case TRANSFORM_SKEW: {
-            return refState[actionItem.actionTypeId] || transformDefaults[actionItem.actionTypeId];
-          }
-          case STYLE_FILTER:
-            return getFilterDefaults(refState[actionItem.actionTypeId], actionItem.config.filters);
-          case STYLE_FONT_VARIATION:
-            return getFontVariationDefaults(refState[actionItem.actionTypeId], actionItem.config.fontVariations);
-          case STYLE_OPACITY:
-            return {
-              value: (0, _defaultTo.default)(parseFloat(getStyle(element, OPACITY)), 1)
-            };
-          case STYLE_SIZE: {
-            const inlineWidth = getStyle(element, WIDTH);
-            const inlineHeight = getStyle(element, HEIGHT);
-            let widthValue;
-            let heightValue;
-            if (actionItem.config.widthUnit === AUTO) {
-              widthValue = pxValueRegex.test(inlineWidth) ? parseFloat(inlineWidth) : parseFloat(computedStyle.width);
-            } else {
-              widthValue = (0, _defaultTo.default)(parseFloat(inlineWidth), parseFloat(computedStyle.width));
-            }
-            if (actionItem.config.heightUnit === AUTO) {
-              heightValue = pxValueRegex.test(inlineHeight) ? parseFloat(inlineHeight) : parseFloat(computedStyle.height);
-            } else {
-              heightValue = (0, _defaultTo.default)(parseFloat(inlineHeight), parseFloat(computedStyle.height));
-            }
-            return {
-              widthValue,
-              heightValue
-            };
-          }
-          case STYLE_BACKGROUND_COLOR:
-          case STYLE_BORDER:
-          case STYLE_TEXT_COLOR:
-            return parseColor({
-              element,
-              actionTypeId: actionItem.actionTypeId,
-              computedStyle,
-              getStyle
-            });
-          case GENERAL_DISPLAY:
-            return {
-              value: (0, _defaultTo.default)(getStyle(element, DISPLAY), computedStyle.display)
-            };
-          case OBJECT_VALUE:
-            return refState[actionItem.actionTypeId] || {
-              value: 0
-            };
-          default: {
-            return;
-          }
-        }
-      }
-      var reduceFilters = (result, filter) => {
+      reduceFilters = (result, filter) => {
         if (filter) {
           result[filter.type] = filter.value || 0;
         }
         return result;
       };
-      var reduceFontVariations = (result, fontVariation) => {
+      reduceFontVariations = (result, fontVariation) => {
         if (fontVariation) {
           result[fontVariation.type] = fontVariation.value || 0;
         }
         return result;
       };
-      var getItemConfigByKey = (actionTypeId, key, config) => {
-        if ((0, _IX2VanillaPlugins.isPluginType)(actionTypeId)) {
-          return (0, _IX2VanillaPlugins.getPluginConfig)(actionTypeId)(config, key);
+      getItemConfigByKey = (actionTypeId, key, config) => {
+        if (isPluginType(actionTypeId)) {
+          return getPluginConfig(actionTypeId)(config, key);
         }
         switch (actionTypeId) {
-          case STYLE_FILTER: {
-            const filter = (0, _findLast.default)(config.filters, ({
-              type
-            }) => type === key);
+          case STYLE_FILTER2: {
+            const filter = (0, import_findLast.default)(config.filters, ({ type }) => type === key);
             return filter ? filter.value : 0;
           }
-          case STYLE_FONT_VARIATION: {
-            const fontVariation = (0, _findLast.default)(config.fontVariations, ({
-              type
-            }) => type === key);
+          case STYLE_FONT_VARIATION2: {
+            const fontVariation = (0, import_findLast.default)(
+              config.fontVariations,
+              ({ type }) => type === key
+            );
             return fontVariation ? fontVariation.value : 0;
           }
           default:
             return config[key];
         }
       };
-      exports.getItemConfigByKey = getItemConfigByKey;
-      function getDestinationValues({
-        element,
-        actionItem,
-        elementApi
-      }) {
-        if ((0, _IX2VanillaPlugins.isPluginType)(actionItem.actionTypeId)) {
-          return (0, _IX2VanillaPlugins.getPluginDestination)(actionItem.actionTypeId)(actionItem.config);
-        }
-        switch (actionItem.actionTypeId) {
-          case TRANSFORM_MOVE:
-          case TRANSFORM_SCALE:
-          case TRANSFORM_ROTATE:
-          case TRANSFORM_SKEW: {
-            const {
-              xValue,
-              yValue,
-              zValue
-            } = actionItem.config;
-            return {
-              xValue,
-              yValue,
-              zValue
-            };
-          }
-          case STYLE_SIZE: {
-            const {
-              getStyle,
-              setStyle,
-              getProperty
-            } = elementApi;
-            const {
-              widthUnit,
-              heightUnit
-            } = actionItem.config;
-            let {
-              widthValue,
-              heightValue
-            } = actionItem.config;
-            if (!_IX2BrowserSupport.IS_BROWSER_ENV) {
-              return {
-                widthValue,
-                heightValue
-              };
-            }
-            if (widthUnit === AUTO) {
-              const temp = getStyle(element, WIDTH);
-              setStyle(element, WIDTH, "");
-              widthValue = getProperty(element, "offsetWidth");
-              setStyle(element, WIDTH, temp);
-            }
-            if (heightUnit === AUTO) {
-              const temp = getStyle(element, HEIGHT);
-              setStyle(element, HEIGHT, "");
-              heightValue = getProperty(element, "offsetHeight");
-              setStyle(element, HEIGHT, temp);
-            }
-            return {
-              widthValue,
-              heightValue
-            };
-          }
-          case STYLE_BACKGROUND_COLOR:
-          case STYLE_BORDER:
-          case STYLE_TEXT_COLOR: {
-            const {
-              rValue,
-              gValue,
-              bValue,
-              aValue
-            } = actionItem.config;
-            return {
-              rValue,
-              gValue,
-              bValue,
-              aValue
-            };
-          }
-          case STYLE_FILTER: {
-            return actionItem.config.filters.reduce(reduceFilters, {});
-          }
-          case STYLE_FONT_VARIATION: {
-            return actionItem.config.fontVariations.reduce(reduceFontVariations, {});
-          }
-          default: {
-            const {
-              value
-            } = actionItem.config;
-            return {
-              value
-            };
-          }
-        }
-      }
-      function getRenderType(actionTypeId) {
-        if (/^TRANSFORM_/.test(actionTypeId)) {
-          return RENDER_TRANSFORM;
-        }
-        if (/^STYLE_/.test(actionTypeId)) {
-          return RENDER_STYLE;
-        }
-        if (/^GENERAL_/.test(actionTypeId)) {
-          return RENDER_GENERAL;
-        }
-        if (/^PLUGIN_/.test(actionTypeId)) {
-          return RENDER_PLUGIN;
-        }
-      }
-      function getStyleProp(renderType, actionTypeId) {
-        return renderType === RENDER_STYLE ? actionTypeId.replace("STYLE_", "").toLowerCase() : null;
-      }
-      function renderHTMLElement(element, refState, actionState, eventId, actionItem, styleProp, elementApi, renderType, pluginInstance) {
-        switch (renderType) {
-          case RENDER_TRANSFORM: {
-            return renderTransform(element, refState, actionState, actionItem, elementApi);
-          }
-          case RENDER_STYLE: {
-            return renderStyle(element, refState, actionState, actionItem, styleProp, elementApi);
-          }
-          case RENDER_GENERAL: {
-            return renderGeneral(element, actionItem, elementApi);
-          }
-          case RENDER_PLUGIN: {
-            const {
-              actionTypeId
-            } = actionItem;
-            if ((0, _IX2VanillaPlugins.isPluginType)(actionTypeId)) {
-              return (0, _IX2VanillaPlugins.renderPlugin)(actionTypeId)(pluginInstance, refState, actionItem);
-            }
-          }
-        }
-      }
-      var transformDefaults = {
-        [TRANSFORM_MOVE]: Object.freeze({
+      transformDefaults = {
+        [TRANSFORM_MOVE2]: Object.freeze({
           xValue: 0,
           yValue: 0,
           zValue: 0
         }),
-        [TRANSFORM_SCALE]: Object.freeze({
+        [TRANSFORM_SCALE2]: Object.freeze({
           xValue: 1,
           yValue: 1,
           zValue: 1
         }),
-        [TRANSFORM_ROTATE]: Object.freeze({
+        [TRANSFORM_ROTATE2]: Object.freeze({
           xValue: 0,
           yValue: 0,
           zValue: 0
         }),
-        [TRANSFORM_SKEW]: Object.freeze({
+        [TRANSFORM_SKEW2]: Object.freeze({
           xValue: 0,
           yValue: 0
         })
       };
-      var filterDefaults = Object.freeze({
+      filterDefaults = Object.freeze({
         blur: 0,
         "hue-rotate": 0,
         invert: 0,
@@ -7983,16 +8446,17 @@
         contrast: 100,
         brightness: 100
       });
-      var fontVariationDefaults = Object.freeze({
+      fontVariationDefaults = Object.freeze({
         wght: 0,
         opsz: 0,
         wdth: 0,
         slnt: 0
       });
-      var getFilterUnit = (filterType, actionItemConfig) => {
-        const filter = (0, _findLast.default)(actionItemConfig.filters, ({
-          type
-        }) => type === filterType);
+      getFilterUnit = (filterType, actionItemConfig) => {
+        const filter = (0, import_findLast.default)(
+          actionItemConfig.filters,
+          ({ type }) => type === filterType
+        );
         if (filter && filter.unit) {
           return filter.unit;
         }
@@ -8005,497 +8469,48 @@
             return "%";
         }
       };
-      var transformKeys = Object.keys(transformDefaults);
-      function renderTransform(element, refState, actionState, actionItem, elementApi) {
-        const newTransform = transformKeys.map((actionTypeId) => {
-          const defaults = transformDefaults[actionTypeId];
-          const {
-            xValue = defaults.xValue,
-            yValue = defaults.yValue,
-            // $FlowFixMe
-            zValue = defaults.zValue,
-            xUnit = "",
-            yUnit = "",
-            zUnit = ""
-          } = refState[actionTypeId] || {};
-          switch (actionTypeId) {
-            case TRANSFORM_MOVE:
-              return `${TRANSLATE_3D}(${xValue}${xUnit}, ${yValue}${yUnit}, ${zValue}${zUnit})`;
-            case TRANSFORM_SCALE:
-              return `${SCALE_3D}(${xValue}${xUnit}, ${yValue}${yUnit}, ${zValue}${zUnit})`;
-            case TRANSFORM_ROTATE:
-              return `${ROTATE_X}(${xValue}${xUnit}) ${ROTATE_Y}(${yValue}${yUnit}) ${ROTATE_Z}(${zValue}${zUnit})`;
-            case TRANSFORM_SKEW:
-              return `${SKEW}(${xValue}${xUnit}, ${yValue}${yUnit})`;
-            default:
-              return "";
-          }
-        }).join(" ");
-        const {
-          setStyle
-        } = elementApi;
-        addWillChange(element, _IX2BrowserSupport.TRANSFORM_PREFIXED, elementApi);
-        setStyle(element, _IX2BrowserSupport.TRANSFORM_PREFIXED, newTransform);
-        if (hasDefined3dTransform(actionItem, actionState)) {
-          setStyle(element, _IX2BrowserSupport.TRANSFORM_STYLE_PREFIXED, PRESERVE_3D);
-        }
-      }
-      function renderFilter(element, actionState, actionItemConfig, elementApi) {
-        const filterValue = (0, _reduce.default)(actionState, (result, value, type) => `${result} ${type}(${value}${getFilterUnit(type, actionItemConfig)})`, "");
-        const {
-          setStyle
-        } = elementApi;
-        addWillChange(element, FILTER, elementApi);
-        setStyle(element, FILTER, filterValue);
-      }
-      function renderFontVariation(element, actionState, actionItemConfig, elementApi) {
-        const fontVariationValue = (0, _reduce.default)(actionState, (result, value, type) => {
-          result.push(`"${type}" ${value}`);
-          return result;
-        }, []).join(", ");
-        const {
-          setStyle
-        } = elementApi;
-        addWillChange(element, FONT_VARIATION_SETTINGS, elementApi);
-        setStyle(element, FONT_VARIATION_SETTINGS, fontVariationValue);
-      }
-      function hasDefined3dTransform({
-        actionTypeId
-      }, {
-        xValue,
-        yValue,
-        zValue
-      }) {
-        return actionTypeId === TRANSFORM_MOVE && zValue !== void 0 || // SCALE_Z
-        actionTypeId === TRANSFORM_SCALE && zValue !== void 0 || // ROTATE_X or ROTATE_Y
-        actionTypeId === TRANSFORM_ROTATE && (xValue !== void 0 || yValue !== void 0);
-      }
-      var paramCapture = "\\(([^)]+)\\)";
-      var rgbValidRegex = /^rgb/;
-      var rgbMatchRegex = RegExp(`rgba?${paramCapture}`);
-      function getFirstMatch(regex, value) {
-        const match = regex.exec(value);
-        return match ? match[1] : "";
-      }
-      function parseColor({
-        element,
-        actionTypeId,
-        computedStyle,
-        getStyle
-      }) {
-        const prop = colorStyleProps[actionTypeId];
-        const inlineValue = getStyle(element, prop);
-        const value = rgbValidRegex.test(inlineValue) ? inlineValue : computedStyle[prop];
-        const matches = getFirstMatch(rgbMatchRegex, value).split(COMMA_DELIMITER);
-        return {
-          rValue: (0, _defaultTo.default)(parseInt(matches[0], 10), 255),
-          gValue: (0, _defaultTo.default)(parseInt(matches[1], 10), 255),
-          bValue: (0, _defaultTo.default)(parseInt(matches[2], 10), 255),
-          aValue: (0, _defaultTo.default)(parseFloat(matches[3]), 1)
-        };
-      }
-      function renderStyle(element, refState, actionState, actionItem, styleProp, elementApi) {
-        const {
-          setStyle
-        } = elementApi;
-        switch (actionItem.actionTypeId) {
-          case STYLE_SIZE: {
-            let {
-              widthUnit = "",
-              heightUnit = ""
-            } = actionItem.config;
-            const {
-              widthValue,
-              heightValue
-            } = actionState;
-            if (widthValue !== void 0) {
-              if (widthUnit === AUTO) {
-                widthUnit = "px";
-              }
-              addWillChange(element, WIDTH, elementApi);
-              setStyle(element, WIDTH, widthValue + widthUnit);
-            }
-            if (heightValue !== void 0) {
-              if (heightUnit === AUTO) {
-                heightUnit = "px";
-              }
-              addWillChange(element, HEIGHT, elementApi);
-              setStyle(element, HEIGHT, heightValue + heightUnit);
-            }
-            break;
-          }
-          case STYLE_FILTER: {
-            renderFilter(element, actionState, actionItem.config, elementApi);
-            break;
-          }
-          case STYLE_FONT_VARIATION: {
-            renderFontVariation(element, actionState, actionItem.config, elementApi);
-            break;
-          }
-          case STYLE_BACKGROUND_COLOR:
-          case STYLE_BORDER:
-          case STYLE_TEXT_COLOR: {
-            const prop = colorStyleProps[actionItem.actionTypeId];
-            const rValue = Math.round(actionState.rValue);
-            const gValue = Math.round(actionState.gValue);
-            const bValue = Math.round(actionState.bValue);
-            const aValue = actionState.aValue;
-            addWillChange(element, prop, elementApi);
-            setStyle(element, prop, aValue >= 1 ? `rgb(${rValue},${gValue},${bValue})` : `rgba(${rValue},${gValue},${bValue},${aValue})`);
-            break;
-          }
-          default: {
-            const {
-              unit = ""
-            } = actionItem.config;
-            addWillChange(element, styleProp, elementApi);
-            setStyle(element, styleProp, actionState.value + unit);
-            break;
-          }
-        }
-      }
-      function renderGeneral(element, actionItem, elementApi) {
-        const {
-          setStyle
-        } = elementApi;
-        switch (actionItem.actionTypeId) {
-          case GENERAL_DISPLAY: {
-            const {
-              value
-            } = actionItem.config;
-            if (value === FLEX && _IX2BrowserSupport.IS_BROWSER_ENV) {
-              setStyle(element, DISPLAY, _IX2BrowserSupport.FLEX_PREFIXED);
-            } else {
-              setStyle(element, DISPLAY, value);
-            }
-            return;
-          }
-        }
-      }
-      function addWillChange(element, prop, elementApi) {
-        if (!_IX2BrowserSupport.IS_BROWSER_ENV) {
-          return;
-        }
-        const validProp = willChangeProps[prop];
-        if (!validProp) {
-          return;
-        }
-        const {
-          getStyle,
-          setStyle
-        } = elementApi;
-        const value = getStyle(element, WILL_CHANGE);
-        if (!value) {
-          setStyle(element, WILL_CHANGE, validProp);
-          return;
-        }
-        const values = value.split(COMMA_DELIMITER).map(trim);
-        if (values.indexOf(validProp) === -1) {
-          setStyle(element, WILL_CHANGE, values.concat(validProp).join(COMMA_DELIMITER));
-        }
-      }
-      function removeWillChange(element, prop, elementApi) {
-        if (!_IX2BrowserSupport.IS_BROWSER_ENV) {
-          return;
-        }
-        const validProp = willChangeProps[prop];
-        if (!validProp) {
-          return;
-        }
-        const {
-          getStyle,
-          setStyle
-        } = elementApi;
-        const value = getStyle(element, WILL_CHANGE);
-        if (!value || value.indexOf(validProp) === -1) {
-          return;
-        }
-        setStyle(element, WILL_CHANGE, value.split(COMMA_DELIMITER).map(trim).filter((v) => v !== validProp).join(COMMA_DELIMITER));
-      }
-      function clearAllStyles({
-        store,
-        elementApi
-      }) {
-        const {
-          ixData
-        } = store.getState();
-        const {
-          events = {},
-          actionLists = {}
-        } = ixData;
-        Object.keys(events).forEach((eventId) => {
-          const event = events[eventId];
-          const {
-            config
-          } = event.action;
-          const {
-            actionListId
-          } = config;
-          const actionList = actionLists[actionListId];
-          if (actionList) {
-            clearActionListStyles({
-              actionList,
-              event,
-              elementApi
-            });
-          }
-        });
-        Object.keys(actionLists).forEach((actionListId) => {
-          clearActionListStyles({
-            actionList: actionLists[actionListId],
-            elementApi
-          });
-        });
-      }
-      function clearActionListStyles({
-        actionList = {},
-        event,
-        elementApi
-      }) {
-        const {
-          actionItemGroups,
-          continuousParameterGroups
-        } = actionList;
-        actionItemGroups && actionItemGroups.forEach((actionGroup) => {
-          clearActionGroupStyles({
-            actionGroup,
-            event,
-            elementApi
-          });
-        });
-        continuousParameterGroups && continuousParameterGroups.forEach((paramGroup) => {
-          const {
-            continuousActionGroups
-          } = paramGroup;
-          continuousActionGroups.forEach((actionGroup) => {
-            clearActionGroupStyles({
-              actionGroup,
-              event,
-              elementApi
-            });
-          });
-        });
-      }
-      function clearActionGroupStyles({
-        actionGroup,
-        event,
-        elementApi
-      }) {
-        const {
-          actionItems
-        } = actionGroup;
-        actionItems.forEach(({
-          actionTypeId,
-          config
-        }) => {
-          let clearElement;
-          if ((0, _IX2VanillaPlugins.isPluginType)(actionTypeId)) {
-            clearElement = (0, _IX2VanillaPlugins.clearPlugin)(actionTypeId);
-          } else {
-            clearElement = processElementByType({
-              effect: clearStyleProp,
-              actionTypeId,
-              elementApi
-            });
-          }
-          getAffectedElements({
-            config,
-            event,
-            elementApi
-          }).forEach(clearElement);
-        });
-      }
-      function cleanupHTMLElement(element, actionItem, elementApi) {
-        const {
-          setStyle,
-          getStyle
-        } = elementApi;
-        const {
-          actionTypeId
-        } = actionItem;
-        if (actionTypeId === STYLE_SIZE) {
-          const {
-            config
-          } = actionItem;
-          if (config.widthUnit === AUTO) {
-            setStyle(element, WIDTH, "");
-          }
-          if (config.heightUnit === AUTO) {
-            setStyle(element, HEIGHT, "");
-          }
-        }
-        if (getStyle(element, WILL_CHANGE)) {
-          processElementByType({
-            effect: removeWillChange,
-            actionTypeId,
-            elementApi
-          })(element);
-        }
-      }
-      var processElementByType = ({
+      transformKeys = Object.keys(transformDefaults);
+      paramCapture = "\\(([^)]+)\\)";
+      rgbValidRegex = /^rgb/;
+      rgbMatchRegex = RegExp(`rgba?${paramCapture}`);
+      processElementByType = ({
         effect,
         actionTypeId,
         elementApi
-      }) => (element) => {
-        switch (actionTypeId) {
-          case TRANSFORM_MOVE:
-          case TRANSFORM_SCALE:
-          case TRANSFORM_ROTATE:
-          case TRANSFORM_SKEW:
-            effect(element, _IX2BrowserSupport.TRANSFORM_PREFIXED, elementApi);
-            break;
-          case STYLE_FILTER:
-            effect(element, FILTER, elementApi);
-            break;
-          case STYLE_FONT_VARIATION:
-            effect(element, FONT_VARIATION_SETTINGS, elementApi);
-            break;
-          case STYLE_OPACITY:
-            effect(element, OPACITY, elementApi);
-            break;
-          case STYLE_SIZE:
-            effect(element, WIDTH, elementApi);
-            effect(element, HEIGHT, elementApi);
-            break;
-          case STYLE_BACKGROUND_COLOR:
-          case STYLE_BORDER:
-          case STYLE_TEXT_COLOR:
-            effect(element, colorStyleProps[actionTypeId], elementApi);
-            break;
-          case GENERAL_DISPLAY:
-            effect(element, DISPLAY, elementApi);
-            break;
-        }
-      };
-      function clearStyleProp(element, prop, elementApi) {
-        const {
-          setStyle
-        } = elementApi;
-        removeWillChange(element, prop, elementApi);
-        setStyle(element, prop, "");
-        if (prop === _IX2BrowserSupport.TRANSFORM_PREFIXED) {
-          setStyle(element, _IX2BrowserSupport.TRANSFORM_STYLE_PREFIXED, "");
-        }
-      }
-      function getMaxDurationItemIndex(actionItems) {
-        let maxDuration = 0;
-        let resultIndex = 0;
-        actionItems.forEach((actionItem, index) => {
-          const {
-            config
-          } = actionItem;
-          const total = config.delay + config.duration;
-          if (total >= maxDuration) {
-            maxDuration = total;
-            resultIndex = index;
+      }) => (
+        // @ts-expect-error - TS7006 - Parameter 'element' implicitly has an 'any' type.
+        (element) => {
+          switch (actionTypeId) {
+            case TRANSFORM_MOVE2:
+            case TRANSFORM_SCALE2:
+            case TRANSFORM_ROTATE2:
+            case TRANSFORM_SKEW2:
+              effect(element, TRANSFORM_PREFIXED, elementApi);
+              break;
+            case STYLE_FILTER2:
+              effect(element, FILTER2, elementApi);
+              break;
+            case STYLE_FONT_VARIATION2:
+              effect(element, FONT_VARIATION_SETTINGS2, elementApi);
+              break;
+            case STYLE_OPACITY:
+              effect(element, OPACITY2, elementApi);
+              break;
+            case STYLE_SIZE2:
+              effect(element, WIDTH2, elementApi);
+              effect(element, HEIGHT2, elementApi);
+              break;
+            case STYLE_BACKGROUND_COLOR:
+            case STYLE_BORDER:
+            case STYLE_TEXT_COLOR:
+              effect(element, colorStyleProps[actionTypeId], elementApi);
+              break;
+            case GENERAL_DISPLAY:
+              effect(element, DISPLAY2, elementApi);
+              break;
           }
-        });
-        return resultIndex;
-      }
-      function getActionListProgress(actionList, instance) {
-        const {
-          actionItemGroups,
-          useFirstGroupAsInitialState
-        } = actionList;
-        const {
-          actionItem: instanceItem,
-          verboseTimeElapsed = 0
-        } = instance;
-        let totalDuration = 0;
-        let elapsedDuration = 0;
-        actionItemGroups.forEach((group, index) => {
-          if (useFirstGroupAsInitialState && index === 0) {
-            return;
-          }
-          const {
-            actionItems
-          } = group;
-          const carrierItem = actionItems[getMaxDurationItemIndex(actionItems)];
-          const {
-            config,
-            actionTypeId
-          } = carrierItem;
-          if (instanceItem.id === carrierItem.id) {
-            elapsedDuration = totalDuration + verboseTimeElapsed;
-          }
-          const duration = getRenderType(actionTypeId) === RENDER_GENERAL ? 0 : config.duration;
-          totalDuration += config.delay + duration;
-        });
-        return totalDuration > 0 ? (0, _IX2EasingUtils.optimizeFloat)(elapsedDuration / totalDuration) : 0;
-      }
-      function reduceListToGroup({
-        actionList,
-        actionItemId,
-        rawData
-      }) {
-        const {
-          actionItemGroups,
-          continuousParameterGroups
-        } = actionList;
-        const newActionItems = [];
-        const takeItemUntilMatch = (actionItem) => {
-          newActionItems.push((0, _timm.mergeIn)(actionItem, ["config"], {
-            delay: 0,
-            duration: 0
-          }));
-          return actionItem.id === actionItemId;
-        };
-        actionItemGroups && actionItemGroups.some(({
-          actionItems
-        }) => {
-          return actionItems.some(takeItemUntilMatch);
-        });
-        continuousParameterGroups && continuousParameterGroups.some((paramGroup) => {
-          const {
-            continuousActionGroups
-          } = paramGroup;
-          return continuousActionGroups.some(({
-            actionItems
-          }) => {
-            return actionItems.some(takeItemUntilMatch);
-          });
-        });
-        return (0, _timm.setIn)(rawData, ["actionLists"], {
-          [actionList.id]: {
-            id: actionList.id,
-            actionItemGroups: [{
-              actionItems: newActionItems
-            }]
-          }
-        });
-      }
-      function shouldNamespaceEventParameter(eventTypeId, {
-        basedOn
-      }) {
-        return eventTypeId === _constants.EventTypeConsts.SCROLLING_IN_VIEW && (basedOn === _constants.EventBasedOn.ELEMENT || basedOn == null) || eventTypeId === _constants.EventTypeConsts.MOUSE_MOVE && basedOn === _constants.EventBasedOn.ELEMENT;
-      }
-      function getNamespacedParameterId(eventStateKey, continuousParameterGroupId) {
-        const namespacedParameterId = eventStateKey + COLON_DELIMITER + continuousParameterGroupId;
-        return namespacedParameterId;
-      }
-      function shouldAllowMediaQuery(mediaQueries, mediaQueryKey) {
-        if (mediaQueryKey == null) {
-          return true;
         }
-        return mediaQueries.indexOf(mediaQueryKey) !== -1;
-      }
-      function mediaQueriesEqual(listA, listB) {
-        return (0, _shallowEqual.default)(listA && listA.sort(), listB && listB.sort());
-      }
-      function stringifyTarget(target) {
-        if (typeof target === "string") {
-          return target;
-        }
-        if (target.pluginElement && target.objectId) {
-          return target.pluginElement + BAR_DELIMITER + target.objectId;
-        }
-        const {
-          id = "",
-          selector = "",
-          useEventTarget = ""
-        } = target;
-        return id + BAR_DELIMITER + selector + BAR_DELIMITER + useEventTarget;
-      }
+      );
     }
   });
 
@@ -8508,54 +8523,41 @@
         value: true
       });
       exports.IX2VanillaUtils = exports.IX2VanillaPlugins = exports.IX2ElementsReducer = exports.IX2Easings = exports.IX2EasingUtils = exports.IX2BrowserSupport = void 0;
-      var IX2BrowserSupport = _interopRequireWildcard(require_IX2BrowserSupport());
-      exports.IX2BrowserSupport = IX2BrowserSupport;
-      var IX2Easings = _interopRequireWildcard(require_IX2Easings());
+      var IX2BrowserSupport2 = _interopRequireWildcard((init_IX2BrowserSupport(), __toCommonJS(IX2BrowserSupport_exports)));
+      exports.IX2BrowserSupport = IX2BrowserSupport2;
+      var IX2Easings = _interopRequireWildcard((init_IX2Easings(), __toCommonJS(IX2Easings_exports)));
       exports.IX2Easings = IX2Easings;
-      var IX2EasingUtils = _interopRequireWildcard(require_IX2EasingUtils());
-      exports.IX2EasingUtils = IX2EasingUtils;
-      var IX2ElementsReducer = _interopRequireWildcard(require_IX2ElementsReducer());
-      exports.IX2ElementsReducer = IX2ElementsReducer;
-      var IX2VanillaPlugins = _interopRequireWildcard(require_IX2VanillaPlugins());
-      exports.IX2VanillaPlugins = IX2VanillaPlugins;
-      var IX2VanillaUtils = _interopRequireWildcard(require_IX2VanillaUtils());
-      exports.IX2VanillaUtils = IX2VanillaUtils;
+      var IX2EasingUtils2 = _interopRequireWildcard((init_IX2EasingUtils(), __toCommonJS(IX2EasingUtils_exports)));
+      exports.IX2EasingUtils = IX2EasingUtils2;
+      var IX2ElementsReducer2 = _interopRequireWildcard((init_IX2ElementsReducer(), __toCommonJS(IX2ElementsReducer_exports)));
+      exports.IX2ElementsReducer = IX2ElementsReducer2;
+      var IX2VanillaPlugins2 = _interopRequireWildcard((init_IX2VanillaPlugins(), __toCommonJS(IX2VanillaPlugins_exports)));
+      exports.IX2VanillaPlugins = IX2VanillaPlugins2;
+      var IX2VanillaUtils5 = _interopRequireWildcard((init_IX2VanillaUtils(), __toCommonJS(IX2VanillaUtils_exports)));
+      exports.IX2VanillaUtils = IX2VanillaUtils5;
     }
   });
 
-  // packages/systems/ix2/engine/reducers/IX2InstancesReducer.js
-  var require_IX2InstancesReducer = __commonJS({
-    "packages/systems/ix2/engine/reducers/IX2InstancesReducer.js"(exports) {
+  // packages/systems/ix2/engine/reducers/IX2InstancesReducer.ts
+  var import_shared, import_timm5, IX2_RAW_DATA_IMPORTED3, IX2_SESSION_STOPPED4, IX2_INSTANCE_ADDED3, IX2_INSTANCE_STARTED2, IX2_INSTANCE_REMOVED2, IX2_ANIMATION_FRAME_CHANGED3, optimizeFloat2, applyEasing2, createBezierEasing2, RENDER_GENERAL3, getItemConfigByKey2, getRenderType2, getStyleProp2, continuousInstance, timedInstance, ixInstances;
+  var init_IX2InstancesReducer = __esm({
+    "packages/systems/ix2/engine/reducers/IX2InstancesReducer.ts"() {
       "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.ixInstances = void 0;
-      var _constants = require_constants();
-      var _shared = require_shared2();
-      var _timm = require_timm();
-      var {
-        IX2_RAW_DATA_IMPORTED,
-        IX2_SESSION_STOPPED,
-        IX2_INSTANCE_ADDED,
-        IX2_INSTANCE_STARTED,
-        IX2_INSTANCE_REMOVED,
-        IX2_ANIMATION_FRAME_CHANGED
-      } = _constants.IX2EngineActionTypes;
-      var {
-        optimizeFloat,
-        applyEasing,
-        createBezierEasing
-      } = _shared.IX2EasingUtils;
-      var {
-        RENDER_GENERAL
-      } = _constants.IX2EngineConstants;
-      var {
-        getItemConfigByKey,
-        getRenderType,
-        getStyleProp
-      } = _shared.IX2VanillaUtils;
-      var continuousInstance = (state, action) => {
+      init_shared_constants();
+      import_shared = __toESM(require_shared2());
+      import_timm5 = __toESM(require_timm());
+      ({
+        IX2_RAW_DATA_IMPORTED: IX2_RAW_DATA_IMPORTED3,
+        IX2_SESSION_STOPPED: IX2_SESSION_STOPPED4,
+        IX2_INSTANCE_ADDED: IX2_INSTANCE_ADDED3,
+        IX2_INSTANCE_STARTED: IX2_INSTANCE_STARTED2,
+        IX2_INSTANCE_REMOVED: IX2_INSTANCE_REMOVED2,
+        IX2_ANIMATION_FRAME_CHANGED: IX2_ANIMATION_FRAME_CHANGED3
+      } = IX2EngineActionTypes_exports);
+      ({ optimizeFloat: optimizeFloat2, applyEasing: applyEasing2, createBezierEasing: createBezierEasing2 } = import_shared.IX2EasingUtils);
+      ({ RENDER_GENERAL: RENDER_GENERAL3 } = IX2EngineConstants_exports);
+      ({ getItemConfigByKey: getItemConfigByKey2, getRenderType: getRenderType2, getStyleProp: getStyleProp2 } = import_shared.IX2VanillaUtils);
+      continuousInstance = (state, action) => {
         const {
           position: lastPosition,
           parameterId,
@@ -8568,9 +8570,7 @@
           skipMotion,
           skipToValue
         } = state;
-        const {
-          parameters
-        } = action.payload;
+        const { parameters } = action.payload;
         let velocity = Math.max(1 - smoothing, 0.01);
         let paramValue = parameters[parameterId];
         if (paramValue == null) {
@@ -8578,8 +8578,8 @@
           paramValue = restingValue;
         }
         const nextPosition = Math.max(paramValue, 0) || 0;
-        const positionDiff = optimizeFloat(nextPosition - lastPosition);
-        const position = skipMotion ? skipToValue : optimizeFloat(lastPosition + positionDiff * velocity);
+        const positionDiff = optimizeFloat2(nextPosition - lastPosition);
+        const position = skipMotion ? skipToValue : optimizeFloat2(lastPosition + positionDiff * velocity);
         const keyframePosition = position * 100;
         if (position === lastPosition && state.current) {
           return state;
@@ -8588,13 +8588,8 @@
         let toActionItem;
         let positionOffset;
         let positionRange;
-        for (let i = 0, {
-          length
-        } = actionGroups; i < length; i++) {
-          const {
-            keyframe,
-            actionItems
-          } = actionGroups[i];
+        for (let i = 0, { length } = actionGroups; i < length; i++) {
+          const { keyframe, actionItems } = actionGroups[i];
           if (i === 0) {
             fromActionItem = actionItems[0];
           }
@@ -8611,33 +8606,37 @@
         }
         const current = {};
         if (fromActionItem && !toActionItem) {
-          for (let i = 0, {
-            length
-          } = destinationKeys; i < length; i++) {
+          for (let i = 0, { length } = destinationKeys; i < length; i++) {
             const key = destinationKeys[i];
-            current[key] = getItemConfigByKey(actionTypeId, key, fromActionItem.config);
+            current[key] = getItemConfigByKey2(
+              actionTypeId,
+              key,
+              fromActionItem.config
+            );
           }
         } else if (fromActionItem && toActionItem && positionOffset !== void 0 && positionRange !== void 0) {
           const localPosition = (position - positionOffset) / positionRange;
           const easing = fromActionItem.config.easing;
-          const eased = applyEasing(easing, localPosition, customEasingFn);
-          for (let i = 0, {
-            length
-          } = destinationKeys; i < length; i++) {
+          const eased = applyEasing2(easing, localPosition, customEasingFn);
+          for (let i = 0, { length } = destinationKeys; i < length; i++) {
             const key = destinationKeys[i];
-            const fromVal = getItemConfigByKey(actionTypeId, key, fromActionItem.config);
-            const toVal = getItemConfigByKey(actionTypeId, key, toActionItem.config);
+            const fromVal = getItemConfigByKey2(
+              actionTypeId,
+              key,
+              fromActionItem.config
+            );
+            const toVal = getItemConfigByKey2(actionTypeId, key, toActionItem.config);
             const diff = toVal - fromVal;
             const value = diff * eased + fromVal;
             current[key] = value;
           }
         }
-        return (0, _timm.merge)(state, {
+        return (0, import_timm5.merge)(state, {
           position,
           current
         });
       };
-      var timedInstance = (state, action) => {
+      timedInstance = (state, action) => {
         const {
           active,
           origin,
@@ -8654,35 +8653,36 @@
           skipMotion
         } = state;
         const easing = actionItem.config.easing;
-        let {
-          duration,
-          delay
-        } = actionItem.config;
+        let { duration, delay } = actionItem.config;
         if (pluginDuration != null) {
           duration = pluginDuration;
         }
         delay = instanceDelay != null ? instanceDelay : delay;
-        if (renderType === RENDER_GENERAL) {
+        if (renderType === RENDER_GENERAL3) {
           duration = 0;
         } else if (immediate || skipMotion) {
           duration = delay = 0;
         }
-        const {
-          now
-        } = action.payload;
+        const { now } = action.payload;
         if (active && origin) {
           const delta = now - (start + delay);
           if (verbose) {
             const verboseDelta = now - start;
             const verboseDuration = duration + delay;
-            const verbosePosition = optimizeFloat(Math.min(Math.max(0, verboseDelta / verboseDuration), 1));
-            state = (0, _timm.set)(state, "verboseTimeElapsed", verboseDuration * verbosePosition);
+            const verbosePosition = optimizeFloat2(
+              Math.min(Math.max(0, verboseDelta / verboseDuration), 1)
+            );
+            state = (0, import_timm5.set)(
+              state,
+              "verboseTimeElapsed",
+              verboseDuration * verbosePosition
+            );
           }
           if (delta < 0) {
             return state;
           }
-          const position = optimizeFloat(Math.min(Math.max(0, delta / duration), 1));
-          const eased = applyEasing(easing, position, customEasingFn);
+          const position = optimizeFloat2(Math.min(Math.max(0, delta / duration), 1));
+          const eased = applyEasing2(easing, position, customEasingFn);
           const newProps = {};
           let current = null;
           if (destinationKeys.length) {
@@ -8701,19 +8701,19 @@
             newProps.active = false;
             newProps.complete = true;
           }
-          return (0, _timm.merge)(state, newProps);
+          return (0, import_timm5.merge)(state, newProps);
         }
         return state;
       };
-      var ixInstances = (state = Object.freeze({}), action) => {
+      ixInstances = (state = Object.freeze({}), action) => {
         switch (action.type) {
-          case IX2_RAW_DATA_IMPORTED: {
+          case IX2_RAW_DATA_IMPORTED3: {
             return action.payload.ixInstances || Object.freeze({});
           }
-          case IX2_SESSION_STOPPED: {
+          case IX2_SESSION_STOPPED4: {
             return Object.freeze({});
           }
-          case IX2_INSTANCE_ADDED: {
+          case IX2_INSTANCE_ADDED3: {
             const {
               instanceId,
               elementId,
@@ -8739,16 +8739,18 @@
               skipMotion,
               skipToValue
             } = action.payload;
-            const {
-              actionTypeId
-            } = actionItem;
-            const renderType = getRenderType(actionTypeId);
-            const styleProp = getStyleProp(renderType, actionTypeId);
-            const destinationKeys = Object.keys(destination).filter((key) => destination[key] != null);
-            const {
-              easing
-            } = actionItem.config;
-            return (0, _timm.set)(state, instanceId, {
+            const { actionTypeId } = actionItem;
+            const renderType = getRenderType2(actionTypeId);
+            const styleProp = getStyleProp2(renderType, actionTypeId);
+            const destinationKeys = Object.keys(destination).filter(
+              (key) => (
+                // Skip null destination values
+                destination[key] != null && // Skip string destination values
+                typeof destination[key] !== "string"
+              )
+            );
+            const { easing } = actionItem.config;
+            return (0, import_timm5.set)(state, instanceId, {
               id: instanceId,
               elementId,
               active: false,
@@ -8780,32 +8782,28 @@
               instanceDelay,
               skipMotion,
               skipToValue,
-              customEasingFn: Array.isArray(easing) && easing.length === 4 ? createBezierEasing(easing) : void 0
+              customEasingFn: Array.isArray(easing) && easing.length === 4 ? (
+                // @ts-expect-error - TS2345 - Argument of type 'any[]' is not assignable to parameter of type 'IX2EasingCustomType'.
+                createBezierEasing2(easing)
+              ) : void 0
             });
           }
-          case IX2_INSTANCE_STARTED: {
-            const {
-              instanceId,
-              time
-            } = action.payload;
-            return (0, _timm.mergeIn)(state, [instanceId], {
+          case IX2_INSTANCE_STARTED2: {
+            const { instanceId, time } = action.payload;
+            return (0, import_timm5.mergeIn)(state, [instanceId], {
               active: true,
               complete: false,
               start: time
             });
           }
-          case IX2_INSTANCE_REMOVED: {
-            const {
-              instanceId
-            } = action.payload;
+          case IX2_INSTANCE_REMOVED2: {
+            const { instanceId } = action.payload;
             if (!state[instanceId]) {
               return state;
             }
             const newState = {};
             const keys = Object.keys(state);
-            const {
-              length
-            } = keys;
+            const { length } = keys;
             for (let i = 0; i < length; i++) {
               const key = keys[i];
               if (key !== instanceId) {
@@ -8814,17 +8812,15 @@
             }
             return newState;
           }
-          case IX2_ANIMATION_FRAME_CHANGED: {
+          case IX2_ANIMATION_FRAME_CHANGED3: {
             let newState = state;
             const keys = Object.keys(state);
-            const {
-              length
-            } = keys;
+            const { length } = keys;
             for (let i = 0; i < length; i++) {
               const key = keys[i];
               const instance = state[key];
               const reducer = instance.continuous ? continuousInstance : timedInstance;
-              newState = (0, _timm.set)(newState, key, reducer(instance, action));
+              newState = (0, import_timm5.set)(newState, key, reducer(instance, action));
             }
             return newState;
           }
@@ -8833,43 +8829,32 @@
           }
         }
       };
-      exports.ixInstances = ixInstances;
     }
   });
 
-  // packages/systems/ix2/engine/reducers/IX2ParametersReducer.js
-  var require_IX2ParametersReducer = __commonJS({
-    "packages/systems/ix2/engine/reducers/IX2ParametersReducer.js"(exports) {
+  // packages/systems/ix2/engine/reducers/IX2ParametersReducer.ts
+  var IX2_RAW_DATA_IMPORTED4, IX2_SESSION_STOPPED5, IX2_PARAMETER_CHANGED2, ixParameters;
+  var init_IX2ParametersReducer = __esm({
+    "packages/systems/ix2/engine/reducers/IX2ParametersReducer.ts"() {
       "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.ixParameters = void 0;
-      var _constants = require_constants();
-      var {
-        IX2_RAW_DATA_IMPORTED,
-        IX2_SESSION_STOPPED,
-        IX2_PARAMETER_CHANGED
-      } = _constants.IX2EngineActionTypes;
-      var ixParameters = (state = {
+      init_shared_constants();
+      ({ IX2_RAW_DATA_IMPORTED: IX2_RAW_DATA_IMPORTED4, IX2_SESSION_STOPPED: IX2_SESSION_STOPPED5, IX2_PARAMETER_CHANGED: IX2_PARAMETER_CHANGED2 } = IX2EngineActionTypes_exports);
+      ixParameters = (state = {
         /*mutable flat state*/
       }, action) => {
         switch (action.type) {
-          case IX2_RAW_DATA_IMPORTED: {
+          case IX2_RAW_DATA_IMPORTED4: {
             return action.payload.ixParameters || {
               /*mutable flat state*/
             };
           }
-          case IX2_SESSION_STOPPED: {
+          case IX2_SESSION_STOPPED5: {
             return {
               /*mutable flat state*/
             };
           }
-          case IX2_PARAMETER_CHANGED: {
-            const {
-              key,
-              value
-            } = action.payload;
+          case IX2_PARAMETER_CHANGED2: {
+            const { key, value } = action.payload;
             state[key] = value;
             return state;
           }
@@ -8878,58 +8863,35 @@
           }
         }
       };
-      exports.ixParameters = ixParameters;
     }
   });
 
-  // packages/systems/ix2/engine/reducers/IX2Reducer.js
-  var require_IX2Reducer = __commonJS({
-    "packages/systems/ix2/engine/reducers/IX2Reducer.js"(exports) {
+  // packages/systems/ix2/engine/reducers/IX2Reducer.ts
+  var IX2Reducer_exports = {};
+  __export(IX2Reducer_exports, {
+    default: () => IX2Reducer_default
+  });
+  var import_redux, import_shared2, ixElements2, IX2Reducer_default;
+  var init_IX2Reducer = __esm({
+    "packages/systems/ix2/engine/reducers/IX2Reducer.ts"() {
       "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
+      import_redux = __toESM(require_lib2());
+      init_IX2DataReducer();
+      init_IX2RequestReducer();
+      init_IX2SessionReducer();
+      import_shared2 = __toESM(require_shared2());
+      init_IX2InstancesReducer();
+      init_IX2ParametersReducer();
+      ({ ixElements: ixElements2 } = import_shared2.IX2ElementsReducer);
+      IX2Reducer_default = (0, import_redux.combineReducers)({
+        // @ts-expect-error - TS2322 - Type '(state: FixMeAny | null | undefined, action: {    type: typeof IX2_RAW_DATA_IMPORTED;    payload: {        ixData: FixMeAny;    };}) => any' is not assignable to type 'Reducer<any>'.
+        ixData,
+        ixRequest,
+        ixSession,
+        ixElements: ixElements2,
+        ixInstances,
+        ixParameters
       });
-      exports.default = void 0;
-      var _redux = require_lib2();
-      var _IX2DataReducer = require_IX2DataReducer();
-      var _IX2RequestReducer = require_IX2RequestReducer();
-      var _IX2SessionReducer = require_IX2SessionReducer();
-      var _shared = require_shared2();
-      var _IX2InstancesReducer = require_IX2InstancesReducer();
-      var _IX2ParametersReducer = require_IX2ParametersReducer();
-      var {
-        ixElements
-      } = _shared.IX2ElementsReducer;
-      var _default = (0, _redux.combineReducers)({
-        ixData: _IX2DataReducer.ixData,
-        ixRequest: _IX2RequestReducer.ixRequest,
-        ixSession: _IX2SessionReducer.ixSession,
-        ixElements,
-        ixInstances: _IX2InstancesReducer.ixInstances,
-        ixParameters: _IX2ParametersReducer.ixParameters
-      });
-      exports.default = _default;
-    }
-  });
-
-  // node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js
-  var require_objectWithoutPropertiesLoose = __commonJS({
-    "node_modules/@babel/runtime/helpers/objectWithoutPropertiesLoose.js"(exports, module) {
-      function _objectWithoutPropertiesLoose(source, excluded) {
-        if (source == null)
-          return {};
-        var target = {};
-        var sourceKeys = Object.keys(source);
-        var key, i;
-        for (i = 0; i < sourceKeys.length; i++) {
-          key = sourceKeys[i];
-          if (excluded.indexOf(key) >= 0)
-            continue;
-          target[key] = source[key];
-        }
-        return target;
-      }
-      module.exports = _objectWithoutPropertiesLoose, module.exports.__esModule = true, module.exports["default"] = module.exports;
     }
   });
 
@@ -9031,7 +8993,7 @@
       var stringSize = require_stringSize();
       var mapTag = "[object Map]";
       var setTag = "[object Set]";
-      function size(collection) {
+      function size2(collection) {
         if (collection == null) {
           return 0;
         }
@@ -9044,7 +9006,7 @@
         }
         return baseKeys(collection).length;
       }
-      module.exports = size;
+      module.exports = size2;
     }
   });
 
@@ -9117,10 +9079,10 @@
       var baseAssignValue = require_baseAssignValue();
       var eq = require_eq();
       var objectProto = Object.prototype;
-      var hasOwnProperty = objectProto.hasOwnProperty;
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
       function assignValue(object, key, value) {
         var objValue = object[key];
-        if (!(hasOwnProperty.call(object, key) && eq(objValue, value)) || value === void 0 && !(key in object)) {
+        if (!(hasOwnProperty2.call(object, key) && eq(objValue, value)) || value === void 0 && !(key in object)) {
           baseAssignValue(object, key, value);
         }
       }
@@ -9226,14 +9188,14 @@
       var isPrototype = require_isPrototype();
       var nativeKeysIn = require_nativeKeysIn();
       var objectProto = Object.prototype;
-      var hasOwnProperty = objectProto.hasOwnProperty;
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
       function baseKeysIn(object) {
         if (!isObject(object)) {
           return nativeKeysIn(object);
         }
         var isProto = isPrototype(object), result = [];
         for (var key in object) {
-          if (!(key == "constructor" && (isProto || !hasOwnProperty.call(object, key)))) {
+          if (!(key == "constructor" && (isProto || !hasOwnProperty2.call(object, key)))) {
             result.push(key);
           }
         }
@@ -9298,10 +9260,10 @@
       var baseIteratee = require_baseIteratee();
       var negate = require_negate();
       var pickBy = require_pickBy();
-      function omitBy(object, predicate) {
+      function omitBy2(object, predicate) {
         return pickBy(object, negate(baseIteratee(predicate)));
       }
-      module.exports = omitBy;
+      module.exports = omitBy2;
     }
   });
 
@@ -9319,8 +9281,8 @@
       var mapTag = "[object Map]";
       var setTag = "[object Set]";
       var objectProto = Object.prototype;
-      var hasOwnProperty = objectProto.hasOwnProperty;
-      function isEmpty(value) {
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
+      function isEmpty2(value) {
         if (value == null) {
           return true;
         }
@@ -9335,13 +9297,13 @@
           return !baseKeys(value).length;
         }
         for (var key in value) {
-          if (hasOwnProperty.call(value, key)) {
+          if (hasOwnProperty2.call(value, key)) {
             return false;
           }
         }
         return true;
       }
-      module.exports = isEmpty;
+      module.exports = isEmpty2;
     }
   });
 
@@ -9351,7 +9313,7 @@
       var baseAssignValue = require_baseAssignValue();
       var baseForOwn = require_baseForOwn();
       var baseIteratee = require_baseIteratee();
-      function mapValues(object, iteratee) {
+      function mapValues2(object, iteratee) {
         var result = {};
         iteratee = baseIteratee(iteratee, 3);
         baseForOwn(object, function(value, key, object2) {
@@ -9359,7 +9321,7 @@
         });
         return result;
       }
-      module.exports = mapValues;
+      module.exports = mapValues2;
     }
   });
 
@@ -9397,11 +9359,11 @@
       var baseEach = require_baseEach();
       var castFunction = require_castFunction();
       var isArray = require_isArray();
-      function forEach(collection, iteratee) {
+      function forEach2(collection, iteratee) {
         var func = isArray(collection) ? arrayEach : baseEach;
         return func(collection, castFunction(iteratee));
       }
-      module.exports = forEach;
+      module.exports = forEach2;
     }
   });
 
@@ -9516,7 +9478,7 @@
       var debounce = require_debounce();
       var isObject = require_isObject();
       var FUNC_ERROR_TEXT = "Expected a function";
-      function throttle(func, wait, options) {
+      function throttle2(func, wait, options) {
         var leading = true, trailing = true;
         if (typeof func != "function") {
           throw new TypeError(FUNC_ERROR_TEXT);
@@ -9531,84 +9493,97 @@
           "trailing": trailing
         });
       }
-      module.exports = throttle;
+      module.exports = throttle2;
     }
   });
 
-  // packages/systems/ix2/engine/actions/IX2EngineActions.js
-  var require_IX2EngineActions = __commonJS({
-    "packages/systems/ix2/engine/actions/IX2EngineActions.js"(exports) {
+  // packages/systems/ix2/engine/actions/IX2EngineActions.ts
+  var IX2EngineActions_exports = {};
+  __export(IX2EngineActions_exports, {
+    actionListPlaybackChanged: () => actionListPlaybackChanged,
+    animationFrameChanged: () => animationFrameChanged,
+    clearRequested: () => clearRequested,
+    elementStateChanged: () => elementStateChanged,
+    eventListenerAdded: () => eventListenerAdded,
+    eventStateChanged: () => eventStateChanged,
+    instanceAdded: () => instanceAdded,
+    instanceRemoved: () => instanceRemoved,
+    instanceStarted: () => instanceStarted,
+    mediaQueriesDefined: () => mediaQueriesDefined,
+    parameterChanged: () => parameterChanged,
+    playbackRequested: () => playbackRequested,
+    previewRequested: () => previewRequested,
+    rawDataImported: () => rawDataImported,
+    sessionInitialized: () => sessionInitialized,
+    sessionStarted: () => sessionStarted,
+    sessionStopped: () => sessionStopped,
+    stopRequested: () => stopRequested,
+    testFrameRendered: () => testFrameRendered,
+    viewportWidthChanged: () => viewportWidthChanged
+  });
+  var import_shared3, IX2_RAW_DATA_IMPORTED5, IX2_SESSION_INITIALIZED3, IX2_SESSION_STARTED3, IX2_SESSION_STOPPED6, IX2_PREVIEW_REQUESTED3, IX2_PLAYBACK_REQUESTED3, IX2_STOP_REQUESTED3, IX2_CLEAR_REQUESTED3, IX2_EVENT_LISTENER_ADDED3, IX2_TEST_FRAME_RENDERED3, IX2_EVENT_STATE_CHANGED3, IX2_ANIMATION_FRAME_CHANGED4, IX2_PARAMETER_CHANGED3, IX2_INSTANCE_ADDED4, IX2_INSTANCE_STARTED3, IX2_INSTANCE_REMOVED3, IX2_ELEMENT_STATE_CHANGED3, IX2_ACTION_LIST_PLAYBACK_CHANGED3, IX2_VIEWPORT_WIDTH_CHANGED3, IX2_MEDIA_QUERIES_DEFINED3, reifyState2, rawDataImported, sessionInitialized, sessionStarted, sessionStopped, previewRequested, playbackRequested, stopRequested, clearRequested, eventListenerAdded, testFrameRendered, eventStateChanged, animationFrameChanged, parameterChanged, instanceAdded, instanceStarted, instanceRemoved, elementStateChanged, actionListPlaybackChanged, viewportWidthChanged, mediaQueriesDefined;
+  var init_IX2EngineActions = __esm({
+    "packages/systems/ix2/engine/actions/IX2EngineActions.ts"() {
       "use strict";
-      var _interopRequireDefault = require_interopRequireDefault().default;
-      Object.defineProperty(exports, "__esModule", {
-        value: true
+      init_shared_constants();
+      import_shared3 = __toESM(require_shared2());
+      ({
+        IX2_RAW_DATA_IMPORTED: IX2_RAW_DATA_IMPORTED5,
+        IX2_SESSION_INITIALIZED: IX2_SESSION_INITIALIZED3,
+        IX2_SESSION_STARTED: IX2_SESSION_STARTED3,
+        IX2_SESSION_STOPPED: IX2_SESSION_STOPPED6,
+        IX2_PREVIEW_REQUESTED: IX2_PREVIEW_REQUESTED3,
+        IX2_PLAYBACK_REQUESTED: IX2_PLAYBACK_REQUESTED3,
+        IX2_STOP_REQUESTED: IX2_STOP_REQUESTED3,
+        IX2_CLEAR_REQUESTED: IX2_CLEAR_REQUESTED3,
+        IX2_EVENT_LISTENER_ADDED: IX2_EVENT_LISTENER_ADDED3,
+        IX2_TEST_FRAME_RENDERED: IX2_TEST_FRAME_RENDERED3,
+        IX2_EVENT_STATE_CHANGED: IX2_EVENT_STATE_CHANGED3,
+        IX2_ANIMATION_FRAME_CHANGED: IX2_ANIMATION_FRAME_CHANGED4,
+        IX2_PARAMETER_CHANGED: IX2_PARAMETER_CHANGED3,
+        IX2_INSTANCE_ADDED: IX2_INSTANCE_ADDED4,
+        IX2_INSTANCE_STARTED: IX2_INSTANCE_STARTED3,
+        IX2_INSTANCE_REMOVED: IX2_INSTANCE_REMOVED3,
+        IX2_ELEMENT_STATE_CHANGED: IX2_ELEMENT_STATE_CHANGED3,
+        IX2_ACTION_LIST_PLAYBACK_CHANGED: IX2_ACTION_LIST_PLAYBACK_CHANGED3,
+        IX2_VIEWPORT_WIDTH_CHANGED: IX2_VIEWPORT_WIDTH_CHANGED3,
+        IX2_MEDIA_QUERIES_DEFINED: IX2_MEDIA_QUERIES_DEFINED3
+      } = IX2EngineActionTypes_exports);
+      ({ reifyState: reifyState2 } = import_shared3.IX2VanillaUtils);
+      rawDataImported = (rawData) => ({
+        type: IX2_RAW_DATA_IMPORTED5,
+        payload: {
+          ...reifyState2(rawData)
+        }
       });
-      exports.viewportWidthChanged = exports.testFrameRendered = exports.stopRequested = exports.sessionStopped = exports.sessionStarted = exports.sessionInitialized = exports.rawDataImported = exports.previewRequested = exports.playbackRequested = exports.parameterChanged = exports.mediaQueriesDefined = exports.instanceStarted = exports.instanceRemoved = exports.instanceAdded = exports.eventStateChanged = exports.eventListenerAdded = exports.elementStateChanged = exports.clearRequested = exports.animationFrameChanged = exports.actionListPlaybackChanged = void 0;
-      var _extends2 = _interopRequireDefault(require_extends());
-      var _constants = require_constants();
-      var _shared = require_shared2();
-      var {
-        IX2_RAW_DATA_IMPORTED,
-        IX2_SESSION_INITIALIZED,
-        IX2_SESSION_STARTED,
-        IX2_SESSION_STOPPED,
-        IX2_PREVIEW_REQUESTED,
-        IX2_PLAYBACK_REQUESTED,
-        IX2_STOP_REQUESTED,
-        IX2_CLEAR_REQUESTED,
-        IX2_EVENT_LISTENER_ADDED,
-        IX2_TEST_FRAME_RENDERED,
-        IX2_EVENT_STATE_CHANGED,
-        IX2_ANIMATION_FRAME_CHANGED,
-        IX2_PARAMETER_CHANGED,
-        IX2_INSTANCE_ADDED,
-        IX2_INSTANCE_STARTED,
-        IX2_INSTANCE_REMOVED,
-        IX2_ELEMENT_STATE_CHANGED,
-        IX2_ACTION_LIST_PLAYBACK_CHANGED,
-        IX2_VIEWPORT_WIDTH_CHANGED,
-        IX2_MEDIA_QUERIES_DEFINED
-      } = _constants.IX2EngineActionTypes;
-      var {
-        reifyState
-      } = _shared.IX2VanillaUtils;
-      var rawDataImported = (rawData) => ({
-        type: IX2_RAW_DATA_IMPORTED,
-        payload: (0, _extends2.default)({}, reifyState(rawData))
-      });
-      exports.rawDataImported = rawDataImported;
-      var sessionInitialized = ({
+      sessionInitialized = ({
         hasBoundaryNodes,
         reducedMotion
       }) => ({
-        type: IX2_SESSION_INITIALIZED,
+        type: IX2_SESSION_INITIALIZED3,
         payload: {
           hasBoundaryNodes,
           reducedMotion
         }
       });
-      exports.sessionInitialized = sessionInitialized;
-      var sessionStarted = () => ({
-        type: IX2_SESSION_STARTED
+      sessionStarted = () => ({
+        type: IX2_SESSION_STARTED3
       });
-      exports.sessionStarted = sessionStarted;
-      var sessionStopped = () => ({
-        type: IX2_SESSION_STOPPED
+      sessionStopped = () => ({
+        type: IX2_SESSION_STOPPED6
       });
-      exports.sessionStopped = sessionStopped;
-      var previewRequested = ({
+      previewRequested = ({
         rawData,
         defer
       }) => ({
-        type: IX2_PREVIEW_REQUESTED,
+        type: IX2_PREVIEW_REQUESTED3,
         payload: {
           defer,
           rawData
         }
       });
-      exports.previewRequested = previewRequested;
-      var playbackRequested = ({
-        actionTypeId = _constants.ActionTypeConsts.GENERAL_START_ACTION,
+      playbackRequested = ({
+        actionTypeId = ActionTypeConsts.GENERAL_START_ACTION,
         actionListId,
         actionItemId,
         eventId,
@@ -9618,7 +9593,7 @@
         verbose,
         rawData
       }) => ({
-        type: IX2_PLAYBACK_REQUESTED,
+        type: IX2_PLAYBACK_REQUESTED3,
         payload: {
           actionTypeId,
           actionListId,
@@ -9631,79 +9606,70 @@
           rawData
         }
       });
-      exports.playbackRequested = playbackRequested;
-      var stopRequested = (actionListId) => ({
-        type: IX2_STOP_REQUESTED,
+      stopRequested = (actionListId) => ({
+        type: IX2_STOP_REQUESTED3,
         payload: {
           actionListId
         }
       });
-      exports.stopRequested = stopRequested;
-      var clearRequested = () => ({
-        type: IX2_CLEAR_REQUESTED
+      clearRequested = () => ({
+        type: IX2_CLEAR_REQUESTED3
       });
-      exports.clearRequested = clearRequested;
-      var eventListenerAdded = (target, listenerParams) => ({
-        type: IX2_EVENT_LISTENER_ADDED,
+      eventListenerAdded = (target, listenerParams) => ({
+        type: IX2_EVENT_LISTENER_ADDED3,
         payload: {
           target,
           listenerParams
         }
       });
-      exports.eventListenerAdded = eventListenerAdded;
-      var testFrameRendered = (step = 1) => ({
-        type: IX2_TEST_FRAME_RENDERED,
+      testFrameRendered = (step = 1) => ({
+        type: IX2_TEST_FRAME_RENDERED3,
         payload: {
           step
         }
       });
-      exports.testFrameRendered = testFrameRendered;
-      var eventStateChanged = (stateKey, newState) => ({
-        type: IX2_EVENT_STATE_CHANGED,
+      eventStateChanged = (stateKey, newState) => ({
+        type: IX2_EVENT_STATE_CHANGED3,
         payload: {
           stateKey,
           newState
         }
       });
-      exports.eventStateChanged = eventStateChanged;
-      var animationFrameChanged = (now, parameters) => ({
-        type: IX2_ANIMATION_FRAME_CHANGED,
+      animationFrameChanged = (now, parameters) => ({
+        type: IX2_ANIMATION_FRAME_CHANGED4,
         payload: {
           now,
           parameters
         }
       });
-      exports.animationFrameChanged = animationFrameChanged;
-      var parameterChanged = (key, value) => ({
-        type: IX2_PARAMETER_CHANGED,
+      parameterChanged = (key, value) => ({
+        type: IX2_PARAMETER_CHANGED3,
         payload: {
           key,
           value
         }
       });
-      exports.parameterChanged = parameterChanged;
-      var instanceAdded = (options) => ({
-        type: IX2_INSTANCE_ADDED,
-        payload: (0, _extends2.default)({}, options)
+      instanceAdded = (options) => ({
+        type: IX2_INSTANCE_ADDED4,
+        payload: {
+          ...options
+        }
       });
-      exports.instanceAdded = instanceAdded;
-      var instanceStarted = (instanceId, time) => ({
-        type: IX2_INSTANCE_STARTED,
+      instanceStarted = (instanceId, time) => ({
+        type: IX2_INSTANCE_STARTED3,
         payload: {
           instanceId,
           time
         }
       });
-      exports.instanceStarted = instanceStarted;
-      var instanceRemoved = (instanceId) => ({
-        type: IX2_INSTANCE_REMOVED,
+      instanceRemoved = (instanceId) => ({
+        type: IX2_INSTANCE_REMOVED3,
         payload: {
           instanceId
         }
       });
-      exports.instanceRemoved = instanceRemoved;
-      var elementStateChanged = (elementId, actionTypeId, current, actionItem) => ({
-        type: IX2_ELEMENT_STATE_CHANGED,
+      elementStateChanged = (elementId, actionTypeId, current, actionItem) => ({
+        type: IX2_ELEMENT_STATE_CHANGED3,
         payload: {
           elementId,
           actionTypeId,
@@ -9711,160 +9677,149 @@
           actionItem
         }
       });
-      exports.elementStateChanged = elementStateChanged;
-      var actionListPlaybackChanged = ({
+      actionListPlaybackChanged = ({
         actionListId,
         isPlaying
       }) => ({
-        type: IX2_ACTION_LIST_PLAYBACK_CHANGED,
+        type: IX2_ACTION_LIST_PLAYBACK_CHANGED3,
         payload: {
           actionListId,
           isPlaying
         }
       });
-      exports.actionListPlaybackChanged = actionListPlaybackChanged;
-      var viewportWidthChanged = ({
+      viewportWidthChanged = ({
         width,
         mediaQueries
       }) => ({
-        type: IX2_VIEWPORT_WIDTH_CHANGED,
+        type: IX2_VIEWPORT_WIDTH_CHANGED3,
         payload: {
           width,
           mediaQueries
         }
       });
-      exports.viewportWidthChanged = viewportWidthChanged;
-      var mediaQueriesDefined = () => ({
-        type: IX2_MEDIA_QUERIES_DEFINED
+      mediaQueriesDefined = () => ({
+        type: IX2_MEDIA_QUERIES_DEFINED3
       });
-      exports.mediaQueriesDefined = mediaQueriesDefined;
     }
   });
 
-  // packages/systems/ix2/engine/logic/IX2BrowserApi.js
-  var require_IX2BrowserApi = __commonJS({
-    "packages/systems/ix2/engine/logic/IX2BrowserApi.js"(exports) {
+  // packages/systems/ix2/engine/logic/IX2BrowserApi.ts
+  var IX2BrowserApi_exports = {};
+  __export(IX2BrowserApi_exports, {
+    elementContains: () => elementContains,
+    getChildElements: () => getChildElements,
+    getClosestElement: () => getClosestElement,
+    getProperty: () => getProperty,
+    getQuerySelector: () => getQuerySelector,
+    getRefType: () => getRefType,
+    getSiblingElements: () => getSiblingElements,
+    getStyle: () => getStyle,
+    getValidDocument: () => getValidDocument,
+    isSiblingNode: () => isSiblingNode,
+    matchSelector: () => matchSelector,
+    queryDocument: () => queryDocument,
+    setStyle: () => setStyle
+  });
+  function setStyle(element, prop, value) {
+    element.style[prop] = value;
+  }
+  function getStyle(element, prop) {
+    return element.style[prop];
+  }
+  function getProperty(element, prop) {
+    return element[prop];
+  }
+  function matchSelector(selector) {
+    return (element) => element[ELEMENT_MATCHES2](selector);
+  }
+  function getQuerySelector({
+    id,
+    selector
+  }) {
+    if (id) {
+      let nodeId = id;
+      if (id.indexOf(IX2_ID_DELIMITER2) !== -1) {
+        const pair = id.split(IX2_ID_DELIMITER2);
+        const pageId = pair[0];
+        nodeId = pair[1];
+        if (pageId !== document.documentElement.getAttribute(WF_PAGE2)) {
+          return null;
+        }
+      }
+      return `[data-w-id="${nodeId}"], [data-w-id^="${nodeId}_instance"]`;
+    }
+    return selector;
+  }
+  function getValidDocument(pageId) {
+    if (pageId == null || pageId === document.documentElement.getAttribute(WF_PAGE2)) {
+      return document;
+    }
+    return null;
+  }
+  function queryDocument(baseSelector, descendantSelector) {
+    return Array.prototype.slice.call(
+      document.querySelectorAll(
+        descendantSelector ? baseSelector + " " + descendantSelector : baseSelector
+      )
+    );
+  }
+  function elementContains(parent, child) {
+    return parent.contains(child);
+  }
+  function isSiblingNode(a, b) {
+    return a !== b && a.parentNode === b.parentNode;
+  }
+  function getChildElements(sourceElements) {
+    const childElements = [];
+    for (let i = 0, { length } = sourceElements || []; i < length; i++) {
+      const { children } = sourceElements[i];
+      const { length: childCount } = children;
+      if (!childCount) {
+        continue;
+      }
+      for (let j = 0; j < childCount; j++) {
+        childElements.push(children[j]);
+      }
+    }
+    return childElements;
+  }
+  function getSiblingElements(sourceElements = []) {
+    const elements = [];
+    const parentCache = [];
+    for (let i = 0, { length } = sourceElements; i < length; i++) {
+      const { parentNode } = sourceElements[i];
+      if (!parentNode || !parentNode.children || !parentNode.children.length) {
+        continue;
+      }
+      if (parentCache.indexOf(parentNode) !== -1) {
+        continue;
+      }
+      parentCache.push(parentNode);
+      let el = parentNode.firstElementChild;
+      while (el != null) {
+        if (sourceElements.indexOf(el) === -1) {
+          elements.push(el);
+        }
+        el = el.nextElementSibling;
+      }
+    }
+    return elements;
+  }
+  function getRefType(ref) {
+    if (ref != null && typeof ref == "object") {
+      return ref instanceof Element ? HTML_ELEMENT3 : PLAIN_OBJECT3;
+    }
+    return null;
+  }
+  var import_shared4, ELEMENT_MATCHES2, IX2_ID_DELIMITER2, HTML_ELEMENT3, PLAIN_OBJECT3, WF_PAGE2, getClosestElement;
+  var init_IX2BrowserApi = __esm({
+    "packages/systems/ix2/engine/logic/IX2BrowserApi.ts"() {
       "use strict";
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.elementContains = elementContains;
-      exports.getChildElements = getChildElements;
-      exports.getClosestElement = void 0;
-      exports.getProperty = getProperty;
-      exports.getQuerySelector = getQuerySelector;
-      exports.getRefType = getRefType;
-      exports.getSiblingElements = getSiblingElements;
-      exports.getStyle = getStyle;
-      exports.getValidDocument = getValidDocument;
-      exports.isSiblingNode = isSiblingNode;
-      exports.matchSelector = matchSelector;
-      exports.queryDocument = queryDocument;
-      exports.setStyle = setStyle;
-      var _shared = require_shared2();
-      var _constants = require_constants();
-      var {
-        ELEMENT_MATCHES
-      } = _shared.IX2BrowserSupport;
-      var {
-        IX2_ID_DELIMITER,
-        HTML_ELEMENT,
-        PLAIN_OBJECT,
-        WF_PAGE
-      } = _constants.IX2EngineConstants;
-      function setStyle(element, prop, value) {
-        element.style[prop] = value;
-      }
-      function getStyle(element, prop) {
-        return element.style[prop];
-      }
-      function getProperty(element, prop) {
-        return element[prop];
-      }
-      function matchSelector(selector) {
-        return (element) => element[ELEMENT_MATCHES](selector);
-      }
-      function getQuerySelector({
-        id,
-        selector
-      }) {
-        if (id) {
-          let nodeId = id;
-          if (id.indexOf(IX2_ID_DELIMITER) !== -1) {
-            const pair = id.split(IX2_ID_DELIMITER);
-            const pageId = pair[0];
-            nodeId = pair[1];
-            if (pageId !== document.documentElement.getAttribute(WF_PAGE)) {
-              return null;
-            }
-          }
-          return `[data-w-id="${nodeId}"], [data-w-id^="${nodeId}_instance"]`;
-        }
-        return selector;
-      }
-      function getValidDocument(pageId) {
-        if (pageId == null || // $FlowIgnore — if documentElement is null crash
-        pageId === document.documentElement.getAttribute(WF_PAGE)) {
-          return document;
-        }
-        return null;
-      }
-      function queryDocument(baseSelector, descendantSelector) {
-        return Array.prototype.slice.call(document.querySelectorAll(descendantSelector ? baseSelector + " " + descendantSelector : baseSelector));
-      }
-      function elementContains(parent, child) {
-        return parent.contains(child);
-      }
-      function isSiblingNode(a, b) {
-        return a !== b && a.parentNode === b.parentNode;
-      }
-      function getChildElements(sourceElements) {
-        const childElements = [];
-        for (let i = 0, {
-          length
-        } = sourceElements || []; i < length; i++) {
-          const {
-            children
-          } = sourceElements[i];
-          const {
-            length: childCount
-          } = children;
-          if (!childCount) {
-            continue;
-          }
-          for (let j = 0; j < childCount; j++) {
-            childElements.push(children[j]);
-          }
-        }
-        return childElements;
-      }
-      function getSiblingElements(sourceElements = []) {
-        const elements = [];
-        const parentCache = [];
-        for (let i = 0, {
-          length
-        } = sourceElements; i < length; i++) {
-          const {
-            parentNode
-          } = sourceElements[i];
-          if (!parentNode || !parentNode.children || !parentNode.children.length) {
-            continue;
-          }
-          if (parentCache.indexOf(parentNode) !== -1) {
-            continue;
-          }
-          parentCache.push(parentNode);
-          let el = parentNode.firstElementChild;
-          while (el != null) {
-            if (sourceElements.indexOf(el) === -1) {
-              elements.push(el);
-            }
-            el = el.nextElementSibling;
-          }
-        }
-        return elements;
-      }
-      var getClosestElement = Element.prototype.closest ? (element, selector) => {
+      import_shared4 = __toESM(require_shared2());
+      init_shared_constants();
+      ({ ELEMENT_MATCHES: ELEMENT_MATCHES2 } = import_shared4.IX2BrowserSupport);
+      ({ IX2_ID_DELIMITER: IX2_ID_DELIMITER2, HTML_ELEMENT: HTML_ELEMENT3, PLAIN_OBJECT: PLAIN_OBJECT3, WF_PAGE: WF_PAGE2 } = IX2EngineConstants_exports);
+      getClosestElement = Element.prototype.closest ? (element, selector) => {
         if (!document.documentElement.contains(element)) {
           return null;
         }
@@ -9875,20 +9830,13 @@
         }
         let el = element;
         do {
-          if (el[ELEMENT_MATCHES] && el[ELEMENT_MATCHES](selector)) {
+          if (el[ELEMENT_MATCHES2] && el[ELEMENT_MATCHES2](selector)) {
             return el;
           }
           el = el.parentNode;
         } while (el != null);
         return null;
       };
-      exports.getClosestElement = getClosestElement;
-      function getRefType(ref) {
-        if (ref != null && typeof ref == "object") {
-          return ref instanceof Element ? HTML_ELEMENT : PLAIN_OBJECT;
-        }
-        return null;
-      }
     }
   });
 
@@ -10163,9 +10111,9 @@
     "node_modules/lodash/_getFuncName.js"(exports, module) {
       var realNames = require_realNames();
       var objectProto = Object.prototype;
-      var hasOwnProperty = objectProto.hasOwnProperty;
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
       function getFuncName(func) {
-        var result = func.name + "", array = realNames[result], length = hasOwnProperty.call(realNames, result) ? array.length : 0;
+        var result = func.name + "", array = realNames[result], length = hasOwnProperty2.call(realNames, result) ? array.length : 0;
         while (length--) {
           var data = array[length], otherFunc = data.func;
           if (otherFunc == null || otherFunc == func) {
@@ -10244,13 +10192,13 @@
       var isObjectLike = require_isObjectLike();
       var wrapperClone = require_wrapperClone();
       var objectProto = Object.prototype;
-      var hasOwnProperty = objectProto.hasOwnProperty;
+      var hasOwnProperty2 = objectProto.hasOwnProperty;
       function lodash(value) {
         if (isObjectLike(value) && !isArray(value) && !(value instanceof LazyWrapper)) {
           if (value instanceof LodashWrapper) {
             return value;
           }
-          if (hasOwnProperty.call(value, "__wrapped__")) {
+          if (hasOwnProperty2.call(value, "__wrapped__")) {
             return wrapperClone(value);
           }
         }
@@ -10344,8 +10292,8 @@
   var require_flow = __commonJS({
     "node_modules/lodash/flow.js"(exports, module) {
       var createFlow = require_createFlow();
-      var flow = createFlow();
-      module.exports = flow;
+      var flow2 = createFlow();
+      module.exports = flow2;
     }
   });
 
@@ -10372,7 +10320,7 @@
     "node_modules/lodash/clamp.js"(exports, module) {
       var baseClamp = require_baseClamp();
       var toNumber = require_toNumber();
-      function clamp(number, lower, upper) {
+      function clamp2(number, lower, upper) {
         if (upper === void 0) {
           upper = lower;
           lower = void 0;
@@ -10387,28 +10335,23 @@
         }
         return baseClamp(toNumber(number), lower, upper);
       }
-      module.exports = clamp;
+      module.exports = clamp2;
     }
   });
 
-  // packages/systems/ix2/engine/logic/IX2VanillaEvents.js
-  var require_IX2VanillaEvents = __commonJS({
-    "packages/systems/ix2/engine/logic/IX2VanillaEvents.js"(exports) {
+  // packages/systems/ix2/engine/logic/IX2VanillaEvents.ts
+  var import_flow, import_get, import_clamp, import_shared5, MOUSE_CLICK, MOUSE_SECOND_CLICK, MOUSE_DOWN, MOUSE_UP, MOUSE_OVER, MOUSE_OUT, DROPDOWN_CLOSE, DROPDOWN_OPEN, SLIDER_ACTIVE, SLIDER_INACTIVE, TAB_ACTIVE, TAB_INACTIVE, NAVBAR_CLOSE, NAVBAR_OPEN, MOUSE_MOVE, PAGE_SCROLL_DOWN, SCROLL_INTO_VIEW, SCROLL_OUT_OF_VIEW, PAGE_SCROLL_UP, SCROLLING_IN_VIEW, PAGE_FINISH, ECOMMERCE_CART_CLOSE, ECOMMERCE_CART_OPEN, PAGE_START, PAGE_SCROLL, COMPONENT_ACTIVE, COMPONENT_INACTIVE, COLON_DELIMITER3, getNamespacedParameterId2, composableFilter, isElement, containsElement, isOrContainsElement, getAutoStopEvent, hasAutoStopEvent, actionGroupCreator, withFilter, baseActionGroupOptions, baseActivityActionGroupOptions, SCROLL_EVENT_TYPES, MOUSE_OVER_OUT_TYPES, baseScrollActionGroupOptions, AUTO_STOP_DISABLED_EVENTS, getDocumentState, areBoxesIntersecting, isElementHovered, isElementVisible, whenComponentActiveChange, whenElementHoverChange, whenElementVisibiltyChange, whenScrollDirectionChange, pointIntersects, whenPageLoadFinish, whenPageLoadStart, whenClickCountChange, getComponentActiveOptions, getComponentInactiveOptions, scrollIntoOutOfViewOptions, MOUSE_OUT_ROUND_THRESHOLD, IX2VanillaEvents_default;
+  var init_IX2VanillaEvents = __esm({
+    "packages/systems/ix2/engine/logic/IX2VanillaEvents.ts"() {
       "use strict";
-      var _interopRequireDefault = require_interopRequireDefault().default;
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.default = void 0;
-      var _extends2 = _interopRequireDefault(require_extends());
-      var _flow = _interopRequireDefault(require_flow());
-      var _get = _interopRequireDefault(require_get());
-      var _clamp = _interopRequireDefault(require_clamp());
-      var _constants = require_constants();
-      var _IX2VanillaEngine = require_IX2VanillaEngine();
-      var _IX2EngineActions = require_IX2EngineActions();
-      var _shared = require_shared2();
-      var {
+      import_flow = __toESM(require_flow());
+      import_get = __toESM(require_get());
+      import_clamp = __toESM(require_clamp());
+      init_shared_constants();
+      init_IX2VanillaEngine();
+      init_IX2EngineActions();
+      import_shared5 = __toESM(require_shared2());
+      ({
         MOUSE_CLICK,
         MOUSE_SECOND_CLICK,
         MOUSE_DOWN,
@@ -10434,42 +10377,28 @@
         ECOMMERCE_CART_OPEN,
         PAGE_START,
         PAGE_SCROLL
-      } = _constants.EventTypeConsts;
-      var COMPONENT_ACTIVE = "COMPONENT_ACTIVE";
-      var COMPONENT_INACTIVE = "COMPONENT_INACTIVE";
-      var {
-        COLON_DELIMITER
-      } = _constants.IX2EngineConstants;
-      var {
-        getNamespacedParameterId
-      } = _shared.IX2VanillaUtils;
-      var composableFilter = (predicate) => (options) => {
+      } = EventTypeConsts);
+      COMPONENT_ACTIVE = "COMPONENT_ACTIVE";
+      COMPONENT_INACTIVE = "COMPONENT_INACTIVE";
+      ({ COLON_DELIMITER: COLON_DELIMITER3 } = IX2EngineConstants_exports);
+      ({ getNamespacedParameterId: getNamespacedParameterId2 } = import_shared5.IX2VanillaUtils);
+      composableFilter = (predicate) => (options) => {
         if (typeof options === "object" && predicate(options)) {
           return true;
         }
         return options;
       };
-      var isElement = composableFilter(({
-        element,
-        nativeEvent
-      }) => {
+      isElement = composableFilter(({ element, nativeEvent }) => {
         return element === nativeEvent.target;
       });
-      var containsElement = composableFilter(({
-        element,
-        nativeEvent
-      }) => {
+      containsElement = composableFilter(({ element, nativeEvent }) => {
         return element.contains(nativeEvent.target);
       });
-      var isOrContainsElement = (0, _flow.default)([isElement, containsElement]);
-      var getAutoStopEvent = (store, autoStopEventId) => {
+      isOrContainsElement = (0, import_flow.default)([isElement, containsElement]);
+      getAutoStopEvent = (store, autoStopEventId) => {
         if (autoStopEventId) {
-          const {
-            ixData
-          } = store.getState();
-          const {
-            events
-          } = ixData;
+          const { ixData: ixData2 } = store.getState();
+          const { events } = ixData2;
           const eventToStop = events[autoStopEventId];
           if (eventToStop && !AUTO_STOP_DISABLED_EVENTS[eventToStop.eventTypeId]) {
             return eventToStop;
@@ -10477,50 +10406,32 @@
         }
         return null;
       };
-      var hasAutoStopEvent = ({
-        store,
-        event
-      }) => {
-        const {
-          action: eventAction
-        } = event;
-        const {
-          autoStopEventId
-        } = eventAction.config;
+      hasAutoStopEvent = ({ store, event }) => {
+        const { action: eventAction } = event;
+        const { autoStopEventId } = eventAction.config;
         return Boolean(getAutoStopEvent(store, autoStopEventId));
       };
-      var actionGroupCreator = ({
-        store,
-        event,
-        element,
-        eventStateKey
-      }, state) => {
-        const {
-          action: eventAction,
-          id: eventId
-        } = event;
-        const {
-          actionListId,
-          autoStopEventId
-        } = eventAction.config;
+      actionGroupCreator = ({ store, event, element, eventStateKey }, state) => {
+        const { action: eventAction, id: eventId } = event;
+        const { actionListId, autoStopEventId } = eventAction.config;
         const eventToStop = getAutoStopEvent(store, autoStopEventId);
         if (eventToStop) {
-          (0, _IX2VanillaEngine.stopActionGroup)({
+          stopActionGroup({
             store,
             eventId: autoStopEventId,
             eventTarget: element,
-            eventStateKey: autoStopEventId + COLON_DELIMITER + eventStateKey.split(COLON_DELIMITER)[1],
-            actionListId: (0, _get.default)(eventToStop, "action.config.actionListId")
+            eventStateKey: autoStopEventId + COLON_DELIMITER3 + eventStateKey.split(COLON_DELIMITER3)[1],
+            actionListId: (0, import_get.default)(eventToStop, "action.config.actionListId")
           });
         }
-        (0, _IX2VanillaEngine.stopActionGroup)({
+        stopActionGroup({
           store,
           eventId,
           eventTarget: element,
           eventStateKey,
           actionListId
         });
-        (0, _IX2VanillaEngine.startActionGroup)({
+        startActionGroup({
           store,
           eventId,
           eventTarget: element,
@@ -10529,72 +10440,54 @@
         });
         return state;
       };
-      var withFilter = (filter, handler) => (options, state) => (
-        // $FlowFixMe
-        filter(options, state) === true ? handler(options, state) : state
-      );
-      var baseActionGroupOptions = {
+      withFilter = (filter, handler) => (options, state) => filter(options, state) === true ? handler(options, state) : state;
+      baseActionGroupOptions = {
         handler: withFilter(isOrContainsElement, actionGroupCreator)
       };
-      var baseActivityActionGroupOptions = (0, _extends2.default)({}, baseActionGroupOptions, {
+      baseActivityActionGroupOptions = {
+        ...baseActionGroupOptions,
         types: [COMPONENT_ACTIVE, COMPONENT_INACTIVE].join(" ")
-      });
-      var SCROLL_EVENT_TYPES = [{
-        target: window,
-        types: "resize orientationchange",
-        throttle: true
-      }, {
-        target: document,
-        types: "scroll wheel readystatechange IX2_PAGE_UPDATE",
-        throttle: true
-      }];
-      var MOUSE_OVER_OUT_TYPES = "mouseover mouseout";
-      var baseScrollActionGroupOptions = {
+      };
+      SCROLL_EVENT_TYPES = [
+        { target: window, types: "resize orientationchange", throttle: true },
+        {
+          target: document,
+          types: "scroll wheel readystatechange IX2_PAGE_UPDATE",
+          throttle: true
+        }
+      ];
+      MOUSE_OVER_OUT_TYPES = "mouseover mouseout";
+      baseScrollActionGroupOptions = {
         types: SCROLL_EVENT_TYPES
       };
-      var AUTO_STOP_DISABLED_EVENTS = {
+      AUTO_STOP_DISABLED_EVENTS = {
         PAGE_START,
         PAGE_FINISH
       };
-      var getDocumentState = (() => {
+      getDocumentState = (() => {
         const supportOffset = window.pageXOffset !== void 0;
         const isCSS1Compat = document.compatMode === "CSS1Compat";
         const rootElement = isCSS1Compat ? document.documentElement : document.body;
         return () => ({
-          // $FlowFixMe
           scrollLeft: supportOffset ? window.pageXOffset : rootElement.scrollLeft,
-          // $FlowFixMe
           scrollTop: supportOffset ? window.pageYOffset : rootElement.scrollTop,
           // required to remove elasticity in Safari scrolling.
-          stiffScrollTop: (0, _clamp.default)(
-            // $FlowFixMe
+          stiffScrollTop: (0, import_clamp.default)(
             supportOffset ? window.pageYOffset : rootElement.scrollTop,
             0,
-            // $FlowFixMe
             rootElement.scrollHeight - window.innerHeight
           ),
-          // $FlowFixMe
           scrollWidth: rootElement.scrollWidth,
-          // $FlowFixMe
           scrollHeight: rootElement.scrollHeight,
-          // $FlowFixMe
           clientWidth: rootElement.clientWidth,
-          // $FlowFixMe
           clientHeight: rootElement.clientHeight,
           innerWidth: window.innerWidth,
           innerHeight: window.innerHeight
         });
       })();
-      var areBoxesIntersecting = (a, b) => !(a.left > b.right || a.right < b.left || a.top > b.bottom || a.bottom < b.top);
-      var isElementHovered = ({
-        element,
-        nativeEvent
-      }) => {
-        const {
-          type,
-          target,
-          relatedTarget
-        } = nativeEvent;
+      areBoxesIntersecting = (a, b) => !(a.left > b.right || a.right < b.left || a.top > b.bottom || a.bottom < b.top);
+      isElementHovered = ({ element, nativeEvent }) => {
+        const { type, target, relatedTarget } = nativeEvent;
         const containsTarget = element.contains(target);
         if (type === "mouseover" && containsTarget) {
           return true;
@@ -10605,17 +10498,12 @@
         }
         return false;
       };
-      var isElementVisible = (options) => {
+      isElementVisible = (options) => {
         const {
           element,
-          event: {
-            config
-          }
+          event: { config }
         } = options;
-        const {
-          clientWidth,
-          clientHeight
-        } = getDocumentState();
+        const { clientWidth, clientHeight } = getDocumentState();
         const scrollOffsetValue = config.scrollOffsetValue;
         const scrollOffsetUnit = config.scrollOffsetUnit;
         const isPX = scrollOffsetUnit === "PX";
@@ -10627,20 +10515,20 @@
           bottom: clientHeight - offsetPadding
         });
       };
-      var whenComponentActiveChange = (handler) => (options, oldState) => {
-        const {
-          type
-        } = options.nativeEvent;
+      whenComponentActiveChange = // @ts-expect-error - TS7006 - Parameter 'handler' implicitly has an 'any' type.
+      (handler) => (options, oldState) => {
+        const { type } = options.nativeEvent;
         const isActive = [COMPONENT_ACTIVE, COMPONENT_INACTIVE].indexOf(type) !== -1 ? type === COMPONENT_ACTIVE : oldState.isActive;
-        const newState = (0, _extends2.default)({}, oldState, {
+        const newState = {
+          ...oldState,
           isActive
-        });
+        };
         if (!oldState || newState.isActive !== oldState.isActive) {
           return handler(options, newState) || newState;
         }
         return newState;
       };
-      var whenElementHoverChange = (handler) => (options, oldState) => {
+      whenElementHoverChange = (handler) => (options, oldState) => {
         const newState = {
           elementHovered: isElementHovered(options)
         };
@@ -10649,63 +10537,58 @@
         }
         return newState;
       };
-      var whenElementVisibiltyChange = (handler) => (options, oldState) => {
-        const newState = (0, _extends2.default)({}, oldState, {
+      whenElementVisibiltyChange = (handler) => (options, oldState) => {
+        const newState = {
+          ...oldState,
           elementVisible: isElementVisible(options)
-        });
+        };
         if (oldState ? newState.elementVisible !== oldState.elementVisible : newState.elementVisible) {
           return handler(options, newState) || newState;
         }
         return newState;
       };
-      var whenScrollDirectionChange = (handler) => (
-        // $FlowFixMe
-        (options, oldState = {}) => {
-          const {
-            stiffScrollTop: scrollTop,
-            scrollHeight,
-            innerHeight
-          } = getDocumentState();
-          const {
-            event: {
-              config,
-              eventTypeId
-            }
-          } = options;
-          const {
-            scrollOffsetValue,
-            scrollOffsetUnit
-          } = config;
-          const isPX = scrollOffsetUnit === "PX";
-          const scrollHeightBounds = scrollHeight - innerHeight;
-          const percentTop = Number((scrollTop / scrollHeightBounds).toFixed(2));
-          if (oldState && oldState.percentTop === percentTop) {
-            return oldState;
-          }
-          const scrollTopPadding = (isPX ? scrollOffsetValue : innerHeight * (scrollOffsetValue || 0) / 100) / scrollHeightBounds;
-          let scrollingDown;
-          let scrollDirectionChanged;
-          let anchorTop = 0;
-          if (oldState) {
-            scrollingDown = percentTop > oldState.percentTop;
-            scrollDirectionChanged = oldState.scrollingDown !== scrollingDown;
-            anchorTop = scrollDirectionChanged ? percentTop : oldState.anchorTop;
-          }
-          const inBounds = eventTypeId === PAGE_SCROLL_DOWN ? percentTop >= anchorTop + scrollTopPadding : percentTop <= anchorTop - scrollTopPadding;
-          const newState = (0, _extends2.default)({}, oldState, {
-            percentTop,
-            inBounds,
-            anchorTop,
-            scrollingDown
-          });
-          if (oldState && inBounds && (scrollDirectionChanged || newState.inBounds !== oldState.inBounds)) {
-            return handler(options, newState) || newState;
-          }
-          return newState;
+      whenScrollDirectionChange = // @ts-expect-error - TS7006 - Parameter 'handler' implicitly has an 'any' type.
+      (handler) => (options, oldState = {}) => {
+        const {
+          stiffScrollTop: scrollTop,
+          scrollHeight,
+          innerHeight
+        } = getDocumentState();
+        const {
+          event: { config, eventTypeId }
+        } = options;
+        const { scrollOffsetValue, scrollOffsetUnit } = config;
+        const isPX = scrollOffsetUnit === "PX";
+        const scrollHeightBounds = scrollHeight - innerHeight;
+        const percentTop = Number((scrollTop / scrollHeightBounds).toFixed(2));
+        if (oldState && oldState.percentTop === percentTop) {
+          return oldState;
         }
-      );
-      var pointIntersects = (point, rect) => point.left > rect.left && point.left < rect.right && point.top > rect.top && point.top < rect.bottom;
-      var whenPageLoadFinish = (handler) => (options, oldState) => {
+        const scrollTopPadding = (isPX ? scrollOffsetValue : innerHeight * (scrollOffsetValue || 0) / 100) / scrollHeightBounds;
+        let scrollingDown;
+        let scrollDirectionChanged;
+        let anchorTop = 0;
+        if (oldState) {
+          scrollingDown = percentTop > oldState.percentTop;
+          scrollDirectionChanged = oldState.scrollingDown !== scrollingDown;
+          anchorTop = scrollDirectionChanged ? percentTop : oldState.anchorTop;
+        }
+        const inBounds = eventTypeId === PAGE_SCROLL_DOWN ? percentTop >= anchorTop + scrollTopPadding : percentTop <= anchorTop - scrollTopPadding;
+        const newState = {
+          ...oldState,
+          percentTop,
+          inBounds,
+          anchorTop,
+          scrollingDown
+        };
+        if (oldState && inBounds && // @ts-expect-error - TS2339 - Property 'inBounds' does not exist on type '{}'.
+        (scrollDirectionChanged || newState.inBounds !== oldState.inBounds)) {
+          return handler(options, newState) || newState;
+        }
+        return newState;
+      };
+      pointIntersects = (point, rect) => point.left > rect.left && point.left < rect.right && point.top > rect.top && point.top < rect.bottom;
+      whenPageLoadFinish = (handler) => (options, oldState) => {
         const newState = {
           finished: document.readyState === "complete"
         };
@@ -10714,7 +10597,7 @@
         }
         return newState;
       };
-      var whenPageLoadStart = (handler) => (options, oldState) => {
+      whenPageLoadStart = (handler) => (options, oldState) => {
         const newState = {
           started: true
         };
@@ -10723,9 +10606,7 @@
         }
         return newState;
       };
-      var whenClickCountChange = (handler) => (options, oldState = {
-        clickCount: 0
-      }) => {
+      whenClickCountChange = (handler) => (options, oldState = { clickCount: 0 }) => {
         const newState = {
           clickCount: oldState.clickCount % 2 + 1
         };
@@ -10734,46 +10615,49 @@
         }
         return newState;
       };
-      var getComponentActiveOptions = (allowNestedChildrenEvents = true) => (0, _extends2.default)({}, baseActivityActionGroupOptions, {
-        handler: withFilter(allowNestedChildrenEvents ? isOrContainsElement : isElement, whenComponentActiveChange((options, state) => {
-          return state.isActive ? baseActionGroupOptions.handler(options, state) : state;
-        }))
+      getComponentActiveOptions = (allowNestedChildrenEvents = true) => ({
+        ...baseActivityActionGroupOptions,
+        handler: withFilter(
+          allowNestedChildrenEvents ? isOrContainsElement : isElement,
+          // @ts-expect-error - TS7006 - Parameter 'options' implicitly has an 'any' type. | TS7006 - Parameter 'state' implicitly has an 'any' type.
+          whenComponentActiveChange((options, state) => {
+            return state.isActive ? baseActionGroupOptions.handler(options, state) : state;
+          })
+        )
       });
-      var getComponentInactiveOptions = (allowNestedChildrenEvents = true) => (0, _extends2.default)({}, baseActivityActionGroupOptions, {
-        handler: withFilter(allowNestedChildrenEvents ? isOrContainsElement : isElement, whenComponentActiveChange((options, state) => {
-          return !state.isActive ? baseActionGroupOptions.handler(options, state) : state;
-        }))
+      getComponentInactiveOptions = (allowNestedChildrenEvents = true) => ({
+        ...baseActivityActionGroupOptions,
+        handler: withFilter(
+          allowNestedChildrenEvents ? isOrContainsElement : isElement,
+          // @ts-expect-error - TS7006 - Parameter 'options' implicitly has an 'any' type. | TS7006 - Parameter 'state' implicitly has an 'any' type.
+          whenComponentActiveChange((options, state) => {
+            return !state.isActive ? baseActionGroupOptions.handler(options, state) : state;
+          })
+        )
       });
-      var scrollIntoOutOfViewOptions = (0, _extends2.default)({}, baseScrollActionGroupOptions, {
+      scrollIntoOutOfViewOptions = {
+        ...baseScrollActionGroupOptions,
         handler: whenElementVisibiltyChange((options, state) => {
-          const {
-            elementVisible
-          } = state;
-          const {
-            event,
-            store
-          } = options;
-          const {
-            ixData
-          } = store.getState();
-          const {
-            events
-          } = ixData;
+          const { elementVisible } = state;
+          const { event, store } = options;
+          const { ixData: ixData2 } = store.getState();
+          const { events } = ixData2;
           if (!events[event.action.config.autoStopEventId] && state.triggered) {
             return state;
           }
           if (event.eventTypeId === SCROLL_INTO_VIEW === elementVisible) {
             actionGroupCreator(options);
-            return (0, _extends2.default)({}, state, {
+            return {
+              ...state,
               triggered: true
-            });
+            };
           } else {
             return state;
           }
         })
-      });
-      var MOUSE_OUT_ROUND_THRESHOLD = 0.05;
-      var _default = {
+      };
+      MOUSE_OUT_ROUND_THRESHOLD = 0.05;
+      IX2VanillaEvents_default = {
         [SLIDER_ACTIVE]: getComponentActiveOptions(),
         [SLIDER_INACTIVE]: getComponentInactiveOptions(),
         [DROPDOWN_OPEN]: getComponentActiveOptions(),
@@ -10794,62 +10678,61 @@
         },
         [MOUSE_CLICK]: {
           types: "click",
-          handler: withFilter(isOrContainsElement, whenClickCountChange((options, {
-            clickCount
-          }) => {
-            if (hasAutoStopEvent(options)) {
-              clickCount === 1 && actionGroupCreator(options);
-            } else {
-              actionGroupCreator(options);
-            }
-          }))
+          handler: withFilter(
+            isOrContainsElement,
+            whenClickCountChange((options, { clickCount }) => {
+              if (hasAutoStopEvent(options)) {
+                clickCount === 1 && actionGroupCreator(options);
+              } else {
+                actionGroupCreator(options);
+              }
+            })
+          )
         },
         [MOUSE_SECOND_CLICK]: {
           types: "click",
-          handler: withFilter(isOrContainsElement, whenClickCountChange((options, {
-            clickCount
-          }) => {
-            if (clickCount === 2) {
-              actionGroupCreator(options);
-            }
-          }))
+          handler: withFilter(
+            isOrContainsElement,
+            whenClickCountChange((options, { clickCount }) => {
+              if (clickCount === 2) {
+                actionGroupCreator(options);
+              }
+            })
+          )
         },
-        [MOUSE_DOWN]: (0, _extends2.default)({}, baseActionGroupOptions, {
+        [MOUSE_DOWN]: {
+          ...baseActionGroupOptions,
           types: "mousedown"
-        }),
-        [MOUSE_UP]: (0, _extends2.default)({}, baseActionGroupOptions, {
+        },
+        [MOUSE_UP]: {
+          ...baseActionGroupOptions,
           types: "mouseup"
-        }),
+        },
         [MOUSE_OVER]: {
           types: MOUSE_OVER_OUT_TYPES,
-          handler: withFilter(isOrContainsElement, whenElementHoverChange((options, state) => {
-            if (state.elementHovered) {
-              actionGroupCreator(options);
-            }
-          }))
+          handler: withFilter(
+            isOrContainsElement,
+            whenElementHoverChange((options, state) => {
+              if (state.elementHovered) {
+                actionGroupCreator(options);
+              }
+            })
+          )
         },
         [MOUSE_OUT]: {
           types: MOUSE_OVER_OUT_TYPES,
-          handler: withFilter(isOrContainsElement, whenElementHoverChange((options, state) => {
-            if (!state.elementHovered) {
-              actionGroupCreator(options);
-            }
-          }))
+          handler: withFilter(
+            isOrContainsElement,
+            whenElementHoverChange((options, state) => {
+              if (!state.elementHovered) {
+                actionGroupCreator(options);
+              }
+            })
+          )
         },
         [MOUSE_MOVE]: {
           types: "mousemove mouseout scroll",
-          handler: ({
-            store,
-            element,
-            eventConfig,
-            nativeEvent,
-            eventStateKey
-          }, state = {
-            clientX: 0,
-            clientY: 0,
-            pageX: 0,
-            pageY: 0
-          }) => {
+          handler: ({ store, element, eventConfig, nativeEvent, eventStateKey }, state = { clientX: 0, clientY: 0, pageX: 0, pageY: 0 }) => {
             const {
               basedOn,
               selectedAxis,
@@ -10869,41 +10752,28 @@
             let namespacedParameterId = continuousParameterGroupId;
             let elementHovered = false;
             switch (basedOn) {
-              case _constants.EventBasedOn.VIEWPORT: {
+              case EventBasedOn.VIEWPORT: {
                 value = isXAxis ? Math.min(clientX, window.innerWidth) / window.innerWidth : Math.min(clientY, window.innerHeight) / window.innerHeight;
                 break;
               }
-              case _constants.EventBasedOn.PAGE: {
-                const {
-                  scrollLeft,
-                  scrollTop,
-                  scrollWidth,
-                  scrollHeight
-                } = getDocumentState();
+              case EventBasedOn.PAGE: {
+                const { scrollLeft, scrollTop, scrollWidth, scrollHeight } = getDocumentState();
                 value = isXAxis ? Math.min(scrollLeft + pageX, scrollWidth) / scrollWidth : Math.min(scrollTop + pageY, scrollHeight) / scrollHeight;
                 break;
               }
-              case _constants.EventBasedOn.ELEMENT:
+              case EventBasedOn.ELEMENT:
               default: {
-                namespacedParameterId = getNamespacedParameterId(eventStateKey, continuousParameterGroupId);
+                namespacedParameterId = getNamespacedParameterId2(
+                  eventStateKey,
+                  continuousParameterGroupId
+                );
                 const isMouseEvent = nativeEvent.type.indexOf("mouse") === 0;
-                if (isMouseEvent && isOrContainsElement({
-                  element,
-                  nativeEvent
-                }) !== true) {
+                if (isMouseEvent && isOrContainsElement({ element, nativeEvent }) !== true) {
                   break;
                 }
                 const rect = element.getBoundingClientRect();
-                const {
-                  left,
-                  top,
-                  width,
-                  height
-                } = rect;
-                if (!isMouseEvent && !pointIntersects({
-                  left: clientX,
-                  top: clientY
-                }, rect)) {
+                const { left, top, width, height } = rect;
+                if (!isMouseEvent && !pointIntersects({ left: clientX, top: clientY }, rect)) {
                   break;
                 }
                 elementHovered = true;
@@ -10914,10 +10784,11 @@
             if (isMouseOut && (value > 1 - MOUSE_OUT_ROUND_THRESHOLD || value < MOUSE_OUT_ROUND_THRESHOLD)) {
               value = Math.round(value);
             }
-            if (basedOn !== _constants.EventBasedOn.ELEMENT || elementHovered || // $FlowFixMe
+            if (basedOn !== EventBasedOn.ELEMENT || elementHovered || // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-expect-error
             elementHovered !== state.elementHovered) {
               value = reverse ? 1 - value : value;
-              store.dispatch((0, _IX2EngineActions.parameterChanged)(namespacedParameterId, value));
+              store.dispatch(parameterChanged(namespacedParameterId, value));
             }
             return {
               elementHovered,
@@ -10930,35 +10801,19 @@
         },
         [PAGE_SCROLL]: {
           types: SCROLL_EVENT_TYPES,
-          // $FlowFixMe
-          handler: ({
-            store,
-            eventConfig
-          }) => {
-            const {
-              continuousParameterGroupId,
-              reverse
-            } = eventConfig;
-            const {
-              scrollTop,
-              scrollHeight,
-              clientHeight
-            } = getDocumentState();
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
+          handler: ({ store, eventConfig }) => {
+            const { continuousParameterGroupId, reverse } = eventConfig;
+            const { scrollTop, scrollHeight, clientHeight } = getDocumentState();
             let value = scrollTop / (scrollHeight - clientHeight);
             value = reverse ? 1 - value : value;
-            store.dispatch((0, _IX2EngineActions.parameterChanged)(continuousParameterGroupId, value));
+            store.dispatch(parameterChanged(continuousParameterGroupId, value));
           }
         },
         [SCROLLING_IN_VIEW]: {
           types: SCROLL_EVENT_TYPES,
-          handler: ({
-            element,
-            store,
-            eventConfig,
-            eventStateKey
-          }, state = {
-            scrollPercent: 0
-          }) => {
+          handler: ({ element, store, eventConfig, eventStateKey }, state = { scrollPercent: 0 }) => {
             const {
               scrollLeft,
               scrollTop,
@@ -10978,16 +10833,19 @@
               endOffsetValue = 0
             } = eventConfig;
             const isXAxis = selectedAxis === "X_AXIS";
-            if (basedOn === _constants.EventBasedOn.VIEWPORT) {
+            if (basedOn === EventBasedOn.VIEWPORT) {
               const value = isXAxis ? scrollLeft / scrollWidth : scrollTop / scrollHeight;
               if (value !== state.scrollPercent) {
-                store.dispatch((0, _IX2EngineActions.parameterChanged)(continuousParameterGroupId, value));
+                store.dispatch(parameterChanged(continuousParameterGroupId, value));
               }
               return {
                 scrollPercent: value
               };
             } else {
-              const namespacedParameterId = getNamespacedParameterId(eventStateKey, continuousParameterGroupId);
+              const namespacedParameterId = getNamespacedParameterId2(
+                eventStateKey,
+                continuousParameterGroupId
+              );
               const elementRect = element.getBoundingClientRect();
               let offsetStartPerc = (addStartOffset ? addOffsetValue : 0) / 100;
               let offsetEndPerc = (addEndOffset ? endOffsetValue : 0) / 100;
@@ -10996,11 +10854,19 @@
               const offsetElementTop = elementRect.top + Math.min(elementRect.height * offsetStartPerc, visibleHeight);
               const offsetElementBottom = elementRect.top + elementRect.height * offsetEndPerc;
               const offsetHeight = offsetElementBottom - offsetElementTop;
-              const fixedScrollHeight = Math.min(visibleHeight + offsetHeight, scrollHeight);
-              const fixedScrollTop = Math.min(Math.max(0, visibleHeight - offsetElementTop), fixedScrollHeight);
+              const fixedScrollHeight = Math.min(
+                visibleHeight + offsetHeight,
+                scrollHeight
+              );
+              const fixedScrollTop = Math.min(
+                Math.max(0, visibleHeight - offsetElementTop),
+                fixedScrollHeight
+              );
               const fixedScrollPerc = fixedScrollTop / fixedScrollHeight;
               if (fixedScrollPerc !== state.scrollPercent) {
-                store.dispatch((0, _IX2EngineActions.parameterChanged)(namespacedParameterId, fixedScrollPerc));
+                store.dispatch(
+                  parameterChanged(namespacedParameterId, fixedScrollPerc)
+                );
               }
               return {
                 scrollPercent: fixedScrollPerc
@@ -11010,20 +10876,24 @@
         },
         [SCROLL_INTO_VIEW]: scrollIntoOutOfViewOptions,
         [SCROLL_OUT_OF_VIEW]: scrollIntoOutOfViewOptions,
-        [PAGE_SCROLL_DOWN]: (0, _extends2.default)({}, baseScrollActionGroupOptions, {
+        [PAGE_SCROLL_DOWN]: {
+          ...baseScrollActionGroupOptions,
+          // @ts-expect-error - TS7006 - Parameter 'options' implicitly has an 'any' type. | TS7006 - Parameter 'state' implicitly has an 'any' type.
           handler: whenScrollDirectionChange((options, state) => {
             if (state.scrollingDown) {
               actionGroupCreator(options);
             }
           })
-        }),
-        [PAGE_SCROLL_UP]: (0, _extends2.default)({}, baseScrollActionGroupOptions, {
+        },
+        [PAGE_SCROLL_UP]: {
+          ...baseScrollActionGroupOptions,
+          // @ts-expect-error - TS7006 - Parameter 'options' implicitly has an 'any' type. | TS7006 - Parameter 'state' implicitly has an 'any' type.
           handler: whenScrollDirectionChange((options, state) => {
             if (!state.scrollingDown) {
               actionGroupCreator(options);
             }
           })
-        }),
+        },
         [PAGE_FINISH]: {
           types: "readystatechange IX2_PAGE_UPDATE",
           handler: withFilter(isElement, whenPageLoadFinish(actionGroupCreator))
@@ -11033,1090 +10903,888 @@
           handler: withFilter(isElement, whenPageLoadStart(actionGroupCreator))
         }
       };
-      exports.default = _default;
     }
   });
 
-  // packages/systems/ix2/engine/logic/IX2VanillaEngine.js
-  var require_IX2VanillaEngine = __commonJS({
-    "packages/systems/ix2/engine/logic/IX2VanillaEngine.js"(exports) {
-      "use strict";
-      var _interopRequireDefault = require_interopRequireDefault().default;
-      var _interopRequireWildcard = require_interopRequireWildcard().default;
-      Object.defineProperty(exports, "__esModule", {
-        value: true
-      });
-      exports.observeRequests = observeRequests;
-      exports.startActionGroup = startActionGroup;
-      exports.startEngine = startEngine;
-      exports.stopActionGroup = stopActionGroup;
-      exports.stopAllActionGroups = stopAllActionGroups;
-      exports.stopEngine = stopEngine;
-      var _extends2 = _interopRequireDefault(require_extends());
-      var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require_objectWithoutPropertiesLoose());
-      var _find = _interopRequireDefault(require_find());
-      var _get = _interopRequireDefault(require_get());
-      var _size = _interopRequireDefault(require_size());
-      var _omitBy = _interopRequireDefault(require_omitBy());
-      var _isEmpty = _interopRequireDefault(require_isEmpty());
-      var _mapValues = _interopRequireDefault(require_mapValues());
-      var _forEach = _interopRequireDefault(require_forEach());
-      var _throttle = _interopRequireDefault(require_throttle());
-      var _constants = require_constants();
-      var _shared = require_shared2();
-      var _IX2EngineActions = require_IX2EngineActions();
-      var elementApi = _interopRequireWildcard(require_IX2BrowserApi());
-      var _IX2VanillaEvents = _interopRequireDefault(require_IX2VanillaEvents());
-      var _excluded = ["store", "computedStyle"];
-      var QuickEffectsIdList = Object.keys(_constants.QuickEffectIds);
-      var isQuickEffect = (actionTypeId) => QuickEffectsIdList.includes(actionTypeId);
-      var {
-        COLON_DELIMITER,
-        BOUNDARY_SELECTOR,
-        HTML_ELEMENT,
-        RENDER_GENERAL,
-        W_MOD_IX
-      } = _constants.IX2EngineConstants;
-      var {
-        getAffectedElements,
-        getElementId,
-        getDestinationValues,
-        observeStore,
-        getInstanceId,
-        renderHTMLElement,
-        clearAllStyles,
-        getMaxDurationItemIndex,
-        getComputedStyle,
-        getInstanceOrigin,
-        reduceListToGroup,
-        shouldNamespaceEventParameter,
-        getNamespacedParameterId,
-        shouldAllowMediaQuery,
-        cleanupHTMLElement,
-        clearObjectCache,
-        stringifyTarget,
-        mediaQueriesEqual,
-        shallowEqual
-      } = _shared.IX2VanillaUtils;
-      var {
-        isPluginType,
-        createPluginInstance,
-        getPluginDuration
-      } = _shared.IX2VanillaPlugins;
-      var ua = navigator.userAgent;
-      var IS_MOBILE_SAFARI = ua.match(/iPad/i) || ua.match(/iPhone/);
-      var THROTTLED_EVENT_WAIT = 12;
-      function observeRequests(store) {
-        observeStore({
-          store,
-          select: ({
-            ixRequest
-          }) => ixRequest.preview,
-          onChange: handlePreviewRequest
-        });
-        observeStore({
-          store,
-          select: ({
-            ixRequest
-          }) => ixRequest.playback,
-          onChange: handlePlaybackRequest
-        });
-        observeStore({
-          store,
-          select: ({
-            ixRequest
-          }) => ixRequest.stop,
-          onChange: handleStopRequest
-        });
-        observeStore({
-          store,
-          select: ({
-            ixRequest
-          }) => ixRequest.clear,
-          onChange: handleClearRequest
-        });
+  // packages/systems/ix2/engine/logic/IX2VanillaEngine.ts
+  var IX2VanillaEngine_exports = {};
+  __export(IX2VanillaEngine_exports, {
+    observeRequests: () => observeRequests,
+    startActionGroup: () => startActionGroup,
+    startEngine: () => startEngine,
+    stopActionGroup: () => stopActionGroup,
+    stopAllActionGroups: () => stopAllActionGroups,
+    stopEngine: () => stopEngine
+  });
+  function observeRequests(store) {
+    observeStore2({
+      store,
+      // @ts-expect-error - TS7031 - Binding element 'ixRequest' implicitly has an 'any' type.
+      select: ({ ixRequest: ixRequest2 }) => ixRequest2.preview,
+      onChange: handlePreviewRequest
+    });
+    observeStore2({
+      store,
+      // @ts-expect-error - TS7031 - Binding element 'ixRequest' implicitly has an 'any' type.
+      select: ({ ixRequest: ixRequest2 }) => ixRequest2.playback,
+      onChange: handlePlaybackRequest
+    });
+    observeStore2({
+      store,
+      // @ts-expect-error - TS7031 - Binding element 'ixRequest' implicitly has an 'any' type.
+      select: ({ ixRequest: ixRequest2 }) => ixRequest2.stop,
+      onChange: handleStopRequest
+    });
+    observeStore2({
+      store,
+      // @ts-expect-error - TS7031 - Binding element 'ixRequest' implicitly has an 'any' type.
+      select: ({ ixRequest: ixRequest2 }) => ixRequest2.clear,
+      onChange: handleClearRequest
+    });
+  }
+  function observeMediaQueryChange(store) {
+    observeStore2({
+      store,
+      // @ts-expect-error - TS7031 - Binding element 'ixSession' implicitly has an 'any' type.
+      select: ({ ixSession: ixSession2 }) => ixSession2.mediaQueryKey,
+      onChange: () => {
+        stopEngine(store);
+        clearAllStyles2({ store, elementApi: IX2BrowserApi_exports });
+        startEngine({ store, allowEvents: true });
+        dispatchPageUpdateEvent();
       }
-      function observeMediaQueryChange(store) {
-        observeStore({
-          store,
-          select: ({
-            ixSession
-          }) => ixSession.mediaQueryKey,
-          onChange: () => {
-            stopEngine(store);
-            clearAllStyles({
-              store,
-              elementApi
-            });
-            startEngine({
-              store,
-              allowEvents: true
-            });
-            dispatchPageUpdateEvent();
-          }
-        });
+    });
+  }
+  function observeOneRenderTick(store, onTick) {
+    const unsubscribe = observeStore2({
+      store,
+      // @ts-expect-error - TS7031 - Binding element 'ixSession' implicitly has an 'any' type.
+      select: ({ ixSession: ixSession2 }) => ixSession2.tick,
+      // @ts-expect-error - TS7006 - Parameter 'tick' implicitly has an 'any' type.
+      onChange: (tick) => {
+        onTick(tick);
+        unsubscribe();
       }
-      function observeOneRenderTick(store, onTick) {
-        const unsubscribe = observeStore({
-          store,
-          select: ({
-            ixSession
-          }) => ixSession.tick,
-          onChange: (tick) => {
-            onTick(tick);
-            unsubscribe();
-          }
-        });
-      }
-      function handlePreviewRequest({
-        rawData,
-        defer
-      }, store) {
-        const start = () => {
-          startEngine({
-            store,
-            rawData,
-            allowEvents: true
-          });
-          dispatchPageUpdateEvent();
-        };
-        defer ? setTimeout(start, 0) : start();
-      }
-      function dispatchPageUpdateEvent() {
-        document.dispatchEvent(new CustomEvent("IX2_PAGE_UPDATE"));
-      }
-      function handlePlaybackRequest(playback, store) {
-        const {
-          actionTypeId,
-          actionListId,
+    });
+  }
+  function handlePreviewRequest({ rawData, defer }, store) {
+    const start = () => {
+      startEngine({ store, rawData, allowEvents: true });
+      dispatchPageUpdateEvent();
+    };
+    defer ? setTimeout(start, 0) : start();
+  }
+  function dispatchPageUpdateEvent() {
+    document.dispatchEvent(new CustomEvent("IX2_PAGE_UPDATE"));
+  }
+  function handlePlaybackRequest(playback, store) {
+    const {
+      actionTypeId,
+      actionListId,
+      actionItemId,
+      eventId,
+      allowEvents,
+      immediate,
+      testManual,
+      verbose = true
+    } = playback;
+    let { rawData } = playback;
+    if (actionListId && actionItemId && rawData && immediate) {
+      const actionList = rawData.actionLists[actionListId];
+      if (actionList) {
+        rawData = reduceListToGroup2({
+          actionList,
           actionItemId,
-          eventId,
-          allowEvents,
-          immediate,
-          testManual,
-          verbose = true
-        } = playback;
-        let {
           rawData
-        } = playback;
-        if (actionListId && actionItemId && rawData && immediate) {
-          const actionList = rawData.actionLists[actionListId];
-          if (actionList) {
-            rawData = reduceListToGroup({
-              actionList,
-              actionItemId,
-              rawData
-            });
-          }
-        }
-        startEngine({
-          store,
-          rawData,
-          allowEvents,
-          testManual
-        });
-        if (actionListId && actionTypeId === _constants.ActionTypeConsts.GENERAL_START_ACTION || isQuickEffect(actionTypeId)) {
-          stopActionGroup({
-            store,
-            actionListId
-          });
-          renderInitialGroup({
-            store,
-            actionListId,
-            eventId
-          });
-          const started = startActionGroup({
-            store,
-            eventId,
-            actionListId,
-            immediate,
-            verbose
-          });
-          if (verbose && started) {
-            store.dispatch((0, _IX2EngineActions.actionListPlaybackChanged)({
-              actionListId,
-              isPlaying: !immediate
-            }));
-          }
-        }
-      }
-      function handleStopRequest({
-        actionListId
-      }, store) {
-        if (actionListId) {
-          stopActionGroup({
-            store,
-            actionListId
-          });
-        } else {
-          stopAllActionGroups({
-            store
-          });
-        }
-        stopEngine(store);
-      }
-      function handleClearRequest(state, store) {
-        stopEngine(store);
-        clearAllStyles({
-          store,
-          elementApi
         });
       }
-      function startEngine({
-        store,
-        rawData,
-        allowEvents,
-        testManual
-      }) {
-        const {
-          ixSession
-        } = store.getState();
-        if (rawData) {
-          store.dispatch((0, _IX2EngineActions.rawDataImported)(rawData));
-        }
-        if (!ixSession.active) {
-          store.dispatch((0, _IX2EngineActions.sessionInitialized)({
-            hasBoundaryNodes: Boolean(document.querySelector(BOUNDARY_SELECTOR)),
-            reducedMotion: (
-              // $FlowFixMe - Remove this attribute on beta launch
-              document.body.hasAttribute("data-wf-ix-vacation") && window.matchMedia("(prefers-reduced-motion)").matches
-            )
-          }));
-          if (allowEvents) {
-            bindEvents(store);
-            addDocumentClass();
-            if (store.getState().ixSession.hasDefinedMediaQueries) {
-              observeMediaQueryChange(store);
-            }
-          }
-          store.dispatch((0, _IX2EngineActions.sessionStarted)());
-          startRenderLoop(store, testManual);
-        }
-      }
-      function addDocumentClass() {
-        const {
-          documentElement
-        } = document;
-        if (documentElement.className.indexOf(W_MOD_IX) === -1) {
-          documentElement.className += ` ${W_MOD_IX}`;
-        }
-      }
-      function startRenderLoop(store, testManual) {
-        const handleFrame = (now) => {
-          const {
-            ixSession,
-            ixParameters
-          } = store.getState();
-          if (ixSession.active) {
-            store.dispatch((0, _IX2EngineActions.animationFrameChanged)(now, ixParameters));
-            if (testManual) {
-              observeOneRenderTick(store, handleFrame);
-            } else {
-              requestAnimationFrame(handleFrame);
-            }
-          }
-        };
-        handleFrame(window.performance.now());
-      }
-      function stopEngine(store) {
-        const {
-          ixSession
-        } = store.getState();
-        if (ixSession.active) {
-          const {
-            eventListeners
-          } = ixSession;
-          eventListeners.forEach(clearEventListener);
-          clearObjectCache();
-          store.dispatch((0, _IX2EngineActions.sessionStopped)());
-        }
-      }
-      function clearEventListener({
-        target,
-        listenerParams
-      }) {
-        target.removeEventListener.apply(target, listenerParams);
-      }
-      function createGroupInstances({
-        store,
-        eventStateKey,
-        eventTarget,
-        eventId,
-        eventConfig,
-        actionListId,
-        parameterGroup,
-        smoothing,
-        restingValue
-      }) {
-        const {
-          ixData,
-          ixSession
-        } = store.getState();
-        const {
-          events
-        } = ixData;
-        const event = events[eventId];
-        const {
-          eventTypeId
-        } = event;
-        const targetCache = {};
-        const instanceActionGroups = {};
-        const instanceConfigs = [];
-        const {
-          continuousActionGroups
-        } = parameterGroup;
-        let {
-          id: parameterId
-        } = parameterGroup;
-        if (shouldNamespaceEventParameter(eventTypeId, eventConfig)) {
-          parameterId = getNamespacedParameterId(eventStateKey, parameterId);
-        }
-        const eventElementRoot = ixSession.hasBoundaryNodes && eventTarget ? elementApi.getClosestElement(eventTarget, BOUNDARY_SELECTOR) : null;
-        continuousActionGroups.forEach((actionGroup) => {
-          const {
-            keyframe,
-            actionItems
-          } = actionGroup;
-          actionItems.forEach((actionItem) => {
-            const {
-              actionTypeId
-            } = actionItem;
-            const {
-              target
-            } = actionItem.config;
-            if (!target) {
-              return;
-            }
-            const elementRoot = target.boundaryMode ? eventElementRoot : null;
-            const key = stringifyTarget(target) + COLON_DELIMITER + actionTypeId;
-            instanceActionGroups[key] = appendActionItem(instanceActionGroups[key], keyframe, actionItem);
-            if (!targetCache[key]) {
-              targetCache[key] = true;
-              const {
-                config
-              } = actionItem;
-              getAffectedElements({
-                config,
-                event,
-                eventTarget,
-                elementRoot,
-                elementApi
-              }).forEach((element) => {
-                instanceConfigs.push({
-                  element,
-                  key
-                });
-              });
-            }
-          });
-        });
-        instanceConfigs.forEach(({
-          element,
-          key
-        }) => {
-          const actionGroups = instanceActionGroups[key];
-          const actionItem = (0, _get.default)(actionGroups, `[0].actionItems[0]`, {});
-          const {
-            actionTypeId
-          } = actionItem;
-          const pluginInstance = isPluginType(actionTypeId) ? (
-            // $FlowFixMe
-            createPluginInstance(actionTypeId)(element, actionItem)
-          ) : null;
-          const destination = getDestinationValues(
-            {
-              element,
-              actionItem,
-              elementApi
-            },
-            // $FlowFixMe
-            pluginInstance
-          );
-          createInstance({
-            store,
-            element,
-            eventId,
-            actionListId,
-            actionItem,
-            destination,
-            continuous: true,
-            parameterId,
-            actionGroups,
-            smoothing,
-            restingValue,
-            pluginInstance
-          });
-        });
-      }
-      function appendActionItem(actionGroups = [], keyframe, actionItem) {
-        const newActionGroups = [...actionGroups];
-        let groupIndex;
-        newActionGroups.some((group, index) => {
-          if (group.keyframe === keyframe) {
-            groupIndex = index;
-            return true;
-          }
-          return false;
-        });
-        if (groupIndex == null) {
-          groupIndex = newActionGroups.length;
-          newActionGroups.push({
-            keyframe,
-            actionItems: []
-          });
-        }
-        newActionGroups[groupIndex].actionItems.push(actionItem);
-        return newActionGroups;
-      }
-      function bindEvents(store) {
-        const {
-          ixData
-        } = store.getState();
-        const {
-          eventTypeMap
-        } = ixData;
-        updateViewportWidth(store);
-        (0, _forEach.default)(eventTypeMap, (events, key) => {
-          const logic = _IX2VanillaEvents.default[key];
-          if (!logic) {
-            console.warn(`IX2 event type not configured: ${key}`);
-            return;
-          }
-          bindEventType({
-            logic,
-            store,
-            events
-          });
-        });
-        const {
-          ixSession
-        } = store.getState();
-        if (ixSession.eventListeners.length) {
-          bindResizeEvents(store);
-        }
-      }
-      var WINDOW_RESIZE_EVENTS = ["resize", "orientationchange"];
-      function bindResizeEvents(store) {
-        const handleResize = () => {
-          updateViewportWidth(store);
-        };
-        WINDOW_RESIZE_EVENTS.forEach((type) => {
-          window.addEventListener(type, handleResize);
-          store.dispatch((0, _IX2EngineActions.eventListenerAdded)(window, [type, handleResize]));
-        });
-        handleResize();
-      }
-      function updateViewportWidth(store) {
-        const {
-          ixSession,
-          ixData
-        } = store.getState();
-        const width = window.innerWidth;
-        if (width !== ixSession.viewportWidth) {
-          const {
-            mediaQueries
-          } = ixData;
-          store.dispatch((0, _IX2EngineActions.viewportWidthChanged)({
-            width,
-            mediaQueries
-          }));
-        }
-      }
-      var mapFoundValues = (object, iteratee) => (0, _omitBy.default)((0, _mapValues.default)(object, iteratee), _isEmpty.default);
-      var forEachEventTarget = (eventTargets, eventCallback) => {
-        (0, _forEach.default)(eventTargets, (elements, eventId) => {
-          elements.forEach((element, index) => {
-            const eventStateKey = eventId + COLON_DELIMITER + index;
-            eventCallback(element, eventId, eventStateKey);
-          });
-        });
-      };
-      var getAffectedForEvent = (event) => {
-        const config = {
-          target: event.target,
-          targets: event.targets
-        };
-        return getAffectedElements({
-          config,
-          elementApi
-        });
-      };
-      function bindEventType({
-        logic,
-        store,
-        events
-      }) {
-        injectBehaviorCSSFixes(events);
-        const {
-          types: eventTypes,
-          handler: eventHandler
-        } = logic;
-        const {
-          ixData
-        } = store.getState();
-        const {
-          actionLists
-        } = ixData;
-        const eventTargets = mapFoundValues(events, getAffectedForEvent);
-        if (!(0, _size.default)(eventTargets)) {
-          return;
-        }
-        (0, _forEach.default)(eventTargets, (elements, key) => {
-          const event = events[key];
-          const {
-            action: eventAction,
-            id: eventId,
-            mediaQueries = ixData.mediaQueryKeys
-          } = event;
-          const {
-            actionListId
-          } = eventAction.config;
-          if (!mediaQueriesEqual(mediaQueries, ixData.mediaQueryKeys)) {
-            store.dispatch((0, _IX2EngineActions.mediaQueriesDefined)());
-          }
-          if (eventAction.actionTypeId === _constants.ActionTypeConsts.GENERAL_CONTINUOUS_ACTION) {
-            const configs = Array.isArray(event.config) ? event.config : [event.config];
-            configs.forEach((eventConfig) => {
-              const {
-                continuousParameterGroupId
-              } = eventConfig;
-              const paramGroups = (0, _get.default)(actionLists, `${actionListId}.continuousParameterGroups`, []);
-              const parameterGroup = (0, _find.default)(paramGroups, ({
-                id
-              }) => id === continuousParameterGroupId);
-              const smoothing = (eventConfig.smoothing || 0) / 100;
-              const restingValue = (eventConfig.restingState || 0) / 100;
-              if (!parameterGroup) {
-                return;
-              }
-              elements.forEach((eventTarget, index) => {
-                const eventStateKey = eventId + COLON_DELIMITER + index;
-                createGroupInstances({
-                  store,
-                  eventStateKey,
-                  eventTarget,
-                  eventId,
-                  eventConfig,
-                  actionListId,
-                  parameterGroup,
-                  smoothing,
-                  restingValue
-                });
-              });
-            });
-          }
-          if (eventAction.actionTypeId === _constants.ActionTypeConsts.GENERAL_START_ACTION || isQuickEffect(eventAction.actionTypeId)) {
-            renderInitialGroup({
-              store,
-              actionListId,
-              eventId
-            });
-          }
-        });
-        const handleEvent = (nativeEvent) => {
-          const {
-            ixSession
-          } = store.getState();
-          forEachEventTarget(eventTargets, (element, eventId, eventStateKey) => {
-            const event = events[eventId];
-            const oldState = ixSession.eventState[eventStateKey];
-            const {
-              action: eventAction,
-              mediaQueries = ixData.mediaQueryKeys
-            } = event;
-            if (!shouldAllowMediaQuery(mediaQueries, ixSession.mediaQueryKey)) {
-              return;
-            }
-            const handleEventWithConfig = (eventConfig = {}) => {
-              const newState = eventHandler({
-                store,
-                element,
-                event,
-                eventConfig,
-                nativeEvent,
-                eventStateKey
-              }, oldState);
-              if (!shallowEqual(newState, oldState)) {
-                store.dispatch((0, _IX2EngineActions.eventStateChanged)(eventStateKey, newState));
-              }
-            };
-            if (eventAction.actionTypeId === _constants.ActionTypeConsts.GENERAL_CONTINUOUS_ACTION) {
-              const configs = Array.isArray(event.config) ? event.config : [event.config];
-              configs.forEach(handleEventWithConfig);
-            } else {
-              handleEventWithConfig();
-            }
-          });
-        };
-        const handleEventThrottled = (0, _throttle.default)(handleEvent, THROTTLED_EVENT_WAIT);
-        const addListeners = ({
-          target = document,
-          types,
-          throttle: shouldThrottle
-        }) => {
-          types.split(" ").filter(Boolean).forEach((type) => {
-            const handlerFunc = shouldThrottle ? handleEventThrottled : handleEvent;
-            target.addEventListener(type, handlerFunc);
-            store.dispatch((0, _IX2EngineActions.eventListenerAdded)(target, [type, handlerFunc]));
-          });
-        };
-        if (Array.isArray(eventTypes)) {
-          eventTypes.forEach(addListeners);
-        } else if (typeof eventTypes === "string") {
-          addListeners(logic);
-        }
-      }
-      function injectBehaviorCSSFixes(events) {
-        if (!IS_MOBILE_SAFARI) {
-          return;
-        }
-        const injectedSelectors = {};
-        let cssText = "";
-        for (const eventId in events) {
-          const {
-            eventTypeId,
-            target
-          } = events[eventId];
-          const selector = elementApi.getQuerySelector(target);
-          if (injectedSelectors[selector]) {
-            continue;
-          }
-          if (eventTypeId === _constants.EventTypeConsts.MOUSE_CLICK || eventTypeId === _constants.EventTypeConsts.MOUSE_SECOND_CLICK) {
-            injectedSelectors[selector] = true;
-            cssText += // $FlowFixMe
-            selector + "{cursor: pointer;touch-action: manipulation;}";
-          }
-        }
-        if (cssText) {
-          const style = document.createElement("style");
-          style.textContent = cssText;
-          document.body.appendChild(style);
-        }
-      }
-      function renderInitialGroup({
-        store,
-        actionListId,
-        eventId
-      }) {
-        const {
-          ixData,
-          ixSession
-        } = store.getState();
-        const {
-          actionLists,
-          events
-        } = ixData;
-        const event = events[eventId];
-        const actionList = actionLists[actionListId];
-        if (actionList && actionList.useFirstGroupAsInitialState) {
-          const initialStateItems = (0, _get.default)(actionList, "actionItemGroups[0].actionItems", []);
-          const mediaQueries = (0, _get.default)(event, "mediaQueries", ixData.mediaQueryKeys);
-          if (!shouldAllowMediaQuery(mediaQueries, ixSession.mediaQueryKey)) {
-            return;
-          }
-          initialStateItems.forEach((actionItem) => {
-            var _itemConfig$target;
-            const {
-              config: itemConfig,
-              actionTypeId
-            } = actionItem;
-            const config = (
-              // When useEventTarget is explicitly true, use event target/targets to query elements
-              (itemConfig === null || itemConfig === void 0 ? void 0 : (_itemConfig$target = itemConfig.target) === null || _itemConfig$target === void 0 ? void 0 : _itemConfig$target.useEventTarget) === true ? {
-                target: event.target,
-                targets: event.targets
-              } : itemConfig
-            );
-            const itemElements = getAffectedElements({
-              config,
-              event,
-              elementApi
-            });
-            const shouldUsePlugin = isPluginType(actionTypeId);
-            itemElements.forEach((element) => {
-              const pluginInstance = shouldUsePlugin ? (
-                // $FlowFixMe
-                createPluginInstance(actionTypeId)(element, actionItem)
-              ) : null;
-              createInstance({
-                destination: getDestinationValues(
-                  {
-                    element,
-                    actionItem,
-                    elementApi
-                  },
-                  // $FlowFixMe
-                  pluginInstance
-                ),
-                immediate: true,
-                store,
-                element,
-                eventId,
-                actionItem,
-                actionListId,
-                pluginInstance
-              });
-            });
-          });
-        }
-      }
-      function stopAllActionGroups({
-        store
-      }) {
-        const {
-          ixInstances
-        } = store.getState();
-        (0, _forEach.default)(ixInstances, (instance) => {
-          if (!instance.continuous) {
-            const {
-              actionListId,
-              verbose
-            } = instance;
-            removeInstance(instance, store);
-            if (verbose) {
-              store.dispatch((0, _IX2EngineActions.actionListPlaybackChanged)({
-                actionListId,
-                isPlaying: false
-              }));
-            }
-          }
-        });
-      }
-      function stopActionGroup({
-        store,
-        // $FlowFixMe
-        eventId,
-        // $FlowFixMe
-        eventTarget,
-        // $FlowFixMe
-        eventStateKey,
-        actionListId
-      }) {
-        const {
-          ixInstances,
-          ixSession
-        } = store.getState();
-        const eventElementRoot = ixSession.hasBoundaryNodes && eventTarget ? elementApi.getClosestElement(eventTarget, BOUNDARY_SELECTOR) : null;
-        (0, _forEach.default)(ixInstances, (instance) => {
-          const boundaryMode = (0, _get.default)(instance, "actionItem.config.target.boundaryMode");
-          const validEventKey = eventStateKey ? instance.eventStateKey === eventStateKey : true;
-          if (instance.actionListId === actionListId && instance.eventId === eventId && validEventKey) {
-            if (eventElementRoot && boundaryMode && !elementApi.elementContains(eventElementRoot, instance.element)) {
-              return;
-            }
-            removeInstance(instance, store);
-            if (instance.verbose) {
-              store.dispatch((0, _IX2EngineActions.actionListPlaybackChanged)({
-                actionListId,
-                isPlaying: false
-              }));
-            }
-          }
-        });
-      }
-      function startActionGroup({
+    }
+    startEngine({ store, rawData, allowEvents, testManual });
+    if (actionListId && actionTypeId === ActionTypeConsts.GENERAL_START_ACTION || isQuickEffect(actionTypeId)) {
+      stopActionGroup({ store, actionListId });
+      renderInitialGroup({ store, actionListId, eventId });
+      const started = startActionGroup({
         store,
         eventId,
-        // $FlowFixMe
-        eventTarget,
-        // $FlowFixMe
-        eventStateKey,
         actionListId,
-        groupIndex = 0,
-        // $FlowFixMe
         immediate,
-        // $FlowFixMe
         verbose
-      }) {
-        var _event$action;
-        const {
-          ixData,
-          ixSession
-        } = store.getState();
-        const {
-          events
-        } = ixData;
-        const event = events[eventId] || {};
-        const {
-          mediaQueries = ixData.mediaQueryKeys
-        } = event;
-        const actionList = (0, _get.default)(ixData, `actionLists.${actionListId}`, {});
-        const {
-          actionItemGroups,
-          useFirstGroupAsInitialState
-        } = actionList;
-        if (!actionItemGroups || !actionItemGroups.length) {
-          return false;
+      });
+      if (verbose && started) {
+        store.dispatch(
+          actionListPlaybackChanged({ actionListId, isPlaying: !immediate })
+        );
+      }
+    }
+  }
+  function handleStopRequest({ actionListId }, store) {
+    if (actionListId) {
+      stopActionGroup({ store, actionListId });
+    } else {
+      stopAllActionGroups({ store });
+    }
+    stopEngine(store);
+  }
+  function handleClearRequest(state, store) {
+    stopEngine(store);
+    clearAllStyles2({ store, elementApi: IX2BrowserApi_exports });
+  }
+  function startEngine({ store, rawData, allowEvents, testManual }) {
+    const { ixSession: ixSession2 } = store.getState();
+    if (rawData) {
+      store.dispatch(rawDataImported(rawData));
+    }
+    if (!ixSession2.active) {
+      store.dispatch(
+        sessionInitialized({
+          hasBoundaryNodes: Boolean(document.querySelector(BOUNDARY_SELECTOR2)),
+          reducedMotion: document.body.hasAttribute("data-wf-ix-vacation") && window.matchMedia("(prefers-reduced-motion)").matches
+        })
+      );
+      if (allowEvents) {
+        bindEvents(store);
+        addDocumentClass();
+        if (store.getState().ixSession.hasDefinedMediaQueries) {
+          observeMediaQueryChange(store);
         }
-        if (groupIndex >= actionItemGroups.length && (0, _get.default)(event, "config.loop")) {
-          groupIndex = 0;
+      }
+      store.dispatch(sessionStarted());
+      startRenderLoop(store, testManual);
+    }
+  }
+  function addDocumentClass() {
+    const { documentElement } = document;
+    if (documentElement.className.indexOf(W_MOD_IX2) === -1) {
+      documentElement.className += ` ${W_MOD_IX2}`;
+    }
+  }
+  function startRenderLoop(store, testManual) {
+    const handleFrame = (now) => {
+      const { ixSession: ixSession2, ixParameters: ixParameters2 } = store.getState();
+      if (ixSession2.active) {
+        store.dispatch(animationFrameChanged(now, ixParameters2));
+        if (testManual) {
+          observeOneRenderTick(store, handleFrame);
+        } else {
+          requestAnimationFrame(handleFrame);
         }
-        if (groupIndex === 0 && useFirstGroupAsInitialState) {
-          groupIndex++;
+      }
+    };
+    handleFrame(window.performance.now());
+  }
+  function stopEngine(store) {
+    const { ixSession: ixSession2 } = store.getState();
+    if (ixSession2.active) {
+      const { eventListeners } = ixSession2;
+      eventListeners.forEach(clearEventListener);
+      clearObjectCache2();
+      store.dispatch(sessionStopped());
+    }
+  }
+  function clearEventListener({ target, listenerParams }) {
+    target.removeEventListener.apply(target, listenerParams);
+  }
+  function createGroupInstances({
+    // @ts-expect-error - TS7031 - Binding element 'store' implicitly has an 'any' type.
+    store,
+    // @ts-expect-error - TS7031 - Binding element 'eventStateKey' implicitly has an 'any' type.
+    eventStateKey,
+    // @ts-expect-error - TS7031 - Binding element 'eventTarget' implicitly has an 'any' type.
+    eventTarget,
+    // @ts-expect-error - TS7031 - Binding element 'eventId' implicitly has an 'any' type.
+    eventId,
+    // @ts-expect-error - TS7031 - Binding element 'eventConfig' implicitly has an 'any' type.
+    eventConfig,
+    // @ts-expect-error - TS7031 - Binding element 'actionListId' implicitly has an 'any' type.
+    actionListId,
+    // @ts-expect-error - TS7031 - Binding element 'parameterGroup' implicitly has an 'any' type.
+    parameterGroup,
+    // @ts-expect-error - TS7031 - Binding element 'smoothing' implicitly has an 'any' type.
+    smoothing,
+    // @ts-expect-error - TS7031 - Binding element 'restingValue' implicitly has an 'any' type.
+    restingValue
+  }) {
+    const { ixData: ixData2, ixSession: ixSession2 } = store.getState();
+    const { events } = ixData2;
+    const event = events[eventId];
+    const { eventTypeId } = event;
+    const targetCache = {};
+    const instanceActionGroups = {};
+    const instanceConfigs = [];
+    const { continuousActionGroups } = parameterGroup;
+    let { id: parameterId } = parameterGroup;
+    if (shouldNamespaceEventParameter2(eventTypeId, eventConfig)) {
+      parameterId = getNamespacedParameterId3(eventStateKey, parameterId);
+    }
+    const eventElementRoot = ixSession2.hasBoundaryNodes && eventTarget ? getClosestElement(eventTarget, BOUNDARY_SELECTOR2) : null;
+    continuousActionGroups.forEach((actionGroup) => {
+      const { keyframe, actionItems } = actionGroup;
+      actionItems.forEach((actionItem) => {
+        const { actionTypeId } = actionItem;
+        const { target } = actionItem.config;
+        if (!target) {
+          return;
         }
-        const isFirstGroup = groupIndex === 0 || groupIndex === 1 && useFirstGroupAsInitialState;
-        const instanceDelay = isFirstGroup && isQuickEffect((_event$action = event.action) === null || _event$action === void 0 ? void 0 : _event$action.actionTypeId) ? event.config.delay : void 0;
-        const actionItems = (0, _get.default)(actionItemGroups, [groupIndex, "actionItems"], []);
-        if (!actionItems.length) {
-          return false;
-        }
-        if (!shouldAllowMediaQuery(mediaQueries, ixSession.mediaQueryKey)) {
-          return false;
-        }
-        const eventElementRoot = ixSession.hasBoundaryNodes && eventTarget ? elementApi.getClosestElement(eventTarget, BOUNDARY_SELECTOR) : null;
-        const carrierIndex = getMaxDurationItemIndex(actionItems);
-        let groupStartResult = false;
-        actionItems.forEach((actionItem, actionIndex) => {
-          const {
-            config,
-            actionTypeId
-          } = actionItem;
-          const shouldUsePlugin = isPluginType(actionTypeId);
-          const {
-            target
-          } = config;
-          if (!target) {
-            return;
-          }
-          const elementRoot = target.boundaryMode ? eventElementRoot : null;
-          const elements = getAffectedElements({
+        const elementRoot = target.boundaryMode ? eventElementRoot : null;
+        const key = stringifyTarget2(target) + COLON_DELIMITER4 + actionTypeId;
+        instanceActionGroups[key] = appendActionItem(
+          instanceActionGroups[key],
+          keyframe,
+          actionItem
+        );
+        if (!targetCache[key]) {
+          targetCache[key] = true;
+          const { config } = actionItem;
+          getAffectedElements2({
             config,
             event,
             eventTarget,
             elementRoot,
-            elementApi
+            elementApi: IX2BrowserApi_exports
+          }).forEach((element) => {
+            instanceConfigs.push({ element, key });
           });
-          elements.forEach((element, elementIndex) => {
-            const pluginInstance = shouldUsePlugin ? (
-              // $FlowFixMe
-              createPluginInstance(actionTypeId)(element, actionItem)
-            ) : null;
-            const pluginDuration = shouldUsePlugin ? (
-              // $FlowFixMe
-              getPluginDuration(actionTypeId)(element, actionItem)
-            ) : null;
-            groupStartResult = true;
-            const isCarrier = carrierIndex === actionIndex && elementIndex === 0;
-            const computedStyle = getComputedStyle({
-              element,
-              actionItem
-            });
-            const destination = getDestinationValues(
-              {
-                element,
-                actionItem,
-                elementApi
-              },
-              // $FlowFixMe
-              pluginInstance
-            );
-            createInstance({
+        }
+      });
+    });
+    instanceConfigs.forEach(({ element, key }) => {
+      const actionGroups = instanceActionGroups[key];
+      const actionItem = (0, import_get2.default)(actionGroups, `[0].actionItems[0]`, {});
+      const { actionTypeId } = actionItem;
+      const pluginInstance = isPluginType2(actionTypeId) ? createPluginInstance2(actionTypeId)(element, actionItem) : null;
+      const destination = getDestinationValues2(
+        { element, actionItem, elementApi: IX2BrowserApi_exports },
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
+        pluginInstance
+      );
+      createInstance({
+        store,
+        element,
+        eventId,
+        actionListId,
+        actionItem,
+        destination,
+        continuous: true,
+        parameterId,
+        actionGroups,
+        smoothing,
+        restingValue,
+        pluginInstance
+      });
+    });
+  }
+  function appendActionItem(actionGroups = [], keyframe, actionItem) {
+    const newActionGroups = [...actionGroups];
+    let groupIndex;
+    newActionGroups.some((group, index) => {
+      if (group.keyframe === keyframe) {
+        groupIndex = index;
+        return true;
+      }
+      return false;
+    });
+    if (groupIndex == null) {
+      groupIndex = newActionGroups.length;
+      newActionGroups.push({
+        keyframe,
+        actionItems: []
+      });
+    }
+    newActionGroups[groupIndex].actionItems.push(actionItem);
+    return newActionGroups;
+  }
+  function bindEvents(store) {
+    const { ixData: ixData2 } = store.getState();
+    const { eventTypeMap } = ixData2;
+    updateViewportWidth(store);
+    (0, import_forEach.default)(eventTypeMap, (events, key) => {
+      const logic = IX2VanillaEvents_default[key];
+      if (!logic) {
+        console.warn(`IX2 event type not configured: ${key}`);
+        return;
+      }
+      bindEventType({
+        logic,
+        store,
+        events
+      });
+    });
+    const { ixSession: ixSession2 } = store.getState();
+    if (ixSession2.eventListeners.length) {
+      bindResizeEvents(store);
+    }
+  }
+  function bindResizeEvents(store) {
+    const handleResize = () => {
+      updateViewportWidth(store);
+    };
+    WINDOW_RESIZE_EVENTS.forEach((type) => {
+      window.addEventListener(type, handleResize);
+      store.dispatch(eventListenerAdded(window, [type, handleResize]));
+    });
+    handleResize();
+  }
+  function updateViewportWidth(store) {
+    const { ixSession: ixSession2, ixData: ixData2 } = store.getState();
+    const width = window.innerWidth;
+    if (width !== ixSession2.viewportWidth) {
+      const { mediaQueries } = ixData2;
+      store.dispatch(viewportWidthChanged({ width, mediaQueries }));
+    }
+  }
+  function bindEventType({ logic, store, events }) {
+    injectBehaviorCSSFixes(events);
+    const { types: eventTypes, handler: eventHandler } = logic;
+    const { ixData: ixData2 } = store.getState();
+    const { actionLists } = ixData2;
+    const eventTargets = mapFoundValues(events, getAffectedForEvent);
+    if (!(0, import_size.default)(eventTargets)) {
+      return;
+    }
+    (0, import_forEach.default)(eventTargets, (elements, key) => {
+      const event = events[key];
+      const {
+        action: eventAction,
+        id: eventId,
+        mediaQueries = ixData2.mediaQueryKeys
+      } = event;
+      const { actionListId } = eventAction.config;
+      if (!mediaQueriesEqual2(mediaQueries, ixData2.mediaQueryKeys)) {
+        store.dispatch(mediaQueriesDefined());
+      }
+      if (eventAction.actionTypeId === ActionTypeConsts.GENERAL_CONTINUOUS_ACTION) {
+        const configs = Array.isArray(event.config) ? event.config : [event.config];
+        configs.forEach((eventConfig) => {
+          const { continuousParameterGroupId } = eventConfig;
+          const paramGroups = (0, import_get2.default)(
+            actionLists,
+            `${actionListId}.continuousParameterGroups`,
+            []
+          );
+          const parameterGroup = (0, import_find2.default)(
+            paramGroups,
+            ({ id }) => id === continuousParameterGroupId
+          );
+          const smoothing = (eventConfig.smoothing || 0) / 100;
+          const restingValue = (eventConfig.restingState || 0) / 100;
+          if (!parameterGroup) {
+            return;
+          }
+          elements.forEach((eventTarget, index) => {
+            const eventStateKey = eventId + COLON_DELIMITER4 + index;
+            createGroupInstances({
               store,
-              element,
-              actionItem,
-              eventId,
-              eventTarget,
               eventStateKey,
+              eventTarget,
+              eventId,
+              eventConfig,
               actionListId,
-              groupIndex,
-              isCarrier,
-              computedStyle,
-              destination,
-              immediate,
-              verbose,
-              pluginInstance,
-              pluginDuration,
-              instanceDelay
+              parameterGroup,
+              smoothing,
+              restingValue
             });
           });
         });
-        return groupStartResult;
       }
-      function createInstance(options) {
-        var _ixData$events$eventI;
-        const {
-          store,
-          computedStyle
-        } = options, rest = (0, _objectWithoutPropertiesLoose2.default)(options, _excluded);
-        const {
-          element,
-          actionItem,
-          // $FlowIgnore - Flow 0.121.0
-          immediate,
-          pluginInstance,
-          // $FlowIgnore - Flow 0.121.0
-          continuous,
-          // $FlowIgnore - Flow 0.121.0
-          restingValue,
-          eventId
-        } = rest;
-        const autoStart = !continuous;
-        const instanceId = getInstanceId();
-        const {
-          ixElements,
-          ixSession,
-          ixData
-        } = store.getState();
-        const elementId = getElementId(ixElements, element);
-        const {
-          refState
-        } = ixElements[elementId] || {};
-        const refType = elementApi.getRefType(element);
-        const skipMotion = ixSession.reducedMotion && _constants.ReducedMotionTypes[actionItem.actionTypeId];
-        let skipToValue;
-        if (skipMotion && continuous) {
-          switch ((_ixData$events$eventI = ixData.events[eventId]) === null || _ixData$events$eventI === void 0 ? void 0 : _ixData$events$eventI.eventTypeId) {
-            case _constants.EventTypeConsts.MOUSE_MOVE:
-            case _constants.EventTypeConsts.MOUSE_MOVE_IN_VIEWPORT:
-              skipToValue = restingValue;
-              break;
-            default:
-              skipToValue = 0.5;
-              break;
-          }
-        }
-        const origin = getInstanceOrigin(
-          element,
-          refState,
-          computedStyle,
-          actionItem,
-          elementApi,
-          // $FlowFixMe
-          pluginInstance
-        );
-        store.dispatch((0, _IX2EngineActions.instanceAdded)((0, _extends2.default)({
-          instanceId,
-          elementId,
-          origin,
-          refType,
-          skipMotion,
-          skipToValue
-        }, rest)));
-        dispatchCustomEvent(document.body, "ix2-animation-started", instanceId);
-        if (immediate) {
-          renderImmediateInstance(store, instanceId);
+      if (eventAction.actionTypeId === ActionTypeConsts.GENERAL_START_ACTION || isQuickEffect(eventAction.actionTypeId)) {
+        renderInitialGroup({ store, actionListId, eventId });
+      }
+    });
+    const handleEvent = (nativeEvent) => {
+      const { ixSession: ixSession2 } = store.getState();
+      forEachEventTarget(eventTargets, (element, eventId, eventStateKey) => {
+        const event = events[eventId];
+        const oldState = ixSession2.eventState[eventStateKey];
+        const { action: eventAction, mediaQueries = ixData2.mediaQueryKeys } = event;
+        if (!shouldAllowMediaQuery2(mediaQueries, ixSession2.mediaQueryKey)) {
           return;
         }
-        observeStore({
+        const handleEventWithConfig = (eventConfig = {}) => {
+          const newState = eventHandler(
+            {
+              store,
+              element,
+              event,
+              eventConfig,
+              nativeEvent,
+              eventStateKey
+            },
+            oldState
+          );
+          if (!shallowEqual2(newState, oldState)) {
+            store.dispatch(eventStateChanged(eventStateKey, newState));
+          }
+        };
+        if (eventAction.actionTypeId === ActionTypeConsts.GENERAL_CONTINUOUS_ACTION) {
+          const configs = Array.isArray(event.config) ? event.config : [event.config];
+          configs.forEach(handleEventWithConfig);
+        } else {
+          handleEventWithConfig();
+        }
+      });
+    };
+    const handleEventThrottled = (0, import_throttle.default)(handleEvent, THROTTLED_EVENT_WAIT);
+    const addListeners = ({
+      target = document,
+      // @ts-expect-error - TS7031 - Binding element 'types' implicitly has an 'any' type.
+      types,
+      // @ts-expect-error - TS7031 - Binding element 'shouldThrottle' implicitly has an 'any' type.
+      throttle: shouldThrottle
+    }) => {
+      types.split(" ").filter(Boolean).forEach((type) => {
+        const handlerFunc = shouldThrottle ? handleEventThrottled : handleEvent;
+        target.addEventListener(type, handlerFunc);
+        store.dispatch(eventListenerAdded(target, [type, handlerFunc]));
+      });
+    };
+    if (Array.isArray(eventTypes)) {
+      eventTypes.forEach(addListeners);
+    } else if (typeof eventTypes === "string") {
+      addListeners(logic);
+    }
+  }
+  function injectBehaviorCSSFixes(events) {
+    if (!IS_MOBILE_SAFARI) {
+      return;
+    }
+    const injectedSelectors = {};
+    let cssText = "";
+    for (const eventId in events) {
+      const { eventTypeId, target } = events[eventId];
+      const selector = getQuerySelector(target);
+      if (injectedSelectors[selector]) {
+        continue;
+      }
+      if (eventTypeId === EventTypeConsts.MOUSE_CLICK || eventTypeId === EventTypeConsts.MOUSE_SECOND_CLICK) {
+        injectedSelectors[selector] = true;
+        cssText += selector + "{cursor: pointer;touch-action: manipulation;}";
+      }
+    }
+    if (cssText) {
+      const style = document.createElement("style");
+      style.textContent = cssText;
+      document.body.appendChild(style);
+    }
+  }
+  function renderInitialGroup({ store, actionListId, eventId }) {
+    const { ixData: ixData2, ixSession: ixSession2 } = store.getState();
+    const { actionLists, events } = ixData2;
+    const event = events[eventId];
+    const actionList = actionLists[actionListId];
+    if (actionList && actionList.useFirstGroupAsInitialState) {
+      const initialStateItems = (0, import_get2.default)(
+        actionList,
+        "actionItemGroups[0].actionItems",
+        []
+      );
+      const mediaQueries = (0, import_get2.default)(event, "mediaQueries", ixData2.mediaQueryKeys);
+      if (!shouldAllowMediaQuery2(mediaQueries, ixSession2.mediaQueryKey)) {
+        return;
+      }
+      initialStateItems.forEach((actionItem) => {
+        const { config: itemConfig, actionTypeId } = actionItem;
+        const config = (
+          // When useEventTarget is explicitly true, use event target/targets to query elements
+          // However, skip this condition when objectId is defined
+          itemConfig?.target?.useEventTarget === true && itemConfig?.target?.objectId == null ? { target: event.target, targets: event.targets } : itemConfig
+        );
+        const itemElements = getAffectedElements2({ config, event, elementApi: IX2BrowserApi_exports });
+        const shouldUsePlugin = isPluginType2(actionTypeId);
+        itemElements.forEach((element) => {
+          const pluginInstance = shouldUsePlugin ? createPluginInstance2(actionTypeId)(element, actionItem) : null;
+          createInstance({
+            destination: getDestinationValues2(
+              { element, actionItem, elementApi: IX2BrowserApi_exports },
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-expect-error
+              pluginInstance
+            ),
+            immediate: true,
+            store,
+            element,
+            eventId,
+            actionItem,
+            actionListId,
+            pluginInstance
+          });
+        });
+      });
+    }
+  }
+  function stopAllActionGroups({ store }) {
+    const { ixInstances: ixInstances2 } = store.getState();
+    (0, import_forEach.default)(ixInstances2, (instance) => {
+      if (!instance.continuous) {
+        const { actionListId, verbose } = instance;
+        removeInstance(instance, store);
+        if (verbose) {
+          store.dispatch(
+            actionListPlaybackChanged({ actionListId, isPlaying: false })
+          );
+        }
+      }
+    });
+  }
+  function stopActionGroup({
+    // @ts-expect-error - TS7031 - Binding element 'store' implicitly has an 'any' type.
+    store,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    eventId,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    eventTarget,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    eventStateKey,
+    // @ts-expect-error - TS7031 - Binding element 'actionListId' implicitly has an 'any' type.
+    actionListId
+  }) {
+    const { ixInstances: ixInstances2, ixSession: ixSession2 } = store.getState();
+    const eventElementRoot = ixSession2.hasBoundaryNodes && eventTarget ? getClosestElement(eventTarget, BOUNDARY_SELECTOR2) : null;
+    (0, import_forEach.default)(ixInstances2, (instance) => {
+      const boundaryMode = (0, import_get2.default)(instance, "actionItem.config.target.boundaryMode");
+      const validEventKey = eventStateKey ? instance.eventStateKey === eventStateKey : true;
+      if (instance.actionListId === actionListId && instance.eventId === eventId && validEventKey) {
+        if (eventElementRoot && boundaryMode && !elementContains(eventElementRoot, instance.element)) {
+          return;
+        }
+        removeInstance(instance, store);
+        if (instance.verbose) {
+          store.dispatch(
+            actionListPlaybackChanged({ actionListId, isPlaying: false })
+          );
+        }
+      }
+    });
+  }
+  function startActionGroup({
+    // @ts-expect-error - TS7031 - Binding element 'store' implicitly has an 'any' type.
+    store,
+    // @ts-expect-error - TS7031 - Binding element 'eventId' implicitly has an 'any' type.
+    eventId,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    eventTarget,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    eventStateKey,
+    // @ts-expect-error - TS7031 - Binding element 'actionListId' implicitly has an 'any' type.
+    actionListId,
+    groupIndex = 0,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    immediate,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    verbose
+  }) {
+    const { ixData: ixData2, ixSession: ixSession2 } = store.getState();
+    const { events } = ixData2;
+    const event = events[eventId] || {};
+    const { mediaQueries = ixData2.mediaQueryKeys } = event;
+    const actionList = (0, import_get2.default)(ixData2, `actionLists.${actionListId}`, {});
+    const { actionItemGroups, useFirstGroupAsInitialState } = actionList;
+    if (!actionItemGroups || !actionItemGroups.length) {
+      return false;
+    }
+    if (groupIndex >= actionItemGroups.length && (0, import_get2.default)(event, "config.loop")) {
+      groupIndex = 0;
+    }
+    if (groupIndex === 0 && useFirstGroupAsInitialState) {
+      groupIndex++;
+    }
+    const isFirstGroup = groupIndex === 0 || groupIndex === 1 && useFirstGroupAsInitialState;
+    const instanceDelay = isFirstGroup && isQuickEffect(event.action?.actionTypeId) ? event.config.delay : void 0;
+    const actionItems = (0, import_get2.default)(actionItemGroups, [groupIndex, "actionItems"], []);
+    if (!actionItems.length) {
+      return false;
+    }
+    if (!shouldAllowMediaQuery2(mediaQueries, ixSession2.mediaQueryKey)) {
+      return false;
+    }
+    const eventElementRoot = ixSession2.hasBoundaryNodes && eventTarget ? getClosestElement(eventTarget, BOUNDARY_SELECTOR2) : null;
+    const carrierIndex = getMaxDurationItemIndex2(actionItems);
+    let groupStartResult = false;
+    actionItems.forEach((actionItem, actionIndex) => {
+      const { config, actionTypeId } = actionItem;
+      const shouldUsePlugin = isPluginType2(actionTypeId);
+      const { target } = config;
+      if (!target) {
+        return;
+      }
+      const elementRoot = target.boundaryMode ? eventElementRoot : null;
+      const elements = getAffectedElements2({
+        config,
+        event,
+        eventTarget,
+        elementRoot,
+        elementApi: IX2BrowserApi_exports
+      });
+      elements.forEach((element, elementIndex) => {
+        const pluginInstance = shouldUsePlugin ? createPluginInstance2(actionTypeId)(element, actionItem) : null;
+        const pluginDuration = shouldUsePlugin ? getPluginDuration2(actionTypeId)(element, actionItem) : null;
+        groupStartResult = true;
+        const isCarrier = carrierIndex === actionIndex && elementIndex === 0;
+        const computedStyle = getComputedStyle3({ element, actionItem });
+        const destination = getDestinationValues2(
+          { element, actionItem, elementApi: IX2BrowserApi_exports },
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
+          pluginInstance
+        );
+        createInstance({
           store,
-          select: ({
-            ixInstances
-          }) => ixInstances[instanceId],
-          onChange: handleInstanceChange
-        });
-        if (autoStart) {
-          store.dispatch((0, _IX2EngineActions.instanceStarted)(instanceId, ixSession.tick));
-        }
-      }
-      function removeInstance(instance, store) {
-        dispatchCustomEvent(document.body, "ix2-animation-stopping", {
-          instanceId: instance.id,
-          state: store.getState()
-        });
-        const {
-          elementId,
-          actionItem
-        } = instance;
-        const {
-          ixElements
-        } = store.getState();
-        const {
-          ref,
-          refType
-        } = ixElements[elementId] || {};
-        if (refType === HTML_ELEMENT) {
-          cleanupHTMLElement(ref, actionItem, elementApi);
-        }
-        store.dispatch((0, _IX2EngineActions.instanceRemoved)(instance.id));
-      }
-      function dispatchCustomEvent(element, eventName, detail) {
-        const event = document.createEvent("CustomEvent");
-        event.initCustomEvent(eventName, true, true, detail);
-        element.dispatchEvent(event);
-      }
-      function renderImmediateInstance(store, instanceId) {
-        const {
-          ixParameters
-        } = store.getState();
-        store.dispatch((0, _IX2EngineActions.instanceStarted)(instanceId, 0));
-        store.dispatch((0, _IX2EngineActions.animationFrameChanged)(performance.now(), ixParameters));
-        const {
-          ixInstances
-        } = store.getState();
-        handleInstanceChange(ixInstances[instanceId], store);
-      }
-      function handleInstanceChange(instance, store) {
-        const {
-          active,
-          continuous,
-          complete,
-          elementId,
+          element,
           actionItem,
-          actionTypeId,
-          renderType,
-          current,
-          groupIndex,
           eventId,
           eventTarget,
           eventStateKey,
           actionListId,
+          groupIndex,
           isCarrier,
-          styleProp,
+          computedStyle,
+          destination,
+          immediate,
           verbose,
-          pluginInstance
-        } = instance;
-        const {
-          ixData,
-          ixSession
-        } = store.getState();
-        const {
-          events
-        } = ixData;
-        const event = events[eventId] || {};
-        const {
-          mediaQueries = ixData.mediaQueryKeys
-        } = event;
-        if (!shouldAllowMediaQuery(mediaQueries, ixSession.mediaQueryKey)) {
-          return;
-        }
-        if (continuous || active || complete) {
-          if (current || renderType === RENDER_GENERAL && complete) {
-            store.dispatch((0, _IX2EngineActions.elementStateChanged)(elementId, actionTypeId, current, actionItem));
-            const {
-              ixElements
-            } = store.getState();
-            const {
-              ref,
-              refType,
-              refState
-            } = ixElements[elementId] || {};
-            const actionState = refState && refState[actionTypeId];
-            if (refType === HTML_ELEMENT || isPluginType(actionTypeId)) {
-              renderHTMLElement(ref, refState, actionState, eventId, actionItem, styleProp, elementApi, renderType, pluginInstance);
-            }
-          }
-          if (complete) {
-            if (isCarrier) {
-              const started = startActionGroup({
-                store,
-                eventId,
-                eventTarget,
-                eventStateKey,
-                actionListId,
-                groupIndex: groupIndex + 1,
-                verbose
-              });
-              if (verbose && !started) {
-                store.dispatch((0, _IX2EngineActions.actionListPlaybackChanged)({
-                  actionListId,
-                  isPlaying: false
-                }));
-              }
-            }
-            removeInstance(instance, store);
-          }
+          pluginInstance,
+          pluginDuration,
+          instanceDelay
+        });
+      });
+    });
+    return groupStartResult;
+  }
+  function createInstance(options) {
+    const { store, computedStyle, ...rest } = options;
+    const {
+      element,
+      actionItem,
+      immediate,
+      pluginInstance,
+      continuous,
+      restingValue,
+      eventId
+    } = rest;
+    const autoStart = !continuous;
+    const instanceId = getInstanceId2();
+    const { ixElements: ixElements3, ixSession: ixSession2, ixData: ixData2 } = store.getState();
+    const elementId = getElementId2(ixElements3, element);
+    const { refState: refState2 } = ixElements3[elementId] || {};
+    const refType = getRefType(element);
+    const skipMotion = (
+      // @ts-expect-error - TS7053 - Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ readonly TRANSFORM_MOVE: true; readonly TRANSFORM_SCALE: true; readonly TRANSFORM_ROTATE: true; readonly TRANSFORM_SKEW: true; readonly STYLE_SIZE: true; readonly STYLE_FILTER: true; readonly STYLE_FONT_VARIATION: true; }'.
+      ixSession2.reducedMotion && ReducedMotionTypes[actionItem.actionTypeId]
+    );
+    let skipToValue;
+    if (skipMotion && continuous) {
+      switch (ixData2.events[eventId]?.eventTypeId) {
+        case EventTypeConsts.MOUSE_MOVE:
+        case EventTypeConsts.MOUSE_MOVE_IN_VIEWPORT:
+          skipToValue = restingValue;
+          break;
+        default:
+          skipToValue = 0.5;
+          break;
+      }
+    }
+    const origin = getInstanceOrigin2(
+      element,
+      refState2,
+      computedStyle,
+      actionItem,
+      IX2BrowserApi_exports,
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
+      pluginInstance
+    );
+    store.dispatch(
+      instanceAdded({
+        instanceId,
+        elementId,
+        origin,
+        refType,
+        skipMotion,
+        skipToValue,
+        ...rest
+      })
+    );
+    dispatchCustomEvent(document.body, "ix2-animation-started", instanceId);
+    if (immediate) {
+      renderImmediateInstance(store, instanceId);
+      return;
+    }
+    observeStore2({
+      store,
+      // @ts-expect-error - TS7031 - Binding element 'ixInstances' implicitly has an 'any' type.
+      select: ({ ixInstances: ixInstances2 }) => ixInstances2[instanceId],
+      onChange: handleInstanceChange
+    });
+    if (autoStart) {
+      store.dispatch(instanceStarted(instanceId, ixSession2.tick));
+    }
+  }
+  function removeInstance(instance, store) {
+    dispatchCustomEvent(document.body, "ix2-animation-stopping", {
+      instanceId: instance.id,
+      state: store.getState()
+    });
+    const { elementId, actionItem } = instance;
+    const { ixElements: ixElements3 } = store.getState();
+    const { ref, refType } = ixElements3[elementId] || {};
+    if (refType === HTML_ELEMENT4) {
+      cleanupHTMLElement2(ref, actionItem, IX2BrowserApi_exports);
+    }
+    store.dispatch(instanceRemoved(instance.id));
+  }
+  function dispatchCustomEvent(element, eventName, detail) {
+    const event = document.createEvent("CustomEvent");
+    event.initCustomEvent(eventName, true, true, detail);
+    element.dispatchEvent(event);
+  }
+  function renderImmediateInstance(store, instanceId) {
+    const { ixParameters: ixParameters2 } = store.getState();
+    store.dispatch(instanceStarted(instanceId, 0));
+    store.dispatch(animationFrameChanged(performance.now(), ixParameters2));
+    const { ixInstances: ixInstances2 } = store.getState();
+    handleInstanceChange(ixInstances2[instanceId], store);
+  }
+  function handleInstanceChange(instance, store) {
+    const {
+      active,
+      continuous,
+      complete,
+      elementId,
+      actionItem,
+      actionTypeId,
+      renderType,
+      current,
+      groupIndex,
+      eventId,
+      eventTarget,
+      eventStateKey,
+      actionListId,
+      isCarrier,
+      styleProp,
+      verbose,
+      pluginInstance
+    } = instance;
+    const { ixData: ixData2, ixSession: ixSession2 } = store.getState();
+    const { events } = ixData2;
+    const event = events[eventId] || {};
+    const { mediaQueries = ixData2.mediaQueryKeys } = event;
+    if (!shouldAllowMediaQuery2(mediaQueries, ixSession2.mediaQueryKey)) {
+      return;
+    }
+    if (continuous || active || complete) {
+      if (current || renderType === RENDER_GENERAL4 && complete) {
+        store.dispatch(
+          elementStateChanged(elementId, actionTypeId, current, actionItem)
+        );
+        const { ixElements: ixElements3 } = store.getState();
+        const { ref, refType, refState: refState2 } = ixElements3[elementId] || {};
+        const actionState = refState2 && refState2[actionTypeId];
+        if (refType === HTML_ELEMENT4 || isPluginType2(actionTypeId)) {
+          renderHTMLElement2(
+            ref,
+            refState2,
+            actionState,
+            eventId,
+            actionItem,
+            styleProp,
+            IX2BrowserApi_exports,
+            renderType,
+            pluginInstance
+          );
         }
       }
+      if (complete) {
+        if (isCarrier) {
+          const started = startActionGroup({
+            store,
+            eventId,
+            eventTarget,
+            eventStateKey,
+            actionListId,
+            groupIndex: groupIndex + 1,
+            verbose
+          });
+          if (verbose && !started) {
+            store.dispatch(
+              actionListPlaybackChanged({ actionListId, isPlaying: false })
+            );
+          }
+        }
+        removeInstance(instance, store);
+      }
+    }
+  }
+  var import_find2, import_get2, import_size, import_omitBy, import_isEmpty, import_mapValues, import_forEach, import_throttle, import_shared6, QuickEffectsIdList, isQuickEffect, COLON_DELIMITER4, BOUNDARY_SELECTOR2, HTML_ELEMENT4, RENDER_GENERAL4, W_MOD_IX2, getAffectedElements2, getElementId2, getDestinationValues2, observeStore2, getInstanceId2, renderHTMLElement2, clearAllStyles2, getMaxDurationItemIndex2, getComputedStyle3, getInstanceOrigin2, reduceListToGroup2, shouldNamespaceEventParameter2, getNamespacedParameterId3, shouldAllowMediaQuery2, cleanupHTMLElement2, clearObjectCache2, stringifyTarget2, mediaQueriesEqual2, shallowEqual2, isPluginType2, createPluginInstance2, getPluginDuration2, ua, IS_MOBILE_SAFARI, THROTTLED_EVENT_WAIT, WINDOW_RESIZE_EVENTS, mapFoundValues, forEachEventTarget, getAffectedForEvent;
+  var init_IX2VanillaEngine = __esm({
+    "packages/systems/ix2/engine/logic/IX2VanillaEngine.ts"() {
+      "use strict";
+      import_find2 = __toESM(require_find());
+      import_get2 = __toESM(require_get());
+      import_size = __toESM(require_size());
+      import_omitBy = __toESM(require_omitBy());
+      import_isEmpty = __toESM(require_isEmpty());
+      import_mapValues = __toESM(require_mapValues());
+      import_forEach = __toESM(require_forEach());
+      import_throttle = __toESM(require_throttle());
+      init_shared_constants();
+      import_shared6 = __toESM(require_shared2());
+      init_IX2EngineActions();
+      init_IX2BrowserApi();
+      init_IX2VanillaEvents();
+      QuickEffectsIdList = Object.keys(QuickEffectIds);
+      isQuickEffect = (actionTypeId) => QuickEffectsIdList.includes(actionTypeId);
+      ({
+        COLON_DELIMITER: COLON_DELIMITER4,
+        BOUNDARY_SELECTOR: BOUNDARY_SELECTOR2,
+        HTML_ELEMENT: HTML_ELEMENT4,
+        RENDER_GENERAL: RENDER_GENERAL4,
+        W_MOD_IX: W_MOD_IX2
+      } = IX2EngineConstants_exports);
+      ({
+        getAffectedElements: getAffectedElements2,
+        getElementId: getElementId2,
+        getDestinationValues: getDestinationValues2,
+        observeStore: observeStore2,
+        getInstanceId: getInstanceId2,
+        renderHTMLElement: renderHTMLElement2,
+        clearAllStyles: clearAllStyles2,
+        getMaxDurationItemIndex: getMaxDurationItemIndex2,
+        getComputedStyle: getComputedStyle3,
+        getInstanceOrigin: getInstanceOrigin2,
+        reduceListToGroup: reduceListToGroup2,
+        shouldNamespaceEventParameter: shouldNamespaceEventParameter2,
+        getNamespacedParameterId: getNamespacedParameterId3,
+        shouldAllowMediaQuery: shouldAllowMediaQuery2,
+        cleanupHTMLElement: cleanupHTMLElement2,
+        clearObjectCache: clearObjectCache2,
+        stringifyTarget: stringifyTarget2,
+        mediaQueriesEqual: mediaQueriesEqual2,
+        shallowEqual: shallowEqual2
+      } = import_shared6.IX2VanillaUtils);
+      ({ isPluginType: isPluginType2, createPluginInstance: createPluginInstance2, getPluginDuration: getPluginDuration2 } = import_shared6.IX2VanillaPlugins);
+      ua = navigator.userAgent;
+      IS_MOBILE_SAFARI = ua.match(/iPad/i) || ua.match(/iPhone/);
+      THROTTLED_EVENT_WAIT = 12;
+      WINDOW_RESIZE_EVENTS = ["resize", "orientationchange"];
+      mapFoundValues = (object, iteratee) => (0, import_omitBy.default)((0, import_mapValues.default)(object, iteratee), import_isEmpty.default);
+      forEachEventTarget = (eventTargets, eventCallback) => {
+        (0, import_forEach.default)(eventTargets, (elements, eventId) => {
+          elements.forEach((element, index) => {
+            const eventStateKey = eventId + COLON_DELIMITER4 + index;
+            eventCallback(element, eventId, eventStateKey);
+          });
+        });
+      };
+      getAffectedForEvent = (event) => {
+        const config = { target: event.target, targets: event.targets };
+        return getAffectedElements2({ config, elementApi: IX2BrowserApi_exports });
+      };
     }
   });
 
@@ -12136,12 +11804,11 @@
       exports.store = void 0;
       require_includes3();
       var _redux = require_lib2();
-      var _IX2Reducer = _interopRequireDefault(require_IX2Reducer());
-      var _IX2VanillaEngine = require_IX2VanillaEngine();
-      var actions = _interopRequireWildcard(require_IX2EngineActions());
+      var _IX2Reducer = _interopRequireDefault((init_IX2Reducer(), __toCommonJS(IX2Reducer_exports)));
+      var _IX2VanillaEngine = (init_IX2VanillaEngine(), __toCommonJS(IX2VanillaEngine_exports));
+      var actions = _interopRequireWildcard((init_IX2EngineActions(), __toCommonJS(IX2EngineActions_exports)));
       exports.actions = actions;
-      var store = (0, _redux.createStore)(_IX2Reducer.default);
-      exports.store = store;
+      var store = exports.store = (0, _redux.createStore)(_IX2Reducer.default);
       function setEnv(env) {
         if (env()) {
           (0, _IX2VanillaEngine.observeRequests)(store);
@@ -12164,6 +11831,7 @@
   // packages/shared/render/plugins/BaseSiteModules/webflow-ix2.js
   var require_webflow_ix2 = __commonJS({
     "packages/shared/render/plugins/BaseSiteModules/webflow-ix2.js"(exports, module) {
+      "use strict";
       var Webflow = require_webflow_lib();
       var ix2 = require_engine();
       ix2.setEnv(Webflow.env);
@@ -12176,6 +11844,7 @@
   // packages/shared/render/plugins/BaseSiteModules/webflow-links.js
   var require_webflow_links = __commonJS({
     "packages/shared/render/plugins/BaseSiteModules/webflow-links.js"(exports, module) {
+      "use strict";
       var Webflow = require_webflow_lib();
       Webflow.define("links", module.exports = function($, _) {
         var api = {};
@@ -12205,6 +11874,9 @@
           }
         }
         function select(link) {
+          if (link.getAttribute("hreflang")) {
+            return;
+          }
           var href = designer && link.getAttribute("href-disabled") || link.getAttribute("href");
           tempLink.href = href;
           if (href.indexOf(":") >= 0) {
@@ -12233,6 +11905,9 @@
           var viewTop = $win.scrollTop();
           var viewHeight = $win.height();
           _.each(anchors, function(anchor) {
+            if (anchor.link.attr("hreflang")) {
+              return;
+            }
             var $link = anchor.link;
             var $section = anchor.sec;
             var top = $section.offset().top;
@@ -12264,6 +11939,7 @@
   // packages/shared/render/plugins/BaseSiteModules/webflow-scroll.js
   var require_webflow_scroll = __commonJS({
     "packages/shared/render/plugins/BaseSiteModules/webflow-scroll.js"(exports, module) {
+      "use strict";
       var Webflow = require_webflow_lib();
       Webflow.define("scroll", module.exports = function($) {
         var NS_EVENTS = {
@@ -12412,9 +12088,9 @@
           if (elapsed > duration) {
             return end;
           }
-          return start + (end - start) * ease(elapsed / duration);
+          return start + (end - start) * ease2(elapsed / duration);
         }
-        function ease(t) {
+        function ease2(t) {
           return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
         }
         function ready() {
@@ -12438,6 +12114,7 @@
   // packages/shared/render/plugins/BaseSiteModules/webflow-touch.js
   var require_webflow_touch = __commonJS({
     "packages/shared/render/plugins/BaseSiteModules/webflow-touch.js"(exports, module) {
+      "use strict";
       var Webflow = require_webflow_lib();
       Webflow.define("touch", module.exports = function($) {
         var api = {};
@@ -12541,6 +12218,7 @@
   // packages/shared/render/plugins/Form/webflow-forms.js
   var require_webflow_forms = __commonJS({
     "packages/shared/render/plugins/Form/webflow-forms.js"(exports, module) {
+      "use strict";
       var Webflow = require_webflow_lib();
       Webflow.define("forms", module.exports = function($, _) {
         var api = {};
@@ -12996,9 +12674,550 @@
     }
   });
 
+  // packages/shared/render/plugins/Lightbox/webflow-lightbox.js
+  var require_webflow_lightbox = __commonJS({
+    "packages/shared/render/plugins/Lightbox/webflow-lightbox.js"(exports, module) {
+      "use strict";
+      var Webflow = require_webflow_lib();
+      var CONDITION_INVISIBLE_CLASS = "w-condition-invisible";
+      var CONDVIS_SELECTOR = "." + CONDITION_INVISIBLE_CLASS;
+      function withoutConditionallyHidden(items) {
+        return items.filter(function(item) {
+          return !isConditionallyHidden(item);
+        });
+      }
+      function isConditionallyHidden(item) {
+        return Boolean(item.$el && item.$el.closest(CONDVIS_SELECTOR).length);
+      }
+      function getPreviousVisibleIndex(start, items) {
+        for (var i = start; i >= 0; i--) {
+          if (!isConditionallyHidden(items[i])) {
+            return i;
+          }
+        }
+        return -1;
+      }
+      function getNextVisibleIndex(start, items) {
+        for (var i = start; i <= items.length - 1; i++) {
+          if (!isConditionallyHidden(items[i])) {
+            return i;
+          }
+        }
+        return -1;
+      }
+      function shouldSetArrowLeftInactive(currentIndex, items) {
+        return getPreviousVisibleIndex(currentIndex - 1, items) === -1;
+      }
+      function shouldSetArrowRightInactive(currentIndex, items) {
+        return getNextVisibleIndex(currentIndex + 1, items) === -1;
+      }
+      function setAriaLabelIfEmpty($element, labelText) {
+        if (!$element.attr("aria-label")) {
+          $element.attr("aria-label", labelText);
+        }
+      }
+      function createLightbox(window2, document2, $, container) {
+        var tram = $.tram;
+        var isArray = Array.isArray;
+        var namespace = "w-lightbox";
+        var prefix = namespace + "-";
+        var prefixRegex = /(^|\s+)/g;
+        var items = [];
+        var currentIndex;
+        var $refs;
+        var spinner;
+        var resetVisibilityState = [];
+        function lightbox(thing, index) {
+          items = isArray(thing) ? thing : [thing];
+          if (!$refs) {
+            lightbox.build();
+          }
+          if (withoutConditionallyHidden(items).length > 1) {
+            $refs.items = $refs.empty;
+            items.forEach(function(item, idx) {
+              var $thumbnail = dom("thumbnail");
+              var $item = dom("item").prop("tabIndex", 0).attr("aria-controls", "w-lightbox-view").attr("role", "tab").append($thumbnail);
+              setAriaLabelIfEmpty($item, `show item ${idx + 1} of ${items.length}`);
+              if (isConditionallyHidden(item)) {
+                $item.addClass(CONDITION_INVISIBLE_CLASS);
+              }
+              $refs.items = $refs.items.add($item);
+              loadImage(item.thumbnailUrl || item.url, function($image) {
+                if ($image.prop("width") > $image.prop("height")) {
+                  addClass($image, "wide");
+                } else {
+                  addClass($image, "tall");
+                }
+                $thumbnail.append(addClass($image, "thumbnail-image"));
+              });
+            });
+            $refs.strip.empty().append($refs.items);
+            addClass($refs.content, "group");
+          }
+          tram(
+            // Focus the lightbox to receive keyboard events.
+            removeClass($refs.lightbox, "hide").trigger("focus")
+          ).add("opacity .3s").start({
+            opacity: 1
+          });
+          addClass($refs.html, "noscroll");
+          return lightbox.show(index || 0);
+        }
+        lightbox.build = function() {
+          lightbox.destroy();
+          $refs = {
+            html: $(document2.documentElement),
+            // Empty jQuery object can be used to build new ones using `.add`.
+            empty: $()
+          };
+          $refs.arrowLeft = dom("control left inactive").attr("role", "button").attr("aria-hidden", true).attr("aria-controls", "w-lightbox-view");
+          $refs.arrowRight = dom("control right inactive").attr("role", "button").attr("aria-hidden", true).attr("aria-controls", "w-lightbox-view");
+          $refs.close = dom("control close").attr("role", "button");
+          setAriaLabelIfEmpty($refs.arrowLeft, "previous image");
+          setAriaLabelIfEmpty($refs.arrowRight, "next image");
+          setAriaLabelIfEmpty($refs.close, "close lightbox");
+          $refs.spinner = dom("spinner").attr("role", "progressbar").attr("aria-live", "polite").attr("aria-hidden", false).attr("aria-busy", true).attr("aria-valuemin", 0).attr("aria-valuemax", 100).attr("aria-valuenow", 0).attr("aria-valuetext", "Loading image");
+          $refs.strip = dom("strip").attr("role", "tablist");
+          spinner = new Spinner($refs.spinner, prefixed("hide"));
+          $refs.content = dom("content").append($refs.spinner, $refs.arrowLeft, $refs.arrowRight, $refs.close);
+          $refs.container = dom("container").append($refs.content, $refs.strip);
+          $refs.lightbox = dom("backdrop hide").append($refs.container);
+          $refs.strip.on("click", selector("item"), itemTapHandler);
+          $refs.content.on("swipe", swipeHandler).on("click", selector("left"), handlerPrev).on("click", selector("right"), handlerNext).on("click", selector("close"), handlerHide).on("click", selector("image, caption"), handlerNext);
+          $refs.container.on("click", selector("view"), handlerHide).on("dragstart", selector("img"), preventDefault);
+          $refs.lightbox.on("keydown", keyHandler).on("focusin", focusThis);
+          $(container).append($refs.lightbox);
+          return lightbox;
+        };
+        lightbox.destroy = function() {
+          if (!$refs) {
+            return;
+          }
+          removeClass($refs.html, "noscroll");
+          $refs.lightbox.remove();
+          $refs = void 0;
+        };
+        lightbox.show = function(index) {
+          if (index === currentIndex) {
+            return;
+          }
+          var item = items[index];
+          if (!item) {
+            return lightbox.hide();
+          }
+          if (isConditionallyHidden(item)) {
+            if (index < currentIndex) {
+              var previousVisibleIndex = getPreviousVisibleIndex(index - 1, items);
+              index = previousVisibleIndex > -1 ? previousVisibleIndex : index;
+            } else {
+              var nextVisibleIndex = getNextVisibleIndex(index + 1, items);
+              index = nextVisibleIndex > -1 ? nextVisibleIndex : index;
+            }
+            item = items[index];
+          }
+          var previousIndex = currentIndex;
+          currentIndex = index;
+          $refs.spinner.attr("aria-hidden", false).attr("aria-busy", true).attr("aria-valuenow", 0).attr("aria-valuetext", "Loading image");
+          spinner.show();
+          var url = item.html && svgDataUri(item.width, item.height) || item.url;
+          loadImage(url, function($image) {
+            if (index !== currentIndex) {
+              return;
+            }
+            var $figure = dom("figure", "figure").append(addClass($image, "image"));
+            var $frame = dom("frame").append($figure);
+            var $newView = dom("view").prop("tabIndex", 0).attr("id", "w-lightbox-view").append($frame);
+            var $html;
+            var isIframe;
+            if (item.html) {
+              $html = $(item.html);
+              isIframe = $html.is("iframe");
+              if (isIframe) {
+                $html.on("load", transitionToNewView);
+              }
+              $figure.append(addClass($html, "embed"));
+            }
+            if (item.caption) {
+              $figure.append(dom("caption", "figcaption").text(item.caption));
+            }
+            $refs.spinner.before($newView);
+            if (!isIframe) {
+              transitionToNewView();
+            }
+            function transitionToNewView() {
+              $refs.spinner.attr("aria-hidden", true).attr("aria-busy", false).attr("aria-valuenow", 100).attr("aria-valuetext", "Loaded image");
+              spinner.hide();
+              if (index !== currentIndex) {
+                $newView.remove();
+                return;
+              }
+              const shouldHideLeftArrow = shouldSetArrowLeftInactive(index, items);
+              toggleClass($refs.arrowLeft, "inactive", shouldHideLeftArrow);
+              toggleHidden($refs.arrowLeft, shouldHideLeftArrow);
+              if (shouldHideLeftArrow && $refs.arrowLeft.is(":focus")) {
+                $refs.arrowRight.focus();
+              }
+              const shouldHideRightArrow = shouldSetArrowRightInactive(index, items);
+              toggleClass($refs.arrowRight, "inactive", shouldHideRightArrow);
+              toggleHidden($refs.arrowRight, shouldHideRightArrow);
+              if (shouldHideRightArrow && $refs.arrowRight.is(":focus")) {
+                $refs.arrowLeft.focus();
+              }
+              if ($refs.view) {
+                tram($refs.view).add("opacity .3s").start({
+                  opacity: 0
+                }).then(remover($refs.view));
+                tram($newView).add("opacity .3s").add("transform .3s").set({
+                  x: index > previousIndex ? "80px" : "-80px"
+                }).start({
+                  opacity: 1,
+                  x: 0
+                });
+              } else {
+                $newView.css("opacity", 1);
+              }
+              $refs.view = $newView;
+              $refs.view.prop("tabIndex", 0);
+              if ($refs.items) {
+                removeClass($refs.items, "active");
+                $refs.items.removeAttr("aria-selected");
+                var $activeThumb = $refs.items.eq(index);
+                addClass($activeThumb, "active");
+                $activeThumb.attr("aria-selected", true);
+                maybeScroll($activeThumb);
+              }
+            }
+          });
+          $refs.close.prop("tabIndex", 0);
+          $(":focus").addClass("active-lightbox");
+          if (resetVisibilityState.length === 0) {
+            $("body").children().each(function() {
+              if ($(this).hasClass("w-lightbox-backdrop") || $(this).is("script")) {
+                return;
+              }
+              resetVisibilityState.push({
+                node: $(this),
+                hidden: $(this).attr("aria-hidden"),
+                tabIndex: $(this).attr("tabIndex")
+              });
+              $(this).attr("aria-hidden", true).attr("tabIndex", -1);
+            });
+            $refs.close.focus();
+          }
+          return lightbox;
+        };
+        lightbox.hide = function() {
+          tram($refs.lightbox).add("opacity .3s").start({
+            opacity: 0
+          }).then(hideLightbox);
+          return lightbox;
+        };
+        lightbox.prev = function() {
+          var previousVisibleIndex = getPreviousVisibleIndex(currentIndex - 1, items);
+          if (previousVisibleIndex > -1) {
+            lightbox.show(previousVisibleIndex);
+          }
+        };
+        lightbox.next = function() {
+          var nextVisibleIndex = getNextVisibleIndex(currentIndex + 1, items);
+          if (nextVisibleIndex > -1) {
+            lightbox.show(nextVisibleIndex);
+          }
+        };
+        function createHandler(action) {
+          return function(event) {
+            if (this !== event.target) {
+              return;
+            }
+            event.stopPropagation();
+            event.preventDefault();
+            action();
+          };
+        }
+        var handlerPrev = createHandler(lightbox.prev);
+        var handlerNext = createHandler(lightbox.next);
+        var handlerHide = createHandler(lightbox.hide);
+        var itemTapHandler = function(event) {
+          var index = $(this).index();
+          event.preventDefault();
+          lightbox.show(index);
+        };
+        var swipeHandler = function(event, data) {
+          event.preventDefault();
+          if (data.direction === "left") {
+            lightbox.next();
+          } else if (data.direction === "right") {
+            lightbox.prev();
+          }
+        };
+        var focusThis = function() {
+          this.focus();
+        };
+        function preventDefault(event) {
+          event.preventDefault();
+        }
+        function keyHandler(event) {
+          var keyCode = event.keyCode;
+          if (keyCode === 27 || checkForFocusTrigger(keyCode, "close")) {
+            lightbox.hide();
+          } else if (keyCode === 37 || checkForFocusTrigger(keyCode, "left")) {
+            lightbox.prev();
+          } else if (keyCode === 39 || checkForFocusTrigger(keyCode, "right")) {
+            lightbox.next();
+          } else if (checkForFocusTrigger(keyCode, "item")) {
+            $(":focus").click();
+          }
+        }
+        function checkForFocusTrigger(keyCode, classMatch) {
+          if (keyCode !== 13 && keyCode !== 32) {
+            return false;
+          }
+          var currentElementClasses = $(":focus").attr("class");
+          var classToFind = prefixed(classMatch).trim();
+          return currentElementClasses.includes(classToFind);
+        }
+        function hideLightbox() {
+          if ($refs) {
+            $refs.strip.scrollLeft(0).empty();
+            removeClass($refs.html, "noscroll");
+            addClass($refs.lightbox, "hide");
+            $refs.view && $refs.view.remove();
+            removeClass($refs.content, "group");
+            addClass($refs.arrowLeft, "inactive");
+            addClass($refs.arrowRight, "inactive");
+            currentIndex = $refs.view = void 0;
+            resetVisibilityState.forEach(function(visibilityState) {
+              var node = visibilityState.node;
+              if (!node) {
+                return;
+              }
+              if (visibilityState.hidden) {
+                node.attr("aria-hidden", visibilityState.hidden);
+              } else {
+                node.removeAttr("aria-hidden");
+              }
+              if (visibilityState.tabIndex) {
+                node.attr("tabIndex", visibilityState.tabIndex);
+              } else {
+                node.removeAttr("tabIndex");
+              }
+            });
+            resetVisibilityState = [];
+            $(".active-lightbox").removeClass("active-lightbox").focus();
+          }
+        }
+        function loadImage(url, callback) {
+          var $image = dom("img", "img");
+          $image.one("load", function() {
+            callback($image);
+          });
+          $image.attr("src", url);
+          return $image;
+        }
+        function remover($element) {
+          return function() {
+            $element.remove();
+          };
+        }
+        function maybeScroll($item) {
+          var itemElement = $item.get(0);
+          var stripElement = $refs.strip.get(0);
+          var itemLeft = itemElement.offsetLeft;
+          var itemWidth = itemElement.clientWidth;
+          var stripScrollLeft = stripElement.scrollLeft;
+          var stripWidth = stripElement.clientWidth;
+          var stripScrollLeftMax = stripElement.scrollWidth - stripWidth;
+          var newScrollLeft;
+          if (itemLeft < stripScrollLeft) {
+            newScrollLeft = Math.max(0, itemLeft + itemWidth - stripWidth);
+          } else if (itemLeft + itemWidth > stripWidth + stripScrollLeft) {
+            newScrollLeft = Math.min(itemLeft, stripScrollLeftMax);
+          }
+          if (newScrollLeft != null) {
+            tram($refs.strip).add("scroll-left 500ms").start({
+              "scroll-left": newScrollLeft
+            });
+          }
+        }
+        function Spinner($spinner, className, delay) {
+          this.$element = $spinner;
+          this.className = className;
+          this.delay = delay || 200;
+          this.hide();
+        }
+        Spinner.prototype.show = function() {
+          var spinner2 = this;
+          if (spinner2.timeoutId) {
+            return;
+          }
+          spinner2.timeoutId = setTimeout(function() {
+            spinner2.$element.removeClass(spinner2.className);
+            delete spinner2.timeoutId;
+          }, spinner2.delay);
+        };
+        Spinner.prototype.hide = function() {
+          var spinner2 = this;
+          if (spinner2.timeoutId) {
+            clearTimeout(spinner2.timeoutId);
+            delete spinner2.timeoutId;
+            return;
+          }
+          spinner2.$element.addClass(spinner2.className);
+        };
+        function prefixed(string, isSelector) {
+          return string.replace(prefixRegex, (isSelector ? " ." : " ") + prefix);
+        }
+        function selector(string) {
+          return prefixed(string, true);
+        }
+        function addClass($element, className) {
+          return $element.addClass(prefixed(className));
+        }
+        function removeClass($element, className) {
+          return $element.removeClass(prefixed(className));
+        }
+        function toggleClass($element, className, shouldAdd) {
+          return $element.toggleClass(prefixed(className), shouldAdd);
+        }
+        function toggleHidden($element, isHidden) {
+          return $element.attr("aria-hidden", isHidden).attr("tabIndex", isHidden ? -1 : 0);
+        }
+        function dom(className, tag) {
+          return addClass($(document2.createElement(tag || "div")), className);
+        }
+        function svgDataUri(width, height) {
+          var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '"/>';
+          return "data:image/svg+xml;charset=utf-8," + encodeURI(svg);
+        }
+        (function() {
+          var ua2 = window2.navigator.userAgent;
+          var iOSRegex = /(iPhone|iPad|iPod);[^OS]*OS (\d)/;
+          var iOSMatches = ua2.match(iOSRegex);
+          var android = ua2.indexOf("Android ") > -1 && ua2.indexOf("Chrome") === -1;
+          if (!android && (!iOSMatches || iOSMatches[2] > 7)) {
+            return;
+          }
+          var styleNode = document2.createElement("style");
+          document2.head.appendChild(styleNode);
+          window2.addEventListener("resize", refresh, true);
+          function refresh() {
+            var vh = window2.innerHeight;
+            var vw = window2.innerWidth;
+            var content = ".w-lightbox-content, .w-lightbox-view, .w-lightbox-view:before {height:" + vh + "px}.w-lightbox-view {width:" + vw + "px}.w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {height:" + 0.86 * vh + "px}.w-lightbox-image {max-width:" + vw + "px;max-height:" + vh + "px}.w-lightbox-group .w-lightbox-image {max-height:" + 0.86 * vh + "px}.w-lightbox-strip {padding: 0 " + 0.01 * vh + "px}.w-lightbox-item {width:" + 0.1 * vh + "px;padding:" + 0.02 * vh + "px " + 0.01 * vh + "px}.w-lightbox-thumbnail {height:" + 0.1 * vh + "px}@media (min-width: 768px) {.w-lightbox-content, .w-lightbox-view, .w-lightbox-view:before {height:" + 0.96 * vh + "px}.w-lightbox-content {margin-top:" + 0.02 * vh + "px}.w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {height:" + 0.84 * vh + "px}.w-lightbox-image {max-width:" + 0.96 * vw + "px;max-height:" + 0.96 * vh + "px}.w-lightbox-group .w-lightbox-image {max-width:" + 0.823 * vw + "px;max-height:" + 0.84 * vh + "px}}";
+            styleNode.textContent = content;
+          }
+          refresh();
+        })();
+        return lightbox;
+      }
+      Webflow.define("lightbox", module.exports = function($) {
+        var api = {};
+        var inApp = Webflow.env();
+        var lightbox = createLightbox(window, document, $, inApp ? "#lightbox-mountpoint" : "body");
+        var $doc = $(document);
+        var $lightboxes;
+        var designer;
+        var namespace = ".w-lightbox";
+        var groups;
+        api.ready = api.design = api.preview = init;
+        function init() {
+          designer = inApp && Webflow.env("design");
+          lightbox.destroy();
+          groups = {};
+          $lightboxes = $doc.find(namespace);
+          $lightboxes.webflowLightBox();
+          $lightboxes.each(function() {
+            setAriaLabelIfEmpty($(this), "open lightbox");
+            $(this).attr("aria-haspopup", "dialog");
+          });
+        }
+        jQuery.fn.extend({
+          webflowLightBox: function() {
+            var $el = this;
+            $.each($el, function(i, el) {
+              var data = $.data(el, namespace);
+              if (!data) {
+                data = $.data(el, namespace, {
+                  el: $(el),
+                  mode: "images",
+                  images: [],
+                  embed: ""
+                });
+              }
+              data.el.off(namespace);
+              configure(data);
+              if (designer) {
+                data.el.on("setting" + namespace, configure.bind(null, data));
+              } else {
+                data.el.on("click" + namespace, clickHandler(data)).on("click" + namespace, function(e) {
+                  e.preventDefault();
+                });
+              }
+            });
+          }
+        });
+        function configure(data) {
+          var json = data.el.children(".w-json").html();
+          var groupName;
+          var groupItems;
+          if (!json) {
+            data.items = [];
+            return;
+          }
+          try {
+            json = JSON.parse(json);
+          } catch (e) {
+            console.error("Malformed lightbox JSON configuration.", e);
+          }
+          supportOldLightboxJson(json);
+          json.items.forEach(function(item) {
+            item.$el = data.el;
+          });
+          groupName = json.group;
+          if (groupName) {
+            groupItems = groups[groupName];
+            if (!groupItems) {
+              groupItems = groups[groupName] = [];
+            }
+            data.items = groupItems;
+            if (json.items.length) {
+              data.index = groupItems.length;
+              groupItems.push.apply(groupItems, json.items);
+            }
+          } else {
+            data.items = json.items;
+            data.index = 0;
+          }
+        }
+        function clickHandler(data) {
+          return function() {
+            data.items.length && lightbox(data.items, data.index || 0);
+          };
+        }
+        function supportOldLightboxJson(data) {
+          if (data.images) {
+            data.images.forEach(function(item) {
+              item.type = "image";
+            });
+            data.items = data.images;
+          }
+          if (data.embed) {
+            data.embed.type = "video";
+            data.items = [data.embed];
+          }
+          if (data.groupId) {
+            data.group = data.groupId;
+          }
+        }
+        return api;
+      });
+    }
+  });
+
   // packages/shared/render/plugins/Navbar/webflow-navbar.js
   var require_webflow_navbar = __commonJS({
     "packages/shared/render/plugins/Navbar/webflow-navbar.js"(exports, module) {
+      "use strict";
       var Webflow = require_webflow_lib();
       var IXEvents = require_webflow_ix2_events();
       var KEY_CODES = {
@@ -13459,6 +13678,7 @@
   require_webflow_scroll();
   require_webflow_touch();
   require_webflow_forms();
+  require_webflow_lightbox();
   require_webflow_navbar();
 })();
 /*!
@@ -13506,5 +13726,5 @@ timm/lib/timm.js:
  * Webflow: Interactions 2.0: Init
  */
 Webflow.require('ix2').init(
-{"events":{"e-3":{"id":"e-3","name":"","animationType":"custom","eventTypeId":"MOUSE_MOVE","action":{"id":"","actionTypeId":"GENERAL_CONTINUOUS_ACTION","config":{"actionListId":"a-2","affectedElements":{},"duration":0}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"64dda65e4740b3e8a557fae8|dff26f68-5731-3efa-d3dd-8f65c72d8fa5","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"64dda65e4740b3e8a557fae8|dff26f68-5731-3efa-d3dd-8f65c72d8fa5","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":[{"continuousParameterGroupId":"a-2-p","selectedAxis":"X_AXIS","basedOn":"ELEMENT","reverse":false,"smoothing":100,"restingState":50},{"continuousParameterGroupId":"a-2-p-2","selectedAxis":"Y_AXIS","basedOn":"ELEMENT","reverse":false,"smoothing":100,"restingState":50}],"createdOn":1694568972822},"e-4":{"id":"e-4","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-5"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"64dda65e4740b3e8a557fae8|dff26f68-5731-3efa-d3dd-8f65c72d8fa6","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"64dda65e4740b3e8a557fae8|dff26f68-5731-3efa-d3dd-8f65c72d8fa6","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694569851456},"e-6":{"id":"e-6","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-7"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"64dda65e4740b3e8a557fae8|dff26f68-5731-3efa-d3dd-8f65c72d8fae","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"64dda65e4740b3e8a557fae8|dff26f68-5731-3efa-d3dd-8f65c72d8fae","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694570286673},"e-8":{"id":"e-8","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-9"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"64dda65e4740b3e8a557fae8|4d7dd38e-f47f-3e39-6c13-a8e206b64542","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"64dda65e4740b3e8a557fae8|4d7dd38e-f47f-3e39-6c13-a8e206b64542","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694570313230},"e-10":{"id":"e-10","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-11"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"64dda65e4740b3e8a557fae8|4d7dd38e-f47f-3e39-6c13-a8e206b6454a","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"64dda65e4740b3e8a557fae8|4d7dd38e-f47f-3e39-6c13-a8e206b6454a","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694570324712},"e-18":{"id":"e-18","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-4","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-19"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"64dda65e4740b3e8a557fae8|34f3d0d4-0947-ab41-71bc-490db9f35e98","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"64dda65e4740b3e8a557fae8|34f3d0d4-0947-ab41-71bc-490db9f35e98","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694570791371},"e-20":{"id":"e-20","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-5","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-21"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"64dda65e4740b3e8a557fae8|34f3d0d4-0947-ab41-71bc-490db9f35e94","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"64dda65e4740b3e8a557fae8|34f3d0d4-0947-ab41-71bc-490db9f35e94","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694570850187},"e-22":{"id":"e-22","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-6","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-23"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"64dda65e4740b3e8a557fae8|4adb3023-9b3f-c1d4-940a-7dcd41822c81","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"64dda65e4740b3e8a557fae8|4adb3023-9b3f-c1d4-940a-7dcd41822c81","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694571020084},"e-32":{"id":"e-32","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-6","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-33"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"64dda65e4740b3e8a557fae8|4d7dd38e-f47f-3e39-6c13-a8e206b6453e","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"64dda65e4740b3e8a557fae8|4d7dd38e-f47f-3e39-6c13-a8e206b6453e","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694571191860},"e-34":{"id":"e-34","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-6","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-35"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"64dda65e4740b3e8a557fae8|5874ba1b-9ec9-10a4-d36d-ec6de1f77e85","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"64dda65e4740b3e8a557fae8|5874ba1b-9ec9-10a4-d36d-ec6de1f77e85","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694571213026},"e-36":{"id":"e-36","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-8","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-37"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"64dda65e4740b3e8a557fae8|5874ba1b-9ec9-10a4-d36d-ec6de1f77e87","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"64dda65e4740b3e8a557fae8|5874ba1b-9ec9-10a4-d36d-ec6de1f77e87","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694571223942},"e-38":{"id":"e-38","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-7","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-39"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"64dda65e4740b3e8a557fae8|4d7dd38e-f47f-3e39-6c13-a8e206b64544","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"64dda65e4740b3e8a557fae8|4d7dd38e-f47f-3e39-6c13-a8e206b64544","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694571379769},"e-41":{"id":"e-41","name":"","animationType":"custom","eventTypeId":"SCROLL_OUT_OF_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-7","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-40"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"64dda65e4740b3e8a557fae8|4d7dd38e-f47f-3e39-6c13-a8e206b6454c","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"64dda65e4740b3e8a557fae8|4d7dd38e-f47f-3e39-6c13-a8e206b6454c","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694571405714},"e-42":{"id":"e-42","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-8","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-43"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"64dda65e4740b3e8a557fae8|4d7dd38e-f47f-3e39-6c13-a8e206b64547"},"targets":[],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694571491064},"e-44":{"id":"e-44","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-8","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-45"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"64dda65e4740b3e8a557fae8|4d7dd38e-f47f-3e39-6c13-a8e206b6454e"},"targets":[],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694571524610},"e-46":{"id":"e-46","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-8","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-47"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"64dda65e4740b3e8a557fae8|dff26f68-5731-3efa-d3dd-8f65c72d8fb2"},"targets":[],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694571537361},"e-48":{"id":"e-48","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-8","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-49"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"64dda65e4740b3e8a557fae8|dff26f68-5731-3efa-d3dd-8f65c72d8fab"},"targets":[],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694571546690},"e-50":{"id":"e-50","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-7","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-51"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"64dda65e4740b3e8a557fae8|dff26f68-5731-3efa-d3dd-8f65c72d8fa8"},"targets":[],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694571557177},"e-52":{"id":"e-52","name":"","animationType":"custom","eventTypeId":"SCROLL_INTO_VIEW","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-7","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-53"}},"mediaQueries":["main","medium","small","tiny"],"target":{"appliesTo":"ELEMENT","styleBlockIds":[],"id":"64dda65e4740b3e8a557fae8|dff26f68-5731-3efa-d3dd-8f65c72d8fb0"},"targets":[],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":0,"scrollOffsetUnit":"%","delay":null,"direction":null,"effectIn":null},"createdOn":1694571566064}},"actionLists":{"a-2":{"id":"a-2","title":"Rotate on mouseover","continuousParameterGroups":[{"id":"a-2-p","type":"MOUSE_X","parameterLabel":"Mouse X","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-2-n","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"","duration":500,"target":{"selector":".work-image","selectorGuids":["8341c309-c80e-25d6-e33f-630c89c23ecd"]},"yValue":-10,"xUnit":"DEG","yUnit":"deg","zUnit":"DEG"}}]},{"keyframe":100,"actionItems":[{"id":"a-2-n-2","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"","duration":500,"target":{"selector":".work-image","selectorGuids":["8341c309-c80e-25d6-e33f-630c89c23ecd"]},"yValue":10,"xUnit":"DEG","yUnit":"deg","zUnit":"DEG"}}]}]},{"id":"a-2-p-2","type":"MOUSE_Y","parameterLabel":"Mouse Y","continuousActionGroups":[{"keyframe":0,"actionItems":[{"id":"a-2-n-3","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"","duration":500,"target":{"selector":".work-image","selectorGuids":["8341c309-c80e-25d6-e33f-630c89c23ecd"]},"xValue":8,"xUnit":"deg","yUnit":"DEG","zUnit":"DEG"}}]},{"keyframe":100,"actionItems":[{"id":"a-2-n-4","actionTypeId":"TRANSFORM_ROTATE","config":{"delay":0,"easing":"","duration":500,"target":{"selector":".work-image","selectorGuids":["8341c309-c80e-25d6-e33f-630c89c23ecd"]},"xValue":-8,"xUnit":"deg","yUnit":"DEG","zUnit":"DEG"}}]}]}],"createdOn":1694569035192},"a":{"id":"a","title":"Move up on scroll work img","actionItemGroups":[{"actionItems":[{"id":"a-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".work-image","selectorGuids":["8341c309-c80e-25d6-e33f-630c89c23ecd"]},"yValue":50,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".work-image","selectorGuids":["8341c309-c80e-25d6-e33f-630c89c23ecd"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuad","duration":1000,"target":{"useEventTarget":"CHILDREN","selector":".work-image","selectorGuids":["8341c309-c80e-25d6-e33f-630c89c23ecd"]},"yValue":0,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"inOutQuad","duration":1000,"target":{"useEventTarget":"CHILDREN","selector":".work-image","selectorGuids":["8341c309-c80e-25d6-e33f-630c89c23ecd"]},"value":1,"unit":""}}]}],"useFirstGroupAsInitialState":true,"createdOn":1694568463561},"a-4":{"id":"a-4","title":"Move up on scroll heading","actionItemGroups":[{"actionItems":[{"id":"a-4-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"selector":".heading-jumbo","selectorGuids":["db935e33-c627-c707-aebf-7fbacbb62cf7"]},"yValue":50,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-4-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"selector":".heading-jumbo","selectorGuids":["db935e33-c627-c707-aebf-7fbacbb62cf7"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-4-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuad","duration":1000,"target":{"selector":".heading-jumbo","selectorGuids":["db935e33-c627-c707-aebf-7fbacbb62cf7"]},"yValue":0,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-4-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"inOutQuad","duration":1000,"target":{"selector":".heading-jumbo","selectorGuids":["db935e33-c627-c707-aebf-7fbacbb62cf7"]},"value":1,"unit":""}}]}],"useFirstGroupAsInitialState":true,"createdOn":1694568463561},"a-5":{"id":"a-5","title":"Move up on scroll name text","actionItemGroups":[{"actionItems":[{"id":"a-5-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"selector":".name-text","selectorGuids":["9fa2423f-e957-2637-f2ec-a3b35d99cca3"]},"yValue":50,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-5-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"selector":".name-text","selectorGuids":["9fa2423f-e957-2637-f2ec-a3b35d99cca3"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-5-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuad","duration":1000,"target":{"selector":".name-text","selectorGuids":["9fa2423f-e957-2637-f2ec-a3b35d99cca3"]},"yValue":0,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-5-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"inOutQuad","duration":1000,"target":{"selector":".name-text","selectorGuids":["9fa2423f-e957-2637-f2ec-a3b35d99cca3"]},"value":1,"unit":""}}]}],"useFirstGroupAsInitialState":true,"createdOn":1694568463561},"a-6":{"id":"a-6","title":"Move up on scroll heading 2","actionItemGroups":[{"actionItems":[{"id":"a-6-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"selector":".section-heading","selectorGuids":["3bb3c332-658e-8bac-4fcd-ed5a7472f0f7"]},"yValue":50,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-6-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"selector":".section-heading","selectorGuids":["3bb3c332-658e-8bac-4fcd-ed5a7472f0f7"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-6-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuad","duration":1000,"target":{"selector":".section-heading","selectorGuids":["3bb3c332-658e-8bac-4fcd-ed5a7472f0f7"]},"yValue":0,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-6-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"inOutQuad","duration":1000,"target":{"selector":".section-heading","selectorGuids":["3bb3c332-658e-8bac-4fcd-ed5a7472f0f7"]},"value":1,"unit":""}}]}],"useFirstGroupAsInitialState":true,"createdOn":1694568463561},"a-8":{"id":"a-8","title":"Move up on scroll paragraph","actionItemGroups":[{"actionItems":[{"id":"a-8-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".paragraph-light","selectorGuids":["db935e33-c627-c707-aebf-7fbacbb62cfa"]},"yValue":50,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-8-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".paragraph-light","selectorGuids":["db935e33-c627-c707-aebf-7fbacbb62cfa"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-8-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuad","duration":1000,"target":{"useEventTarget":"CHILDREN","selector":".paragraph-light","selectorGuids":["db935e33-c627-c707-aebf-7fbacbb62cfa"]},"yValue":0,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-8-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"inOutQuad","duration":1000,"target":{"useEventTarget":"CHILDREN","selector":".paragraph-light","selectorGuids":["db935e33-c627-c707-aebf-7fbacbb62cfa"]},"value":1,"unit":""}}]}],"useFirstGroupAsInitialState":true,"createdOn":1694568463561},"a-7":{"id":"a-7","title":"Move up on scroll proj name link","actionItemGroups":[{"actionItems":[{"id":"a-7-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".project-name-link","selectorGuids":["8341c309-c80e-25d6-e33f-630c89c23ece"]},"yValue":50,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-7-n-2","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"","duration":500,"target":{"useEventTarget":"CHILDREN","selector":".project-name-link","selectorGuids":["8341c309-c80e-25d6-e33f-630c89c23ece"]},"value":0,"unit":""}}]},{"actionItems":[{"id":"a-7-n-3","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"inOutQuad","duration":1000,"target":{"useEventTarget":"CHILDREN","selector":".project-name-link","selectorGuids":["8341c309-c80e-25d6-e33f-630c89c23ece"]},"yValue":0,"xUnit":"PX","yUnit":"px","zUnit":"PX"}},{"id":"a-7-n-4","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"inOutQuad","duration":1000,"target":{"useEventTarget":"CHILDREN","selector":".project-name-link","selectorGuids":["8341c309-c80e-25d6-e33f-630c89c23ece"]},"value":1,"unit":""}}]}],"useFirstGroupAsInitialState":true,"createdOn":1694568463561}},"site":{"mediaQueries":[{"key":"main","min":992,"max":10000},{"key":"medium","min":768,"max":991},{"key":"small","min":480,"max":767},{"key":"tiny","min":0,"max":479}]}}
+{"events":{"e-3":{"id":"e-3","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-4"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"088edc34-1072-75df-3950-2c46ac287ef6","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"088edc34-1072-75df-3950-2c46ac287ef6","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1628432624734},"e-4":{"id":"e-4","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-2","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-3"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"088edc34-1072-75df-3950-2c46ac287ef6","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"088edc34-1072-75df-3950-2c46ac287ef6","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1628432624734},"e-5":{"id":"e-5","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-3","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-6"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"d4a5855d-95ce-774b-3efc-38df2adaf582","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"d4a5855d-95ce-774b-3efc-38df2adaf582","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1628561972106},"e-6":{"id":"e-6","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-4","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-5"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"d4a5855d-95ce-774b-3efc-38df2adaf582","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"d4a5855d-95ce-774b-3efc-38df2adaf582","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1628561972106},"e-11":{"id":"e-11","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-5","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-12"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|57a37c1f-6178-493d-4627-bab4defd2700","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|57a37c1f-6178-493d-4627-bab4defd2700","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1628567436709},"e-12":{"id":"e-12","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-6","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-11"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|57a37c1f-6178-493d-4627-bab4defd2700","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|57a37c1f-6178-493d-4627-bab4defd2700","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1628567436709},"e-15":{"id":"e-15","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-5","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-16"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|57a37c1f-6178-493d-4627-bab4defd26fe","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|57a37c1f-6178-493d-4627-bab4defd26fe","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1628567607806},"e-16":{"id":"e-16","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-6","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-15"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|57a37c1f-6178-493d-4627-bab4defd26fe","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|57a37c1f-6178-493d-4627-bab4defd26fe","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1628567607806},"e-25":{"id":"e-25","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-7","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-26"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"2f15e6f1-1804-a14b-3192-c7ee124e101d","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"2f15e6f1-1804-a14b-3192-c7ee124e101d","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1628603139368},"e-26":{"id":"e-26","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-8","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-25"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"2f15e6f1-1804-a14b-3192-c7ee124e101d","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"2f15e6f1-1804-a14b-3192-c7ee124e101d","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1628603139369},"e-29":{"id":"e-29","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-5","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-30"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|5fda6ba0-0a3f-1f64-bfeb-7020018cb262","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|5fda6ba0-0a3f-1f64-bfeb-7020018cb262","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1629341891997},"e-30":{"id":"e-30","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-6","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-29"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|5fda6ba0-0a3f-1f64-bfeb-7020018cb262","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|5fda6ba0-0a3f-1f64-bfeb-7020018cb262","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1629341891997},"e-53":{"id":"e-53","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-9","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-54"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818154|19e87802-50db-ec0b-b550-b829420e532a","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818154|19e87802-50db-ec0b-b550-b829420e532a","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1631712644231},"e-54":{"id":"e-54","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-10","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-53"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818154|19e87802-50db-ec0b-b550-b829420e532a","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818154|19e87802-50db-ec0b-b550-b829420e532a","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1631712644233},"e-56":{"id":"e-56","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-10","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-55"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818154|19e87802-50db-ec0b-b550-b829420e532a","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818154|19e87802-50db-ec0b-b550-b829420e532a","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1631712727628},"e-57":{"id":"e-57","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-9","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-58"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818154|77df5e02-2c56-9a23-f2ce-7c161f56e8a5","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818154|77df5e02-2c56-9a23-f2ce-7c161f56e8a5","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1631712762251},"e-60":{"id":"e-60","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-10","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-59"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818154|77df5e02-2c56-9a23-f2ce-7c161f56e8a5","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818154|77df5e02-2c56-9a23-f2ce-7c161f56e8a5","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1631712771820},"e-61":{"id":"e-61","name":"","animationType":"custom","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-9","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-62"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818154|5facd54f-42f3-37a7-e69f-d9423807fb03","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818154|5facd54f-42f3-37a7-e69f-d9423807fb03","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1631712783233},"e-64":{"id":"e-64","name":"","animationType":"custom","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-10","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-63"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818154|5facd54f-42f3-37a7-e69f-d9423807fb03","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818154|5facd54f-42f3-37a7-e69f-d9423807fb03","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1631712791843},"e-109":{"id":"e-109","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-11","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-110"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|0d1b017d-70c2-e234-6415-605fa090cccd","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|0d1b017d-70c2-e234-6415-605fa090cccd","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":0,"direction":null,"effectIn":false},"createdOn":1641084275387},"e-110":{"id":"e-110","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-12","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-109"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|0d1b017d-70c2-e234-6415-605fa090cccd","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|0d1b017d-70c2-e234-6415-605fa090cccd","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1641084275387},"e-111":{"id":"e-111","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-11","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-112"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|922e6a3a-eb3d-ed2b-4a43-9130314f33b5","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|922e6a3a-eb3d-ed2b-4a43-9130314f33b5","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":0,"direction":null,"effectIn":false},"createdOn":1641086227338},"e-112":{"id":"e-112","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-12","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-111"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|922e6a3a-eb3d-ed2b-4a43-9130314f33b5","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|922e6a3a-eb3d-ed2b-4a43-9130314f33b5","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1641086227338},"e-119":{"id":"e-119","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-13","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-120"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818157|c9dc72f7-60eb-d920-955b-0407e74df79d","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818157|c9dc72f7-60eb-d920-955b-0407e74df79d","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1641156427211},"e-120":{"id":"e-120","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-14","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-119"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818157|c9dc72f7-60eb-d920-955b-0407e74df79d","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818157|c9dc72f7-60eb-d920-955b-0407e74df79d","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1641156427211},"e-121":{"id":"e-121","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-13","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-122"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818157|df2278cb-aa3d-6c0b-d068-4804401f3631","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818157|df2278cb-aa3d-6c0b-d068-4804401f3631","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1641167251861},"e-122":{"id":"e-122","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-14","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-121"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818157|df2278cb-aa3d-6c0b-d068-4804401f3631","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818157|df2278cb-aa3d-6c0b-d068-4804401f3631","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1641167251861},"e-123":{"id":"e-123","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-13","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-124"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818157|830b4009-b6e7-4400-b08f-3ccdb55d9fe8","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818157|830b4009-b6e7-4400-b08f-3ccdb55d9fe8","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1641678385631},"e-124":{"id":"e-124","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-14","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-123"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818157|830b4009-b6e7-4400-b08f-3ccdb55d9fe8","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818157|830b4009-b6e7-4400-b08f-3ccdb55d9fe8","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1641678385631},"e-125":{"id":"e-125","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-13","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-126"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818157|95341579-38f6-e5b6-ea8e-48b9b5f5e9a4","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818157|95341579-38f6-e5b6-ea8e-48b9b5f5e9a4","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1641686815299},"e-126":{"id":"e-126","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-14","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-125"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818157|95341579-38f6-e5b6-ea8e-48b9b5f5e9a4","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818157|95341579-38f6-e5b6-ea8e-48b9b5f5e9a4","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1641686815299},"e-133":{"id":"e-133","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-13","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-134"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818158|48f5fb0a-9b41-41aa-55a4-d1ce13793eaa","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818158|48f5fb0a-9b41-41aa-55a4-d1ce13793eaa","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1643675858028},"e-134":{"id":"e-134","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-14","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-133"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818158|48f5fb0a-9b41-41aa-55a4-d1ce13793eaa","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818158|48f5fb0a-9b41-41aa-55a4-d1ce13793eaa","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1643675858028},"e-143":{"id":"e-143","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-11","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-144"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|116e6ef2-e6cc-7c7a-0c83-6c50cd089fc9","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|116e6ef2-e6cc-7c7a-0c83-6c50cd089fc9","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":0,"direction":null,"effectIn":false},"createdOn":1699700496676},"e-144":{"id":"e-144","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-12","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-143"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|116e6ef2-e6cc-7c7a-0c83-6c50cd089fc9","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|116e6ef2-e6cc-7c7a-0c83-6c50cd089fc9","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1699700496676},"e-145":{"id":"e-145","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-11","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-146"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|116e6ef2-e6cc-7c7a-0c83-6c50cd089fd5","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|116e6ef2-e6cc-7c7a-0c83-6c50cd089fd5","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":0,"direction":null,"effectIn":false},"createdOn":1699700496676},"e-146":{"id":"e-146","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-12","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-145"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|116e6ef2-e6cc-7c7a-0c83-6c50cd089fd5","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|116e6ef2-e6cc-7c7a-0c83-6c50cd089fd5","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1699700496676},"e-147":{"id":"e-147","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-11","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-148"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|6ab5b8b9-20f8-ccdd-406d-e5906ebee635","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|6ab5b8b9-20f8-ccdd-406d-e5906ebee635","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":0,"direction":null,"effectIn":false},"createdOn":1699701212426},"e-148":{"id":"e-148","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-12","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-147"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|6ab5b8b9-20f8-ccdd-406d-e5906ebee635","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|6ab5b8b9-20f8-ccdd-406d-e5906ebee635","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1699701212426},"e-149":{"id":"e-149","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-5","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-150"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"4813eb28-d697-d0a8-7706-e55ce7135274","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"4813eb28-d697-d0a8-7706-e55ce7135274","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1700165377257},"e-150":{"id":"e-150","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-6","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-149"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"4813eb28-d697-d0a8-7706-e55ce7135274","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"4813eb28-d697-d0a8-7706-e55ce7135274","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1700165377257},"e-151":{"id":"e-151","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-5","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-152"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"4813eb28-d697-d0a8-7706-e55ce7135276","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"4813eb28-d697-d0a8-7706-e55ce7135276","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1700165377257},"e-152":{"id":"e-152","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-6","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-151"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"4813eb28-d697-d0a8-7706-e55ce7135276","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"4813eb28-d697-d0a8-7706-e55ce7135276","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1700165377257},"e-153":{"id":"e-153","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-11","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-154"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|d9e1ddd7-f291-6577-0e99-9dd3709e15db","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|d9e1ddd7-f291-6577-0e99-9dd3709e15db","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":0,"direction":null,"effectIn":false},"createdOn":1704792422101},"e-154":{"id":"e-154","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-12","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-153"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|d9e1ddd7-f291-6577-0e99-9dd3709e15db","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|d9e1ddd7-f291-6577-0e99-9dd3709e15db","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1704792422101},"e-155":{"id":"e-155","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-11","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-156"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|226f67e9-f1d8-8bba-43bc-47da60bc1137","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|226f67e9-f1d8-8bba-43bc-47da60bc1137","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":0,"direction":null,"effectIn":false},"createdOn":1704793258808},"e-156":{"id":"e-156","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-12","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-155"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|226f67e9-f1d8-8bba-43bc-47da60bc1137","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|226f67e9-f1d8-8bba-43bc-47da60bc1137","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1704793258808},"e-157":{"id":"e-157","name":"","animationType":"preset","eventTypeId":"MOUSE_OVER","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-11","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-158"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|c0761e95-3b30-c9b9-8fc9-974c712deadb","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|c0761e95-3b30-c9b9-8fc9-974c712deadb","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":0,"direction":null,"effectIn":false},"createdOn":1706528869188},"e-158":{"id":"e-158","name":"","animationType":"preset","eventTypeId":"MOUSE_OUT","action":{"id":"","actionTypeId":"GENERAL_START_ACTION","config":{"delay":0,"easing":"","duration":0,"actionListId":"a-12","affectedElements":{},"playInReverse":false,"autoStopEventId":"e-157"}},"mediaQueries":["main","medium","small","tiny"],"target":{"id":"650ce3ee5935d8f435818150|c0761e95-3b30-c9b9-8fc9-974c712deadb","appliesTo":"ELEMENT","styleBlockIds":[]},"targets":[{"id":"650ce3ee5935d8f435818150|c0761e95-3b30-c9b9-8fc9-974c712deadb","appliesTo":"ELEMENT","styleBlockIds":[]}],"config":{"loop":false,"playInReverse":false,"scrollOffsetValue":null,"scrollOffsetUnit":null,"delay":null,"direction":null,"effectIn":null},"createdOn":1706528869188}},"actionLists":{"a":{"id":"a","title":"Arrow up","actionItemGroups":[{"actionItems":[{"id":"a-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{},"xValue":0,"yValue":0,"xUnit":"px","yUnit":"px","zUnit":"PX"}}]},{"actionItems":[{"id":"a-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"easeIn","duration":200,"target":{},"xValue":2,"yValue":-2,"xUnit":"px","yUnit":"px","zUnit":"PX"}}]}],"useFirstGroupAsInitialState":true,"createdOn":1628431517525},"a-2":{"id":"a-2","title":"Arrow down","actionItemGroups":[{"actionItems":[{"id":"a-2-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"","duration":500,"target":{},"xValue":2,"yValue":-2,"xUnit":"px","yUnit":"px","zUnit":"PX"}}]},{"actionItems":[{"id":"a-2-n-2","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"easeIn","duration":200,"target":{},"xValue":0,"yValue":0,"xUnit":"px","yUnit":"px","zUnit":"PX"}}]}],"useFirstGroupAsInitialState":true,"createdOn":1628431517525},"a-3":{"id":"a-3","title":"Link Hover","actionItemGroups":[{"actionItems":[{"id":"a-3-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"ease","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".link-primary-text-arrow","selectorGuids":["e4e659ba-368f-9454-54b4-aa5c4d6839ed"]},"xValue":3,"yValue":-3,"xUnit":"px","yUnit":"px","zUnit":"PX"}}]},{"actionItems":[{"id":"a-3-n-2","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"ease","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".link-primary-wrapper","selectorGuids":["e1fce991-2000-e22e-5c47-7596e72aa579"]},"globalSwatchId":"7d85b1dc","rValue":80,"bValue":253,"gValue":112,"aValue":1}}]}],"useFirstGroupAsInitialState":false,"createdOn":1628562004076},"a-4":{"id":"a-4","title":"Link Hover Out","actionItemGroups":[{"actionItems":[{"id":"a-4-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"ease","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".link-primary-text-arrow","selectorGuids":["e4e659ba-368f-9454-54b4-aa5c4d6839ed"]},"xValue":0,"yValue":0,"xUnit":"px","yUnit":"px","zUnit":"PX"}}]},{"actionItems":[{"id":"a-4-n-2","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"ease","duration":200,"target":{"useEventTarget":true,"id":"d4a5855d-95ce-774b-3efc-38df2adaf582"},"globalSwatchId":"b1a721d4","rValue":103,"bValue":95,"gValue":149,"aValue":1}}]}],"useFirstGroupAsInitialState":false,"createdOn":1628562254534},"a-5":{"id":"a-5","title":"Social icon hover","actionItemGroups":[{"actionItems":[{"id":"a-5-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"easeIn","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".social-icon","selectorGuids":["b7f73c6d-78fd-4d26-ffaf-0030e6ee6f2a"]},"globalSwatchId":"b1a721d4","rValue":103,"bValue":95,"gValue":149,"aValue":1}}]}],"useFirstGroupAsInitialState":false,"createdOn":1628567163801},"a-6":{"id":"a-6","title":"Social icon hover out","actionItemGroups":[{"actionItems":[{"id":"a-6-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"easeOut","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".social-icon","selectorGuids":["b7f73c6d-78fd-4d26-ffaf-0030e6ee6f2a"]},"globalSwatchId":"7899f16f","rValue":56,"bValue":56,"gValue":56,"aValue":1}}]}],"useFirstGroupAsInitialState":false,"createdOn":1628567289215},"a-7":{"id":"a-7","title":"Email link hover","actionItemGroups":[{"actionItems":[{"id":"a-7-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"easeIn","duration":200,"target":{"id":"5cc4dc21-912b-b479-993e-785d3fa7c2db"},"globalSwatchId":"b1a721d4","rValue":103,"bValue":95,"gValue":149,"aValue":1}}]}],"useFirstGroupAsInitialState":false,"createdOn":1628603161967},"a-8":{"id":"a-8","title":"Email link hover out","actionItemGroups":[{"actionItems":[{"id":"a-8-n","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"easeOut","duration":200,"target":{"id":"5cc4dc21-912b-b479-993e-785d3fa7c2db"},"globalSwatchId":"7899f16f","rValue":56,"bValue":56,"gValue":56,"aValue":1}}]}],"useFirstGroupAsInitialState":false,"createdOn":1628603249348},"a-9":{"id":"a-9","title":"Image Grow on Hover","actionItemGroups":[{"actionItems":[{"id":"a-9-n","actionTypeId":"TRANSFORM_SCALE","config":{"delay":0,"easing":"easeIn","duration":100,"target":{"useEventTarget":true,"id":"650ce3ee5935d8f435818150|f611c112-e195-4faf-5f87-0fe705922fbc"},"xValue":1.01,"yValue":1.01,"locked":true}}]}],"useFirstGroupAsInitialState":false,"createdOn":1629948574454},"a-10":{"id":"a-10","title":"Image Shrink on Hover Out","actionItemGroups":[{"actionItems":[{"id":"a-10-n","actionTypeId":"TRANSFORM_SCALE","config":{"delay":0,"easing":"easeOut","duration":100,"target":{"useEventTarget":true,"id":"650ce3ee5935d8f435818150|f611c112-e195-4faf-5f87-0fe705922fbc"},"xValue":1,"yValue":1,"locked":true}}]}],"useFirstGroupAsInitialState":false,"createdOn":1629948892310},"a-11":{"id":"a-11","title":"Link Fade on Hover","actionItemGroups":[{"actionItems":[{"id":"a-11-n","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"easeIn","duration":200,"target":{"useEventTarget":true,"id":"650ce3ee5935d8f435818150|c5455e0e-b856-0b99-80e0-8d7592a5cbd8"},"value":0.6,"unit":""}}]}],"useFirstGroupAsInitialState":false,"createdOn":1629949222960},"a-12":{"id":"a-12","title":"Text Fade on Hover Out","actionItemGroups":[{"actionItems":[{"id":"a-12-n","actionTypeId":"STYLE_OPACITY","config":{"delay":0,"easing":"easeOut","duration":200,"target":{"useEventTarget":true,"id":"650ce3ee5935d8f435818150|c5455e0e-b856-0b99-80e0-8d7592a5cbd8"},"value":1,"unit":""}}]}],"useFirstGroupAsInitialState":false,"createdOn":1629949289675},"a-13":{"id":"a-13","title":"Link Hover 2","actionItemGroups":[{"actionItems":[{"id":"a-13-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"ease","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".link-primary-text-arrow","selectorGuids":["e4e659ba-368f-9454-54b4-aa5c4d6839ed"]},"xValue":3,"yValue":-3,"xUnit":"px","yUnit":"px","zUnit":"PX"}}]},{"actionItems":[{"id":"a-13-n-2","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"ease","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".link-primary-wrapper","selectorGuids":["e1fce991-2000-e22e-5c47-7596e72aa579"]},"globalSwatchId":"7d85b1dc","rValue":80,"bValue":253,"gValue":112,"aValue":1}}]}],"useFirstGroupAsInitialState":false,"createdOn":1628562004076},"a-14":{"id":"a-14","title":"Link Hover Out 2","actionItemGroups":[{"actionItems":[{"id":"a-14-n","actionTypeId":"TRANSFORM_MOVE","config":{"delay":0,"easing":"ease","duration":200,"target":{"useEventTarget":"CHILDREN","selector":".link-primary-text-arrow","selectorGuids":["e4e659ba-368f-9454-54b4-aa5c4d6839ed"]},"xValue":0,"yValue":0,"xUnit":"px","yUnit":"px","zUnit":"PX"}}]},{"actionItems":[{"id":"a-14-n-2","actionTypeId":"STYLE_TEXT_COLOR","config":{"delay":0,"easing":"ease","duration":200,"target":{"useEventTarget":true,"id":"650ce3ee5935d8f435818156|9fd9cf09-4351-8e1b-a5ef-8fe128e8a476"},"globalSwatchId":"b1a721d4","rValue":103,"bValue":95,"gValue":149,"aValue":1}}]}],"useFirstGroupAsInitialState":false,"createdOn":1628562254534}},"site":{"mediaQueries":[{"key":"main","min":992,"max":10000},{"key":"medium","min":768,"max":991},{"key":"small","min":480,"max":767},{"key":"tiny","min":0,"max":479}]}}
 );
