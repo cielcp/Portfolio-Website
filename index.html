@@ -42,17 +42,7 @@
     <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <link href="images/webclip.png" rel="apple-touch-icon" />
   </head>
-  <!--  style the modelviewer component  -->
-  <style is:global="">
-    model-viewer {
-      --progress-bar-color: none;
-      --progress-bar-height: 0px;
-      height: 500;
-      width: 500;
-      overflow: hidden;
-      align-items: middle;
-    }
-  </style>
+
   <body>
     <div
       data-collapse="medium"
@@ -68,14 +58,28 @@
           href="index.html"
           aria-current="page"
           class="logo w-nav-brand w--current"
-          ><img
+          ><!--<img
             src="images/logo.svg"
             loading="lazy"
             width="Auto"
             height="50"
             alt=""
             class="image-83"
-        /></a>
+        />-->
+          <model-viewer
+            camera-controls=""
+            alt="A 3D model of a bow"
+            poster="images/3d/bow.jpg"
+            src="images/3d/bow.gltf"
+            camera-orbit="180deg auto"
+            disable-zoom=""
+            disable-pan=""
+            interaction-prompt="none"
+            auto-rotate=""
+            rotation-per-second="40deg"
+            field-of-view="30deg">
+          </model-viewer
+        ></a>
         <nav role="navigation" class="nav-menu w-nav-menu">
           <a
             href="index.html"
@@ -149,16 +153,17 @@
               class="w-embed w-script">
               <model-viewer
                 camera-controls=""
-                alt="A 3D model of a bow"
+                alt="A 3D avatar of Ciel"
                 poster="images/3d/avatar.png"
                 src="images/3d/avatar.gltf"
-                camera-orbit="180deg 2m"
+                camera-orbit="120deg auto"
                 disable-zoom=""
                 disable-pan=""
                 interaction-prompt="none"
                 auto-rotate=""
-                rotation-per-second="10deg"
-                shadow-intensity="1">
+                field-of-view="30deg"
+                shadow-intensity="1"
+                environment-image="images/3d/pillars_1k.hdr">
               </model-viewer>
             </div>
             <!--<img
@@ -816,6 +821,32 @@
               </div>
             </a>
           </div>
+          <a
+            href="index.html"
+            aria-current="page"
+            class="logo w-nav-brand w--current"
+            ><!--<img
+            src="images/logo.svg"
+            loading="lazy"
+            width="Auto"
+            height="50"
+            alt=""
+            class="image-83"
+        />-->
+            <model-viewer
+              camera-controls=""
+              alt="A 3D model of a bow"
+              poster="images/3d/bow.jpg"
+              src="images/3d/bow.gltf"
+              camera-orbit="180deg auto"
+              disable-zoom=""
+              disable-pan=""
+              interaction-prompt="none"
+              auto-rotate=""
+              rotation-per-second="40deg"
+              field-of-view="30deg">
+            </model-viewer
+          ></a>
           <a
             data-w-id="2f15e6f1-1804-a14b-3192-c7ee124e101d"
             href="mailto:cielcpark@gmail.com"
