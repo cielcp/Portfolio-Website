@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--  Last Published: Mon Sep 09 2024 14:10:17 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Wed Sep 25 2024 19:53:26 GMT+0000 (Coordinated Universal Time)  -->
 <html
   data-wf-page="650ce3ee5935d8f435818150"
   data-wf-site="650ce3ed5935d8f4358180e5">
@@ -35,9 +35,24 @@
             (n.className += t + "touch");
       })(window, document);
     </script>
+    <!--  import the modelviewer component  -->
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
     <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <link href="images/webclip.png" rel="apple-touch-icon" />
   </head>
+  <!--  style the modelviewer component  -->
+  <style is:global="">
+    model-viewer {
+      --progress-bar-color: none;
+      --progress-bar-height: 0px;
+      height: 500;
+      width: 500;
+      overflow: hidden;
+      align-items: middle;
+    }
+  </style>
   <body>
     <div
       data-collapse="medium"
@@ -118,49 +133,42 @@
           <div
             id="w-node-_2069c8ca-f9e1-a310-57fe-44527a837b8d-35818150"
             class="div-block-2">
-            <h2 class="heading-14">Hi, I’m Ciel</h2>
+            <h2 class="heading-14">Ciel Park</h2>
             <p class="hero-text">
-              A full stack product designer with a background in Computer
-              Science and Psychology.<br /><br />I’m passionate about creating
-              digital experiences that are intuitive, uplifting, and joyful.<br />
+              is a full stack designer with a background in Computer Science and
+              Psychology.<br /><br />I’m passionate about creating intuitive,
+              engaging, and joyful digital experiences from ideation to
+              implementation<br />
             </p>
-            <div class="link-primary-wrapper hide">
-              <div>Previously worked on</div>
-              <a
-                data-w-id="d5de0e41-c10e-60ef-4440-a71e5c1027db"
-                href="https://testkube.io/"
-                target="_blank"
-                class="link-primary w-inline-block">
-                <div class="link-primary-text">AI Insights</div>
-              </a>
-              <div>@</div>
-              <a
-                data-w-id="2a67d0f4-542e-b066-f5b7-d8d57808e820"
-                href="https://testkube.io/"
-                target="_blank"
-                class="link-primary w-inline-block">
-                <div class="link-primary-text">Testkube</div>
-                <div class="link-primary-text-arrow">north_east</div>
-              </a>
-            </div>
-            <a
-              href="documents/Ciel-Park-Resume_1.pdf"
-              target="_blank"
-              class="button color-primary hide w-button"
-              >View case studies</a
-            >
           </div>
           <div
             id="w-node-_2069c8ca-f9e1-a310-57fe-44527a837ba8-35818150"
             class="div-block-center">
-            <img
+            <div
+              id="w-node-_9b4aa371-9033-1646-f70d-c88ab3db8e78-35818150"
+              class="w-embed w-script">
+              <model-viewer
+                camera-controls=""
+                alt="A 3D model of a bow"
+                poster="images/3d/avatar.png"
+                src="images/3d/avatar.gltf"
+                camera-orbit="180deg 2m"
+                disable-zoom=""
+                disable-pan=""
+                interaction-prompt="none"
+                auto-rotate=""
+                rotation-per-second="10deg"
+                shadow-intensity="1">
+              </model-viewer>
+            </div>
+            <!--<img
               src="images/flower.jpg"
               loading="lazy"
               width="284"
               sizes="(max-width: 479px) 70vw, (max-width: 767px) 87vw, (max-width: 991px) 88vw, 876px"
               alt=""
               srcset="images/flower-p-500.jpg 500w, images/flower.jpg 736w"
-              class="rounded-image home" />
+              class="rounded-image home" /> -->
           </div>
         </div>
       </div>
@@ -276,6 +284,10 @@
       <div class="container w-container">
         <div class="section-header hide">
           <h2>Internship</h2>
+          <p class="hide">
+            From client projects to concept work, here are a few of my favorite
+            recent case studies.
+          </p>
         </div>
         <div class="w-layout-grid portfolio-preview-card hide">
           <a
@@ -295,6 +307,10 @@
               Designing the user flow for a new AI powered insights generator to
               improve Testkube users&#x27; debugging experience.
             </div>
+            <p class="hide">
+              A better way for vendors to list their educational products on
+              EdCuration.
+            </p>
             <a
               href="portfolio-kube.html"
               target="_blank"
@@ -305,6 +321,10 @@
         </div>
         <div class="section-header">
           <h2>Case Studies</h2>
+          <p class="hide">
+            From client projects to concept work, here are a few of my favorite
+            recent case studies.
+          </p>
         </div>
         <div class="w-layout-grid portfolio-preview-card hide">
           <a
@@ -323,6 +343,10 @@
             <div class="project-preview-category">
               Final project for HCI in Software Development course @ UVA
             </div>
+            <p class="hide">
+              A better way for vendors to list their educational products on
+              EdCuration.
+            </p>
             <a
               href="https://sites.google.com/vt.edu/hci-f23-team-pandas/home"
               target="_blank"
@@ -353,6 +377,10 @@
             <div class="project-preview-tag">
               UX Design | Prototyping | Coursework
             </div>
+            <p class="hide">
+              A simple way to connect talented freelancers to the businesses who
+              need them most.
+            </p>
             <a
               href="wahoozones.html"
               class="button top-margin color-parking w-button"
@@ -421,6 +449,10 @@
             <div class="project-preview-tag">
               UX Design | Wireframing | Coursework
             </div>
+            <p class="hide">
+              A simple way to connect talented freelancers to the businesses who
+              need them most.
+            </p>
             <a href="cavchow.html" class="button top-margin color-ww w-button"
               >View case study</a
             >
@@ -443,6 +475,10 @@
             <div class="project-preview-category">
               Final project for HCI in Software Development course @ UVA
             </div>
+            <p class="hide">
+              A better way for vendors to list their educational products on
+              EdCuration.
+            </p>
             <a
               href="https://sites.google.com/vt.edu/hci-f23-team-pandas/home"
               target="_blank"
@@ -457,10 +493,14 @@
       <div class="container w-container">
         <div class="section-header">
           <h2>Internships &amp; Freelance</h2>
+          <p class="hide">
+            From client projects to concept work, here are a few of my favorite
+            recent case studies.
+          </p>
         </div>
         <div class="w-layout-grid portfolio-preview-card">
           <a
-            href="https://lunachatbot.netlify.app/"
+            href="https://testkube.io/learn/leveraging-ai-to-analyze-test-results-in-kubernetes"
             target="_blank"
             class="portfolio-preview-image grid-position-first w-inline-block"
             ><img src="images/luna-home.jpg" loading="lazy" alt=""
@@ -480,8 +520,12 @@
             <div class="project-preview-tag">
               App Dev | Animation | Internship
             </div>
+            <p class="hide">
+              A travel app feature to help travelers plan their dream trip to
+              Japan.
+            </p>
             <a
-              href="https://lunachatbot.netlify.app/"
+              href="https://docs.testkube.io/testkube-pro/articles/AI-test-insights/#using-ai-analysis"
               target="_blank"
               class="button top-margin color-luna w-button"
               >View app</a
@@ -517,8 +561,8 @@
               Viget Spinet
             </h2>
             <div class="project-preview-category">
-              A hackathon project for internal use in random name selection for
-              prize giveaways.
+              A hackathon project for internal use in weekly company prize
+              giveaways.
             </div>
             <div class="project-preview-tag">
               App Dev | UI DEsign | Internship
