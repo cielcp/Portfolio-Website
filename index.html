@@ -17,6 +17,8 @@
       href="https://fonts.gstatic.com"
       rel="preconnect"
       crossorigin="anonymous" />
+    <link rel="preload" href="images/flower/flower.gltf" as="fetch" />
+    <link rel="preload" href="images/3d/pillars_1k.hdr" as="image" />
     <script
       src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
       type="text/javascript"></script>
@@ -103,34 +105,6 @@
     <div class="container w-container">
       <div class="divider"></div>
     </div>
-    <section class="hide">
-      <div class="w-layout-blockcontainer w-container">
-        <div
-          id="w-node-e681d5d5-b843-4f0c-7ac7-15cd44cbbc7a-35818150"
-          class="w-layout-layout wf-layout-layout">
-          <div
-            id="w-node-_031f037f-606b-245a-23df-815169c1ba7b-35818150"
-            class="w-layout-cell">
-            <div class="div-block-center">
-              <img
-                src="images/flower.jpg"
-                loading="lazy"
-                width="284"
-                sizes="100vw"
-                alt=""
-                srcset="images/flower-p-500.jpg 500w, images/flower.jpg 736w"
-                class="rounded-image home" />
-            </div>
-          </div>
-          <div
-            id="w-node-_19bf23e5-8acc-da00-3aff-11ba7c98c66f-35818150"
-            class="w-layout-cell"></div>
-          <div
-            id="w-node-ecc2c9d8-9f96-5ffe-4432-529eef53cf74-35818150"
-            class="w-layout-cell"></div>
-        </div>
-      </div>
-    </section>
     <div class="section">
       <div class="container w-container">
         <div class="w-layout-grid hero-grid">
@@ -166,44 +140,10 @@
                 environment-image="images/3d/pillars_1k.hdr">
               </model-viewer>
             </div>
-            <!--<img
-              src="images/flower.jpg"
-              loading="lazy"
-              width="284"
-              sizes="(max-width: 479px) 70vw, (max-width: 767px) 87vw, (max-width: 991px) 88vw, 876px"
-              alt=""
-              srcset="images/flower-p-500.jpg 500w, images/flower.jpg 736w"
-              class="rounded-image home" /> -->
           </div>
         </div>
       </div>
     </div>
-    <header class="section hide">
-      <div class="container w-container">
-        <div class="hero-content">
-          <h1>Hi, I&#x27;m Ciel</h1>
-          <h1 class="section-subtitle">
-            UX designer + developer striving to create delightful digital
-            experiences. <br />Currently a 4th year studying computer science +
-            psychology @ UVA.
-          </h1>
-          <a
-            href="documents/Ciel-Park-Resume.pdf"
-            target="_blank"
-            class="button color-primary w-button"
-            >View resume</a
-          >
-        </div>
-        <div class="w-layout-grid grid-7 hide">
-          <img
-            src="images/edcuration-00-hero.png"
-            loading="lazy"
-            id="w-node-adfb2d38-8de7-a9d2-0575-b8e857b2eb1e-35818150"
-            alt=""
-            class="hero-image hide" />
-        </div>
-      </div>
-    </header>
     <div class="container w-container">
       <div class="w-layout-grid grid-8">
         <div class="divider"></div>
@@ -287,78 +227,8 @@
     </div>
     <section id="portfolio" class="section">
       <div class="container w-container">
-        <div class="section-header hide">
-          <h2>Internship</h2>
-          <p class="hide">
-            From client projects to concept work, here are a few of my favorite
-            recent case studies.
-          </p>
-        </div>
-        <div class="w-layout-grid portfolio-preview-card hide">
-          <a
-            href="template3.html"
-            class="portfolio-preview-image grid-position-first w-inline-block"
-            ><img src="images/testkube-home.png" loading="lazy" alt=""
-          /></a>
-          <div
-            id="w-node-_116e6ef2-e6cc-7c7a-0c83-6c50cd089fc8-35818150"
-            class="portfolio-preview-text-section left">
-            <h2
-              data-w-id="116e6ef2-e6cc-7c7a-0c83-6c50cd089fc9"
-              class="project-preview-title">
-              Testkube AI Insights
-            </h2>
-            <div class="project-preview-category">
-              Designing the user flow for a new AI powered insights generator to
-              improve Testkube users&#x27; debugging experience.
-            </div>
-            <p class="hide">
-              A better way for vendors to list their educational products on
-              EdCuration.
-            </p>
-            <a
-              href="portfolio-kube.html"
-              target="_blank"
-              class="button top-margin color-testkube w-button"
-              >See project</a
-            >
-          </div>
-        </div>
         <div class="section-header">
           <h2>Case Studies</h2>
-          <p class="hide">
-            From client projects to concept work, here are a few of my favorite
-            recent case studies.
-          </p>
-        </div>
-        <div class="w-layout-grid portfolio-preview-card hide">
-          <a
-            href="template3.html"
-            class="portfolio-preview-image grid-position-first w-inline-block"
-            ><img src="images/parking-home.png" loading="lazy" alt=""
-          /></a>
-          <div
-            id="w-node-_226f67e9-f1d8-8bba-43bc-47da60bc1136-35818150"
-            class="portfolio-preview-text-section left">
-            <h2
-              data-w-id="226f67e9-f1d8-8bba-43bc-47da60bc1137"
-              class="project-preview-title">
-              Parking App
-            </h2>
-            <div class="project-preview-category">
-              Final project for HCI in Software Development course @ UVA
-            </div>
-            <p class="hide">
-              A better way for vendors to list their educational products on
-              EdCuration.
-            </p>
-            <a
-              href="https://sites.google.com/vt.edu/hci-f23-team-pandas/home"
-              target="_blank"
-              class="button top-margin color-parking w-button"
-              >View case study</a
-            >
-          </div>
         </div>
         <div class="w-layout-grid portfolio-preview-card">
           <a
@@ -382,10 +252,6 @@
             <div class="project-preview-tag">
               UX Design | Prototyping | Coursework
             </div>
-            <p class="hide">
-              A simple way to connect talented freelancers to the businesses who
-              need them most.
-            </p>
             <a
               href="wahoozones.html"
               class="button top-margin color-parking w-button"
@@ -412,16 +278,12 @@
             <div class="project-preview-tag">
               Web Dev | Visual Design | Coursework
             </div>
-            <p class="hide">
-              A better way for vendors to list their educational products on
-              EdCuration.
-            </p>
             <a href="mysky.html" class="button top-margin color-mysky w-button"
               >Read case study</a
             >
           </div>
         </div>
-        <div class="w-layout-grid portfolio-preview-card hide">
+        <div class="w-layout-grid portfolio-preview-card">
           <a
             id="w-node-c0761e95-3b30-c9b9-8fc9-974c712dead8-35818150"
             href="cavchow.html"
@@ -429,7 +291,7 @@
             ><img
               src="images/wahoowheels-home.png"
               loading="lazy"
-              sizes="100vw"
+              sizes="(max-width: 991px) 88vw, 876px"
               srcset="
                 images/wahoowheels-home-p-500.png   500w,
                 images/wahoowheels-home-p-800.png   800w,
@@ -449,7 +311,8 @@
               CavChow
             </h2>
             <div class="project-preview-category">
-              A dedicated platform to order from UVA food trucks.
+              A mobile app dedicated to the vibrant, dynamic food truck culture
+              at UVA.
             </div>
             <div class="project-preview-tag">
               UX Design | Wireframing | Coursework
@@ -459,36 +322,7 @@
               need them most.
             </p>
             <a href="cavchow.html" class="button top-margin color-ww w-button"
-              >View case study</a
-            >
-          </div>
-        </div>
-        <div class="w-layout-grid portfolio-preview-card hide">
-          <a
-            href="template3.html"
-            class="portfolio-preview-image grid-position-first w-inline-block"
-            ><img src="images/mysky-home.png" loading="lazy" alt=""
-          /></a>
-          <div
-            id="w-node-d9e1ddd7-f291-6577-0e99-9dd3709e15da-35818150"
-            class="portfolio-preview-text-section left">
-            <h2
-              data-w-id="d9e1ddd7-f291-6577-0e99-9dd3709e15db"
-              class="project-preview-title">
-              Parking App
-            </h2>
-            <div class="project-preview-category">
-              Final project for HCI in Software Development course @ UVA
-            </div>
-            <p class="hide">
-              A better way for vendors to list their educational products on
-              EdCuration.
-            </p>
-            <a
-              href="https://sites.google.com/vt.edu/hci-f23-team-pandas/home"
-              target="_blank"
-              class="button top-margin color-mysky w-button"
-              >See project</a
+              >Read case study</a
             >
           </div>
         </div>
@@ -498,14 +332,10 @@
       <div class="container w-container">
         <div class="section-header">
           <h2>Internships &amp; Freelance</h2>
-          <p class="hide">
-            From client projects to concept work, here are a few of my favorite
-            recent case studies.
-          </p>
         </div>
         <div class="w-layout-grid portfolio-preview-card">
           <a
-            href="https://testkube.io/learn/leveraging-ai-to-analyze-test-results-in-kubernetes"
+            href="https://lunachatbot.netlify.app/"
             target="_blank"
             class="portfolio-preview-image grid-position-first w-inline-block"
             ><img src="images/luna-home.jpg" loading="lazy" alt=""
@@ -525,12 +355,8 @@
             <div class="project-preview-tag">
               App Dev | Animation | Internship
             </div>
-            <p class="hide">
-              A travel app feature to help travelers plan their dream trip to
-              Japan.
-            </p>
             <a
-              href="https://docs.testkube.io/testkube-pro/articles/AI-test-insights/#using-ai-analysis"
+              href="https://lunachatbot.netlify.app/"
               target="_blank"
               class="button top-margin color-luna w-button"
               >View app</a
@@ -540,7 +366,7 @@
         <div class="w-layout-grid portfolio-preview-card">
           <a
             id="w-node-_922e6a3a-eb3d-ed2b-4a43-9130314f33b0-35818150"
-            href="https://www.andmarketkitchens.com/"
+            href="https://spinet.vigetx.com/users/sign_up"
             target="_blank"
             class="portfolio-preview-image grid-position-last w-inline-block"
             ><img
@@ -570,12 +396,8 @@
               giveaways.
             </div>
             <div class="project-preview-tag">
-              App Dev | UI DEsign | Internship
+              App Dev | UI Design | Internship
             </div>
-            <p class="hide">
-              A wearable swim tracking app designed as part of a concept
-              project.
-            </p>
             <a
               href="https://spinet.vigetx.com/users/sign_up"
               target="_blank"
@@ -606,10 +428,6 @@
             <div class="project-preview-tag">
               UX Design | Strategy | Internship
             </div>
-            <p class="hide">
-              A travel app feature to help travelers plan their dream trip to
-              Japan.
-            </p>
             <a
               href="https://docs.testkube.io/testkube-pro/articles/AI-test-insights/#using-ai-analysis"
               target="_blank"
@@ -621,20 +439,20 @@
         <div class="w-layout-grid portfolio-preview-card">
           <a
             id="w-node-_266ec0bd-e81e-d824-2735-a1b98996ddf1-35818150"
-            href="https://www.andmarketkitchens.com/"
+            href="https://bangbop.com/"
             target="_blank"
             class="portfolio-preview-image grid-position-last w-inline-block"
             ><img
-              src="images/market-home.png"
+              src="images/bangbop-home.png"
               loading="lazy"
-              sizes="(max-width: 479px) 88vw, (max-width: 767px) 91vw, (max-width: 991px) 88vw, 876px"
+              sizes="(max-width: 991px) 88vw, 876px"
               srcset="
-                images/market-home-p-500.png   500w,
-                images/market-home-p-800.png   800w,
-                images/market-home-p-1080.png 1080w,
-                images/market-home-p-1600.png 1600w,
-                images/market-home-p-2000.png 2000w,
-                images/market-home.png        2500w
+                images/bangbop-home-p-500.png   500w,
+                images/bangbop-home-p-800.png   800w,
+                images/bangbop-home-p-1080.png 1080w,
+                images/bangbop-home-p-1600.png 1600w,
+                images/bangbop-home-p-2000.png 2000w,
+                images/bangbop-home.png        2500w
               "
               alt=""
           /></a>
@@ -644,22 +462,23 @@
             <h2
               data-w-id="266ec0bd-e81e-d824-2735-a1b98996ddf4"
               class="project-preview-title">
-              &amp;Market Kitchens
+              Bangbop
             </h2>
             <div class="project-preview-category">
-              The vendor-facing website for DC&#x27;s newest coworking kitchen.
+              The branding, website, and e-commerce flow for a Korean ghost
+              kitchen.
             </div>
             <div class="project-preview-tag">
-              Web Dev | UI DEsign | Client Work
+              Brand design | WEb Dev | Client Work
             </div>
             <p class="hide">
               A wearable swim tracking app designed as part of a concept
               project.
             </p>
             <a
-              href="https://www.andmarketkitchens.com/"
+              href="https://bangbop.com/"
               target="_blank"
-              class="button top-margin color-market w-button"
+              class="button top-margin color-bangbop w-button"
               >View website</a
             >
           </div>
@@ -668,73 +487,6 @@
     </section>
     <div class="container w-container">
       <div class="divider"></div>
-    </div>
-    <div class="section hide">
-      <div class="container w-container">
-        <div class="w-form">
-          <form
-            id="email-form"
-            name="email-form"
-            data-name="Email Form"
-            method="get"
-            class="form"
-            data-wf-page-id="650ce3ee5935d8f435818150"
-            data-wf-element-id="0ad1142c-ffb2-2314-0981-40a64eeea2f2">
-            <div class="section-header">
-              <h2>Let&#x27;s work together!</h2>
-              <p>Get in touch with me through social media or by email.</p>
-            </div>
-            <div class="w-layout-grid grid">
-              <div>
-                <label for="Name-6" class="label">Name</label
-                ><input
-                  class="text-field w-input"
-                  maxlength="256"
-                  name="Name"
-                  data-name="Name"
-                  placeholder="Name"
-                  type="text"
-                  id="Name-6" />
-              </div>
-              <div>
-                <label for="Email-address" class="label">Email Address</label
-                ><input
-                  class="text-field w-input"
-                  maxlength="256"
-                  name="Email-address"
-                  data-name="Email address"
-                  placeholder="Email address"
-                  type="email"
-                  id="Email-address"
-                  required="" />
-              </div>
-            </div>
-            <label for="Message-3" class="label">Message</label
-            ><textarea
-              data-name="Message"
-              maxlength="5000"
-              id="Message-3"
-              name="Message"
-              placeholder="Type your message..."
-              class="text-field w-input"></textarea>
-            <div
-              class="w-form-formrecaptcha g-recaptcha g-recaptcha-error g-recaptcha-disabled g-recaptcha-invalid-key"></div>
-            <input
-              type="submit"
-              data-wait="Please wait..."
-              class="button button-position color-primary w-button"
-              value="Contact me" />
-          </form>
-          <div class="success-message w-form-done">
-            <div class="text-block">
-              Thank you! Your submission has been received!
-            </div>
-          </div>
-          <div class="w-form-fail">
-            <div>Oops! Something went wrong while submitting the form.</div>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="container w-container">
       <div class="divider"></div>

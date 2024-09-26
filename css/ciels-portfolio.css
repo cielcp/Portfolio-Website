@@ -11,6 +11,7 @@
   --wahoozones: #7796be;
   --spinet: #61a1c2;
   --luna: #87799e;
+  --bangbop: #976351;
   --stada\<deleted\|variable-f9dcacd3\>: #4b60bc;
   --card-background: #a96161;
   --divider: #ececec;
@@ -265,6 +266,10 @@ img {
 
 .button.top-margin.color-luna {
   background-color: var(--luna);
+}
+
+.button.top-margin.color-bangbop {
+  background-color: var(--bangbop);
 }
 
 .button.color-primary {
@@ -1068,7 +1073,7 @@ img {
   margin-top: 20px;
 }
 
-.link-ww {
+.link-cc {
   color: var(--wahoowheels);
   text-decoration: underline;
 }
@@ -1521,6 +1526,10 @@ img {
 
 .f-heading-detail-small.color-wz {
   color: var(--wahoozones);
+}
+
+.f-heading-detail-small.color-cavchow {
+  color: var(--wahoowheels);
 }
 
 .f-margin-bottom-08 {
