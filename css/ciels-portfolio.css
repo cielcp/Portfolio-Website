@@ -103,6 +103,7 @@ ul {
   --spinet: #61a1c2;
   --luna: #87799e;
   --bangbop: #976351;
+  --keepsake: #7a87bb;
   --card-background: #a96161;
   --divider: #ececec;
   --orange: #f58116;
@@ -293,6 +294,9 @@ img {
 }
 .button.top-margin.color-bangbop {
   background-color: var(--bangbop);
+}
+.button.top-margin.color-keepsake {
+  background-color: var(--keepsake);
 }
 .section {
   margin-bottom: 40px;
@@ -1223,6 +1227,12 @@ img {
 .f-heading-detail-small-3.color-mysky,
 .f-heading-detail-small.color-mysky {
   color: var(--mysky);
+}
+.color-wz {
+  color: var(--wahoozones);
+}
+.color-ks {
+  color: var(--keepsake);
 }
 .f-heading-detail-small.color-cavchow {
   color: var(--wahoowheels);
